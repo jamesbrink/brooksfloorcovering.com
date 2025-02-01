@@ -167,13 +167,13 @@
             // Add all numbered images from 001 to 031
             for (let i = 1; i <= 31; i++) {
                 const num = i.toString().padStart(3, '0');
-                const imagePath = `/src/assets/images/${num}.jpg`;
+                const imagePath = `./src/assets/images/${num}.jpg`;
                 galleryGrid.appendChild(createImageCard(imagePath));
             }
             
             // Add service images
             for (let i = 1; i <= 12; i++) {
-                const imagePath = `/src/assets/images/service${i}.jpg`;
+                const imagePath = `./src/assets/images/service${i}.jpg`;
                 galleryGrid.appendChild(createImageCard(imagePath));
             }
         }
