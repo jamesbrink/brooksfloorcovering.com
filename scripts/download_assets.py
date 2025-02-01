@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
 import os
+import time
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
 import mimetypes
+import re
 
 def download_file(url, local_path):
     try:
-        response = requests.get(url, stream=True)
+        # Add headers to mimic a browser request
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        }
+        response = requests.get(url, stream=True, headers=headers)
         response.raise_for_status()
         
         os.makedirs(os.path.dirname(local_path), exist_ok=True)
@@ -16,6 +22,7 @@ def download_file(url, local_path):
             for chunk in response.iter_content(chunk_size=8192):
                 if chunk:
                     f.write(chunk)
+        print(f"Successfully downloaded: {url}")
         return True
     except Exception as e:
         print(f"Error downloading {url}: {e}")
@@ -31,25 +38,101 @@ def is_valid_file(url):
     
     return ext in valid_extensions or any(mime_type.startswith(t) for mime_type in valid_mimes if mime_type)
 
+def extract_image_urls(html_content):
+    """Extract image URLs from HTML content including those in style attributes and background images"""
+    urls = set()
+    
+    # Find all img tags
+    for img in html_content.find_all('img'):
+        src = img.get('src')
+        if src:
+            urls.add(src)
+            
+        # Check data-src attribute (common for lazy loading)
+        data_src = img.get('data-src')
+        if data_src:
+            urls.add(data_src)
+    
+    # Find background images in style attributes
+    for tag in html_content.find_all(style=True):
+        style = tag['style']
+        bg_urls = re.findall(r'url\([\'"]?([^\'")]+)[\'"]?\)', style)
+        urls.update(bg_urls)
+    
+    # Find background images in style tags
+    for style in html_content.find_all('style'):
+        if style.string:
+            bg_urls = re.findall(r'url\([\'"]?([^\'")]+)[\'"]?\)', style.string)
+            urls.update(bg_urls)
+    
+    return urls
+
 def main():
     base_url = 'https://brooksfloorcovering.com'
-    assets_dir = 'assets/original'
+    pages_to_check = [
+        '/photo-gallery',
+        '/about-us',
+        '/flooring-services-in-maricopa-county-arizona',
+        '/',
+    ]
+    assets_dir = 'src/assets'
+    gallery_dir = os.path.join(assets_dir, 'gallery')
     
     # Create assets directory if it doesn't exist
-    os.makedirs(assets_dir, exist_ok=True)
+    os.makedirs(gallery_dir, exist_ok=True)
     
-    # Get the main page
-    response = requests.get(base_url)
-    soup = BeautifulSoup(response.text, 'html.parser')
+    # Store all unique image URLs
+    all_image_urls = set()
     
-    # Find all images, stylesheets, and scripts
-    assets = []
-    assets.extend([(img.get('src'), 'images') for img in soup.find_all('img')])
-    assets.extend([(link.get('href'), 'css') for link in soup.find_all('link', rel='stylesheet')])
-    assets.extend([(script.get('src'), 'js') for script in soup.find_all('script', src=True)])
+    # Headers to mimic a browser request
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
     
-    # Download each asset
-    for asset_url, asset_type in assets:
+    # Check each page for images
+    for page in pages_to_check:
+        page_url = urljoin(base_url, page)
+        print(f"Checking page: {page_url}")
+        
+        try:
+            response = requests.get(page_url, headers=headers)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, 'html.parser')
+            
+            # Extract image URLs from the page
+            image_urls = extract_image_urls(soup)
+            
+            # Add valid URLs to our set
+            for url in image_urls:
+                full_url = urljoin(page_url, url)
+                if is_valid_file(full_url):
+                    all_image_urls.add(full_url)
+            
+            # Small delay to be nice to the server
+            time.sleep(1)
+            
+        except Exception as e:
+            print(f"Error processing {page_url}: {e}")
+    
+    # Download all unique images
+    print(f"Found {len(all_image_urls)} unique images")
+    for url in all_image_urls:
+        filename = os.path.basename(urlparse(url).path)
+        if not filename:
+            continue
+            
+        # Determine if this should go in the gallery directory
+        is_gallery_image = 'gallery' in url.lower() or 'project' in url.lower()
+        target_dir = gallery_dir if is_gallery_image else os.path.join(assets_dir, 'images')
+        local_path = os.path.join(target_dir, filename)
+        
+        # Skip if file already exists
+        if os.path.exists(local_path):
+            print(f"File already exists: {local_path}")
+            continue
+            
+        print(f"Downloading {url} to {local_path}")
+        download_file(url, local_path)
         if not asset_url:
             continue
             
