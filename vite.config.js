@@ -2,10 +2,11 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   root: './',
-  base: '/',
+  base: '',
   server: {
     open: true,
     port: 3000,
+    host: true, // Enable network access
     watch: {
       usePolling: true
     }
