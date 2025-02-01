@@ -1,15 +1,21 @@
 {
   "name": "brooksfloorcovering.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Brooks Floor Covering website",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "jsdom": "^26.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.11"
   }
 }
