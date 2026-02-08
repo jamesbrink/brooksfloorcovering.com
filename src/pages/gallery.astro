@@ -6,11 +6,165 @@ import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 import 'glightbox/dist/css/glightbox.min.css';
 
-// Generate array of gallery images
-const galleryImages = Array.from({ length: 31 }, (_, i) => {
-  const num = String(i + 1).padStart(3, '0');
-  return `/images/${num}.jpg`;
-});
+const galleryImages = [
+  {
+    src: '/images/001.jpg',
+    title: 'Custom Tile Shower',
+    description: 'Natural stone tile with mosaic accent strip in a walk-in shower',
+  },
+  {
+    src: '/images/002.jpg',
+    title: 'Bathtub Tile Surround',
+    description: 'Oval soaking tub with marble tile and mosaic detail — in progress',
+  },
+  {
+    src: '/images/003.jpg',
+    title: 'Completed Bathtub Installation',
+    description: 'Finished oval tub surround with mosaic tile and brushed nickel fixtures',
+  },
+  {
+    src: '/images/004.jpg',
+    title: 'Bathroom Shower Partition',
+    description: 'Frameless glass partition with full-height mosaic tile shower wall',
+  },
+  {
+    src: '/images/005.jpg',
+    title: 'Glass & Tile Detail',
+    description: 'Close-up of frameless glass meeting mosaic tile — precision craftsmanship',
+  },
+  {
+    src: '/images/006.jpg',
+    title: 'Full Bathroom Remodel',
+    description:
+      'Complete master bath with tiled floors, mosaic shower, soaking tub, and double vanity',
+  },
+  {
+    src: '/images/007.jpg',
+    title: 'Powder Room Tile Floor',
+    description: 'Large-format porcelain tile in a powder room for a clean, modern look',
+  },
+  {
+    src: '/images/008.jpg',
+    title: 'Double Vanity Bathroom',
+    description: 'Tile flooring and tub surround complementing a dark-cabinet double vanity',
+  },
+  {
+    src: '/images/009.jpg',
+    title: 'Shower Tile & Niche',
+    description:
+      'Walk-in shower with large porcelain tile, mosaic accent, and built-in shampoo niche',
+  },
+  {
+    src: '/images/010.jpg',
+    title: 'Residential Carpet Install',
+    description: 'Fresh wall-to-wall carpet installation in a Phoenix-area home',
+  },
+  {
+    src: '/images/011.jpg',
+    title: 'Bedroom Carpet',
+    description: 'Plush carpet installed in a bedroom with closet doors and baseboards',
+  },
+  {
+    src: '/images/012.jpg',
+    title: 'Carpet with Shutters',
+    description: 'Neutral-tone carpet in a bedroom with plantation shutters',
+  },
+  {
+    src: '/images/013.jpg',
+    title: 'Hallway Carpet',
+    description: 'Dark carpet extending through a hallway and into adjacent rooms',
+  },
+  {
+    src: '/images/014.jpg',
+    title: 'Concrete Polishing Demo',
+    description: 'Live demonstration of CPS concrete grinding and polishing equipment',
+  },
+  {
+    src: '/images/015.jpg',
+    title: 'Concrete Grinding Close-Up',
+    description: 'CPS floor grinder producing a high-gloss polished concrete finish',
+  },
+  {
+    src: '/images/016.jpg',
+    title: 'Warehouse Before Polishing',
+    description: 'Large-scale warehouse floor before concrete polishing treatment',
+  },
+  {
+    src: '/images/017.jpg',
+    title: 'Warehouse After Polishing',
+    description: 'Same warehouse with mirror-finish polished concrete — night and day difference',
+  },
+  {
+    src: '/images/018.jpg',
+    title: 'Commercial Polished Concrete',
+    description: 'High-gloss polished concrete in a commercial building with reflective finish',
+  },
+  {
+    src: '/images/019.jpg',
+    title: 'Aircraft Hangar Floor',
+    description: 'King Air 360 sitting on a pristine polished hangar floor',
+  },
+  {
+    src: '/images/020.jpg',
+    title: 'Metallic Epoxy Floor',
+    description: 'Stunning dark metallic epoxy with swirl pattern in a retail storefront',
+  },
+  {
+    src: '/images/021.jpg',
+    title: 'Metallic Epoxy — Wide View',
+    description: 'Metallic epoxy floor in a commercial space with track lighting and staircase',
+  },
+  {
+    src: '/images/022.jpg',
+    title: 'Hangar Epoxy Coating',
+    description: 'Light gray epoxy coating in a large hangar with industrial roll-up doors',
+  },
+  {
+    src: '/images/023.jpg',
+    title: 'Metallic Epoxy Detail',
+    description: 'Metallic epoxy floor catching natural light near a cable railing',
+  },
+  {
+    src: '/images/024.jpg',
+    title: 'Restaurant Polished Concrete',
+    description: 'Polished concrete flooring in a restaurant kitchen and service area',
+  },
+  {
+    src: '/images/025.jpg',
+    title: 'Polished Concrete — Dining Area',
+    description: 'Glossy polished concrete in a restaurant with floor-to-ceiling windows',
+  },
+  {
+    src: '/images/026.jpg',
+    title: 'Exposed Aggregate Concrete',
+    description: 'Close-up of polished concrete revealing natural stone aggregate',
+  },
+  {
+    src: '/images/027.jpg',
+    title: 'Commercial Concrete Hallway',
+    description: 'Polished concrete in a commercial corridor with exposed aggregate finish',
+  },
+  {
+    src: '/images/028.jpg',
+    title: 'Self-Leveling Overlay',
+    description: 'Self-leveling concrete overlay in a building under construction',
+  },
+  {
+    src: '/images/029.jpg',
+    title: 'Self-Leveling Concrete',
+    description: 'Fresh self-leveling concrete with a mirror-like surface in a residential remodel',
+  },
+  {
+    src: '/images/030.jpg',
+    title: 'Concrete Overlay — Renovation',
+    description: 'Self-leveling concrete floor reflecting window light during a renovation project',
+  },
+  {
+    src: '/images/031.jpg',
+    title: 'Self-Leveling Floor — Wide View',
+    description: 'Completed self-leveling concrete in a full residential renovation',
+  },
+];
 ---
 
 <Layout
@@ -34,21 +188,27 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
           id="gallery"
         >
           {
-            galleryImages.map((src, index) => (
+            galleryImages.map((image, index) => (
               <a
-                href={src}
-                class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100"
+                href={image.src}
+                class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100 relative"
                 data-gallery="gallery1"
+                data-title={image.title}
+                data-description={image.description}
               >
                 <Image
-                  src={src}
-                  alt={`Brooks Floor Covering Project ${index + 1}`}
+                  src={image.src}
+                  alt={`${image.title} — ${image.description}`}
                   class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   width={400}
                   height={400}
                   inferSize
                   loading={index < 12 ? 'eager' : 'lazy'}
                 />
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p class="text-white text-sm font-semibold leading-tight">{image.title}</p>
+                  <p class="text-white/80 text-xs mt-0.5 leading-snug">{image.description}</p>
+                </div>
               </a>
             ))
           }

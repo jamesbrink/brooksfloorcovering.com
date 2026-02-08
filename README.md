@@ -172,7 +172,7 @@ On every push to `main`:
    - Prettier formatting check
    - ESLint linting
    - Astro type checking
-   - Dependency security audit (bun pm scan)
+   - Dependency security audit (npm audit)
 
 2. **Build**
    - Production build

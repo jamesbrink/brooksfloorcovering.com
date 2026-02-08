@@ -205,7 +205,7 @@ Runs on every push to `main` branch.
 ```bash
 bun update
 bun outdated  # Check for major updates
-bun pm scan   # Security check
+bun run audit:deps  # Security check (npm audit)
 ```
 
 ### Troubleshooting
