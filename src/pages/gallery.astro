@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
+import 'glightbox/dist/css/glightbox.min.css';
 
 // Generate array of gallery images
 const galleryImages = Array.from({ length: 31 }, (_, i) => {
@@ -24,13 +25,12 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
     <!-- Gallery Grid -->
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto" id="gallery">
           {galleryImages.map((src, index) => (
             <a
               href={src}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100"
+              class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100"
+              data-gallery="gallery1"
             >
               <img
                 src={src}
@@ -65,6 +65,19 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
   
   <Footer />
 </Layout>
+
+<script>
+  import GLightbox from 'glightbox';
+  
+  // Initialize GLightbox
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: false,
+    closeButton: true,
+    moreLength: 0,
+  });
+</script>
 
 <style>
   /* Ensure images display properly */
