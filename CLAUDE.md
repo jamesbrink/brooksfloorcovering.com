@@ -16,7 +16,7 @@ This document provides guidance for AI assistants (like Claude) working on this 
 
 ### Multi-Page Structure
 
-```
+```shell
 src/
 ├── components/          # Reusable Astro components
 │   ├── ContactForm.astro
@@ -141,6 +141,7 @@ This is separate from `npm run check` and `npm run audit:deps`.
 
 1. Add images to `public/images/` as `001.jpg`, `002.jpg`, etc.
 2. Update the count in `gallery.astro`:
+
    ```ts
    const galleryImages = Array.from({ length: 31 }, ...);
    ```
@@ -167,7 +168,7 @@ Edit the review cards in `src/pages/about.astro`. Images are in `public/images/r
 Current contact information (update in multiple places):
 
 - Phone: (623) 688-8422
-- Email: info@brooksfloorcovering.com
+- Email: <info@brooksfloorcovering.com>
 - ROC: #226840
 
 **Where to update:**
@@ -236,15 +237,23 @@ npm audit     # Security check
 
 ## External Resources
 
-- **Astro Docs:** https://docs.astro.build
-- **Tailwind CSS:** https://tailwindcss.com
-- **GLightbox:** https://github.com/biati-digital/glightbox
-- **Deployment:** https://docs.astro.build/en/guides/deploy/github/
+- **Astro Docs:** <https://docs.astro.build>
+- **Tailwind CSS:** <https://tailwindcss.com>
+- **GLightbox:** <https://github.com/biati-digital/glightbox>
+- **Deployment:** <https://docs.astro.build/en/guides/deploy/github/>
+
+## Project Settings
+
+### Claude Code (`.claude/settings.json`)
+
+Fully permissive project settings are checked in at `.claude/settings.json`. All tools (Bash, Read, Edit, Write, WebFetch, MCP, Task, etc.) are pre-allowed so Claude Code can operate without permission prompts.
 
 ## Project History
 
-- **2026-02-07:** Initial migration from Vite to Astro 5
-- **2026-02-07:** Refactored to multi-page architecture
+- **2026-02-08:** Added `.claude/settings.json` with fully permissive config
+- **2026-02-08:** Removed obsolete `MIGRATION.md`
+- **2026-02-07:** Added Formspree contact form, sitemap, SEO, AI discoverability
+- **2026-02-07:** Initial migration from Vite to Astro 5, multi-page architecture
 - **2026-02-07:** Added GLightbox, linting, CI/CD checks
 
 ## Notes for AI Assistants

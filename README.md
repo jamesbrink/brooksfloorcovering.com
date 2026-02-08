@@ -78,7 +78,7 @@ npm run build
 
 ## Project Structure
 
-```
+```shell
 /
 ├── .github/
 │   └── workflows/
@@ -214,6 +214,7 @@ This version improves upon the original site with:
 
 1. Add images to `public/images/` as `001.jpg`, `002.jpg`, etc.
 2. Update image count in `src/pages/gallery.astro`:
+
    ```ts
    const galleryImages = Array.from({ length: 31 }, ...);
    ```
@@ -228,7 +229,7 @@ Contact info appears in multiple places:
 Current info:
 
 - Phone: (623) 688-8422
-- Email: info@brooksfloorcovering.com
+- Email: <info@brooksfloorcovering.com>
 - ROC: #226840
 
 ### Updating Services
@@ -255,7 +256,7 @@ Edit review cards in `src/pages/about.astro`. Reviewer images are in `public/ima
 
 For questions or issues, contact:
 
-- Email: info@brooksfloorcovering.com
+- Email: <info@brooksfloorcovering.com>
 - Phone: (623) 688-8422
 
 ## Credits
