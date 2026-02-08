@@ -1,0 +1,522 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Custom Tile Showers',
+      description:
+        'Custom tile shower design and installation in Phoenix. Waterproof, beautifully crafted showers for your home.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Custom Tile Shower Installation',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Custom Tile Showers',
+          item: 'https://brooksfloorcovering.com/services/custom-tile-showers/',
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'Custom Tile Shower Installation Process',
+      description:
+        'Our step-by-step custom tile shower installation process ensures your shower is waterproof, structurally sound, and built to last.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Planning & Design',
+          text: 'We start by discussing your vision, layout, tile selection, and functional needs. Measurements are taken, drain placement is confirmed, and design details are finalized before installation begins.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Shower Pan Liner Installation',
+          text: 'A high-quality shower pan liner is installed to protect the subfloor from moisture. This critical layer directs water safely to the drain and prevents leaks before tile is ever laid.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Mud Shower Pan (Mortar Bed)',
+          text: 'We hand-build a sloped mud shower pan to ensure proper drainage. Unlike pre-formed pans, a custom mud pan allows perfect slope to the drain, a precise fit for your space, and long-term stability and durability.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Backer Board Installation',
+          text: 'Cement backer board is installed on all shower walls and ceilings as needed. This provides a solid, moisture-resistant surface designed specifically for tile installations.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Waterproofing System',
+          text: 'A full waterproofing membrane is applied over the backer board and critical seams, corners, and penetrations. This creates a continuous moisture barrier — one of the most important steps in a long-lasting shower.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 6,
+          name: 'Custom Seats, Benches & Shelves',
+          text: 'We build shower benches or seats for comfort and accessibility, recessed niches and shelves for storage, and custom shapes and sizes to match your design. All features are properly framed, sloped, and waterproofed.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 7,
+          name: 'Tile Installation & Finishing',
+          text: 'Your selected tile is carefully installed with precision spacing, clean cuts, and attention to detail. Once set, grout is applied and sealed for durability and a clean, finished look.',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Custom Tile Showers Phoenix | Shower Design & Installation - Brooks Floor Covering"
+  description="Custom tile shower design and installation in Phoenix. Waterproof, beautifully crafted showers for your home. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+>
+  <Navigation />
+
+  <Hero
+    title="Custom Tile Showers"
+    subtitle="Built for beauty. Built to last. Built just for you. Custom tile shower design and installation across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Custom Shower Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            A Shower Designed Just for You
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            A custom tile shower is more than a place to rinse off — it's a statement piece, a daily
+            luxury, and a long-term investment in your home. At Brooks Floor Covering, we design and
+            install fully customized tile showers that blend functionality, durability, and standout
+            aesthetics.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            From sleek modern designs to timeless stone looks, every shower we build is tailored to
+            your space, your style, and your lifestyle. Contact us for a
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+              >free, no-obligation estimate</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose a Custom Tile Shower -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Advantages
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Why Choose a Custom Tile Shower?
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">
+                Endless Design Possibilities
+              </h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Custom tile showers allow complete creative freedom. Choose from:
+              </p>
+              <ul class="space-y-2 text-neutral-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Ceramic, porcelain, glass, or natural stone tile</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Unique layouts, patterns, and accent walls</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Custom niches, benches, and shelves</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Matte, polished, textured, or mixed finishes</span>
+                </li>
+              </ul>
+              <p class="text-neutral-600 mt-4 italic">
+                No two showers are ever the same — yours is truly one of a kind.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">
+                Superior Durability & Longevity
+              </h3>
+              <p class="text-neutral-700 leading-relaxed">
+                When properly built, a custom tile shower is one of the most durable bathroom
+                upgrades you can make. We focus on what's behind the tile just as much as what you
+                see, ensuring long-term performance and moisture protection.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Improved Functionality</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Custom showers aren't just beautiful — they're practical:
+              </p>
+              <ul class="space-y-2 text-neutral-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Sloped pans for proper drainage</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Built-in seating for comfort and accessibility</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Recessed shelves to eliminate clutter</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Layouts designed for easy maintenance and daily use</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Adds Value to Your Home</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                A professionally installed tile shower adds both visual appeal and resale value.
+                Buyers notice quality craftsmanship — and custom tile work makes a strong
+                impression.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              How We Work
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Our Custom Tile Shower Installation Process
+            </h2>
+            <p class="text-neutral-700 leading-relaxed text-lg mt-4">
+              We believe great tile work starts with proper preparation. Our step-by-step process
+              ensures your shower is waterproof, structurally sound, and built to last.
+            </p>
+          </div>
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  1
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Planning & Design</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We start by discussing your vision, layout, tile selection, and functional needs.
+                  Measurements are taken, drain placement is confirmed, and design details are
+                  finalized before installation begins.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  2
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Shower Pan Liner Installation
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  A high-quality shower pan liner is installed to protect the subfloor from
+                  moisture. This critical layer directs water safely to the drain and prevents leaks
+                  before tile is ever laid.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  3
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Mud Shower Pan (Mortar Bed)
+                </h3>
+                <p class="text-neutral-700 leading-relaxed mb-3">
+                  We hand-build a sloped mud shower pan to ensure proper drainage. Unlike pre-formed
+                  pans, a custom mud pan allows:
+                </p>
+                <ul class="space-y-2 text-neutral-700">
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                    <span>Perfect slope to the drain</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                    <span>A precise fit for your space</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                    <span>Long-term stability and durability</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  4
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Backer Board Installation
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Cement backer board is installed on all shower walls and ceilings as needed. This
+                  provides a solid, moisture-resistant surface designed specifically for tile
+                  installations.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  5
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Waterproofing System</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  A full waterproofing membrane is applied over the backer board and critical seams,
+                  corners, and penetrations. This creates a continuous moisture barrier — one of the
+                  most important steps in a long-lasting shower.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  6
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Custom Seats, Benches & Shelves
+                </h3>
+                <p class="text-neutral-700 leading-relaxed mb-3">We build:</p>
+                <ul class="space-y-2 text-neutral-700">
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                    <span>Shower benches or seats for comfort and accessibility</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                    <span>Recessed niches and shelves for storage</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                    <span>Custom shapes and sizes to match your design</span>
+                  </li>
+                </ul>
+                <p class="text-neutral-700 leading-relaxed mt-3">
+                  All features are properly framed, sloped, and waterproofed to prevent water
+                  intrusion.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  7
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">
+                  Tile Installation & Finishing
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Your selected tile is carefully installed with precision spacing, clean cuts, and
+                  attention to detail. Once set, grout is applied and sealed for durability and a
+                  clean, finished look.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Craftsmanship You Can Trust -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Quality Workmanship
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Craftsmanship You Can Trust
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            A custom tile shower is only as good as the work behind the walls. Our team focuses on:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Proper preparation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Industry-proven installation methods</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Clean, professional workmanship</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Long-lasting results</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6 font-semibold">
+            We don't cut corners — because tile showers shouldn't be rebuilt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="/services/polished-concrete"
+              class="block bg-neutral-50 rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Polished Concrete</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Matte to high-gloss polished concrete finishes for homes, offices, and commercial
+                spaces.
+              </p>
+            </a>
+            <a
+              href="/services/epoxy"
+              class="block bg-neutral-50 rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Epoxy Flooring</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Durable, seamless epoxy coatings for garages, warehouses, and commercial spaces.
+              </p>
+            </a>
+            <a
+              href="/services/floor-preparation"
+              class="block bg-neutral-50 rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Floor Preparation</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Concrete grinding, leveling, and subfloor prep for lasting flooring installations.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Your Free Estimate</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Whether you're remodeling an existing bathroom or building new, a custom tile shower can
+          transform your space. Contact Brooks Floor Covering today to start designing a shower
+          that's as functional as it is beautiful.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

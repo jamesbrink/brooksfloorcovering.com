@@ -1,0 +1,375 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+
+const residentialProducts = [
+  {
+    icon: '🏠',
+    title: 'Carpet',
+    description:
+      'Plush, durable carpet for bedrooms, living rooms, and family spaces. Comfort underfoot with a wide range of colors and textures to match your style.',
+    link: '/services/carpet',
+  },
+  {
+    icon: '🪵',
+    title: 'Engineered Hardwood',
+    description:
+      'Timeless character and warmth with the stability to handle Arizona climate. Real wood surfaces engineered for long-lasting beauty.',
+    link: '/services/engineered-hardwood',
+  },
+  {
+    icon: '💧',
+    title: 'Luxury Vinyl Plank',
+    description:
+      'Waterproof, scratch-resistant LVP that looks like real wood or stone. The most popular choice for Phoenix-area homes with pets and kids.',
+    link: '/services/luxury-vinyl-plank',
+  },
+  {
+    icon: '🔲',
+    title: 'Tile & Stone',
+    description:
+      'Porcelain, ceramic, and natural stone tile for kitchens, bathrooms, entryways, and throughout your home. Built to last in high-traffic areas.',
+    link: '/services/tile',
+  },
+  {
+    icon: '🚿',
+    title: 'Custom Tile Showers',
+    description:
+      'Beautifully crafted walk-in showers, tub surrounds, and bathroom tile work. From mosaic accents to floor-to-ceiling tile installations.',
+    link: '/services/custom-tile-showers',
+  },
+];
+
+const galleryPreview = [
+  {
+    src: '/images/001.jpg',
+    title: 'Custom Tile Shower',
+    description: 'Natural stone tile with mosaic accent strip in a walk-in shower',
+  },
+  {
+    src: '/images/003.jpg',
+    title: 'Completed Bathtub Installation',
+    description: 'Finished oval tub surround with mosaic tile and brushed nickel fixtures',
+  },
+  {
+    src: '/images/006.jpg',
+    title: 'Full Bathroom Remodel',
+    description:
+      'Complete master bath with tiled floors, mosaic shower, soaking tub, and double vanity',
+  },
+  {
+    src: '/images/010.jpg',
+    title: 'Residential Carpet Install',
+    description: 'Fresh wall-to-wall carpet installation in a Phoenix-area home',
+  },
+  {
+    src: '/images/011.jpg',
+    title: 'Bedroom Carpet',
+    description: 'Plush carpet installed in a bedroom with closet doors and baseboards',
+  },
+  {
+    src: '/images/029.jpg',
+    title: 'Self-Leveling Concrete',
+    description: 'Fresh self-leveling concrete with a mirror-like surface in a residential remodel',
+  },
+];
+
+const residentialJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Residential Flooring Services',
+      description:
+        'Residential flooring installation in Phoenix including carpet, hardwood, luxury vinyl plank, tile, and custom tile showers for homes throughout the Greater Phoenix Area.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Residential Flooring',
+          item: 'https://brooksfloorcovering.com/residential/',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Residential Flooring Phoenix | Home Flooring Installation - Brooks Floor Covering"
+  description="Residential flooring installation in Phoenix. Carpet, hardwood, LVP, tile, and custom showers for your home. Free estimates — call (623) 688-8422."
+  jsonLd={residentialJsonLd}
+>
+  <Navigation />
+
+  <Hero
+    title="Residential Flooring Services"
+    subtitle="Transforming Phoenix-area homes with expert flooring installation for over 30 years."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Residential Flooring Experts
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Flooring Designed for Your Home
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Flooring plays a critical role in how a home looks, feels, and functions. At Brooks
+            Floor Covering, our residential services are designed to provide homeowners with
+            dependable guidance, quality materials, and skilled installation backed by more than
+            <strong>30 years of local experience</strong>.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            We approach every project with a focus on clarity, professionalism, and long-term
+            performance. Our in-home consultations allow you to evaluate colors, textures, and
+            materials in your lighting and alongside your furnishings, helping simplify the
+            decision-making process.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            Whether you are updating a single room, renovating your entire home, or planning new
+            construction, our team guides you from consultation through installation with experience
+            and care. Every residential project starts with a
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+              >free in-home estimate</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Residential Products -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Our Products
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+            Popular Residential Flooring
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {
+            residentialProducts.map((product) => (
+              <div class="bg-white rounded-xl p-8 shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                <div
+                  class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  aria-hidden="true"
+                >
+                  {product.icon}
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-neutral-800">{product.title}</h3>
+                <p class="text-neutral-600 leading-relaxed mb-4">{product.description}</p>
+                <a
+                  href={product.link}
+                  class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors text-sm"
+                >
+                  Learn More &rarr;
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Residential -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              The Brooks Difference
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Why Homeowners Trust Brooks
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🏠
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">In-Home Consultations</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                See flooring samples in your own lighting and alongside your furnishings for
+                confident decisions.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🏆
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">30+ Years Experience</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Decades of residential flooring expertise across every type of home improvement
+                project.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                👨‍👩‍👧‍👦
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Family-Owned</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                We treat every home like our own. Our reputation is built on honest pricing,
+                referrals, and repeat customers.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🛡️
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Licensed & Insured</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Arizona ROC #226840. Fully licensed, bonded, and insured for your protection on
+                every project.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                ⭐
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">4.9-Star Reviews</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Rated 4.9 out of 5 stars across 150+ reviews on Google, Yelp, and Facebook from
+                satisfied homeowners.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                💰
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Free Estimates</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Every project starts with a free, no-obligation in-home estimate. No pressure, no
+                hidden fees.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Our Work
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+            Recent Residential Projects
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {
+            galleryPreview.map((image) => (
+              <a
+                href="/gallery"
+                class="group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100 relative"
+              >
+                <Image
+                  src={image.src}
+                  alt={`${image.title} — ${image.description}`}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  width={400}
+                  height={400}
+                  inferSize
+                  loading="lazy"
+                />
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p class="text-white text-sm font-semibold leading-tight">{image.title}</p>
+                  <p class="text-white/80 text-xs mt-0.5 leading-snug">{image.description}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+        <div class="text-center mt-10">
+          <a
+            href="/gallery"
+            class="inline-block text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors text-lg"
+          >
+            View Full Gallery &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight">
+          Schedule Your Free In-Home Estimate
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Whether you are updating a single room or transforming your entire home, our team is ready
+          to help. Get started with a free in-home consultation today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get a Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

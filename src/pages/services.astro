@@ -2,58 +2,97 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
-import ServiceCard from '../components/ServiceCard.astro';
 import Footer from '../components/Footer.astro';
 
-const services = [
+const flooringServices = [
   {
-    icon: '🔨',
-    title: 'Flooring Sales & Installation',
+    icon: '🏠',
+    title: 'Carpet Flooring',
+    href: '/services/carpet',
     description:
-      'We install hardwood, engineered wood, ceramic tile, natural stone, carpet, carpet tile, and luxury vinyl plank for homes and businesses across the Greater Phoenix Area. Our factory-trained installers work with top brands including Mohawk, Shaw, Arizona Tile, and Daltile to deliver lasting results. Every project begins with a free in-home estimate where we measure your space, discuss your style and budget, and provide a detailed written quote. Whether you are renovating a single room in Scottsdale or outfitting an entire commercial building in Chandler, we handle every step from product selection to final walkthrough.',
-    features: [
-      'Hardwood',
-      'Engineered Wood',
-      'Ceramic Tile',
-      'Natural Stone',
-      'Carpet',
-      'Carpet Tile',
-      'Luxury Vinyl Tile & Plank',
-    ],
+      'Commercial carpet tile, stretch-in carpet, and broadloom carpet expertly installed for homes and businesses.',
+  },
+  {
+    icon: '◻️',
+    title: 'Tile Flooring',
+    href: '/services/tile',
+    description:
+      'Ceramic, porcelain, and natural stone tile installation with precision layout and lasting adhesion.',
+  },
+  {
+    icon: '🪵',
+    title: 'Luxury Vinyl Plank',
+    href: '/services/luxury-vinyl-plank',
+    description:
+      'Waterproof, scratch-resistant LVP flooring that replicates hardwood and stone at a fraction of the cost.',
+  },
+  {
+    icon: '🪵',
+    title: 'Engineered Hardwood',
+    href: '/services/engineered-hardwood',
+    description:
+      'Oak, maple, hickory, walnut, and exotic wood species in engineered or solid formats.',
+  },
+];
+
+const concreteServices = [
+  {
+    icon: '💎',
+    title: 'Polished Concrete',
+    href: '/services/polished-concrete',
+    description:
+      'Transform raw concrete into a sleek, low-maintenance finished floor from matte to high-gloss.',
+  },
+  {
+    icon: '🔬',
+    title: 'Epoxy Flooring',
+    href: '/services/epoxy',
+    description:
+      'Seamless, durable coatings ideal for garages, warehouses, and commercial environments.',
   },
   {
     icon: '🔧',
+    title: 'Floor Preparation',
+    href: '/services/floor-preparation',
+    description:
+      'Concrete grinding, moisture mitigation, leveling, and subfloor prep for lasting installations.',
+  },
+];
+
+const specialtyInlineServices = [
+  {
+    title: 'Countertops',
+    description: 'Custom countertop installations using tile, stone, and specialty materials.',
+  },
+  {
+    title: 'Backsplashes',
+    description: 'Decorative and functional backsplash installations for kitchens and bathrooms.',
+  },
+  {
+    title: 'Feature Walls',
+    description:
+      'Decorative tile or stone feature walls for fireplaces, lobbies, and accent walls.',
+  },
+];
+
+const repairServices = [
+  {
     title: 'Floor Repairs',
     description:
-      'We fix cracked tiles, restretch carpet, replace vinyl planks, repair grout, and fix carpet seams throughout the Phoenix metro area. Our repair team diagnoses the root cause of the issue, not just the visible damage, so the fix lasts. We offer same-week scheduling for most repairs, and urgent service is available for water damage and safety hazards. From a single cracked tile in a Tempe kitchen to a full carpet restretch in a Peoria rental property, no job is too small or too large. Contact us for a free repair estimate.',
-    features: [
-      'Cracked Tile Replacement',
-      'Carpet Restretch',
-      'Vinyl Plank Replacement',
-      'Grout Repairs',
-      'Carpet Seam Repair',
-    ],
+      'Cracked tile replacement, vinyl plank replacement, laminate and wood plank repairs.',
   },
   {
-    icon: '🏗️',
-    title: 'Concrete Services',
-    description:
-      'We provide moisture mitigation, concrete grinding, floor leveling, self-leveling underlayment pours, epoxy coatings, and decorative concrete polishing for residential and commercial properties. Proper subfloor preparation is essential for any flooring installation, and our concrete team ensures your slab is flat, dry, and ready. We also offer standalone epoxy and polished concrete finishes for garages, warehouses, and retail spaces in Phoenix, Glendale, Mesa, and across the Valley. Every concrete project starts with a free on-site evaluation.',
-    features: [
-      'Moisture Mitigation',
-      'Concrete Grinding',
-      'Floor Leveling',
-      'SLU Pours',
-      'Epoxy Coatings',
-      'Concrete Polishing',
-    ],
+    title: 'Grout Services',
+    description: 'Professional grout repair, staining, and sealing to restore tile surfaces.',
   },
   {
-    icon: '💎',
-    title: 'Specialty Services',
+    title: 'Carpet Services',
     description:
-      'We build custom showers, install countertops and backsplashes, create fireplace surrounds, and handle all custom tile and stone work. Our specialty installers bring precision and artistry to every detail, whether it is a mosaic backsplash in a Scottsdale kitchen or a floor-to-ceiling shower tile in a Goodyear master bath. We work with ceramic, porcelain, natural stone, and glass tile to bring your design vision to life. Schedule a free consultation to discuss your project.',
-    features: ['Custom Showers', 'Countertops', 'Backsplashes', 'Fireplaces', 'Custom Tile Work'],
+      'Re-stretching to remove wrinkles and trip hazards, pad replacement, and seam repairs.',
+  },
+  {
+    title: 'Flooring Demolition',
+    description: 'Safe, clean removal of existing flooring systems, adhesives, and underlayments.',
   },
 ];
 
@@ -100,18 +139,44 @@ const faqItems = [
   },
 ];
 
+const allServices = [
+  { name: 'Carpet Flooring', url: 'https://brooksfloorcovering.com/services/carpet/' },
+  { name: 'Tile Flooring', url: 'https://brooksfloorcovering.com/services/tile/' },
+  {
+    name: 'Luxury Vinyl Plank',
+    url: 'https://brooksfloorcovering.com/services/luxury-vinyl-plank/',
+  },
+  {
+    name: 'Engineered Hardwood',
+    url: 'https://brooksfloorcovering.com/services/engineered-hardwood/',
+  },
+  {
+    name: 'Polished Concrete',
+    url: 'https://brooksfloorcovering.com/services/polished-concrete/',
+  },
+  { name: 'Epoxy Flooring', url: 'https://brooksfloorcovering.com/services/epoxy/' },
+  {
+    name: 'Floor Preparation',
+    url: 'https://brooksfloorcovering.com/services/floor-preparation/',
+  },
+  {
+    name: 'Custom Tile Showers',
+    url: 'https://brooksfloorcovering.com/services/custom-tile-showers/',
+  },
+];
+
 const servicesJsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
       '@type': 'ItemList',
-      itemListElement: services.map((service, index) => ({
+      itemListElement: allServices.map((service, index) => ({
         '@type': 'ListItem',
         position: index + 1,
         item: {
           '@type': 'Service',
-          name: service.title,
-          description: service.description,
+          name: service.name,
+          url: service.url,
           provider: {
             '@type': 'HomeAndConstructionBusiness',
             '@id': 'https://brooksfloorcovering.com/#business',
@@ -164,7 +229,7 @@ const servicesJsonLd = {
 
   <Hero
     title="Our Services"
-    subtitle="Professional flooring solutions for residential and commercial projects throughout the Greater Phoenix Area."
+    subtitle="Comprehensive services directory — professional flooring, concrete, and specialty solutions for residential and commercial projects throughout the Greater Phoenix Area."
     compact={true}
   />
 
@@ -174,25 +239,23 @@ const servicesJsonLd = {
       <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
           <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
-            Comprehensive Flooring Solutions
+            Full-Service Floor Covering
           </p>
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
-            Complete Flooring Services for Homes & Businesses
+            From Concrete Preparation to Specialty Finishes
           </h2>
           <p class="text-neutral-700 leading-relaxed text-lg mb-4">
-            Brooks Floor Covering provides full-service flooring solutions for residential and
-            commercial clients across the Greater Phoenix Area. With over 30 years of experience,
-            our family-owned team handles every project from start to finish — from product
-            selection and subfloor preparation to precision installation and post-project cleanup.
-            We are licensed, bonded, and insured (ROC #226840), and our installers are
-            factory-trained by leading manufacturers including Mohawk, Shaw, Arizona Tile, and
-            Daltile.
+            Brooks Floor Covering is a full-service floor covering company specializing in
+            preparation, installation, restoration, and specialty surface solutions for residential,
+            commercial, and industrial spaces. From concrete preparation and surface systems to fine
+            finish details, our team delivers durable results, clean installations, and floors built
+            to perform. With over 30 years of experience, we are licensed, bonded, and insured (ROC
+            #226840), and our installers are factory-trained by leading manufacturers including
+            Mohawk, Shaw, Arizona Tile, and Daltile.
           </p>
           <p class="text-neutral-700 leading-relaxed text-lg">
-            Whether you need hardwood installed in your Scottsdale home, carpet replaced in a Mesa
-            rental property, epoxy coatings for a Phoenix warehouse, or custom tile work for a
-            Chandler kitchen remodel, we deliver exceptional quality at honest prices. Every project
-            starts with a
+            Whether you need a single repair or a complete flooring system, we deliver solutions
+            built on precision, durability, and craftsmanship. Every project starts with a
             <a
               href="/contact"
               class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
@@ -203,27 +266,214 @@ const servicesJsonLd = {
       </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Flooring Installation Category -->
     <section class="py-20 bg-neutral-50">
       <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
-            What We Do
-          </p>
-          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
-            Expert Flooring & Concrete Services
-          </h2>
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Flooring Solutions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Professional Flooring Installation
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {
+              flooringServices.map((service) => (
+                <a
+                  href={service.href}
+                  class="block p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                >
+                  <div
+                    class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                    aria-hidden="true"
+                  >
+                    {service.icon}
+                  </div>
+                  <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
+                  <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
+                  <span class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm">
+                    Learn More &rarr;
+                  </span>
+                </a>
+              ))
+            }
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map((service) => <ServiceCard {...service} />)}
+      </div>
+    </section>
+
+    <!-- Concrete & Surface Systems Category -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Concrete Services
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Concrete & Surface Systems
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {
+              concreteServices.map((service) => (
+                <a
+                  href={service.href}
+                  class="block p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                >
+                  <div
+                    class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                    aria-hidden="true"
+                  >
+                    {service.icon}
+                  </div>
+                  <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
+                  <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
+                  <span class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm">
+                    Learn More &rarr;
+                  </span>
+                </a>
+              ))
+            }
+          </div>
         </div>
-        <div class="text-center mt-12">
-          <a
-            href="/contact"
-            class="inline-block bg-brand-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 shadow-lg"
-          >
-            Get a Free Estimate
-          </a>
+      </div>
+    </section>
+
+    <!-- Specialty Services Category -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Custom Work
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Specialty & Custom Work</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <a
+              href="/services/custom-tile-showers"
+              class="block p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+            >
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                aria-hidden="true"
+              >
+                🚿
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-neutral-800">Custom Tile Showers</h3>
+              <p class="text-neutral-700 mb-4 leading-relaxed">
+                Complete custom shower systems including waterproofing, tile installation, and
+                custom layouts.
+              </p>
+              <span
+                class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm"
+              >
+                Learn More &rarr;
+              </span>
+            </a>
+          </div>
+          <div class="bg-white rounded-lg border border-neutral-200 p-6">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">
+              Additional Specialty Services
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {
+                specialtyInlineServices.map((service) => (
+                  <div>
+                    <h4 class="font-semibold text-neutral-800 mb-1">{service.title}</h4>
+                    <p class="text-neutral-600 text-sm leading-relaxed">{service.description}</p>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Repairs & Restoration Category -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Restore & Maintain
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Repairs & Restoration</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {
+              repairServices.map((service) => (
+                <div class="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
+                  <h3 class="text-lg font-semibold text-neutral-800 mb-2">{service.title}</h3>
+                  <p class="text-neutral-600 leading-relaxed">{service.description}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Commercial vs Residential Callout -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Tailored Solutions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">We Serve Every Sector</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a
+              href="/commercial"
+              class="block bg-white border border-neutral-200 rounded-lg p-8 shadow hover:shadow-xl transition-all duration-300 group"
+            >
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                aria-hidden="true"
+              >
+                🏢
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-neutral-800">Commercial Flooring</h3>
+              <p class="text-neutral-700 mb-4 leading-relaxed">
+                Professional flooring solutions for offices, retail, restaurants, warehouses, and
+                multi-unit properties. We partner with general contractors, property managers, and
+                business owners across the Valley.
+              </p>
+              <span
+                class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm"
+              >
+                Explore Commercial Services &rarr;
+              </span>
+            </a>
+            <a
+              href="/residential"
+              class="block bg-white border border-neutral-200 rounded-lg p-8 shadow hover:shadow-xl transition-all duration-300 group"
+            >
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                aria-hidden="true"
+              >
+                🏠
+              </div>
+              <h3 class="text-xl font-semibold mb-3 text-neutral-800">Residential Flooring</h3>
+              <p class="text-neutral-700 mb-4 leading-relaxed">
+                Beautiful, durable floors for every room in your home. From kitchens and bathrooms
+                to living areas and garages, we help homeowners choose and install the perfect
+                flooring for their lifestyle and budget.
+              </p>
+              <span
+                class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm"
+              >
+                Explore Residential Services &rarr;
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

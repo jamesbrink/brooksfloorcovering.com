@@ -5,19 +5,72 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 
-const distributors = [
-  'mohawk.png',
-  'shaw.png',
-  'arizona-tile.png',
-  'western-surfaces.png',
-  'qdi.png',
-  'daltile.png',
-  'emser.png',
-  'longust.png',
-  'galleher.png',
-  'tri-west.png',
-  'marazzi.png',
-  'tile-shop.png',
+const trustedOrgs = [
+  { name: 'Walmart', src: '/images/clients/walmart.png' },
+  { name: 'Dexcom', src: '/images/clients/dexcom.png' },
+  { name: 'Luke Air Force Base', src: '/images/clients/luke-afb.png' },
+  { name: 'MassMutual', src: '/images/clients/massmutual.png' },
+  { name: 'Honeywell', src: '/images/clients/honeywell.png' },
+  { name: 'FedEx', src: '/images/clients/fedex.png' },
+  { name: 'Arizona State University', src: '/images/clients/asu.png' },
+  { name: 'Mesa Gateway Airport', src: '/images/clients/mesa-gateway.png' },
+  { name: 'Din Tai Fung', src: '/images/clients/din-tai-fung.png' },
+  { name: 'Chipotle', src: '/images/clients/chipotle.png' },
+  { name: 'AutoZone', src: '/images/clients/autozone.png' },
+  { name: 'The Ritz-Carlton', src: '/images/clients/ritz-carlton.png' },
+  { name: 'Hilton Phoenix Resort at the Peak', src: '/images/clients/point-hilton.png' },
+];
+
+const flooringManufacturers = {
+  title: 'Flooring Manufacturers & Distributors',
+  logos: [
+    { name: 'Arizona Tile', file: 'arizona-tile.png', existing: true },
+    { name: 'Dal-Tile', file: 'daltile.png', existing: true },
+    { name: 'Bedrosians', file: 'bedrosians.png', existing: false },
+    { name: 'Cactus Tile', file: 'cactus-tile.png', existing: false },
+    { name: 'The Tile Shop', file: 'tile-shop.png', existing: true },
+    { name: 'Shaw', file: 'shaw.png', existing: true },
+    { name: 'Mohawk', file: 'mohawk.png', existing: true },
+    { name: 'Emser', file: 'emser.png', existing: true },
+    { name: 'QDI', file: 'qdi.png', existing: true },
+    { name: 'Galleher', file: 'galleher.png', existing: true },
+    { name: 'Tri-West', file: 'tri-west.png', existing: true },
+  ],
+};
+
+const installationSystems = {
+  title: 'Professional Installation Systems',
+  logos: [
+    { name: 'Schluter', file: 'schluter.png', existing: false },
+    { name: 'Laticrete', file: 'laticrete.png', existing: false },
+    { name: 'MAPEI', file: 'mapei.png', existing: false },
+    { name: 'Custom Building Products', file: 'custom-building-products.png', existing: false },
+  ],
+};
+
+const floorPreparation = {
+  title: 'Floor Preparation & Moisture Mitigation',
+  logos: [
+    { name: 'UZIN', file: 'uzin.png', existing: false },
+    { name: 'Euclid', file: 'euclid.png', existing: false },
+  ],
+};
+
+const concreteCoatings = {
+  title: 'Concrete Coatings',
+  logos: [
+    { name: 'CPS', file: 'cps.png', existing: false },
+    { name: 'APF', file: 'apf.png', existing: false },
+    { name: 'Ameripolish', file: 'ameripolish.png', existing: false },
+    { name: 'Hi-Tech', file: 'hi-tech.png', existing: false },
+  ],
+};
+
+const distributorCategories = [
+  flooringManufacturers,
+  installationSystems,
+  floorPreparation,
+  concreteCoatings,
 ];
 
 const whyChooseUs = [
@@ -153,38 +206,86 @@ const breadcrumbJsonLd = {
       </div>
     </section>
 
-    <!-- Distributors Section -->
+    <!-- Trusted Organizations Section -->
     <section class="py-20 bg-neutral-50">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-display tracking-tight">
-          Floor Covering Distributors
+          Trusted by Leading Organizations
         </h2>
         <p class="text-center text-neutral-700 mb-12 max-w-2xl mx-auto leading-relaxed">
-          We partner with industry-leading manufacturers to provide you with the highest quality
-          products for your Phoenix-area home or business.
+          Our work speaks for itself. We've provided flooring services for some of the most
+          recognizable organizations in the Valley.
         </p>
         <div
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto"
         >
           {
-            distributors.map((logo) => (
-              <Image
-                src={`/images/${logo}`}
-                alt={logo.replace('.png', '').replace(/-/g, ' ')}
+            trustedOrgs.map((org) => (
+              <img
+                src={org.src}
+                alt={org.name}
                 class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
-                width={128}
-                height={64}
-                inferSize
                 loading="lazy"
               />
             ))
           }
         </div>
+        <p class="text-sm text-neutral-500 text-center mt-8 max-w-3xl mx-auto italic">
+          We have had the privilege of providing flooring services to the organizations listed
+          above, both through direct partnerships and through our work as a trusted subcontractor
+          alongside general contractors. This list reflects completed projects and professional
+          relationships&mdash;not endorsements.
+        </p>
+      </div>
+    </section>
+
+    <!-- Distributors Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-display tracking-tight">
+          Trusted Products. Proven Results.
+        </h2>
+        <p class="text-center text-neutral-700 mb-12 max-w-2xl mx-auto leading-relaxed">
+          We partner with industry-leading manufacturers to provide you with the highest quality
+          products for your Phoenix-area home or business.
+        </p>
+
+        {
+          distributorCategories.map((category) => (
+            <div class="mb-12">
+              <h3 class="text-xl font-semibold text-neutral-800 text-center mb-6">
+                {category.title}
+              </h3>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto">
+                {category.logos.map((logo) =>
+                  logo.existing ? (
+                    <Image
+                      src={`/images/${logo.file}`}
+                      alt={logo.name}
+                      class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                      width={128}
+                      height={64}
+                      inferSize
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src={`/images/${logo.file}`}
+                      alt={logo.name}
+                      class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                      loading="lazy"
+                    />
+                  )
+                )}
+              </div>
+            </div>
+          ))
+        }
       </div>
     </section>
 
     <!-- Reviews Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-neutral-50">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-display tracking-tight">
           Customer Reviews
@@ -192,7 +293,7 @@ const breadcrumbJsonLd = {
 
         <!-- Rating Summary -->
         <div
-          class="max-w-4xl mx-auto mb-16 bg-neutral-50 rounded-xl shadow-lg overflow-hidden border-t-4 border-t-brand-accent"
+          class="max-w-4xl mx-auto mb-16 bg-white rounded-xl shadow-lg overflow-hidden border-t-4 border-t-brand-accent"
         >
           <div class="flex flex-col md:flex-row items-center justify-between p-8">
             <div class="text-center md:text-left mb-8 md:mb-0">
@@ -241,9 +342,7 @@ const breadcrumbJsonLd = {
 
         <!-- Review Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div
-            class="bg-neutral-50 p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary"
-          >
+          <div class="bg-white p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary">
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/reviewers/linda.jpg"
@@ -272,9 +371,7 @@ const breadcrumbJsonLd = {
             </div>
           </div>
 
-          <div
-            class="bg-neutral-50 p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary"
-          >
+          <div class="bg-white p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary">
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/reviewers/julie-m.jpg"
@@ -303,9 +400,7 @@ const breadcrumbJsonLd = {
             </div>
           </div>
 
-          <div
-            class="bg-neutral-50 p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary"
-          >
+          <div class="bg-white p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary">
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/reviewers/don.jpg"

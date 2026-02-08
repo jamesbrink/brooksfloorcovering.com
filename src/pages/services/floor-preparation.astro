@@ -1,0 +1,509 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Floor Preparation Services',
+      description:
+        'Professional floor preparation in Phoenix. Concrete grinding, moisture mitigation, leveling, and subfloor prep for lasting flooring installations.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Floor Preparation',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Floor Preparation',
+          item: 'https://brooksfloorcovering.com/services/floor-preparation/',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Floor Preparation Services Phoenix | Concrete Grinding & Leveling - Brooks Floor Covering"
+  description="Professional floor preparation in Phoenix. Concrete grinding, moisture mitigation, leveling, and subfloor prep for lasting flooring installations. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+>
+  <Navigation />
+
+  <Hero
+    title="Floor Preparation Services"
+    subtitle="Professional concrete grinding, leveling, moisture mitigation, and subfloor preparation for lasting flooring installations across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Foundation for Success
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Great Floors Start with Proper Preparation
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            At Brooks Floor Covering, we provide professional floor preparation services designed to
+            create a smooth, level, and durable foundation for any flooring system. Whether the
+            project involves tile, hardwood, vinyl, epoxy, or resilient and specialty flooring
+            systems, our team uses advanced equipment and proven methods to ensure the subfloor is
+            properly prepared for long-term performance.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            We serve residential and commercial clients across Phoenix, Glendale, Scottsdale, Mesa,
+            Chandler, and the entire Valley. Every project starts with a
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+              >free, no-obligation estimate</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concrete Grinding -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Surface Correction
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Concrete Grinding</h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Concrete grinding is essential for correcting imperfections and preparing surfaces for
+            new flooring. Our concrete grinding services include:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Removing high spots and uneven areas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Flattening and smoothing concrete slabs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Eliminating trip hazards and surface irregularities</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Preparing concrete for coatings or floor coverings</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6">
+            Our grinding process delivers improved floor flatness, ready for the next phase of
+            installation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concrete Surface Profiling -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Adhesion Preparation
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Concrete Surface Profiling
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Proper concrete surface profiling is critical to achieving strong adhesion and
+            long-lasting results. We provide mechanical surface preparation services such as:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Grinding concrete to achieve the required Concrete Surface Profile (CSP)</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Surface preparation for epoxy, urethane, resinous, and flooring systems</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6">
+            Our surface preparation methods meet manufacturer and project specifications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adhesive & Coating Removal -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Clean Substrate
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Adhesive & Coating Removal
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Residual adhesives and existing coatings from previous flooring systems can interfere
+            with new installations and compromise performance. We remove a wide range of materials,
+            including:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Carpet glue</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Vinyl and VCT adhesives</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Cutback adhesives</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Pressure-sensitive residues</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Existing coatings, sealers, and paints</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6">
+            The result is a clean, properly prepared surface ready for new flooring materials.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Moisture Mitigation Systems -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Moisture Control
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Moisture Mitigation Systems
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Excess moisture is one of the most common causes of flooring failure. Our moisture
+            mitigation services include:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Moisture testing and evaluation</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Installation of moisture mitigation systems</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Control of vapor emissions and hydrostatic pressure</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Compliance with flooring manufacturer moisture requirements</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6">
+            These systems reduce the risk of moisture-related flooring failures.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Waterproofing Systems -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Water Protection
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Waterproofing Systems</h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            In areas exposed to moisture, proper waterproofing is essential. We install
+            waterproofing systems for:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Bathrooms and wet areas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Commercial kitchens</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Upper-level areas with occupied living, office, or retail space below</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Multi-family and commercial spaces</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6">
+            These systems protect substrates from water intrusion and long-term damage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Self-Leveling Underlayment -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Level Surfaces
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Self-Leveling Underlayment
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            When floors are out of tolerance, self-leveling underlayment creates a smooth, flat
+            surface suitable for modern flooring installations. Self-leveling underlayment is ideal
+            for:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Correcting uneven or wavy slabs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Preparing floors for vinyl plank, tile, or wood</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Residential and commercial applications</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Meeting flatness requirements for modern flooring systems</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Crack Isolation Systems -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Crack Prevention
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Crack Isolation Systems
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Cracks in concrete can transfer through finished flooring if not properly addressed. Our
+            crack isolation systems are designed to:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Accommodate concrete movement and minor cracking</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Reduce the risk of cracks telegraphing through finished flooring</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                >Improve the long-term performance of tile and resilient flooring installations</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Meet manufacturer and project specifications</span>
+            </li>
+          </ul>
+          <p class="text-neutral-700 leading-relaxed text-lg mt-6">
+            These systems provide added protection and peace of mind for finished flooring
+            installations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Laser Floor Leveling -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Precision Technology
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Laser Floor Leveling</h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            For projects requiring the highest level of accuracy, we utilize laser-guided floor
+            leveling technology. Laser floor leveling offers:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Extremely accurate floor flatness</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Consistent results across large areas</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                >Ideal solutions for commercial, industrial, and high-end residential projects</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Compliance with strict FF/FL specifications and installation requirements</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Why Brooks
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Why Choose Brooks Floor Covering
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">Clients choose us for our:</p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Experienced floor preparation specialists</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Industrial-grade equipment and proven methods</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Manufacturer-approved systems</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Reliable scheduling and professional results</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>One source for complete floor preparation services</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="/services/polished-concrete"
+              class="block bg-neutral-50 rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Polished Concrete</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Matte to high-gloss polished concrete finishes for homes, offices, and commercial
+                spaces.
+              </p>
+            </a>
+            <a
+              href="/services/epoxy"
+              class="block bg-neutral-50 rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Epoxy Flooring</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Durable, seamless epoxy coatings for garages, warehouses, and commercial spaces.
+              </p>
+            </a>
+            <a
+              href="/services/custom-tile-showers"
+              class="block bg-neutral-50 rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Custom Tile Showers</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Beautifully crafted custom tile showers designed and installed for your home.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Your Free Estimate</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          No matter the size or scope of your project, proper floor preparation is the foundation of
+          a successful flooring installation. Contact Brooks Floor Covering today to ensure your
+          floors are prepared the right way from the start.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

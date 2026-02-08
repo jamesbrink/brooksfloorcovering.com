@@ -1,0 +1,766 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Carpet Flooring Installation',
+      description:
+        'Professional carpet flooring installation in Phoenix. Commercial carpet tile, stretch-in carpet, and residential carpet services.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Carpet Flooring Installation',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Carpet Flooring',
+          item: 'https://brooksfloorcovering.com/services/carpet/',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Carpet Flooring Installation Phoenix | Commercial & Residential Carpet - Brooks Floor Covering"
+  description="Professional carpet flooring installation in Phoenix. Commercial carpet tile, stretch-in carpet, and residential carpet services. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+>
+  <Navigation />
+
+  <Hero
+    title="Carpet Flooring"
+    subtitle="Unmatched comfort, warmth, and style for residential and commercial spaces throughout the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Carpet Flooring Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Professional Carpet Installation for Homes & Businesses
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Carpet flooring remains one of the most popular and versatile floor covering options —
+            and for good reason. It offers unmatched comfort, warmth, and style while enhancing both
+            residential and commercial spaces. At Brooks Floor Covering, we provide expertly
+            selected and professionally installed carpet floors that combine performance, beauty,
+            and long-term value.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Carpet -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Benefits
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Why Choose Carpet Flooring?
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Comfort & Warmth</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Carpet creates a soft, cushioned surface that feels comfortable underfoot and helps
+                insulate your space. It retains warmth, making rooms feel cozier and more inviting —
+                especially in bedrooms, living rooms, offices, and hospitality environments.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Noise Reduction</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Carpet naturally absorbs sound, reducing echoes and minimizing noise transfer
+                between rooms and floors. This makes it an excellent choice for multi-story homes,
+                offices, apartments, and commercial spaces where acoustics matter.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Safety & Functionality</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                The padded surface of carpet provides slip resistance and impact absorption, making
+                it a safer flooring option for families, seniors, and high-traffic areas. It also
+                reduces fatigue when standing or walking for extended periods.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Aesthetic Appeal</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                With endless options in color, texture, and pattern, carpet allows for complete
+                design flexibility. From subtle neutrals to bold statement patterns, carpet can
+                complement virtually any interior style.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Unique & Customizable</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Carpet flooring offers a level of customization that few other floor types can
+                match. You can mix textures, create zones, or combine styles like carpet tile and
+                broadloom to achieve a truly unique look.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Carpet -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Our Products
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Types of Carpet Flooring We Offer
+            </h2>
+          </div>
+
+          <!-- Commercial Glue-Down -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">Commercial Glue-Down Carpet</h3>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Commercial glue-down carpet is designed for durability and performance in high-traffic
+              environments such as offices, retail spaces, and hospitality settings. This type of
+              carpet is directly adhered to the subfloor, creating a firm and professional finish.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Low profile and highly durable</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Excellent stability with minimal movement</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Ideal for heavy foot traffic</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Easy maintenance and long lifespan</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Carpet Tile -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">Carpet Tile</h3>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Carpet tiles are modular squares or planks that offer flexibility, modern design, and
+              ease of maintenance. Carpet tile is a smart choice for businesses and homeowners
+              looking for practicality without sacrificing style.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Easy to replace individual tiles if damaged</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Great for creative patterns and custom layouts</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Ideal for commercial spaces and contemporary homes</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Minimal waste during installation</span>
+              </li>
+            </ul>
+            <div class="bg-blue-50 border border-blue-200 rounded-lg p-5">
+              <h4 class="font-semibold text-brand-dark mb-2">
+                Specialty Office Installation Service
+              </h4>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                We specialize in installing carpet tiles in active office environments, including
+                spaces with existing cubicles and workstations. Our experienced team can install
+                carpet tile with <strong>minimal to no disassembly of cubicles</strong>, reducing
+                downtime and disruption to daily operations. This makes carpet tile an ideal
+                solution for offices that need efficient upgrades without interrupting productivity.
+              </p>
+            </div>
+          </div>
+
+          <!-- Stretch-In -->
+          <div class="mb-12">
+            <h3 class="text-2xl font-bold text-brand-dark mb-4">Stretch-In Carpet with Pad</h3>
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Stretch-in carpet is the traditional residential installation method, using tack
+              strips and a cushioned pad beneath the carpet. The carpet pad improves comfort,
+              extends carpet life, and enhances overall performance.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Superior comfort and softness</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Enhanced insulation and sound absorption</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Wide variety of styles and textures</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Ideal for bedrooms, living rooms, and family spaces</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carpet Styles -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Design Options
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Carpet Styles & Design Options
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Carpet is available in a wide range of styles to suit both aesthetic preferences and
+              functional needs.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Patterned Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Patterned carpets add visual interest and depth to a room. They are excellent for
+                hiding wear and adding personality to both residential and commercial spaces.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Berber Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Berber features looped fibers and a textured appearance.
+              </p>
+              <ul class="space-y-1 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Extremely durable
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Ideal for high-traffic areas
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Casual and modern aesthetic
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Plush (Cut Pile) Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Plush carpet offers a smooth, velvety surface for a luxurious feel.
+              </p>
+              <ul class="space-y-1 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Elegant and formal appearance
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Soft underfoot
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Perfect for low- to moderate-traffic areas
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Level Loop Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Level loop carpet consists of uncut loops at the same height.
+              </p>
+              <ul class="space-y-1 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Clean, tailored look
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  High durability
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Great for offices and high-traffic areas
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Textured & Frieze Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                These styles feature twisted or varied fibers that create dimension and hide
+                footprints and vacuum marks. A great all-around choice for busy homes and offices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carpet Fiber & Material Options -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Materials
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Carpet Fiber & Material Options
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              The performance, feel, and longevity of carpet flooring depend heavily on the
+              materials used to construct it. We offer carpets made from a variety of high-quality
+              fibers to suit different needs, budgets, and environments.
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-3">Nylon Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed mb-3">
+                Nylon is one of the most popular carpet materials due to its strength and
+                resilience.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Extremely durable and long-lasting</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700"
+                    >Excellent resistance to wear, crushing, and abrasion</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Easy to clean and maintain</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700"
+                    >Ideal for high-traffic residential and commercial areas</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-3">PET (Polyester) Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed mb-3">
+                PET carpet is known for its softness and vibrant color options.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Soft and comfortable underfoot</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Naturally stain- and fade-resistant</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Budget-friendly option</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700"
+                    >Best suited for low- to moderate-traffic areas</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-3">Wool Carpet</h3>
+              <p class="text-neutral-700 leading-relaxed mb-3">
+                Wool is a premium, natural fiber that offers timeless elegance and superior comfort.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Luxurious look and feel</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Naturally insulating and flame-resistant</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Eco-friendly and biodegradable</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Ideal for upscale residential spaces</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-3">
+                Recycled & Eco-Friendly Carpets
+              </h3>
+              <p class="text-neutral-700 leading-relaxed mb-3">
+                Many modern carpets are constructed from recycled materials, such as reclaimed
+                plastics.
+              </p>
+              <ul class="space-y-2">
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Environmentally responsible choice</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700">Durable and performance-driven</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span class="text-neutral-700"
+                    >Supports sustainability without sacrificing style</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Our Process
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Our Carpet Installation Process
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              We follow a detailed, professional installation process to ensure long-lasting
+              performance and a flawless finish.
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Consultation & Selection</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We help you choose the right carpet type, style, and color based on your space,
+                  traffic levels, and design goals.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Measurement & Assessment</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Accurate measurements and subfloor inspection ensure proper material quantities
+                  and installation method.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Subfloor Preparation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  The subfloor is cleaned, leveled, and prepped to ensure optimal adhesion and
+                  performance.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                4
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Professional Installation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Depending on the carpet type, we use glue-down, modular placement, or stretch-in
+                  techniques with precision and care.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                5
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Final Inspection & Cleanup</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We inspect the finished floor, ensure proper fit and appearance, and leave your
+                  space clean and ready to enjoy.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 bg-blue-50 border border-blue-200 rounded-lg p-5">
+            <h4 class="font-semibold text-brand-dark mb-2">
+              Office-Friendly Installation Approach
+            </h4>
+            <p class="text-neutral-700 leading-relaxed text-sm">
+              For commercial projects — especially offices with cubicles — we plan installations
+              strategically to allow phased work, off-hour scheduling, and minimal disruption. Our
+              process is designed to keep your business running while we upgrade your flooring.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Maintenance -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Protect Your Investment
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Carpet Care & Maintenance
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Proper care and maintenance will extend the life of your carpet and keep it looking
+              its best for years to come.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Routine Vacuuming</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Frequent vacuuming removes dirt and debris before they become embedded in carpet
+                fibers.
+              </p>
+              <ul class="space-y-2 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Vacuum high-traffic areas multiple times per week
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Use a quality vacuum with strong suction
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Pay special attention to entryways and hallways
+                </li>
+              </ul>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Address Spills Immediately</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Quick action helps prevent stains from setting.
+              </p>
+              <ul class="space-y-2 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Blot spills — never rub — to avoid spreading
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Use manufacturer-approved cleaning products
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Test cleaning solutions in an inconspicuous area first
+                </li>
+              </ul>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Professional Deep Cleaning</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Even with regular maintenance, carpets benefit from professional cleaning.
+              </p>
+              <ul class="space-y-2 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Schedule professional cleaning every 12-18 months
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Commercial spaces may require more frequent service
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Restores appearance and improves air quality
+                </li>
+              </ul>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Protect High-Traffic Areas</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm mb-3">
+                Using walk-off mats and area rugs can significantly reduce wear.
+              </p>
+              <ul class="space-y-2 text-sm text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Place mats at entrances to capture dirt and moisture
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Rearrange furniture periodically to prevent indentations
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Consider carpet tile in heavy-use spaces
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a
+              href="/services/tile"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Tile Flooring</h3>
+              <p class="text-neutral-600 text-sm">
+                Ceramic, porcelain, and natural stone tile installation for homes and businesses.
+              </p>
+            </a>
+            <a
+              href="/services/luxury-vinyl-plank"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Luxury Vinyl Plank</h3>
+              <p class="text-neutral-600 text-sm">
+                Waterproof, scratch-resistant LVP flooring for modern living.
+              </p>
+            </a>
+            <a
+              href="/services/engineered-hardwood"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Engineered Hardwood</h3>
+              <p class="text-neutral-600 text-sm">
+                Real wood beauty with enhanced stability and performance.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Space?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Contact us today for a free, no-obligation estimate on your carpet flooring project. We
+          serve Phoenix, Glendale, Scottsdale, Mesa, Chandler, Tempe, and the entire Valley.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
