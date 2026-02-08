@@ -68,6 +68,7 @@ npm run preview          # Preview production build
 ### Before Committing
 
 Always run:
+
 ```bash
 npm run format
 npm run lint
@@ -87,7 +88,12 @@ npm run build
   ctaText="Optional CTA"
   ctaLink="/optional-link"
   image="/optional-image.jpg"
-  compact={true}  // Smaller padding for internal pages
+  compact={true}
+  Smaller
+  padding
+  for
+  internal
+  pages
 />
 ```
 
@@ -130,6 +136,7 @@ npm run build
 ### Updating Services
 
 Edit the `services` array in `src/pages/services.astro`:
+
 ```ts
 {
   icon: '🔨',
@@ -146,11 +153,13 @@ Edit the review cards in `src/pages/about.astro`. Images are in `public/images/r
 ## Contact Info
 
 Current contact information (update in multiple places):
+
 - Phone: (623) 688-8422
 - Email: info@brooksfloorcovering.com
 - ROC: #226840
 
 **Where to update:**
+
 - `src/components/Footer.astro`
 - `src/pages/contact.astro`
 
@@ -189,14 +198,17 @@ npm audit     # Security check
 ### Troubleshooting
 
 **Images not loading:**
+
 - Check path: `/images/name.jpg` (public folder)
 - Verify file exists in `public/images/`
 
 **Tailwind not working:**
+
 - Check `src/styles/global.css` imports Tailwind
 - Verify `@tailwindcss/vite` plugin in `astro.config.mjs`
 
 **Build fails:**
+
 - Run `npm run check` for type errors
 - Check import paths (case-sensitive!)
 - Verify all images exist

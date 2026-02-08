@@ -37,7 +37,15 @@ const { title, subtitle, ctaText, ctaLink, image, compact = false } = Astro.prop
             )}
           </div>
           <div class="md:w-1/2">
-            <img src={image} alt={title} class="rounded-lg shadow-xl w-full" />
+            <img
+              src={image}
+              alt={title}
+              class="rounded-lg shadow-xl w-full"
+              width="960"
+              height="720"
+              loading="eager"
+              decoding="async"
+            />
           </div>
         </div>
       ) : (

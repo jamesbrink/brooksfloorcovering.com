@@ -43,6 +43,7 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
                   loading="lazy"
                   width="400"
                   height="400"
+                  decoding="async"
                 />
               </a>
             ))
@@ -73,7 +74,7 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
 
 <script>
   import GLightbox from 'glightbox';
-  
+
   // Initialize GLightbox
   GLightbox({
     touchNavigation: true,

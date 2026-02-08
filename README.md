@@ -114,6 +114,7 @@ npm run build
 ## Pages
 
 ### Home (`/`)
+
 - Hero section with call-to-action
 - Services preview (4 cards)
 - About section preview
@@ -121,12 +122,14 @@ npm run build
 - Contact CTA
 
 ### Services (`/services`)
+
 - Detailed service offerings
 - 4 main service categories
 - Features and capabilities
 - Contact CTA
 
 ### About (`/about`)
+
 - Company history
 - Why choose us
 - 12 distributor/partner logos
@@ -134,12 +137,14 @@ npm run build
 - Rating summary with links
 
 ### Gallery (`/gallery`)
+
 - 31 project photos in responsive grid
 - GLightbox integration for fullscreen viewing
 - Touch-friendly navigation
 - Keyboard shortcuts
 
 ### Contact (`/contact`)
+
 - Contact information
 - Business hours
 - ROC license number
@@ -153,6 +158,7 @@ npm run build
 This site automatically deploys to GitHub Pages via GitHub Actions.
 
 **Setup:**
+
 1. Repository Settings → Pages
 2. Source: **GitHub Actions**
 3. Custom domain configured via `public/CNAME`
@@ -213,10 +219,12 @@ This version improves upon the original site with:
 ### Updating Contact Information
 
 Contact info appears in multiple places:
+
 - `src/components/Footer.astro`
 - `src/pages/contact.astro`
 
 Current info:
+
 - Phone: (623) 688-8422
 - Email: info@brooksfloorcovering.com
 - ROC: #226840
@@ -244,12 +252,14 @@ Edit review cards in `src/pages/about.astro`. Reviewer images are in `public/ima
 ## Support
 
 For questions or issues, contact:
+
 - Email: info@brooksfloorcovering.com
 - Phone: (623) 688-8422
 
 ## Credits
 
 Built with:
+
 - [Astro](https://astro.build)
 - [Tailwind CSS](https://tailwindcss.com)
 - [GLightbox](https://github.com/biati-digital/glightbox)
