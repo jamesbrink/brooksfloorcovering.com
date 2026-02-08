@@ -26,8 +26,7 @@ This is the modernized version of [brooksfloorcovering.com](https://brooksfloorc
 
 ### Prerequisites
 
-- Node.js 20+
-- npm
+- [Bun](https://bun.sh) (latest)
 
 ### Setup
 
@@ -37,10 +36,10 @@ git clone https://github.com/jamesbrink/brooksfloorcovering.com.git
 cd brooksfloorcovering.com
 
 # Install dependencies
-npm install
+bun install
 
 # Start development server
-npm run dev
+bun run dev
 ```
 
 The site will be available at `http://localhost:4321`
@@ -49,17 +48,17 @@ The site will be available at `http://localhost:4321`
 
 ```bash
 # Development
-npm run dev              # Start dev server with hot reload
-npm run build            # Build for production
-npm run preview          # Preview production build
+bun run dev              # Start dev server with hot reload
+bun run build            # Build for production
+bun run preview          # Preview production build
 
 # Code Quality
-npm run format           # Format all code with Prettier
-npm run format:check     # Check formatting (CI)
-npm run lint             # Lint with ESLint
-npm run lint:fix         # Auto-fix linting issues
-npm run check            # Run Astro type checking
-npm run audit:deps       # Check for security vulnerabilities (npm audit)
+bun run format           # Format all code with Prettier
+bun run format:check     # Check formatting (CI)
+bun run lint             # Lint with ESLint
+bun run lint:fix         # Auto-fix linting issues
+bun run check            # Run Astro type checking
+bun run audit:deps       # Scan dependencies for security vulnerabilities
 ```
 
 ### Pre-commit Checklist
@@ -67,14 +66,14 @@ npm run audit:deps       # Check for security vulnerabilities (npm audit)
 Before committing changes, run:
 
 ```bash
-npm run format
-npm run lint
-npm run check
-npm run audit:deps
-npm run build
+bun run format
+bun run lint
+bun run check
+bun run audit:deps
+bun run build
 ```
 
-> **Note:** Astro also includes a visual dev toolbar with performance/accessibility audits when running `npm run dev`. Check it by clicking the toolbar icon at the bottom of the page.
+> **Note:** Astro also includes a visual dev toolbar with performance/accessibility audits when running `bun run dev`. Check it by clicking the toolbar icon at the bottom of the page.
 
 ## Project Structure
 
@@ -105,7 +104,7 @@ npm run build
 │   └── styles/
 │       └── global.css      # Tailwind imports
 ├── CLAUDE.md               # Developer guide for AI assistants
-├── MIGRATION.md            # Migration notes from old site
+├── AGENTS.md               # Symlink to CLAUDE.md
 ├── .prettierrc.json        # Prettier config
 ├── eslint.config.js        # ESLint config
 ├── astro.config.mjs        # Astro configuration
@@ -173,7 +172,7 @@ On every push to `main`:
    - Prettier formatting check
    - ESLint linting
    - Astro type checking
-   - Dependency security audit (npm audit)
+   - Dependency security audit (bun pm scan)
 
 2. **Build**
    - Production build
@@ -187,7 +186,7 @@ On every push to `main`:
 
 ```bash
 # Build the site
-npm run build
+bun run build
 
 # Deploy the dist/ directory to your hosting provider
 ```
@@ -244,8 +243,8 @@ Edit review cards in `src/pages/about.astro`. Reviewer images are in `public/ima
 
 1. Create a feature branch
 2. Make your changes
-3. Run tests: `npm run format && npm run lint && npm run check`
-4. Build: `npm run build`
+3. Run tests: `bun run format && bun run lint && bun run check`
+4. Build: `bun run build`
 5. Submit a pull request
 
 ## License

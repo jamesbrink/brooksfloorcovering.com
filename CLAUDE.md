@@ -50,19 +50,19 @@ src/
 
 ```bash
 # Development
-npm run dev              # Start dev server (http://localhost:4321)
+bun run dev              # Start dev server (http://localhost:4321)
 
 # Code Quality
-npm run format           # Format code with Prettier
-npm run format:check     # Check formatting without changes
-npm run lint             # Lint with ESLint
-npm run lint:fix         # Auto-fix linting issues
-npm run check            # Run Astro type checking
-npm run audit:deps       # Check for security vulnerabilities (npm audit)
+bun run format           # Format code with Prettier
+bun run format:check     # Check formatting without changes
+bun run lint             # Lint with ESLint
+bun run lint:fix         # Auto-fix linting issues
+bun run check            # Run Astro type checking
+bun run audit:deps       # Scan dependencies for security vulnerabilities
 
 # Build & Preview
-npm run build            # Build for production
-npm run preview          # Preview production build
+bun run build            # Build for production
+bun run preview          # Preview production build
 ```
 
 ### Before Committing
@@ -70,11 +70,11 @@ npm run preview          # Preview production build
 Always run:
 
 ```bash
-npm run format
-npm run lint
-npm run check
-npm run audit:deps
-npm run build
+bun run format
+bun run lint
+bun run check
+bun run audit:deps
+bun run build
 ```
 
 ### Astro Dev Toolbar Audit
@@ -87,7 +87,7 @@ The Astro dev server includes a visual dev toolbar (bottom of page) with built-i
 
 Access it at: `http://localhost:4321` (click toolbar icon at bottom)
 
-This is separate from `npm run check` and `npm run audit:deps`.
+This is separate from `bun run check` and `bun run audit:deps`.
 
 ## Component Patterns
 
@@ -203,9 +203,9 @@ Runs on every push to `main` branch.
 ### Updating Dependencies
 
 ```bash
-npm update
-npm outdated  # Check for major updates
-npm audit     # Security check
+bun update
+bun outdated  # Check for major updates
+bun pm scan   # Security check
 ```
 
 ### Troubleshooting
@@ -222,7 +222,7 @@ npm audit     # Security check
 
 **Build fails:**
 
-- Run `npm run check` for type errors
+- Run `bun run check` for type errors
 - Check import paths (case-sensitive!)
 - Verify all images exist
 
@@ -260,6 +260,6 @@ Fully permissive project settings are checked in at `.claude/settings.json`. All
 
 - **Dev server:** Always run with `--host 0.0.0.0` for remote access
 - **Hostname:** Use `bender` instead of `localhost` for links
-- **Formatting:** Run `npm run format` after edits
+- **Formatting:** Run `bun run format` after edits
 - **Testing:** Check mobile responsiveness
 - **Images:** Verify images load before committing
