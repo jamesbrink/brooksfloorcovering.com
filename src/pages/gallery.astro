@@ -44,7 +44,7 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
                   width={400}
                   height={400}
                   inferSize
-                  loading="lazy"
+                  loading={index < 8 ? 'eager' : 'lazy'}
                 />
               </a>
             ))
