@@ -10,7 +10,11 @@ export default defineConfig({
     plugins: [tailwindcss()],
     build: {
       cssMinify: 'lightningcss',
-    }
+    },
+    server: {
+      host: '0.0.0.0',
+      allowedHosts: ['bender', 'bender.local', 'bender.home.urandom.io', '.tail1f4f9.ts.net'],
+    },
   },
   
   image: {
