@@ -165,11 +165,31 @@ const galleryImages = [
     description: 'Completed self-leveling concrete in a full residential renovation',
   },
 ];
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://brooksfloorcovering.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Gallery',
+      item: 'https://brooksfloorcovering.com/gallery',
+    },
+  ],
+};
 ---
 
 <Layout
-  title="Photo Gallery - Brooks Floor Covering"
+  title="Flooring Project Gallery | Phoenix, AZ - Tile, Carpet, Concrete"
   description="Browse our portfolio of completed flooring projects throughout the Phoenix Valley. Hardwood, tile, carpet, vinyl, concrete, and custom installations."
+  jsonLd={breadcrumbJsonLd}
 >
   <Navigation />
 
@@ -180,11 +200,23 @@ const galleryImages = [
   />
 
   <main>
+    <!-- Intro Paragraph -->
+    <section class="pt-12 pb-4 bg-neutral-50">
+      <div class="container mx-auto px-4 max-w-4xl text-center">
+        <p class="text-neutral-700 leading-relaxed text-lg">
+          From custom tile showers and full bathroom remodels to wall-to-wall carpet installations,
+          polished concrete, and metallic epoxy coatings, our portfolio showcases the range of
+          flooring projects we've completed for homes and businesses across Phoenix, Scottsdale,
+          Glendale, Mesa, and the Greater Phoenix Area.
+        </p>
+      </div>
+    </section>
+
     <!-- Gallery Grid -->
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4">
         <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
           id="gallery"
         >
           {
@@ -219,13 +251,15 @@ const galleryImages = [
     <!-- Call to Action -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
-        <p class="text-neutral-600 mb-8 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight">
+          Ready to Start Your Project?
+        </h2>
+        <p class="text-neutral-700 mb-8 max-w-2xl mx-auto leading-relaxed">
           Let us bring your flooring vision to life. Contact us today for a free estimate.
         </p>
         <a
           href="/contact"
-          class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-lg"
+          class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
         >
           Get Your Free Estimate
         </a>
@@ -239,9 +273,12 @@ const galleryImages = [
 <script>
   import GLightbox from 'glightbox';
 
-  // Initialize GLightbox
+  // Initialize GLightbox with keyboard navigation enabled
+  // Escape key closes the lightbox, arrow keys navigate between slides
   GLightbox({
     touchNavigation: true,
+    keyboardNavigation: true,
+    closeOnOutsideClick: true,
     loop: true,
     autoplayVideos: false,
     closeButton: true,

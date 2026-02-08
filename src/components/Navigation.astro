@@ -18,9 +18,9 @@ const currentPath = Astro.url.pathname;
       <Image
         src="/images/logo.jpg"
         alt="Brooks Floor Covering Logo"
-        class="h-12"
-        width={200}
-        height={48}
+        class="h-14"
+        width={233}
+        height={56}
         inferSize
         loading="eager"
       />
@@ -35,7 +35,7 @@ const currentPath = Astro.url.pathname;
           return (
             <a
               href={link.href}
-              class={`transition-colors font-medium ${isActive ? 'text-blue-600' : 'text-neutral-600 hover:text-blue-600'}`}
+              class={`transition-colors font-medium text-sm tracking-wide uppercase ${isActive ? 'text-brand-primary border-b-2 border-brand-primary pb-0.5' : 'text-neutral-700 hover:text-brand-primary'}`}
             >
               {link.label}
             </a>
@@ -47,7 +47,7 @@ const currentPath = Astro.url.pathname;
     <!-- Mobile Menu Button -->
     <button
       id="mobile-menu-button"
-      class="md:hidden text-2xl text-neutral-600 hover:text-blue-600"
+      class="md:hidden text-2xl text-neutral-700 hover:text-brand-primary"
       aria-label="Toggle menu"
     >
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,16 +62,20 @@ const currentPath = Astro.url.pathname;
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
-    <div class="px-4 py-3 space-y-3">
+    <div class="px-4 py-3 space-y-1">
       {
-        navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="block text-neutral-600 hover:text-blue-600 transition-colors py-2"
-          >
-            {link.label}
-          </a>
-        ))
+        navLinks.map((link) => {
+          const isActive =
+            currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class={`block transition-colors py-2 px-3 rounded-md text-sm tracking-wide uppercase font-medium ${isActive ? 'text-brand-primary bg-blue-50' : 'text-neutral-700 hover:text-brand-primary hover:bg-neutral-50'}`}
+            >
+              {link.label}
+            </a>
+          );
+        })
       }
     </div>
   </div>

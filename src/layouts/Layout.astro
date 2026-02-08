@@ -4,7 +4,7 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
-  jsonLd?: Record<string, unknown>;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
@@ -14,7 +14,9 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const jsonLdString = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null;
+const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const jsonLdStrings = jsonLdItems.map((item) => JSON.stringify(item).replace(/</g, '\\u003c'));
+const ogImage = new URL('/images/home-image-1.jpg', Astro.site).toString();
 ---
 
 <!doctype html>
@@ -38,19 +40,36 @@ const jsonLdString = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta
-      property="og:image"
-      content={new URL('/images/home-image-1.jpg', Astro.site).toString()}
-    />
+    <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="Brooks Floor Covering" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    {jsonLdString && <script type="application/ld+json" set:html={jsonLdString} />}
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    {jsonLdStrings.map((str) => <script type="application/ld+json" set:html={str} />)}
   </head>
-  <body class="bg-neutral-50 text-neutral-900">
+  <body class="bg-neutral-50 text-neutral-900 font-sans">
     <slot />
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "a5c70cbdabe24fe09d6398e5b48b9c90"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>

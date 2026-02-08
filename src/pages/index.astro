@@ -24,6 +24,7 @@ const businessJsonLd = {
     '@type': 'PostalAddress',
     addressLocality: 'Glendale',
     addressRegion: 'AZ',
+    postalCode: '85301',
     addressCountry: 'US',
   },
   geo: {
@@ -49,13 +50,6 @@ const businessJsonLd = {
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
       opens: '08:00',
       closes: '17:00',
-    },
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: 'Saturday',
-      opens: '08:00',
-      closes: '17:00',
-      description: 'By appointment only',
     },
   ],
   sameAs: [
@@ -113,6 +107,16 @@ const businessJsonLd = {
   },
 };
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Brooks Floor Covering',
+  url: 'https://brooksfloorcovering.com',
+  publisher: {
+    '@id': 'https://brooksfloorcovering.com/#business',
+  },
+};
+
 const featuredServices = [
   {
     icon: '🔨',
@@ -141,15 +145,30 @@ const featuredServices = [
     features: ['Custom Showers', 'Countertops', 'Backsplashes'],
   },
 ];
+
+const galleryAltTexts = [
+  'Custom tile shower installation in Phoenix home',
+  'Marble bathtub surround with mosaic tile detail',
+  'Completed oval tub installation with brushed nickel fixtures',
+  'Frameless glass shower partition with mosaic tile wall',
+  'Precision glass and tile craftsmanship detail',
+  'Full master bathroom remodel with tiled floors and custom shower',
+  'Large-format porcelain tile floor in powder room',
+  'Tile flooring and tub surround with dark-cabinet vanity',
+];
 ---
 
-<Layout jsonLd={businessJsonLd}>
+<Layout
+  title="Brooks Floor Covering - Professional Flooring Services in Phoenix, AZ"
+  description="Family-owned flooring company serving the Greater Phoenix Area since 1980. Expert installation, repairs, concrete services, and custom tile work. Licensed and insured — ROC #226840."
+  jsonLd={[businessJsonLd, websiteJsonLd]}
+>
   <Navigation />
 
   <Hero
-    title="Professional Flooring Services in the Valley"
-    subtitle="Professional flooring services for both residential and commercial clients throughout the Greater Phoenix Area. We deliver exceptional quality and unmatched expertise for all your flooring needs."
-    ctaText="Get a Quote"
+    title="Professional Flooring Services in Phoenix, Arizona"
+    subtitle="Family-owned since 1980. We deliver expert flooring installation, repairs, and concrete services to homes and businesses across the Greater Phoenix Area."
+    ctaText="Get a Free Estimate"
     ctaLink="/contact"
     image="/images/home-image-1.jpg"
   />
@@ -159,19 +178,22 @@ const featuredServices = [
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-          <p class="text-neutral-600 max-w-2xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-3">
+            What We Do
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Our Services</h2>
+          <p class="text-neutral-700 max-w-2xl mx-auto leading-relaxed">
             From installation to repairs, we handle all your flooring needs with professionalism and
             expertise.
           </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
           {featuredServices.map((service) => <ServiceCard {...service} />)}
         </div>
         <div class="text-center">
           <a
             href="/services"
-            class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+            class="inline-block bg-brand-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-primary-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
           >
             View All Services
           </a>
@@ -184,19 +206,23 @@ const featuredServices = [
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
           <div class="md:w-1/2 order-2 md:order-1">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Three Decades of Excellence</h2>
-            <p class="text-neutral-600 mb-6">
-              For over three decades, Brooks Floor Covering has accumulated experience in the floor
-              covering industry and can tackle just about any challenge. We understand the value of
-              word-of-mouth, which is why we always go the extra mile on every project.
+            <p class="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-3">
+              Our Story
             </p>
-            <p class="text-neutral-600 mb-8">
-              Our team is family-owned and operated, and we love working hand-in-hand with our
-              customers to deliver the perfect flooring solution for their needs.
+            <h2 class="text-2xl md:text-3xl font-bold mb-6">Three Decades of Excellence</h2>
+            <p class="text-neutral-700 mb-6 leading-relaxed">
+              Since 1980, Brooks Floor Covering has been a trusted name in flooring across the
+              Greater Phoenix Area. Based in Glendale, we serve homeowners and businesses in
+              Phoenix, Scottsdale, Mesa, Chandler, Tempe, Peoria, and throughout the Valley.
+            </p>
+            <p class="text-neutral-700 mb-8 leading-relaxed">
+              As a family-owned and operated company, we take pride in working hand-in-hand with our
+              customers. Our decades of experience mean we can tackle any flooring challenge, and
+              our reputation is built on word-of-mouth from satisfied clients.
             </p>
             <a
               href="/about"
-              class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+              class="inline-block bg-brand-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-primary-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
             >
               Learn More About Us
             </a>
@@ -204,7 +230,7 @@ const featuredServices = [
           <div class="md:w-1/2 order-1 md:order-2">
             <Image
               src="/images/home-image-2.jpg"
-              alt="Brooks Floor Covering Experience"
+              alt="Brooks Floor Covering team working on a flooring project in Phoenix"
               class="rounded-lg shadow-lg w-full"
               width={960}
               height={720}
@@ -220,20 +246,23 @@ const featuredServices = [
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Work</h2>
-          <p class="text-neutral-600 max-w-2xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-3">
+            Portfolio
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">Our Work</h2>
+          <p class="text-neutral-700 max-w-2xl mx-auto leading-relaxed">
             See examples of our professional flooring installations throughout the Phoenix Valley.
           </p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
           {
-            [1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
+            [1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => {
               const imageNum = String(num).padStart(3, '0');
               return (
-                <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                   <Image
                     src={`/images/${imageNum}.jpg`}
-                    alt={`Project ${num}`}
+                    alt={galleryAltTexts[index]}
                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                     width={400}
                     height={400}
@@ -248,7 +277,7 @@ const featuredServices = [
         <div class="text-center">
           <a
             href="/gallery"
-            class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+            class="inline-block bg-brand-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-primary-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300"
           >
             View Full Gallery
           </a>
@@ -257,15 +286,15 @@ const featuredServices = [
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Space?</h2>
-        <p class="text-xl mb-8 max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Transform Your Space?</h2>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed opacity-90">
           Get a free, no-obligation estimate on your flooring project today.
         </p>
         <a
           href="/contact"
-          class="inline-block bg-white text-blue-700 px-10 py-4 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 text-lg"
+          class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-lg shadow-lg"
         >
           Get Your Free Estimate
         </a>
