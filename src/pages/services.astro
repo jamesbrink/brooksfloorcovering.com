@@ -56,9 +56,35 @@ const services = [
     features: ['Custom Showers', 'Countertops', 'Backsplashes', 'Fireplaces', 'Custom Tile Work'],
   },
 ];
+
+const servicesJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  itemListElement: services.map((service, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'Service',
+      name: service.title,
+      description: service.description,
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+    },
+  })),
+};
 ---
 
-<Layout title="Our Services - Brooks Floor Covering">
+<Layout
+  title="Our Services - Brooks Floor Covering"
+  description="Professional flooring installation, repairs, concrete services, and specialty tile work in the Greater Phoenix Area. Hardwood, tile, carpet, vinyl, epoxy coatings, and more."
+  jsonLd={servicesJsonLd}
+>
   <Navigation />
 
   <Hero
