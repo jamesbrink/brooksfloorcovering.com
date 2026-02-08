@@ -39,6 +39,11 @@ const contactPointJsonLd = {
     },
     {
       '@type': 'City',
+      name: 'Avondale',
+      containedInPlace: { '@type': 'State', name: 'Arizona' },
+    },
+    {
+      '@type': 'City',
       name: 'Goodyear',
       containedInPlace: { '@type': 'State', name: 'Arizona' },
     },
@@ -79,7 +84,7 @@ const breadcrumbJsonLd = {
       '@type': 'ListItem',
       position: 2,
       name: 'Contact',
-      item: 'https://brooksfloorcovering.com/contact',
+      item: 'https://brooksfloorcovering.com/contact/',
     },
   ],
 };
@@ -87,7 +92,7 @@ const breadcrumbJsonLd = {
 
 <Layout
   title="Free Flooring Estimate | Phoenix, AZ - Brooks Floor Covering"
-  description="Get a free flooring estimate from Brooks Floor Covering. Call (623) 688-8422 or text us. Serving Phoenix, Scottsdale, Glendale, Mesa, Tempe, Chandler, and the Greater Phoenix Area. ROC #226840."
+  description="Get a free flooring estimate from Brooks Floor Covering. Call (623) 688-8422 or text us. Serving Phoenix, Scottsdale, Mesa, and the Greater Phoenix Area."
   jsonLd={[contactPointJsonLd, breadcrumbJsonLd]}
 >
   <Navigation />
@@ -170,6 +175,7 @@ const breadcrumbJsonLd = {
                     'Peoria',
                     'Surprise',
                     'Goodyear',
+                    'Avondale',
                     'Buckeye',
                   ].map((city) => (
                     <div class="flex items-center gap-2">
