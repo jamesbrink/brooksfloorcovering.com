@@ -223,7 +223,9 @@ const breadcrumbJsonLd = {
             trustedOrgs.map((org) => (
               <img
                 src={org.src}
-                alt={org.name}
+                alt={`${org.name} logo`}
+                width="200"
+                height="100"
                 class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
                 loading="lazy"
               />
