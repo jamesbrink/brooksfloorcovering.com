@@ -58,7 +58,7 @@ npm run format:check     # Check formatting without changes
 npm run lint             # Lint with ESLint
 npm run lint:fix         # Auto-fix linting issues
 npm run check            # Run Astro type checking
-npm run audit            # Check for security vulnerabilities
+npm run audit:deps       # Check for security vulnerabilities (npm audit)
 
 # Build & Preview
 npm run build            # Build for production
@@ -73,9 +73,21 @@ Always run:
 npm run format
 npm run lint
 npm run check
-npm run audit
+npm run audit:deps
 npm run build
 ```
+
+### Astro Dev Toolbar Audit
+
+The Astro dev server includes a visual dev toolbar (bottom of page) with built-in audits:
+
+- **Performance recommendations** (use `<Image>`, lazy loading, etc.)
+- **Accessibility checks**
+- **Best practices**
+
+Access it at: `http://localhost:4321` (click toolbar icon at bottom)
+
+This is separate from `npm run check` and `npm run audit:deps`.
 
 ## Component Patterns
 

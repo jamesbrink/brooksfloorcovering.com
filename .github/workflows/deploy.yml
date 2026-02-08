@@ -39,8 +39,8 @@ jobs:
       - name: Astro check
         run: npm run check
       
-      - name: Astro audit
-        run: npm run audit
+      - name: Dependency audit
+        run: npm run audit:deps
 
   build:
     runs-on: ubuntu-latest
