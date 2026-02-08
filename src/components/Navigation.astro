@@ -1,12 +1,13 @@
 ---
 const navLinks = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#about', label: 'About' },
-  { href: '/#distributors', label: 'Distributors' },
-  { href: '/#reviews', label: 'Reviews' },
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
   { href: '/gallery', label: 'Gallery' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ];
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="fixed w-full bg-white shadow-md z-50">
@@ -17,14 +18,17 @@ const navLinks = [
     
     <!-- Desktop Navigation -->
     <div class="hidden md:flex space-x-8">
-      {navLinks.map(link => (
-        <a 
-          href={link.href} 
-          class="text-neutral-600 hover:text-blue-600 transition-colors font-medium"
-        >
-          {link.label}
-        </a>
-      ))}
+      {navLinks.map(link => {
+        const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+        return (
+          <a 
+            href={link.href} 
+            class={`transition-colors font-medium ${isActive ? 'text-blue-600' : 'text-neutral-600 hover:text-blue-600'}`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
     </div>
     
     <!-- Mobile Menu Button -->

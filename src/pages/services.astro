@@ -1,0 +1,102 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import Footer from '../components/Footer.astro';
+
+const services = [
+  {
+    icon: '🔨',
+    title: 'Flooring Sales & Installation',
+    description: 'Professional flooring sales and installation services for both residential and commercial clients throughout the Valley. Free in-home estimates available.',
+    features: [
+      'Hardwood',
+      'Engineered Wood',
+      'Ceramic Tile',
+      'Natural Stone',
+      'Carpet',
+      'Carpet Tile',
+      'Luxury Vinyl Tile & Plank',
+    ]
+  },
+  {
+    icon: '🔧',
+    title: 'Floor Repairs',
+    description: 'Expert repair services for all types of flooring. From minor fixes to major repairs, we ensure your floors look and function their best.',
+    features: [
+      'Cracked Tile Replacement',
+      'Carpet Restretch',
+      'Vinyl Plank Replacement',
+      'Grout Repairs',
+      'Carpet Seam Repair',
+    ]
+  },
+  {
+    icon: '🏗️',
+    title: 'Concrete Services',
+    description: 'Professional concrete services for both residential and commercial projects. From moisture mitigation to polishing, we handle all your concrete needs.',
+    features: [
+      'Moisture Mitigation',
+      'Concrete Grinding',
+      'Floor Leveling',
+      'SLU Pours',
+      'Epoxy Coatings',
+      'Concrete Polishing',
+    ]
+  },
+  {
+    icon: '💎',
+    title: 'Specialty Services',
+    description: 'Custom solutions beyond traditional flooring. We provide a wide range of specialty services to meet your unique needs.',
+    features: [
+      'Custom Showers',
+      'Countertops',
+      'Backsplashes',
+      'Fireplaces',
+      'Custom Tile Work',
+    ]
+  },
+];
+---
+
+<Layout title="Our Services - Brooks Floor Covering">
+  <Navigation />
+  
+  <Hero
+    title="Our Services"
+    subtitle="Professional flooring solutions for residential and commercial projects throughout the Greater Phoenix Area."
+    compact={true}
+  />
+  
+  <main>
+    <!-- Services Grid -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {services.map(service => (
+            <ServiceCard {...service} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+        <p class="text-neutral-600 mb-8 max-w-2xl mx-auto">
+          Contact us today for a free, no-obligation estimate on your flooring project.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-lg"
+        >
+          Get Your Free Estimate
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

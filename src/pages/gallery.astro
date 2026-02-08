@@ -1,59 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
 import Footer from '../components/Footer.astro';
 
-// Generate array of gallery image numbers (001-031)
+// Generate array of gallery images
 const galleryImages = Array.from({ length: 31 }, (_, i) => {
   const num = String(i + 1).padStart(3, '0');
-  return {
-    src: `/images/${num}.jpg`,
-    alt: `Brooks Floor Covering Project ${i + 1}`,
-    index: i,
-    // Most images are either 720x960 (portrait) or 960x720 (landscape)
-    width: 960,
-    height: 720,
-  };
+  return `/images/${num}.jpg`;
 });
 ---
 
 <Layout title="Photo Gallery - Brooks Floor Covering">
   <Navigation />
   
-  <main class="pt-24">
-    <!-- Gallery Header -->
-    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Project Gallery</h1>
-        <p class="text-xl max-w-2xl mx-auto">
-          Browse through our extensive portfolio of completed flooring projects throughout the Phoenix Valley.
-        </p>
-      </div>
-    </section>
-
+  <Hero
+    title="Our Project Gallery"
+    subtitle="Browse through our extensive portfolio of completed flooring projects throughout the Phoenix Valley."
+    compact={true}
+  />
+  
+  <main>
     <!-- Gallery Grid -->
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4">
-        <div id="gallery" class="columns-2 md:columns-3 lg:columns-4 gap-4 space-y-4">
-          {galleryImages.map((image) => (
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto">
+          {galleryImages.map((src, index) => (
             <a
-              href={image.src}
-              data-pswp-width={image.width}
-              data-pswp-height={image.height}
+              href={src}
               target="_blank"
-              class="group relative block overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 mb-4 break-inside-avoid"
+              rel="noopener noreferrer"
+              class="group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100"
             >
               <img
-                src={image.src}
-                alt={image.alt}
-                class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                src={src}
+                alt={`Brooks Floor Covering Project ${index + 1}`}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 loading="lazy"
+                width="400"
+                height="400"
               />
-              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
-                <span class="text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  🔍
-                </span>
-              </div>
             </a>
           ))}
         </div>
@@ -68,7 +54,7 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
           Let us bring your flooring vision to life. Contact us today for a free estimate.
         </p>
         <a
-          href="/#contact"
+          href="/contact"
           class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-lg"
         >
           Get Your Free Estimate
@@ -80,46 +66,9 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
   <Footer />
 </Layout>
 
-<script>
-  import PhotoSwipeLightbox from 'photoswipe/lightbox';
-  import 'photoswipe/style.css';
-
-  const lightbox = new PhotoSwipeLightbox({
-    gallery: '#gallery',
-    children: 'a',
-    pswpModule: () => import('photoswipe'),
-    
-    // UI options
-    bgOpacity: 0.95,
-    spacing: 0.1,
-    allowPanToNext: true,
-    loop: true,
-    pinchToClose: true,
-    closeOnVerticalDrag: true,
-    
-    // Navigation
-    arrowPrev: true,
-    arrowNext: true,
-    zoom: true,
-    close: true,
-    counter: true,
-  });
-  
-  lightbox.init();
-</script>
-
 <style>
-  /* Custom PhotoSwipe styling */
-  :global(.pswp__bg) {
-    background: rgba(0, 0, 0, 0.95);
-  }
-  
-  :global(.pswp__button) {
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-  }
-  
-  :global(.pswp__button:hover) {
-    background-color: rgba(255, 255, 255, 0.3);
+  /* Ensure images display properly */
+  img {
+    display: block;
   }
 </style>

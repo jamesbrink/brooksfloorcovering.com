@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
+
+const distributors = [
+  'mohawk.png',
+  'shaw.png',
+  'arizona-tile.png',
+  'western-surfaces.png',
+  'qdi.png',
+  'daltile.png',
+  'emser.png',
+  'longust.png',
+  'galleher.png',
+  'tri-west.png',
+  'marazzi.png',
+  'tile-shop.png',
+];
+
+const whyChooseUs = [
+  '30+ Years Experience',
+  'Licensed, Bonded & Insured',
+  'ROC #226840',
+  'Family Owned',
+  'Free Estimates',
+  'Warranty Offered',
+];
+---
+
+<Layout title="About Us - Brooks Floor Covering">
+  <Navigation />
+  
+  <Hero
+    title="About Brooks Floor Covering"
+    subtitle="Three decades of excellence serving the Greater Phoenix Area."
+    compact={true}
+  />
+  
+  <main>
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div class="md:w-1/2">
+            <img 
+              src="/images/home-image-2.jpg" 
+              alt="Brooks Floor Covering Team"
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+            <p class="text-neutral-600 mb-6">
+              For over three decades, Brooks Floor Covering has accumulated experience in the floor covering industry and can tackle just about any challenge. We understand the value of word-of-mouth, which is why we always go the extra mile on every project.
+            </p>
+            <p class="text-neutral-600 mb-8">
+              Our team is family-owned and operated, and we love working hand-in-hand with our customers to deliver the perfect flooring solution for their needs.
+            </p>
+            
+            <h3 class="text-2xl font-bold mb-4">Why Choose Us</h3>
+            <div class="grid grid-cols-2 gap-4">
+              {whyChooseUs.map(item => (
+                <div class="flex items-start space-x-2">
+                  <span class="text-blue-600 text-xl mt-0.5">✓</span>
+                  <span class="text-neutral-700">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distributors Section -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Floor Covering Distributors</h2>
+        <p class="text-center text-neutral-600 mb-12 max-w-2xl mx-auto">
+          We partner with industry-leading manufacturers to provide you with the highest quality products.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto">
+          {distributors.map(logo => (
+            <img 
+              src={`/images/${logo}`}
+              alt={logo.replace('.png', '').replace(/-/g, ' ')}
+              class="w-32 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Customer Reviews</h2>
+        
+        <!-- Rating Summary -->
+        <div class="max-w-4xl mx-auto mb-16 bg-neutral-50 rounded-xl shadow-lg overflow-hidden">
+          <div class="flex flex-col md:flex-row items-center justify-between p-8">
+            <div class="text-center md:text-left mb-8 md:mb-0">
+              <div class="text-5xl font-bold text-blue-600 mb-2">4.9</div>
+              <div class="flex items-center justify-center md:justify-start text-yellow-400 text-xl mb-2">
+                <span>★★★★★</span>
+              </div>
+              <div class="text-neutral-600">Based on 150+ Reviews</div>
+            </div>
+            
+            <div class="flex flex-col items-center md:items-end space-y-4">
+              <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6">
+                <a href="https://goo.gl/maps/nuodwwpJoyuMW9Ae9" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-neutral-600 hover:text-blue-600 transition-colors">
+                  <span class="text-[#4285F4] text-3xl">G</span>
+                  <span class="font-semibold">Google</span>
+                </a>
+                <a href="https://www.yelp.com/biz/brooks-floor-covering-glendale-2" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-neutral-600 hover:text-red-600 transition-colors">
+                  <span class="text-[#FF1A1A] text-3xl">★</span>
+                  <span class="font-semibold">Yelp</span>
+                </a>
+                <a href="https://www.facebook.com/brooksfloorcovering/" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 text-neutral-600 hover:text-[#1877F2] transition-colors">
+                  <span class="text-[#1877F2] text-3xl">f</span>
+                  <span class="font-semibold">Facebook</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Review Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <img src="/images/reviewers/linda.jpg" alt="Linda D." class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg" />
+            </div>
+            <div class="mt-4">
+              <div class="flex items-center justify-center mb-4">
+                <div class="text-yellow-400">★★★★★</div>
+              </div>
+              <p class="text-neutral-600 mb-6 text-center italic leading-relaxed">
+                "We've used the services of Brooks Floor Covering several times and will definitely call the owner, Josh, for any future projects we will have. Josh and his team have always been professional and do excellent work."
+              </p>
+              <div class="text-center">
+                <div class="font-semibold text-neutral-800 text-lg">Linda D.</div>
+                <div class="text-neutral-500 text-sm">Residential Customer</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <img src="/images/reviewers/julie-m.jpg" alt="Julie M." class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg" />
+            </div>
+            <div class="mt-4">
+              <div class="flex items-center justify-center mb-4">
+                <div class="text-yellow-400">★★★★★</div>
+              </div>
+              <p class="text-neutral-600 mb-6 text-center italic leading-relaxed">
+                "We manage numerous properties throughout the Greater Phoenix Area. Whenever there is a problem or we need any new flooring in the Phoenix Metro area, we call Brooks Floor Covering. Everything is always handled professionally and promptly."
+              </p>
+              <div class="text-center">
+                <div class="font-semibold text-neutral-800 text-lg">Julie M.</div>
+                <div class="text-neutral-500 text-sm">Property Manager</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
+            <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+              <img src="/images/reviewers/don.jpg" alt="Don S." class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg" />
+            </div>
+            <div class="mt-4">
+              <div class="flex items-center justify-center mb-4">
+                <div class="text-yellow-400">★★★★★</div>
+              </div>
+              <p class="text-neutral-600 mb-6 text-center italic leading-relaxed">
+                "Over the last five years I've worked with Josh on at least twelve projects in the West Valley area and I'm always confident when hiring him. He takes pride in his work and he's someone I can always count on."
+              </p>
+              <div class="text-center">
+                <div class="font-semibold text-neutral-800 text-lg">Don S.</div>
+                <div class="text-neutral-500 text-sm">General Contractor</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
