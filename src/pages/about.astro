@@ -28,9 +28,49 @@ const whyChooseUs = [
   'Free Estimates',
   'Warranty Offered',
 ];
+
+const reviewsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': 'https://brooksfloorcovering.com/#business',
+  name: 'Brooks Floor Covering',
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: 4.9,
+    reviewCount: 150,
+    bestRating: 5,
+  },
+  review: [
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Linda D.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "We've used the services of Brooks Floor Covering several times and will definitely call the owner, Josh, for any future projects we will have. Josh and his team have always been professional and do excellent work.",
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Julie M.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        'We manage numerous properties throughout the Greater Phoenix Area. Whenever there is a problem or we need any new flooring in the Phoenix Metro area, we call Brooks Floor Covering. Everything is always handled professionally and promptly.',
+    },
+    {
+      '@type': 'Review',
+      author: { '@type': 'Person', name: 'Don S.' },
+      reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
+      reviewBody:
+        "Over the last five years I've worked with Josh on at least twelve projects in the West Valley area and I'm always confident when hiring him. He takes pride in his work and he's someone I can always count on.",
+    },
+  ],
+};
 ---
 
-<Layout title="About Us - Brooks Floor Covering">
+<Layout
+  title="About Us - Brooks Floor Covering"
+  description="Learn about Brooks Floor Covering — a family-owned flooring company with 30+ years of experience serving the Greater Phoenix Area. Licensed, bonded, insured — ROC #226840."
+  jsonLd={reviewsJsonLd}
+>
   <Navigation />
 
   <Hero

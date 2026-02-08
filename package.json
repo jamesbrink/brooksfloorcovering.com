@@ -15,6 +15,7 @@
     "format:check": "prettier --check \"**/*.{astro,js,ts,json,md}\""
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.1.18",
     "astro": "^5.17.1",
     "glightbox": "^3.3.1",
