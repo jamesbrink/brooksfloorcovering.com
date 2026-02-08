@@ -14,6 +14,7 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const jsonLdString = jsonLd ? JSON.stringify(jsonLd).replace(/</g, '\\u003c') : null;
 ---
 
 <!doctype html>
@@ -47,7 +48,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-    {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {jsonLdString && <script type="application/ld+json" set:html={jsonLdString} />}
   </head>
   <body class="bg-neutral-50 text-neutral-900">
     <slot />

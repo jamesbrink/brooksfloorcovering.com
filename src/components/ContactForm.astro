@@ -1,7 +1,6 @@
 ---
 // Contact form component - submits via Formspree
-// To set up: Create a form at https://formspree.io and replace the ID below
-const FORMSPREE_ID = 'xwpkpbjq';
+const FORMSPREE_ID = import.meta.env.PUBLIC_FORMSPREE_ID || 'xwpkpbjq';
 const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
 ---
 
@@ -46,6 +45,7 @@ const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
         required></textarea>
     </div>
     <input type="hidden" name="_subject" value="New contact from brooksfloorcovering.com" />
+    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
     <button
       type="submit"
       id="contact-submit"
@@ -54,12 +54,12 @@ const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
       Send Message
     </button>
   </form>
-  <div id="form-success" class="hidden text-center py-8">
+  <div id="form-success" class="hidden text-center py-8" role="status" aria-live="polite">
     <div class="text-4xl mb-4" aria-hidden="true">&#10003;</div>
     <h3 class="text-xl font-semibold mb-2">Message Sent!</h3>
     <p class="text-neutral-600">Thank you for contacting us. We'll get back to you shortly.</p>
   </div>
-  <div id="form-error" class="hidden text-center py-8">
+  <div id="form-error" class="hidden text-center py-8" role="alert" aria-live="assertive">
     <p class="text-red-600 font-medium">
       Something went wrong. Please call us at
       <a href="tel:+16236888422" class="underline">(623) 688-8422</a> or email
@@ -78,6 +78,8 @@ const formAction = `https://formspree.io/f/${FORMSPREE_ID}`;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    successDiv.classList.add('hidden');
+    errorDiv.classList.add('hidden');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
 
