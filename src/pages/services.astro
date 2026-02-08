@@ -10,7 +10,7 @@ const services = [
     icon: '🔨',
     title: 'Flooring Sales & Installation',
     description:
-      'Professional flooring sales and installation services for both residential and commercial clients throughout the Valley. Free in-home estimates available.',
+      'We install hardwood, engineered wood, ceramic tile, natural stone, carpet, carpet tile, and luxury vinyl plank for homes and businesses across the Greater Phoenix Area. Our factory-trained installers work with top brands including Mohawk, Shaw, Arizona Tile, and Daltile to deliver lasting results. Every project begins with a free in-home estimate where we measure your space, discuss your style and budget, and provide a detailed written quote. Whether you are renovating a single room in Scottsdale or outfitting an entire commercial building in Chandler, we handle every step from product selection to final walkthrough.',
     features: [
       'Hardwood',
       'Engineered Wood',
@@ -25,7 +25,7 @@ const services = [
     icon: '🔧',
     title: 'Floor Repairs',
     description:
-      'Expert repair services for all types of flooring. From minor fixes to major repairs, we ensure your floors look and function their best.',
+      'We fix cracked tiles, restretch carpet, replace vinyl planks, repair grout, and fix carpet seams throughout the Phoenix metro area. Our repair team diagnoses the root cause of the issue, not just the visible damage, so the fix lasts. We offer same-week scheduling for most repairs, and urgent service is available for water damage and safety hazards. From a single cracked tile in a Tempe kitchen to a full carpet restretch in a Peoria rental property, no job is too small or too large. Contact us for a free repair estimate.',
     features: [
       'Cracked Tile Replacement',
       'Carpet Restretch',
@@ -38,7 +38,7 @@ const services = [
     icon: '🏗️',
     title: 'Concrete Services',
     description:
-      'Professional concrete services for both residential and commercial projects. From moisture mitigation to polishing, we handle all your concrete needs.',
+      'We provide moisture mitigation, concrete grinding, floor leveling, self-leveling underlayment pours, epoxy coatings, and decorative concrete polishing for residential and commercial properties. Proper subfloor preparation is essential for any flooring installation, and our concrete team ensures your slab is flat, dry, and ready. We also offer standalone epoxy and polished concrete finishes for garages, warehouses, and retail spaces in Phoenix, Glendale, Mesa, and across the Valley. Every concrete project starts with a free on-site evaluation.',
     features: [
       'Moisture Mitigation',
       'Concrete Grinding',
@@ -52,37 +52,112 @@ const services = [
     icon: '💎',
     title: 'Specialty Services',
     description:
-      'Custom solutions beyond traditional flooring. We provide a wide range of specialty services to meet your unique needs.',
+      'We build custom showers, install countertops and backsplashes, create fireplace surrounds, and handle all custom tile and stone work. Our specialty installers bring precision and artistry to every detail, whether it is a mosaic backsplash in a Scottsdale kitchen or a floor-to-ceiling shower tile in a Goodyear master bath. We work with ceramic, porcelain, natural stone, and glass tile to bring your design vision to life. Schedule a free consultation to discuss your project.',
     features: ['Custom Showers', 'Countertops', 'Backsplashes', 'Fireplaces', 'Custom Tile Work'],
+  },
+];
+
+const faqItems = [
+  {
+    question: 'What types of flooring do you install?',
+    answer:
+      'We install hardwood, engineered wood, ceramic tile, porcelain tile, natural stone, carpet, carpet tile, and luxury vinyl tile and plank (LVT/LVP). We source products from leading manufacturers including Mohawk, Shaw, Arizona Tile, and Daltile. Contact us at (623) 688-8422 for a free estimate on any flooring type.',
+  },
+  {
+    question: 'Do you offer free estimates?',
+    answer:
+      'Yes, we offer free in-home estimates with no obligation. We visit your home or business anywhere in the Phoenix metro area, measure your space, discuss your options, and provide a detailed written estimate. Call (623) 688-8422 or use our online contact form to schedule.',
+  },
+  {
+    question: 'How long does a typical flooring installation take?',
+    answer:
+      'A single room of carpet or luxury vinyl can often be completed in one day. Tile and hardwood projects for an average-sized home typically take 2 to 5 days. Larger residential remodels and commercial projects in Chandler, Tempe, Mesa, or other Valley locations may take a week or more. We provide a detailed timeline during your free estimate.',
+  },
+  {
+    question: 'Do you offer warranties on your installations?',
+    answer:
+      'Yes, we stand behind every installation with a workmanship warranty. In addition, most products we install carry manufacturer warranties from brands like Mohawk, Shaw, Arizona Tile, and Daltile. We explain all warranty coverage during your free estimate so there are no surprises.',
+  },
+  {
+    question: 'What are the best pet-friendly flooring options?',
+    answer:
+      'Luxury vinyl plank (LVP) and porcelain tile are the most popular pet-friendly choices. LVP is waterproof, scratch-resistant, and easy to clean. Porcelain tile is extremely durable and resists scratches and stains. We help homeowners across Scottsdale, Mesa, Peoria, and the entire Phoenix area choose flooring that works for families with pets.',
+  },
+  {
+    question: 'Do you work on commercial flooring projects?',
+    answer:
+      'Yes, we provide professional flooring services for commercial clients throughout the Valley. We have completed projects for property management companies, general contractors, retail stores, offices, and restaurants in Phoenix, Glendale, Scottsdale, Chandler, and surrounding cities. Contact us for a free commercial estimate.',
+  },
+  {
+    question: 'What areas do you serve?',
+    answer:
+      'We serve the entire Greater Phoenix Area including Phoenix, Glendale, Scottsdale, Mesa, Chandler, Tempe, Peoria, Surprise, Avondale, Goodyear, and surrounding communities. Our home base is in Glendale, and we typically service locations within a 50-mile radius.',
+  },
+  {
+    question: 'How should I prepare for installation day?',
+    answer:
+      'Clear furniture and personal items from the rooms being worked on. Remove wall decorations and fragile items near the work area. Ensure the space is accessible and keep pets and children away from the installation zone. Our team handles the rest, including removing old flooring if that is part of your project. We provide detailed preparation instructions during your free estimate appointment.',
   },
 ];
 
 const servicesJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  itemListElement: services.map((service, index) => ({
-    '@type': 'ListItem',
-    position: index + 1,
-    item: {
-      '@type': 'Service',
-      name: service.title,
-      description: service.description,
-      provider: {
-        '@type': 'HomeAndConstructionBusiness',
-        '@id': 'https://brooksfloorcovering.com/#business',
-      },
-      areaServed: {
-        '@type': 'State',
-        name: 'Arizona',
-      },
+  '@graph': [
+    {
+      '@type': 'ItemList',
+      itemListElement: services.map((service, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'Service',
+          name: service.title,
+          description: service.description,
+          provider: {
+            '@type': 'HomeAndConstructionBusiness',
+            '@id': 'https://brooksfloorcovering.com/#business',
+          },
+          areaServed: {
+            '@type': 'State',
+            name: 'Arizona',
+          },
+        },
+      })),
     },
-  })),
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
 };
 ---
 
 <Layout
-  title="Our Services - Brooks Floor Covering"
-  description="Professional flooring installation, repairs, concrete services, and specialty tile work in the Greater Phoenix Area. Hardwood, tile, carpet, vinyl, epoxy coatings, and more."
+  title="Flooring Installation & Repair Services | Phoenix, AZ - Brooks Floor Covering"
+  description="Professional flooring installation, repairs, concrete services, and specialty tile work in Phoenix, Glendale, Scottsdale, Mesa, and the Greater Phoenix Area. Hardwood, tile, carpet, vinyl, epoxy coatings. Free estimates — call (623) 688-8422."
   jsonLd={servicesJsonLd}
 >
   <Navigation />
@@ -94,28 +169,209 @@ const servicesJsonLd = {
   />
 
   <main>
-    <!-- Services Grid -->
-    <section class="py-20 bg-white">
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Comprehensive Flooring Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Complete Flooring Services for Homes & Businesses
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Brooks Floor Covering provides full-service flooring solutions for residential and
+            commercial clients across the Greater Phoenix Area. With over 30 years of experience,
+            our family-owned team handles every project from start to finish — from product
+            selection and subfloor preparation to precision installation and post-project cleanup.
+            We are licensed, bonded, and insured (ROC #226840), and our installers are
+            factory-trained by leading manufacturers including Mohawk, Shaw, Arizona Tile, and
+            Daltile.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            Whether you need hardwood installed in your Scottsdale home, carpet replaced in a Mesa
+            rental property, epoxy coatings for a Phoenix warehouse, or custom tile work for a
+            Chandler kitchen remodel, we deliver exceptional quality at honest prices. Every project
+            starts with a
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+              >free, no-obligation estimate</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            What We Do
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+            Expert Flooring & Concrete Services
+          </h2>
+        </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {services.map((service) => <ServiceCard {...service} />)}
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 shadow-lg"
+          >
+            Get a Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Why Brooks
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Why Homeowners & Contractors Trust Us
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🏆
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">30+ Years Experience</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Serving the Greater Phoenix Area since 1980 with proven expertise in every type of
+                flooring project.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🛡️
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Licensed & Insured</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Arizona ROC #226840. Fully licensed, bonded, and insured for your protection on
+                every project.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🏠
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Family-Owned</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                We treat every customer like family. Our reputation is built on honest pricing and
+                going the extra mile.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                ⭐
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">4.9-Star Reviews</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Rated 4.9 out of 5 stars across 150+ reviews on Google, Yelp, and Facebook from
+                satisfied customers.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                🎓
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Factory-Trained</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Our installers are certified by Mohawk, Shaw, Arizona Tile, and Daltile for expert
+                product handling.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mx-auto mb-4"
+                aria-hidden="true"
+              >
+                💰
+              </div>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Free Estimates</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Every project starts with a free, no-obligation in-home estimate. No pressure, no
+                hidden fees.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Common Questions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div class="space-y-8">
+            {
+              faqItems.map((faq) => (
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+                  <h3 class="text-lg font-semibold text-neutral-800 mb-3">{faq.question}</h3>
+                  <p class="text-neutral-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-neutral-50">
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-        <p class="text-neutral-600 mb-8 max-w-2xl mx-auto">
-          Contact us today for a free, no-obligation estimate on your flooring project.
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Contact us today for a free, no-obligation estimate on your flooring project. We serve
+          Phoenix, Glendale, Scottsdale, Mesa, Chandler, Tempe, and the entire Valley.
         </p>
-        <a
-          href="/contact"
-          class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-lg"
-        >
-          Get Your Free Estimate
-        </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
       </div>
     </section>
   </main>

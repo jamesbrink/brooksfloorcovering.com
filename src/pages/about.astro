@@ -64,12 +64,31 @@ const reviewsJsonLd = {
     },
   ],
 };
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://brooksfloorcovering.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'About',
+      item: 'https://brooksfloorcovering.com/about',
+    },
+  ],
+};
 ---
 
 <Layout
-  title="About Us - Brooks Floor Covering"
+  title="About Brooks Floor Covering | 30+ Years in Phoenix, AZ"
   description="Learn about Brooks Floor Covering — a family-owned flooring company with 30+ years of experience serving the Greater Phoenix Area. Licensed, bonded, insured — ROC #226840."
-  jsonLd={reviewsJsonLd}
+  jsonLd={[reviewsJsonLd, breadcrumbJsonLd]}
 >
   <Navigation />
 
@@ -87,7 +106,7 @@ const reviewsJsonLd = {
           <div class="md:w-1/2">
             <Image
               src="/images/home-image-2.jpg"
-              alt="Brooks Floor Covering Team"
+              alt="Brooks Floor Covering team at work on a Phoenix flooring project"
               class="rounded-lg shadow-lg w-full"
               width={960}
               height={720}
@@ -96,28 +115,39 @@ const reviewsJsonLd = {
             />
           </div>
           <div class="md:w-1/2">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
-            <p class="text-neutral-600 mb-6">
-              For over three decades, Brooks Floor Covering has accumulated experience in the floor
-              covering industry and can tackle just about any challenge. We understand the value of
-              word-of-mouth, which is why we always go the extra mile on every project.
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-display tracking-tight">
+              Our Story
+            </h2>
+            <p class="text-neutral-700 mb-6 leading-relaxed">
+              For over three decades, Brooks Floor Covering has been the trusted name for flooring
+              services across Phoenix, Glendale, Scottsdale, and the entire West Valley. We've
+              accumulated deep experience in the floor covering industry and can tackle just about
+              any challenge. We understand the value of word-of-mouth, which is why we always go the
+              extra mile on every project.
             </p>
-            <p class="text-neutral-600 mb-8">
+            <p class="text-neutral-700 mb-8 leading-relaxed">
               Our team is family-owned and operated, and we love working hand-in-hand with our
-              customers to deliver the perfect flooring solution for their needs.
+              customers to deliver the perfect flooring solution for their homes and businesses
+              throughout the Greater Phoenix Area.
             </p>
 
             <h3 class="text-2xl font-bold mb-4">Why Choose Us</h3>
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-2 gap-4 mb-6">
               {
                 whyChooseUs.map((item) => (
                   <div class="flex items-start space-x-2">
-                    <span class="text-blue-600 text-xl mt-0.5">✓</span>
-                    <span class="text-neutral-700">{item}</span>
+                    <span class="text-brand-accent text-xl mt-0.5 font-bold">&#10003;</span>
+                    <span class="text-neutral-700 font-medium">{item}</span>
                   </div>
                 ))
               }
             </div>
+            <a
+              href="/services"
+              class="inline-block text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+            >
+              View all our services &rarr;
+            </a>
           </div>
         </div>
       </div>
@@ -126,10 +156,12 @@ const reviewsJsonLd = {
     <!-- Distributors Section -->
     <section class="py-20 bg-neutral-50">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Floor Covering Distributors</h2>
-        <p class="text-center text-neutral-600 mb-12 max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 font-display tracking-tight">
+          Floor Covering Distributors
+        </h2>
+        <p class="text-center text-neutral-700 mb-12 max-w-2xl mx-auto leading-relaxed">
           We partner with industry-leading manufacturers to provide you with the highest quality
-          products.
+          products for your Phoenix-area home or business.
         </p>
         <div
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto"
@@ -139,7 +171,7 @@ const reviewsJsonLd = {
               <Image
                 src={`/images/${logo}`}
                 alt={logo.replace('.png', '').replace(/-/g, ' ')}
-                class="w-32 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
+                class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
                 width={128}
                 height={64}
                 inferSize
@@ -154,17 +186,21 @@ const reviewsJsonLd = {
     <!-- Reviews Section -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Customer Reviews</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-display tracking-tight">
+          Customer Reviews
+        </h2>
 
         <!-- Rating Summary -->
-        <div class="max-w-4xl mx-auto mb-16 bg-neutral-50 rounded-xl shadow-lg overflow-hidden">
+        <div
+          class="max-w-4xl mx-auto mb-16 bg-neutral-50 rounded-xl shadow-lg overflow-hidden border-t-4 border-t-brand-accent"
+        >
           <div class="flex flex-col md:flex-row items-center justify-between p-8">
             <div class="text-center md:text-left mb-8 md:mb-0">
-              <div class="text-5xl font-bold text-blue-600 mb-2">4.9</div>
+              <div class="text-5xl font-bold text-brand-primary mb-2">4.9</div>
               <div
                 class="flex items-center justify-center md:justify-start text-yellow-400 text-xl mb-2"
               >
-                <span>★★★★★</span>
+                <span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               </div>
               <div class="text-neutral-600">Based on 150+ Reviews</div>
             </div>
@@ -175,7 +211,7 @@ const reviewsJsonLd = {
                   href="https://goo.gl/maps/nuodwwpJoyuMW9Ae9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center space-x-2 text-neutral-600 hover:text-blue-600 transition-colors"
+                  class="flex items-center space-x-2 text-neutral-600 hover:text-brand-primary transition-colors"
                 >
                   <span class="text-[#4285F4] text-3xl">G</span>
                   <span class="font-semibold">Google</span>
@@ -186,7 +222,7 @@ const reviewsJsonLd = {
                   rel="noopener noreferrer"
                   class="flex items-center space-x-2 text-neutral-600 hover:text-red-600 transition-colors"
                 >
-                  <span class="text-[#FF1A1A] text-3xl">★</span>
+                  <span class="text-[#FF1A1A] text-3xl">&#9733;</span>
                   <span class="font-semibold">Yelp</span>
                 </a>
                 <a
@@ -205,7 +241,9 @@ const reviewsJsonLd = {
 
         <!-- Review Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
+          <div
+            class="bg-neutral-50 p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary"
+          >
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/reviewers/linda.jpg"
@@ -218,8 +256,9 @@ const reviewsJsonLd = {
               />
             </div>
             <div class="mt-4">
+              <div class="text-brand-accent text-4xl leading-none mb-2 font-display">&ldquo;</div>
               <div class="flex items-center justify-center mb-4">
-                <div class="text-yellow-400">★★★★★</div>
+                <div class="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               </div>
               <p class="text-neutral-600 mb-6 text-center italic leading-relaxed">
                 "We've used the services of Brooks Floor Covering several times and will definitely
@@ -233,7 +272,9 @@ const reviewsJsonLd = {
             </div>
           </div>
 
-          <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
+          <div
+            class="bg-neutral-50 p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary"
+          >
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/reviewers/julie-m.jpg"
@@ -246,8 +287,9 @@ const reviewsJsonLd = {
               />
             </div>
             <div class="mt-4">
+              <div class="text-brand-accent text-4xl leading-none mb-2 font-display">&ldquo;</div>
               <div class="flex items-center justify-center mb-4">
-                <div class="text-yellow-400">★★★★★</div>
+                <div class="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               </div>
               <p class="text-neutral-600 mb-6 text-center italic leading-relaxed">
                 "We manage numerous properties throughout the Greater Phoenix Area. Whenever there
@@ -261,7 +303,9 @@ const reviewsJsonLd = {
             </div>
           </div>
 
-          <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
+          <div
+            class="bg-neutral-50 p-8 rounded-xl shadow-lg relative border-t-4 border-t-brand-primary"
+          >
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
               <Image
                 src="/images/reviewers/don.jpg"
@@ -274,8 +318,9 @@ const reviewsJsonLd = {
               />
             </div>
             <div class="mt-4">
+              <div class="text-brand-accent text-4xl leading-none mb-2 font-display">&ldquo;</div>
               <div class="flex items-center justify-center mb-4">
-                <div class="text-yellow-400">★★★★★</div>
+                <div class="text-yellow-400">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
               </div>
               <p class="text-neutral-600 mb-6 text-center italic leading-relaxed">
                 "Over the last five years I've worked with Josh on at least twelve projects in the
@@ -288,6 +333,78 @@ const reviewsJsonLd = {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight">
+          Ready to Transform Your Floors?
+        </h2>
+        <p class="text-lg leading-relaxed opacity-90 mb-8">
+          Whether you need tile, carpet, hardwood, or polished concrete, our experienced team is
+          ready to bring your vision to life. Get started with a free estimate today.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/services"
+            class="inline-block bg-brand-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 shadow-lg"
+          >
+            Explore Our Services
+          </a>
+          <a
+            href="/contact"
+            class="inline-block bg-white text-brand-dark px-8 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition duration-300 shadow-lg"
+          >
+            Get a Free Estimate
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Your Experience -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight">
+          Share Your Experience
+        </h2>
+        <p class="text-neutral-700 mb-8 leading-relaxed">
+          Had a great experience with Brooks Floor Covering? We'd love to hear from you. Leave us a
+          review on your favorite platform.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a
+            href="https://goo.gl/maps/nuodwwpJoyuMW9Ae9"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Review Brooks Floor Covering on Google Maps (opens in a new tab)"
+            class="inline-flex items-center gap-2 bg-white border border-neutral-200 px-6 py-3 rounded-lg font-semibold text-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            <span class="text-[#4285F4] text-xl" aria-hidden="true">G</span>
+            Review on Google
+          </a>
+          <a
+            href="https://www.yelp.com/biz/brooks-floor-covering-glendale-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Review Brooks Floor Covering on Yelp (opens in a new tab)"
+            class="inline-flex items-center gap-2 bg-white border border-neutral-200 px-6 py-3 rounded-lg font-semibold text-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            <span class="text-[#FF1A1A] text-xl" aria-hidden="true">&#9733;</span>
+            Review on Yelp
+          </a>
+          <a
+            href="https://www.facebook.com/brooksfloorcovering/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Review Brooks Floor Covering on Facebook (opens in a new tab)"
+            class="inline-flex items-center gap-2 bg-white border border-neutral-200 px-6 py-3 rounded-lg font-semibold text-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
+            <span class="text-[#1877F2] text-xl" aria-hidden="true">f</span>
+            Review on Facebook
+          </a>
         </div>
       </div>
     </section>

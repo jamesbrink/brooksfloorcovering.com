@@ -10,17 +10,22 @@ const { icon, title, description, features } = Astro.props;
 ---
 
 <div
-  class="p-6 border border-neutral-200 rounded-lg hover:shadow-xl transition duration-300 bg-white"
+  class="p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
 >
-  <div class="text-5xl mb-4">{icon}</div>
-  <h3 class="text-xl font-semibold mb-3">{title}</h3>
-  <p class="text-neutral-600 mb-4">{description}</p>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-neutral-600">
+  <div
+    class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+    aria-hidden="true"
+  >
+    {icon}
+  </div>
+  <h3 class="text-xl font-semibold mb-3 text-neutral-800">{title}</h3>
+  <p class="text-neutral-700 mb-4 leading-relaxed">{description}</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
     {
       features.map((feature) => (
         <div class="flex items-start">
-          <span class="text-blue-600 mr-2 mt-0.5">✓</span>
-          <span class="flex-1">{feature}</span>
+          <span class="text-brand-accent mr-2 mt-0.5 font-bold">&#10003;</span>
+          <span class="flex-1 text-neutral-700 font-medium">{feature}</span>
         </div>
       ))
     }

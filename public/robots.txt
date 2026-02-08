@@ -1,3 +1,5 @@
+# AI discoverability: see /llms.txt and /llms-full.txt
+
 User-agent: *
 Allow: /
 
@@ -27,6 +29,24 @@ User-agent: Google-Extended
 Allow: /
 
 User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://brooksfloorcovering.com/sitemap-index.xml
