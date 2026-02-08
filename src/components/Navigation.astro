@@ -40,7 +40,7 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex space-x-8">
+    <div class="hidden md:flex items-center space-x-8">
       {
         navLinks.map((link) => {
           const isActive =
@@ -49,10 +49,10 @@ const currentPath = Astro.url.pathname;
 
           if (isServices) {
             return (
-              <div class="relative group">
+              <div class="relative group flex items-center">
                 <a
                   href={link.href}
-                  class={`transition-colors font-medium text-sm tracking-wide uppercase inline-flex items-center gap-1 ${isActive ? 'text-brand-primary border-b-2 border-brand-primary pb-0.5' : 'text-neutral-700 hover:text-brand-primary'}`}
+                  class={`transition-colors font-medium text-sm tracking-wide uppercase inline-flex items-center gap-1 border-b-2 pb-0.5 ${isActive ? 'text-brand-primary border-brand-primary' : 'text-neutral-700 hover:text-brand-primary border-transparent'}`}
                 >
                   {link.label}
                   <svg
@@ -107,7 +107,7 @@ const currentPath = Astro.url.pathname;
           return (
             <a
               href={link.href}
-              class={`transition-colors font-medium text-sm tracking-wide uppercase ${isActive ? 'text-brand-primary border-b-2 border-brand-primary pb-0.5' : 'text-neutral-700 hover:text-brand-primary'}`}
+              class={`transition-colors font-medium text-sm tracking-wide uppercase border-b-2 pb-0.5 ${isActive ? 'text-brand-primary border-brand-primary' : 'text-neutral-700 hover:text-brand-primary border-transparent'}`}
             >
               {link.label}
             </a>
