@@ -19,7 +19,6 @@ This document provides guidance for AI assistants (like Claude) working on this 
 ```shell
 src/
 ├── components/          # Reusable Astro components
-│   ├── ContactForm.astro
 │   ├── Footer.astro
 │   ├── Hero.astro
 │   ├── Navigation.astro

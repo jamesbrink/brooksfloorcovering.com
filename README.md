@@ -88,7 +88,6 @@ bun run build
 │   └── favicon.ico
 ├── src/
 │   ├── components/         # Reusable components
-│   │   ├── ContactForm.astro
 │   │   ├── Footer.astro
 │   │   ├── Hero.astro
 │   │   ├── Navigation.astro

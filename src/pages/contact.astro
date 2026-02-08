@@ -2,107 +2,130 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
-import ContactForm from '../components/ContactForm.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout
   title="Contact Us - Brooks Floor Covering"
-  description="Get a free flooring estimate from Brooks Floor Covering. Call (623) 688-8422 or fill out our contact form. Serving the Greater Phoenix Area. ROC #226840."
+  description="Get a free flooring estimate from Brooks Floor Covering. Call (623) 688-8422 or text us. Serving the Greater Phoenix Area. ROC #226840."
 >
   <Navigation />
 
   <Hero
     title="Get Your Free Estimate"
-    subtitle="Ready to transform your space? Contact us today for a free, no-obligation estimate."
+    subtitle="Ready to transform your space? Reach out today — no forms, no waiting."
     compact={true}
   />
 
   <main>
+    <!-- Primary CTA Section -->
     <section class="py-20 bg-white">
-      <div class="container mx-auto px-4 max-w-6xl">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <!-- Contact Info -->
-          <div class="space-y-8">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+          <a
+            href="tel:+16236888422"
+            class="group flex flex-col items-center gap-3 p-8 rounded-2xl bg-blue-600 text-white shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+          >
+            <span class="text-4xl" aria-hidden="true">&#128222;</span>
+            <span class="text-lg font-bold">Call Us</span>
+            <span class="text-blue-100 text-sm">(623) 688-8422</span>
+          </a>
+
+          <a
+            href="sms:+16236888422"
+            class="group flex flex-col items-center gap-3 p-8 rounded-2xl bg-emerald-600 text-white shadow-lg hover:bg-emerald-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+          >
+            <span class="text-4xl" aria-hidden="true">&#128172;</span>
+            <span class="text-lg font-bold">Text Us</span>
+            <span class="text-emerald-100 text-sm">(623) 688-8422</span>
+          </a>
+
+          <a
+            href="mailto:info@brooksfloorcovering.com"
+            class="group flex flex-col items-center gap-3 p-8 rounded-2xl bg-neutral-800 text-white shadow-lg hover:bg-neutral-900 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+          >
+            <span class="text-4xl" aria-hidden="true">&#9993;</span>
+            <span class="text-lg font-bold">Email Us</span>
+            <span class="text-neutral-300 text-sm">info@brooksfloorcovering.com</span>
+          </a>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div class="space-y-6">
             <div>
-              <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-              <p class="text-neutral-600 mb-8">
-                We're here to help with all your flooring needs. Reach out to us by phone, email, or
-                using the contact form.
-              </p>
+              <h2 class="text-2xl font-bold mb-4">Business Hours</h2>
+              <div class="space-y-2 text-neutral-600">
+                <div class="flex justify-between border-b border-neutral-100 pb-2">
+                  <span>Monday &ndash; Friday</span>
+                  <span class="font-medium text-neutral-800">8:00 AM &ndash; 5:00 PM</span>
+                </div>
+                <div class="flex justify-between border-b border-neutral-100 pb-2">
+                  <span>Saturday</span>
+                  <span class="font-medium text-neutral-800">By appointment</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Sunday</span>
+                  <span class="font-medium text-neutral-800">Closed</span>
+                </div>
+              </div>
             </div>
 
-            <div class="space-y-6">
-              <div class="flex items-start space-x-4">
-                <div class="text-3xl text-blue-600">📞</div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-1">Call Us</h3>
-                  <a
-                    href="tel:+16236888422"
-                    class="text-blue-600 hover:text-blue-700 text-xl font-medium"
-                  >
-                    (623) 688-8422
-                  </a>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4">
-                <div class="text-3xl text-blue-600">📧</div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-1">Email Us</h3>
-                  <a
-                    href="mailto:info@brooksfloorcovering.com"
-                    class="text-blue-600 hover:text-blue-700 break-all"
-                  >
-                    info@brooksfloorcovering.com
-                  </a>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4">
-                <div class="text-3xl text-blue-600">📍</div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-1">Service Area</h3>
-                  <p class="text-neutral-600">Greater Phoenix Area, Arizona</p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4">
-                <div class="text-3xl text-blue-600">🕐</div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-1">Business Hours</h3>
-                  <p class="text-neutral-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                  <p class="text-neutral-600">Saturday: By appointment</p>
-                  <p class="text-neutral-600">Sunday: Closed</p>
-                </div>
-              </div>
-
-              <div class="flex items-start space-x-4">
-                <div class="text-3xl text-blue-600">🔒</div>
-                <div>
-                  <h3 class="font-semibold text-lg mb-1">Licensed & Insured</h3>
-                  <p class="text-neutral-600">ROC #226840</p>
-                </div>
-              </div>
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Service Area</h2>
+              <p class="text-neutral-600">
+                Greater Phoenix Area, Arizona &mdash; from Glendale to Mesa, Scottsdale to Chandler,
+                we bring professional flooring services to homes and businesses throughout the
+                Valley.
+              </p>
             </div>
           </div>
 
-          <!-- Contact Form -->
-          <div>
-            <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
-            <ContactForm />
+          <div class="space-y-6">
+            <div>
+              <h2 class="text-2xl font-bold mb-4">Licensed &amp; Insured</h2>
+              <p class="text-neutral-600">
+                Arizona Registrar of Contractors<br />
+                <span class="font-semibold text-neutral-800">ROC #226840</span>
+              </p>
+              <p class="text-neutral-600 mt-2">
+                30+ years of experience serving the Phoenix Valley.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4">What to Expect</h2>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">&#10003;</span>
+                  Free, no-obligation estimate
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">&#10003;</span>
+                  Same-day response on calls and texts
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">&#10003;</span>
+                  Transparent pricing, no hidden fees
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-blue-600 font-bold mt-0.5">&#10003;</span>
+                  Professional installation by our own crew
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Map or Additional CTA -->
+    <!-- Bottom CTA -->
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-4">Serving the Greater Phoenix Area</h2>
+        <h2 class="text-3xl font-bold mb-4">See What We Can Do</h2>
         <p class="text-neutral-600 mb-8 max-w-2xl mx-auto">
-          From Glendale to Mesa, Scottsdale to Chandler, we bring professional flooring services to
-          homes and businesses throughout the Valley.
+          Browse our portfolio of completed tile, carpet, concrete, and epoxy projects across the
+          Valley.
         </p>
         <a
           href="/gallery"
