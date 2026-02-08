@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
@@ -94,14 +95,14 @@ const featuredServices = [
             </a>
           </div>
           <div class="md:w-1/2 order-1 md:order-2">
-            <img
+            <Image
               src="/images/home-image-2.jpg"
               alt="Brooks Floor Covering Experience"
               class="rounded-lg shadow-lg w-full"
-              width="960"
-              height="720"
+              width={960}
+              height={720}
+              inferSize
               loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
@@ -123,14 +124,14 @@ const featuredServices = [
               const imageNum = String(num).padStart(3, '0');
               return (
                 <div class="aspect-square overflow-hidden rounded-lg shadow-md">
-                  <img
+                  <Image
                     src={`/images/${imageNum}.jpg`}
                     alt={`Project ${num}`}
                     class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    width={400}
+                    height={400}
+                    inferSize
                     loading="lazy"
-                    width="400"
-                    height="400"
-                    decoding="async"
                   />
                 </div>
               );

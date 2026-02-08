@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
@@ -44,14 +45,14 @@ const whyChooseUs = [
       <div class="container mx-auto px-4">
         <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
           <div class="md:w-1/2">
-            <img
+            <Image
               src="/images/home-image-2.jpg"
               alt="Brooks Floor Covering Team"
               class="rounded-lg shadow-lg w-full"
-              width="960"
-              height="720"
+              width={960}
+              height={720}
+              inferSize
               loading="eager"
-              decoding="async"
             />
           </div>
           <div class="md:w-1/2">
@@ -95,14 +96,14 @@ const whyChooseUs = [
         >
           {
             distributors.map((logo) => (
-              <img
+              <Image
                 src={`/images/${logo}`}
                 alt={logo.replace('.png', '').replace(/-/g, ' ')}
                 class="w-32 h-auto object-contain grayscale hover:grayscale-0 transition duration-300"
-                width="128"
-                height="64"
+                width={128}
+                height={64}
+                inferSize
                 loading="lazy"
-                decoding="async"
               />
             ))
           }
@@ -166,14 +167,14 @@ const whyChooseUs = [
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <img
+              <Image
                 src="/images/reviewers/linda.jpg"
                 alt="Linda D."
                 class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
-                width="64"
-                height="64"
+                width={64}
+                height={64}
+                inferSize
                 loading="lazy"
-                decoding="async"
               />
             </div>
             <div class="mt-4">
@@ -194,14 +195,14 @@ const whyChooseUs = [
 
           <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <img
+              <Image
                 src="/images/reviewers/julie-m.jpg"
                 alt="Julie M."
                 class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
-                width="64"
-                height="64"
+                width={64}
+                height={64}
+                inferSize
                 loading="lazy"
-                decoding="async"
               />
             </div>
             <div class="mt-4">
@@ -222,14 +223,14 @@ const whyChooseUs = [
 
           <div class="bg-neutral-50 p-8 rounded-xl shadow-lg relative">
             <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
-              <img
+              <Image
                 src="/images/reviewers/don.jpg"
                 alt="Don S."
                 class="w-16 h-16 rounded-full object-cover border-4 border-white shadow-lg"
-                width="64"
-                height="64"
+                width={64}
+                height={64}
+                inferSize
                 loading="lazy"
-                decoding="async"
               />
             </div>
             <div class="mt-4">

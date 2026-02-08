@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -37,14 +39,14 @@ const { title, subtitle, ctaText, ctaLink, image, compact = false } = Astro.prop
             )}
           </div>
           <div class="md:w-1/2">
-            <img
+            <Image
               src={image}
               alt={title}
               class="rounded-lg shadow-xl w-full"
-              width="960"
-              height="720"
+              width={960}
+              height={720}
+              inferSize
               loading="eager"
-              decoding="async"
             />
           </div>
         </div>
