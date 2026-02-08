@@ -11,12 +11,14 @@ I've successfully migrated the Brooks Floor Covering website from the old Vite s
 ## Key Improvements
 
 ### ⚡ Performance
+
 - **Modern stack**: Astro 5 with static site generation
 - **Tailwind 4.1**: Latest version with new CSS-first approach
 - **Optimized assets**: Lazy loading images, minified CSS/JS
 - **Lightning-fast builds**: 443ms production build time
 
 ### 🎨 Design & UX
+
 - **Professional lightbox**: PhotoSwipe gallery with smooth transitions
 - **Responsive design**: Mobile-first approach, works on all devices
 - **Modern aesthetics**: Cleaner, more professional look
@@ -24,18 +26,21 @@ I've successfully migrated the Brooks Floor Covering website from the old Vite s
 - **Better typography**: Improved readability and hierarchy
 
 ### 🧹 Code Quality
+
 - **Removed bloat**: No more Bootstrap, old FontAwesome, jQuery, etc.
 - **Component-based**: Reusable Astro components
 - **Type-safe**: TypeScript strict mode
 - **Maintainable**: Clear structure, easy to update
 
 ### 🖼️ Gallery
+
 - **31 project images**: All numbered 001-031.jpg
 - **PhotoSwipe lightbox**: Professional, smooth, mobile-friendly
 - **Lazy loading**: Images load as you scroll
 - **Zoom & pan**: Full-featured image viewing
 
 ### 📊 Content Preserved
+
 - ✅ All services sections
 - ✅ About section
 - ✅ 8 distributor logos (instead of 4)
@@ -149,6 +154,7 @@ brooks-astro/
 ## Distributor Logos
 
 Updated to show 8 logos (all available in the images):
+
 - Daltile
 - Shaw Floors
 - Mohawk
@@ -187,4 +193,4 @@ Check the README.md in the project folder for full documentation!
 ---
 
 **Built by Bender** 🤖  
-*Bite my shiny metal ass!*
+_Bite my shiny metal ass!_

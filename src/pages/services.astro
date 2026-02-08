@@ -9,7 +9,8 @@ const services = [
   {
     icon: '🔨',
     title: 'Flooring Sales & Installation',
-    description: 'Professional flooring sales and installation services for both residential and commercial clients throughout the Valley. Free in-home estimates available.',
+    description:
+      'Professional flooring sales and installation services for both residential and commercial clients throughout the Valley. Free in-home estimates available.',
     features: [
       'Hardwood',
       'Engineered Wood',
@@ -18,24 +19,26 @@ const services = [
       'Carpet',
       'Carpet Tile',
       'Luxury Vinyl Tile & Plank',
-    ]
+    ],
   },
   {
     icon: '🔧',
     title: 'Floor Repairs',
-    description: 'Expert repair services for all types of flooring. From minor fixes to major repairs, we ensure your floors look and function their best.',
+    description:
+      'Expert repair services for all types of flooring. From minor fixes to major repairs, we ensure your floors look and function their best.',
     features: [
       'Cracked Tile Replacement',
       'Carpet Restretch',
       'Vinyl Plank Replacement',
       'Grout Repairs',
       'Carpet Seam Repair',
-    ]
+    ],
   },
   {
     icon: '🏗️',
     title: 'Concrete Services',
-    description: 'Professional concrete services for both residential and commercial projects. From moisture mitigation to polishing, we handle all your concrete needs.',
+    description:
+      'Professional concrete services for both residential and commercial projects. From moisture mitigation to polishing, we handle all your concrete needs.',
     features: [
       'Moisture Mitigation',
       'Concrete Grinding',
@@ -43,40 +46,33 @@ const services = [
       'SLU Pours',
       'Epoxy Coatings',
       'Concrete Polishing',
-    ]
+    ],
   },
   {
     icon: '💎',
     title: 'Specialty Services',
-    description: 'Custom solutions beyond traditional flooring. We provide a wide range of specialty services to meet your unique needs.',
-    features: [
-      'Custom Showers',
-      'Countertops',
-      'Backsplashes',
-      'Fireplaces',
-      'Custom Tile Work',
-    ]
+    description:
+      'Custom solutions beyond traditional flooring. We provide a wide range of specialty services to meet your unique needs.',
+    features: ['Custom Showers', 'Countertops', 'Backsplashes', 'Fireplaces', 'Custom Tile Work'],
   },
 ];
 ---
 
 <Layout title="Our Services - Brooks Floor Covering">
   <Navigation />
-  
+
   <Hero
     title="Our Services"
     subtitle="Professional flooring solutions for residential and commercial projects throughout the Greater Phoenix Area."
     compact={true}
   />
-  
+
   <main>
     <!-- Services Grid -->
     <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {services.map(service => (
-            <ServiceCard {...service} />
-          ))}
+          {services.map((service) => <ServiceCard {...service} />)}
         </div>
       </div>
     </section>
@@ -97,6 +93,6 @@ const services = [
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>

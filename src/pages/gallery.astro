@@ -14,34 +14,39 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
 
 <Layout title="Photo Gallery - Brooks Floor Covering">
   <Navigation />
-  
+
   <Hero
     title="Our Project Gallery"
     subtitle="Browse through our extensive portfolio of completed flooring projects throughout the Phoenix Valley."
     compact={true}
   />
-  
+
   <main>
     <!-- Gallery Grid -->
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto" id="gallery">
-          {galleryImages.map((src, index) => (
-            <a
-              href={src}
-              class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100"
-              data-gallery="gallery1"
-            >
-              <img
-                src={src}
-                alt={`Brooks Floor Covering Project ${index + 1}`}
-                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                loading="lazy"
-                width="400"
-                height="400"
-              />
-            </a>
-          ))}
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-7xl mx-auto"
+          id="gallery"
+        >
+          {
+            galleryImages.map((src, index) => (
+              <a
+                href={src}
+                class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100"
+                data-gallery="gallery1"
+              >
+                <img
+                  src={src}
+                  alt={`Brooks Floor Covering Project ${index + 1}`}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  loading="lazy"
+                  width="400"
+                  height="400"
+                />
+              </a>
+            ))
+          }
         </div>
       </div>
     </section>
@@ -62,7 +67,7 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>
 
@@ -70,7 +75,7 @@ const galleryImages = Array.from({ length: 31 }, (_, i) => {
   import GLightbox from 'glightbox';
   
   // Initialize GLightbox
-  const lightbox = GLightbox({
+  GLightbox({
     touchNavigation: true,
     loop: true,
     autoplayVideos: false,

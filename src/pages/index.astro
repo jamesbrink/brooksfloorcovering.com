@@ -9,33 +9,35 @@ const featuredServices = [
   {
     icon: '🔨',
     title: 'Flooring Sales & Installation',
-    description: 'Professional flooring sales and installation for residential and commercial clients.',
-    features: ['Hardwood', 'Tile', 'Carpet', 'Luxury Vinyl']
+    description:
+      'Professional flooring sales and installation for residential and commercial clients.',
+    features: ['Hardwood', 'Tile', 'Carpet', 'Luxury Vinyl'],
   },
   {
     icon: '🔧',
     title: 'Floor Repairs',
-    description: 'Expert repair services for all types of flooring, from minor fixes to major repairs.',
-    features: ['Tile Replacement', 'Carpet Restretch', 'Grout Repairs']
+    description:
+      'Expert repair services for all types of flooring, from minor fixes to major repairs.',
+    features: ['Tile Replacement', 'Carpet Restretch', 'Grout Repairs'],
   },
   {
     icon: '🏗️',
     title: 'Concrete Services',
     description: 'Complete concrete solutions including grinding, leveling, and epoxy coatings.',
-    features: ['Grinding', 'Leveling', 'Epoxy Coatings', 'Polishing']
+    features: ['Grinding', 'Leveling', 'Epoxy Coatings', 'Polishing'],
   },
   {
     icon: '💎',
     title: 'Specialty Services',
     description: 'Custom showers, countertops, backsplashes, and unique tile work.',
-    features: ['Custom Showers', 'Countertops', 'Backsplashes']
+    features: ['Custom Showers', 'Countertops', 'Backsplashes'],
   },
 ];
 ---
 
 <Layout>
   <Navigation />
-  
+
   <Hero
     title="Professional Flooring Services in the Valley"
     subtitle="Professional flooring services for both residential and commercial clients throughout the Greater Phoenix Area. We deliver exceptional quality and unmatched expertise for all your flooring needs."
@@ -43,7 +45,7 @@ const featuredServices = [
     ctaLink="/contact"
     image="/images/home-image-1.jpg"
   />
-  
+
   <main>
     <!-- Services Preview -->
     <section class="py-20 bg-white">
@@ -51,13 +53,12 @@ const featuredServices = [
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
           <p class="text-neutral-600 max-w-2xl mx-auto">
-            From installation to repairs, we handle all your flooring needs with professionalism and expertise.
+            From installation to repairs, we handle all your flooring needs with professionalism and
+            expertise.
           </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
-          {featuredServices.map(service => (
-            <ServiceCard {...service} />
-          ))}
+          {featuredServices.map((service) => <ServiceCard {...service} />)}
         </div>
         <div class="text-center">
           <a
@@ -77,10 +78,13 @@ const featuredServices = [
           <div class="md:w-1/2 order-2 md:order-1">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Three Decades of Excellence</h2>
             <p class="text-neutral-600 mb-6">
-              For over three decades, Brooks Floor Covering has accumulated experience in the floor covering industry and can tackle just about any challenge. We understand the value of word-of-mouth, which is why we always go the extra mile on every project.
+              For over three decades, Brooks Floor Covering has accumulated experience in the floor
+              covering industry and can tackle just about any challenge. We understand the value of
+              word-of-mouth, which is why we always go the extra mile on every project.
             </p>
             <p class="text-neutral-600 mb-8">
-              Our team is family-owned and operated, and we love working hand-in-hand with our customers to deliver the perfect flooring solution for their needs.
+              Our team is family-owned and operated, and we love working hand-in-hand with our
+              customers to deliver the perfect flooring solution for their needs.
             </p>
             <a
               href="/about"
@@ -90,8 +94,8 @@ const featuredServices = [
             </a>
           </div>
           <div class="md:w-1/2 order-1 md:order-2">
-            <img 
-              src="/images/home-image-2.jpg" 
+            <img
+              src="/images/home-image-2.jpg"
               alt="Brooks Floor Covering Experience"
               class="rounded-lg shadow-lg w-full"
             />
@@ -110,19 +114,21 @@ const featuredServices = [
           </p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map(num => {
-            const imageNum = String(num).padStart(3, '0');
-            return (
-              <div class="aspect-square overflow-hidden rounded-lg shadow-md">
-                <img
-                  src={`/images/${imageNum}.jpg`}
-                  alt={`Project ${num}`}
-                  class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  loading="lazy"
-                />
-              </div>
-            );
-          })}
+          {
+            [1, 2, 3, 4, 5, 6, 7, 8].map((num) => {
+              const imageNum = String(num).padStart(3, '0');
+              return (
+                <div class="aspect-square overflow-hidden rounded-lg shadow-md">
+                  <img
+                    src={`/images/${imageNum}.jpg`}
+                    alt={`Project ${num}`}
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              );
+            })
+          }
         </div>
         <div class="text-center">
           <a
@@ -151,6 +157,6 @@ const featuredServices = [
       </div>
     </section>
   </main>
-  
+
   <Footer />
 </Layout>
