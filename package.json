@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
+    "audit": "npm audit --omit=dev",
     "lint": "eslint . --ext .js,.astro",
     "lint:fix": "eslint . --ext .js,.astro --fix",
     "format": "prettier --write \"**/*.{astro,js,ts,json,md}\"",

@@ -58,6 +58,7 @@ npm run format:check     # Check formatting without changes
 npm run lint             # Lint with ESLint
 npm run lint:fix         # Auto-fix linting issues
 npm run check            # Run Astro type checking
+npm run audit            # Check for security vulnerabilities
 
 # Build & Preview
 npm run build            # Build for production
@@ -71,6 +72,7 @@ Always run:
 npm run format
 npm run lint
 npm run check
+npm run audit
 npm run build
 ```
 
@@ -156,7 +158,7 @@ Current contact information (update in multiple places):
 
 ### GitHub Actions Workflow
 
-1. **Lint & Check** - Formatting, linting, Astro check
+1. **Lint & Check** - Formatting, linting, Astro type check, security audit
 2. **Build** - Production build
 3. **Deploy** - Deploy to GitHub Pages
 

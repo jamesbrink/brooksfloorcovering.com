@@ -59,6 +59,7 @@ npm run format:check     # Check formatting (CI)
 npm run lint             # Lint with ESLint
 npm run lint:fix         # Auto-fix linting issues
 npm run check            # Run Astro type checking
+npm run audit            # Check for security vulnerabilities
 ```
 
 ### Pre-commit Checklist
@@ -69,6 +70,7 @@ Before committing changes, run:
 npm run format
 npm run lint
 npm run check
+npm run audit
 npm run build
 ```
 
@@ -163,6 +165,7 @@ On every push to `main`:
    - Prettier formatting check
    - ESLint linting
    - Astro type checking
+   - Security audit (npm audit)
 
 2. **Build**
    - Production build
