@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+// Generate array of gallery image numbers (001-031)
+const galleryImages = Array.from({ length: 31 }, (_, i) => {
+  const num = String(i + 1).padStart(3, '0');
+  return {
+    src: `/images/${num}.jpg`,
+    alt: `Brooks Floor Covering Project ${i + 1}`,
+    index: i
+  };
+});
+---
+
+<Layout title="Photo Gallery - Brooks Floor Covering">
+  <Navigation />
+  
+  <main class="pt-24">
+    <!-- Gallery Header -->
+    <section class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Project Gallery</h1>
+        <p class="text-xl max-w-2xl mx-auto">
+          Browse through our extensive portfolio of completed flooring projects throughout the Phoenix Valley.
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div id="gallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {galleryImages.map((image) => (
+            <a
+              href={image.src}
+              data-pswp-width="1920"
+              data-pswp-height="1080"
+              target="_blank"
+              class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                <span class="text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  🔍
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Start Your Project?</h2>
+        <p class="text-neutral-600 mb-8 max-w-2xl mx-auto">
+          Let us bring your flooring vision to life. Contact us today for a free estimate.
+        </p>
+        <a
+          href="/#contact"
+          class="inline-block bg-blue-600 text-white px-10 py-4 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 text-lg"
+        >
+          Get Your Free Estimate
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<script>
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  import 'photoswipe/style.css';
+
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#gallery',
+    children: 'a',
+    pswpModule: () => import('photoswipe'),
+    
+    // UI options
+    bgOpacity: 0.95,
+    spacing: 0.1,
+    allowPanToNext: true,
+    loop: true,
+    pinchToClose: true,
+    closeOnVerticalDrag: true,
+    
+    // Navigation
+    arrowPrev: true,
+    arrowNext: true,
+    zoom: true,
+    close: true,
+    counter: true,
+  });
+  
+  lightbox.init();
+</script>
+
+<style>
+  /* Custom PhotoSwipe styling */
+  :global(.pswp__bg) {
+    background: rgba(0, 0, 0, 0.95);
+  }
+  
+  :global(.pswp__button) {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+  
+  :global(.pswp__button:hover) {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+</style>

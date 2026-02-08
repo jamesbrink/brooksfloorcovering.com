@@ -1,43 +1,83 @@
-# Astro Starter Kit: Minimal
+# Brooks Floor Covering - Modern Website
 
-```sh
-npm create astro@latest -- --template minimal
+This is the modernized version of [brooksfloorcovering.com](https://brooksfloorcovering.com), rebuilt from the ground up with:
+
+- **Astro 5** - Modern static site generator
+- **Tailwind CSS 4.1** - Utility-first CSS framework
+- **PhotoSwipe** - Professional lightbox gallery
+- **Optimized Images** - Fast loading with proper lazy loading
+- **Responsive Design** - Mobile-first, works beautifully on all devices
+- **SEO Optimized** - Meta tags, semantic HTML, and proper structure
+
+## Features
+
+- 🎨 Modern, professional design
+- 📱 Fully responsive across all devices
+- 🖼️ Beautiful image gallery with lightbox
+- ⚡ Lightning-fast page loads
+- 🎯 SEO optimized
+- ♿ Accessible and semantic HTML
+- 🔧 Easy to maintain and update
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Project Structure
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
+```
 /
 ├── public/
+│   ├── images/          # Gallery images and logos
+│   └── favicon.ico
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/      # Reusable components
+│   │   ├── Navigation.astro
+│   │   └── Footer.astro
+│   ├── layouts/
+│   │   └── Layout.astro # Main layout template
+│   ├── pages/
+│   │   ├── index.astro  # Homepage
+│   │   └── gallery.astro # Gallery page
+│   └── styles/
+│       └── global.css   # Global styles & Tailwind
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deployment
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+This site is configured for GitHub Pages deployment. The build output goes to `dist/` directory.
 
-Any static assets, like images, can be placed in the `public/` directory.
+To deploy:
+```bash
+npm run build
+# Then deploy the dist/ directory to your hosting
+```
 
-## 🧞 Commands
+## Migrations from Old Site
 
-All commands are run from the root of the project, from a terminal:
+This version improves upon the original site with:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- ✅ Removed legacy CSS bloat (Bootstrap, old FontAwesome, etc.)
+- ✅ Modern Tailwind 4.1 for all styling
+- ✅ Professional PhotoSwipe lightbox instead of custom jQuery
+- ✅ Optimized image loading
+- ✅ Better semantic HTML structure
+- ✅ Improved mobile experience
+- ✅ Cleaner, more maintainable codebase
 
-## 👀 Want to learn more?
+## License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+© 2025 Brooks Floor Covering. All rights reserved.

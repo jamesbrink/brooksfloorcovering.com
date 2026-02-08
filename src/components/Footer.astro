@@ -1,0 +1,45 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-neutral-900 text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Brooks Floor Covering</h3>
+        <p class="text-neutral-400 mb-4">
+          Professional flooring services in the Greater Phoenix Area since 1980.
+        </p>
+        <p class="text-neutral-400">
+          Family-owned and operated with over three decades of excellence.
+        </p>
+      </div>
+      
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+        <div class="space-y-2 text-neutral-400">
+          <p>📞 <a href="tel:+14809858886" class="hover:text-white transition-colors">(480) 985-8886</a></p>
+          <p>📧 <a href="mailto:brooksfloors@cox.net" class="hover:text-white transition-colors">brooksfloors@cox.net</a></p>
+          <p>📍 Serving Greater Phoenix Area</p>
+        </div>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-neutral-400">
+          <li><a href="/#services" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="/#about" class="hover:text-white transition-colors">About</a></li>
+          <li><a href="/gallery" class="hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="/#contact" class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="border-t border-neutral-800 pt-8 text-center text-neutral-400">
+      <p>&copy; {currentYear} Brooks Floor Covering. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

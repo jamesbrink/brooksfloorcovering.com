@@ -1,17 +1,386 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Navigation />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="pt-24 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+      <div class="container mx-auto px-4 py-24">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+          <div class="md:w-1/2 mb-8 md:mb-0">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8">
+              Professional Flooring Services in the Valley
+            </h1>
+            <p class="text-xl mb-10 leading-relaxed">
+              Professional flooring services for both residential and commercial clients throughout the Greater Phoenix Area. We deliver exceptional quality and unmatched expertise for all your flooring needs.
+            </p>
+            <a 
+              href="#contact" 
+              class="inline-block bg-white text-blue-700 px-10 py-4 rounded-lg font-semibold hover:bg-blue-50 transition duration-300 text-lg"
+            >
+              Get a Quote
+            </a>
+          </div>
+          <div class="md:w-1/2">
+            <img 
+              src="/images/home-image-1.jpg" 
+              alt="Professional Flooring Sales and Installation" 
+              class="rounded-lg shadow-xl w-full"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Our Services</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <!-- Flooring Sales & Installation -->
+          <div class="p-6 border border-neutral-200 rounded-lg hover:shadow-xl transition duration-300">
+            <div class="text-5xl text-blue-600 mb-4">🔨</div>
+            <h3 class="text-xl font-semibold mb-3">Flooring Sales & Installation</h3>
+            <p class="text-neutral-600 mb-4">
+              Professional flooring sales and installation services for both residential and commercial clients throughout the Valley. Free in-home estimates available.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-sm text-neutral-600">
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Hardwood
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Engineered Wood
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Ceramic Tile
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Natural Stone
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Carpet
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Carpet Tile
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Luxury Vinyl Tile & Plank
+              </div>
+            </div>
+          </div>
+
+          <!-- Floor Repairs -->
+          <div class="p-6 border border-neutral-200 rounded-lg hover:shadow-xl transition duration-300">
+            <div class="text-5xl text-blue-600 mb-4">🔧</div>
+            <h3 class="text-xl font-semibold mb-3">Floor Repairs</h3>
+            <p class="text-neutral-600 mb-4">
+              Expert repair services for all types of flooring. From minor fixes to major repairs, we ensure your floors look and function their best.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-sm text-neutral-600">
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Cracked Tile Replacement
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Carpet Restretch
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Vinyl Plank Replacement
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Grout Repairs
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Carpet Seam Repair
+              </div>
+            </div>
+          </div>
+
+          <!-- Concrete Services -->
+          <div class="p-6 border border-neutral-200 rounded-lg hover:shadow-xl transition duration-300">
+            <div class="text-5xl text-blue-600 mb-4">🏗️</div>
+            <h3 class="text-xl font-semibold mb-3">Concrete Services</h3>
+            <p class="text-neutral-600 mb-4">
+              Professional concrete services for both residential and commercial projects. From moisture mitigation to polishing, we handle all your concrete needs.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-sm text-neutral-600">
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Moisture Mitigation
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Concrete Grinding
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Floor Leveling
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>SLU Pours
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Epoxy Coatings
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Concrete Polishing
+              </div>
+            </div>
+          </div>
+
+          <!-- Specialty Services -->
+          <div class="p-6 border border-neutral-200 rounded-lg hover:shadow-xl transition duration-300">
+            <div class="text-5xl text-blue-600 mb-4">💎</div>
+            <h3 class="text-xl font-semibold mb-3">Specialty Services</h3>
+            <p class="text-neutral-600 mb-4">
+              Custom solutions beyond traditional flooring. We provide a wide range of specialty services to meet your unique needs.
+            </p>
+            <div class="grid grid-cols-2 gap-2 text-sm text-neutral-600">
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Custom Showers
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Countertops
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Backsplashes
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Fireplaces
+              </div>
+              <div class="flex items-center">
+                <span class="text-blue-600 mr-2">✓</span>Custom Tile Work
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <img 
+              src="/images/home-image-2.jpg" 
+              alt="Three Decades of Experience" 
+              class="rounded-lg shadow-lg w-full"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Three Decades of Excellence</h2>
+            <p class="text-neutral-600 mb-6">
+              For over three decades, Brooks Floor Covering has accumulated experience in the floor covering industry and can tackle just about any challenge. We understand the value of word-of-mouth, which is why we always go the extra mile on every project.
+            </p>
+            <p class="text-neutral-600 mb-8">
+              Our team is family-owned and operated, and we love working hand-in-hand with our customers to deliver the perfect flooring solution for their needs.
+            </p>
+            
+            <h3 class="text-2xl font-bold mb-4">Why Choose Us</h3>
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="flex items-start space-x-2">
+                <span class="text-blue-600 text-xl">✓</span>
+                <span class="text-neutral-700">30+ Years Experience</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="text-blue-600 text-xl">✓</span>
+                <span class="text-neutral-700">Family Owned</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="text-blue-600 text-xl">✓</span>
+                <span class="text-neutral-700">Licensed & Insured</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="text-blue-600 text-xl">✓</span>
+                <span class="text-neutral-700">Free Estimates</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="text-blue-600 text-xl">✓</span>
+                <span class="text-neutral-700">Quality Workmanship</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="text-blue-600 text-xl">✓</span>
+                <span class="text-neutral-700">Customer Focused</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Distributors Section -->
+    <section id="distributors" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Trusted Distributors</h2>
+        <p class="text-center text-neutral-600 mb-12 max-w-2xl mx-auto">
+          We partner with industry-leading distributors to provide you with the highest quality flooring materials and the best selection for your project.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center max-w-6xl mx-auto">
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/daltile.png" alt="Daltile" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/shaw.png" alt="Shaw Floors" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/mohawk.png" alt="Mohawk" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/marazzi.png" alt="Marazzi" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/arizona-tile.png" alt="Arizona Tile" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/emser.png" alt="Emser Tile" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/western-surfaces.png" alt="Western Surfaces" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+          <div class="flex items-center justify-center p-4 bg-neutral-50 rounded-lg hover:shadow-lg transition">
+            <img src="/images/tile-shop.png" alt="The Tile Shop" class="max-h-16 w-auto grayscale hover:grayscale-0 transition" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What Our Customers Say</h2>
+        <p class="text-center text-neutral-600 mb-12">
+          Don't just take our word for it - here's what our satisfied customers have to say.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400 text-xl">★★★★★</div>
+            </div>
+            <p class="text-neutral-600 mb-4 italic">
+              "Excellent work! They transformed our dated floors into something beautiful. Very professional and clean work."
+            </p>
+            <p class="font-semibold">— Sarah M.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400 text-xl">★★★★★</div>
+            </div>
+            <p class="text-neutral-600 mb-4 italic">
+              "Brooks Floor Covering did an amazing job on our commercial property. They were on time, on budget, and the quality exceeded our expectations."
+            </p>
+            <p class="font-semibold">— John D.</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400 text-xl">★★★★★</div>
+            </div>
+            <p class="text-neutral-600 mb-4 italic">
+              "Family-owned business that truly cares about their customers. Great communication and beautiful results!"
+            </p>
+            <p class="font-semibold">— Maria G.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Get Your Free Estimate</h2>
+        <p class="text-center text-neutral-600 mb-12">
+          Ready to transform your space? Contact us today for a free, no-obligation estimate.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="text-2xl text-blue-600">📞</div>
+              <div>
+                <h3 class="font-semibold mb-1">Call Us</h3>
+                <a href="tel:+14809858886" class="text-blue-600 hover:text-blue-700 text-lg">
+                  (480) 985-8886
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-2xl text-blue-600">📧</div>
+              <div>
+                <h3 class="font-semibold mb-1">Email Us</h3>
+                <a href="mailto:brooksfloors@cox.net" class="text-blue-600 hover:text-blue-700">
+                  brooksfloors@cox.net
+                </a>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-2xl text-blue-600">📍</div>
+              <div>
+                <h3 class="font-semibold mb-1">Service Area</h3>
+                <p class="text-neutral-600">Greater Phoenix Area, Arizona</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="text-2xl text-blue-600">🕐</div>
+              <div>
+                <h3 class="font-semibold mb-1">Business Hours</h3>
+                <p class="text-neutral-600">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p class="text-neutral-600">Saturday: By appointment</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-neutral-50 p-6 rounded-lg">
+            <form class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  required
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  required
+                />
+              </div>
+              <div>
+                <label for="phone" class="block text-sm font-medium mb-1">Phone</label>
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                />
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium mb-1">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  required
+                ></textarea>
+              </div>
+              <button 
+                type="submit"
+                class="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
