@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
@@ -162,6 +163,20 @@ const serviceAreasJsonLd = {
   <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Service Areas' }]} />
 
   <main>
+    <!-- Arizona Landscape Banner -->
+    <section class="relative h-48 md:h-64 overflow-hidden">
+      <Image
+        src="/images/hero-arizona-desert-saguaro.jpg"
+        alt="Arizona desert landscape with saguaro cacti representing the Phoenix Valley service area"
+        class="w-full h-full object-cover"
+        width={1920}
+        height={480}
+        inferSize
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
+    </section>
+
     <!-- Introduction -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
