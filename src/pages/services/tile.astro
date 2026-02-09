@@ -1,0 +1,464 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Tile Flooring Installation',
+      description:
+        'Expert tile flooring installation in Phoenix. Ceramic, porcelain, and natural stone tile for homes and businesses.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Tile Flooring Installation',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Tile Flooring',
+          item: 'https://brooksfloorcovering.com/services/tile/',
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'Tile Flooring Installation Process',
+      description:
+        'Our proven 6-step tile installation process ensures lasting results and exceptional craftsmanship.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Consultation & Design Selection',
+          text: 'We begin by understanding your vision, lifestyle, and space. Our team helps you select the right tile material, size, color, and layout to match your needs and aesthetic goals.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Site Preparation',
+          text: 'We inspect and prepare the subfloor to ensure it is clean, level, and structurally sound — creating a solid foundation for your tile.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Layout & Planning',
+          text: 'Before installation begins, we carefully plan the tile layout to ensure balanced spacing, clean lines, and optimal visual appeal.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Professional Installation',
+          text: 'Using industry-best techniques and materials, our skilled installers place each tile with precision, ensuring consistent spacing and alignment.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Grouting & Finishing',
+          text: 'Once tiles are set, grout is applied to secure and seal the floor. We finish with detailed cleanup and final inspection to ensure every detail meets our quality standards.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 6,
+          name: 'Final Walkthrough',
+          text: 'We review the completed floor with you, answer care questions, and make sure you are fully satisfied with the result.',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Tile Flooring Installation Phoenix | Ceramic, Porcelain & Stone Tile - Brooks Floor Covering"
+  description="Expert tile flooring installation in Phoenix. Ceramic, porcelain, and natural stone tile for homes and businesses. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+  ogImage="/images/001.jpg"
+>
+  <Navigation />
+
+  <Hero
+    title="Tile Flooring"
+    subtitle="Timeless, durable, and endlessly versatile tile flooring for homes and businesses across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Tile Flooring Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Expert Tile Installation for Every Space
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Timeless, durable, and endlessly versatile, tile flooring is one of the smartest
+            investments you can make for your home or business. Whether your style leans modern and
+            minimal or warm and traditional, tile offers a perfect balance of performance and design
+            that stands the test of time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Tile -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Benefits
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Why Choose Tile Floors?</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Exceptional Durability</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Tile is built to last. Resistant to scratches, dents, moisture, and heavy foot
+                traffic, tile floors are ideal for high-use areas like kitchens, bathrooms,
+                entryways, and commercial spaces. With proper installation and care, tile can last
+                for decades.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">
+                Low Maintenance & Easy Care
+              </h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Tile floors are incredibly easy to maintain. Regular sweeping and occasional mopping
+                keep them looking new. Unlike other flooring options, tile doesn't trap allergens,
+                dust, or odors — making it a great choice for healthier indoor spaces.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Precision & Clean Finish</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Tile flooring delivers crisp lines, defined edges, and a clean, intentional finish
+                that elevates the overall look of a space. When installed correctly, tile creates a
+                sense of order and craftsmanship that other flooring types can't replicate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Functional & Versatile -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+              <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+                Performance
+              </p>
+              <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+                Functional & Versatile
+              </h2>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Tile flooring is as functional as it is beautiful. Available in ceramic, porcelain,
+                and natural stone, tile can be customized to meet the demands of nearly any space.
+                Slip-resistant finishes, varied thicknesses, and strength ratings allow tile to
+                perform in residential, commercial, and outdoor environments with confidence.
+              </p>
+              <p class="text-neutral-700 leading-relaxed">
+                From busy households to high-traffic retail spaces, tile delivers reliable
+                performance without sacrificing style.
+              </p>
+            </div>
+            <div>
+              <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+                Design
+              </p>
+              <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Uniquely Yours</h2>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                One of tile's greatest advantages is its design flexibility. Choose from an endless
+                array of colors, patterns, textures, and sizes. Tile can mimic the look of natural
+                stone or hardwood, create bold geometric patterns, or provide a clean, seamless
+                modern finish.
+              </p>
+              <p class="text-neutral-700 leading-relaxed">
+                Layout options like herringbone, chevron, stacked, or staggered patterns allow you
+                to create a truly one-of-a-kind space that reflects your personal style.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Our Process
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Our Tile Installation Process
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              We believe a beautiful tile floor starts with expert planning and precise
+              installation. Our proven process ensures lasting results and exceptional
+              craftsmanship.
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">
+                  Consultation & Design Selection
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We begin by understanding your vision, lifestyle, and space. Our team helps you
+                  select the right tile material, size, color, and layout to match your needs and
+                  aesthetic goals.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Site Preparation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Proper preparation is key. We inspect and prepare the subfloor to ensure it is
+                  clean, level, and structurally sound — creating a solid foundation for your tile.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Layout & Planning</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Before installation begins, we carefully plan the tile layout to ensure balanced
+                  spacing, clean lines, and optimal visual appeal.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                4
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Professional Installation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Using industry-best techniques and materials, our skilled installers place each
+                  tile with precision, ensuring consistent spacing and alignment.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                5
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Grouting & Finishing</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Once tiles are set, grout is applied to secure and seal the floor. We finish with
+                  detailed cleanup and final inspection to ensure every detail meets our quality
+                  standards.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                6
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Final Walkthrough</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We review the completed floor with you, answer care questions, and make sure
+                  you're fully satisfied with the result.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Maintenance -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Protect Your Investment
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Care & Maintenance</h2>
+          </div>
+          <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+            <p class="text-neutral-700 leading-relaxed mb-4">
+              Tile flooring is designed for easy, stress-free upkeep. Routine sweeping or vacuuming
+              helps prevent debris from dulling the surface, while occasional mopping with a
+              manufacturer-approved cleaner keeps your floors looking their best. For grout lines,
+              periodic sealing may be recommended to protect against moisture and staining.
+            </p>
+            <p class="text-neutral-700 leading-relaxed mb-6">
+              Avoid harsh chemicals or abrasive tools that could damage the finish, and clean spills
+              promptly to maintain the integrity of the grout. With simple, consistent care, your
+              tile floor will continue to look beautiful and perform reliably for years.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Sweep or vacuum regularly to prevent surface dulling</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Mop with manufacturer-approved cleaners</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Seal grout lines periodically to protect against moisture</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Clean spills promptly to maintain grout integrity</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">Avoid harsh chemicals or abrasive tools</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a
+              href="/services/carpet"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Carpet Flooring</h3>
+              <p class="text-neutral-600 text-sm">
+                Commercial and residential carpet installation with expert precision.
+              </p>
+            </a>
+            <a
+              href="/services/luxury-vinyl-plank"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Luxury Vinyl Plank</h3>
+              <p class="text-neutral-600 text-sm">
+                Waterproof, scratch-resistant LVP flooring for modern living.
+              </p>
+            </a>
+            <a
+              href="/services/engineered-hardwood"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Engineered Hardwood</h3>
+              <p class="text-neutral-600 text-sm">
+                Real wood beauty with enhanced stability and performance.
+              </p>
+            </a>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">A Floor That Lasts</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Tile flooring combines beauty, strength, and practicality in a way few materials can
+          match. Let us help you transform your home or business with a tile floor that's built to
+          perform — and designed to impress.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

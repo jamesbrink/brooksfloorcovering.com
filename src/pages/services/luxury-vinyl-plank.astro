@@ -1,0 +1,451 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Luxury Vinyl Plank (LVP) Flooring Installation',
+      description:
+        'LVP flooring installation in Phoenix. Waterproof, scratch-resistant luxury vinyl plank for homes and businesses.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Luxury Vinyl Plank Flooring Installation',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Luxury Vinyl Plank',
+          item: 'https://brooksfloorcovering.com/services/luxury-vinyl-plank/',
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'LVP Flooring Installation Process',
+      description:
+        'Our proven 5-step LVP installation process ensures your floor looks beautiful and performs flawlessly for years.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Consultation & Selection',
+          text: 'We begin with a personalized consultation to understand your needs, style preferences, and space requirements. We help you select the right LVP product based on design, durability, and budget.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Site Evaluation & Preparation',
+          text: 'Our team evaluates the subfloor to ensure it is clean, level, and ready for installation. Any necessary preparation is handled upfront to guarantee long-term performance.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Precision Installation',
+          text: 'Using professional-grade tools and techniques, we install each plank with precision and care. Proper spacing, alignment, and expansion gaps are carefully maintained for a flawless finish.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Finishing Touches',
+          text: 'Once installation is complete, we install trim and transitions for a clean, polished look. The space is thoroughly cleaned and inspected to ensure everything meets our quality standards.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Final Walkthrough & Care Guidance',
+          text: 'We walk you through your new floor and provide care and maintenance tips so you can enjoy your LVP with confidence.',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Luxury Vinyl Plank (LVP) Flooring Phoenix | Waterproof & Durable - Brooks Floor Covering"
+  description="LVP flooring installation in Phoenix. Waterproof, scratch-resistant luxury vinyl plank for homes and businesses. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+  ogImage="/images/home-image-2.jpg"
+>
+  <Navigation />
+
+  <Hero
+    title="Luxury Vinyl Plank Flooring"
+    subtitle="The perfect balance of beauty, durability, and everyday practicality for homes and businesses across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            LVP Flooring Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Professional LVP Installation for Modern Living
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Luxury Vinyl Plank (LVP) flooring delivers the perfect balance of beauty, durability,
+            and everyday practicality. Designed to replicate the look of natural hardwood, concrete,
+            and tile while outperforming them in many ways, LVP has quickly become one of the most
+            popular flooring options for modern homes and commercial spaces alike.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            Whether you're updating a single room or transforming an entire property, LVP offers a
+            stylish, long-lasting solution that fits your lifestyle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose LVP -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Benefits
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Why Choose LVP Flooring?</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Built for Real Life</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                LVP is engineered to handle the demands of busy households and high-traffic
+                environments. It's waterproof, scratch-resistant, and highly durable — making it
+                ideal for kitchens, bathrooms, offices, and anywhere life happens.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Comfort & Performance</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Unlike traditional hardwood or tile, LVP provides a softer, warmer feel underfoot
+                while enhancing overall comfort. Many products include built-in underlayment for
+                added comfort and sound absorption.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">
+                Low Maintenance, High Reward
+              </h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                LVP is incredibly easy to maintain. No refinishing, sealing, or special cleaners
+                required — just simple sweeping and occasional mopping to keep it looking new.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aesthetics & Versatility -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Design Options
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Aesthetically Pleasing & Uniquely Versatile
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            LVP flooring is crafted with advanced printing and embossing technology to capture the
+            natural grain, texture, and character of real wood. From rustic oak and classic maple to
+            modern gray tones and wide-plank styles, the design options are nearly endless.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-8">
+            Each plank offers subtle variation, creating a rich, authentic look that elevates any
+            space. Whether your style is traditional, contemporary, or somewhere in between, LVP
+            adapts seamlessly to your vision.
+          </p>
+
+          <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+            <h3 class="text-xl font-bold text-brand-dark mb-4">Functional Benefits at a Glance</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700">100% waterproof options available</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Highly resistant to scratches, dents, and stains</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Ideal for residential and commercial applications</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                <span class="text-neutral-700"
+                  >Long-lasting performance with manufacturer warranties</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Our Process
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Our LVP Installation Process
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              We believe great flooring starts with a great installation. Our proven process ensures
+              your LVP floor looks beautiful and performs flawlessly for years to come.
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Consultation & Selection</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We begin with a personalized consultation to understand your needs, style
+                  preferences, and space requirements. We help you select the right LVP product
+                  based on design, durability, and budget.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">
+                  Site Evaluation & Preparation
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Our team evaluates the subfloor to ensure it's clean, level, and ready for
+                  installation. Any necessary preparation is handled upfront to guarantee long-term
+                  performance.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Precision Installation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Using professional-grade tools and techniques, we install each plank with
+                  precision and care. Proper spacing, alignment, and expansion gaps are carefully
+                  maintained for a flawless finish.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                4
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Finishing Touches</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Once installation is complete, we install trim and transitions for a clean,
+                  polished look. The space is thoroughly cleaned and inspected to ensure everything
+                  meets our quality standards.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                5
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">
+                  Final Walkthrough & Care Guidance
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We walk you through your new floor and provide care and maintenance tips so you
+                  can enjoy your LVP with confidence.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Maintenance -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Protect Your Investment
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Care & Maintenance</h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Keeping your Luxury Vinyl Plank flooring looking its best is simple. With just a
+              little routine care, your floors will maintain their beauty and performance for years.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Daily Care</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Sweep or vacuum regularly to remove dirt and debris that could cause minor surface
+                wear.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Routine Cleaning</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Use a damp mop with a manufacturer-approved cleaner. Avoid excessive water or harsh
+                chemicals to protect the finish.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Protect Your Floors</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Place mats at entryways, use felt pads under furniture, and avoid dragging heavy
+                items across the surface.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Handle Spills Promptly</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Although many LVP products are waterproof, cleaning spills quickly helps preserve
+                the floor's appearance.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a
+              href="/services/carpet"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Carpet Flooring</h3>
+              <p class="text-neutral-600 text-sm">
+                Commercial and residential carpet installation with expert precision.
+              </p>
+            </a>
+            <a
+              href="/services/tile"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Tile Flooring</h3>
+              <p class="text-neutral-600 text-sm">
+                Ceramic, porcelain, and natural stone tile installation for homes and businesses.
+              </p>
+            </a>
+            <a
+              href="/services/engineered-hardwood"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Engineered Hardwood</h3>
+              <p class="text-neutral-600 text-sm">
+                Real wood beauty with enhanced stability and performance.
+              </p>
+            </a>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Upgrade Your Space with Confidence</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Luxury Vinyl Plank flooring offers the look you love with the performance you need.
+          Contact us today to schedule your consultation and discover how LVP flooring can transform
+          your home or business.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

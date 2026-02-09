@@ -4,9 +4,22 @@ import { Image } from 'astro:assets';
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
+  { href: '/commercial', label: 'Commercial' },
+  { href: '/residential', label: 'Residential' },
   { href: '/about', label: 'About' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
+];
+
+const serviceLinks = [
+  { href: '/services/carpet', label: 'Carpet Flooring' },
+  { href: '/services/tile', label: 'Tile Flooring' },
+  { href: '/services/luxury-vinyl-plank', label: 'Luxury Vinyl Plank' },
+  { href: '/services/engineered-hardwood', label: 'Engineered Hardwood' },
+  { href: '/services/polished-concrete', label: 'Polished Concrete' },
+  { href: '/services/epoxy', label: 'Epoxy Flooring' },
+  { href: '/services/floor-preparation', label: 'Floor Preparation' },
+  { href: '/services/custom-tile-showers', label: 'Custom Tile Showers' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -27,15 +40,74 @@ const currentPath = Astro.url.pathname;
     </a>
 
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex space-x-8">
+    <div class="hidden md:flex items-center space-x-8">
       {
         navLinks.map((link) => {
           const isActive =
             currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          const isServices = link.href === '/services';
+
+          if (isServices) {
+            return (
+              <div class="relative group flex items-center">
+                <a
+                  href={link.href}
+                  class={`transition-colors font-medium text-sm tracking-wide uppercase inline-flex items-center gap-1 border-b-2 pb-0.5 ${isActive ? 'text-brand-primary border-brand-primary' : 'text-neutral-700 hover:text-brand-primary border-transparent'}`}
+                >
+                  {link.label}
+                  <svg
+                    class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </a>
+
+                {/* Dropdown */}
+                <div
+                  id="services-dropdown"
+                  class="absolute left-1/2 -translate-x-1/2 top-full pt-2 hidden group-hover:block group-focus-within:block"
+                >
+                  <div class="bg-white rounded-lg shadow-lg border border-neutral-100 p-4 w-72">
+                    <div class="grid grid-cols-2 gap-1">
+                      {serviceLinks.map((sLink) => {
+                        const sActive = currentPath === sLink.href;
+                        return (
+                          <a
+                            href={sLink.href}
+                            class={`block px-3 py-2 rounded-md text-sm transition-colors ${sActive ? 'text-brand-primary bg-blue-50 font-medium' : 'text-neutral-600 hover:text-brand-primary hover:bg-neutral-50'}`}
+                          >
+                            {sLink.label}
+                          </a>
+                        );
+                      })}
+                    </div>
+                    <div class="border-t border-neutral-100 mt-3 pt-3">
+                      <a
+                        href="/services"
+                        class="block text-center text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+                      >
+                        View All Services &rarr;
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+
           return (
             <a
               href={link.href}
-              class={`transition-colors font-medium text-sm tracking-wide uppercase ${isActive ? 'text-brand-primary border-b-2 border-brand-primary pb-0.5' : 'text-neutral-700 hover:text-brand-primary'}`}
+              class={`transition-colors font-medium text-sm tracking-wide uppercase border-b-2 pb-0.5 ${isActive ? 'text-brand-primary border-brand-primary' : 'text-neutral-700 hover:text-brand-primary border-transparent'}`}
             >
               {link.label}
             </a>
@@ -50,7 +122,7 @@ const currentPath = Astro.url.pathname;
       class="md:hidden text-2xl text-neutral-700 hover:text-brand-primary"
       aria-label="Toggle menu"
     >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -67,6 +139,56 @@ const currentPath = Astro.url.pathname;
         navLinks.map((link) => {
           const isActive =
             currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          const isServices = link.href === '/services';
+
+          if (isServices) {
+            return (
+              <div>
+                <button
+                  id="mobile-services-toggle"
+                  class={`w-full flex items-center justify-between py-2 px-3 rounded-md text-sm tracking-wide uppercase font-medium transition-colors ${isActive ? 'text-brand-primary bg-blue-50' : 'text-neutral-700 hover:text-brand-primary hover:bg-neutral-50'}`}
+                  aria-expanded="false"
+                >
+                  <span>{link.label}</span>
+                  <svg
+                    id="mobile-services-chevron"
+                    class="w-4 h-4 transition-transform duration-200"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div id="mobile-services-panel" class="hidden pl-4 pb-1 space-y-0.5">
+                  {serviceLinks.map((sLink) => {
+                    const sActive = currentPath === sLink.href;
+                    return (
+                      <a
+                        href={sLink.href}
+                        class={`block py-1.5 px-3 rounded-md text-sm transition-colors ${sActive ? 'text-brand-primary bg-blue-50 font-medium' : 'text-neutral-600 hover:text-brand-primary hover:bg-neutral-50'}`}
+                      >
+                        {sLink.label}
+                      </a>
+                    );
+                  })}
+                  <a
+                    href="/services"
+                    class="block py-1.5 px-3 rounded-md text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+                  >
+                    View All Services &rarr;
+                  </a>
+                </div>
+              </div>
+            );
+          }
+
           return (
             <a
               href={link.href}
@@ -85,18 +207,30 @@ const currentPath = Astro.url.pathname;
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const servicesToggle = document.getElementById('mobile-services-toggle');
+    const servicesPanel = document.getElementById('mobile-services-panel');
+    const servicesChevron = document.getElementById('mobile-services-chevron');
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
       });
 
-      // Close menu when clicking on a link
+      // Close menu when clicking on a nav link (but not the services toggle)
       const menuLinks = mobileMenu.querySelectorAll('a');
       menuLinks.forEach((link) => {
         link.addEventListener('click', () => {
           mobileMenu.classList.add('hidden');
         });
+      });
+    }
+
+    if (servicesToggle && servicesPanel && servicesChevron) {
+      servicesToggle.addEventListener('click', () => {
+        const isOpen = !servicesPanel.classList.contains('hidden');
+        servicesPanel.classList.toggle('hidden');
+        servicesChevron.classList.toggle('rotate-180');
+        servicesToggle.setAttribute('aria-expanded', String(!isOpen));
       });
     }
   });

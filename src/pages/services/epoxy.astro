@@ -1,0 +1,684 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Epoxy Flooring Systems',
+      description:
+        'Epoxy flooring systems in Phoenix. Durable, seamless coatings for garages, warehouses, commercial and industrial spaces.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Epoxy Flooring',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Epoxy Flooring',
+          item: 'https://brooksfloorcovering.com/services/epoxy/',
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'Epoxy Flooring Installation Process',
+      description:
+        'Our proven epoxy installation process ensures long-lasting results through proper preparation and expert application.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Surface Preparation',
+          text: 'We mechanically grind the concrete to remove contaminants, open the pores, and ensure proper adhesion.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Moisture Testing',
+          text: 'We perform professional moisture testing to identify vapor transmission or hydrostatic pressure that could compromise the epoxy system. This step ensures the correct products and mitigation methods are selected for long-term performance.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Concrete Repairs',
+          text: 'Cracks, spalls, and imperfections are repaired to create a smooth, structurally sound surface.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Primer Application',
+          text: 'A high-quality primer is applied to enhance adhesion and prevent moisture-related issues.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Base Coat Application',
+          text: 'The selected epoxy system is applied evenly to create a strong, seamless foundation.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 6,
+          name: 'Design Layer (Optional)',
+          text: 'Decorative elements such as flakes, quartz, or metallic pigments are broadcast or layered for visual impact.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 7,
+          name: 'Protective Top Coat',
+          text: 'A durable top coat is applied to seal the system, enhance durability, and protect against UV exposure, chemicals, and wear.',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Epoxy Flooring Phoenix | Garage, Commercial & Industrial Epoxy Coatings - Brooks Floor Covering"
+  description="Epoxy flooring systems in Phoenix. Durable, seamless coatings for garages, warehouses, commercial and industrial spaces. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+  ogImage="/images/020.jpg"
+>
+  <Navigation />
+
+  <Hero
+    title="Epoxy Flooring Systems"
+    subtitle="High-performance, seamless epoxy flooring for residential, commercial, and industrial spaces across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Epoxy Flooring Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Durable, Seamless Epoxy Floors
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Epoxy flooring is a high-performance, seamless flooring solution that blends durability,
+            functionality, and eye-catching design. Ideal for residential, commercial, and
+            industrial spaces, epoxy floors are built to handle heavy use while delivering a clean,
+            modern, and truly customized look.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            Brooks Floor Covering installs professional epoxy flooring systems throughout Phoenix,
+            Glendale, Scottsdale, Mesa, Chandler, and the entire Valley. Every project starts with a
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+              >free, no-obligation estimate</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Epoxy -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Advantages
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Why Choose Epoxy Floors?
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-8">
+            Epoxy floors are more than just tough — they're smart, stylish, and versatile.
+          </p>
+          <ul class="space-y-4 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                ><strong>Exceptional Durability:</strong> Designed to withstand heavy foot traffic, machinery,
+                impacts, and abrasions.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                ><strong>Seamless & Hygienic:</strong> No grout lines or seams, making cleaning easy and
+                preventing dirt, bacteria, and moisture buildup.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                ><strong>Chemical & Moisture Resistant:</strong> Ideal for garages, warehouses, kitchens,
+                showrooms, basements, aircraft hangars, and industrial spaces.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                ><strong>Slip-Resistant Options:</strong> Textured finishes can be added for enhanced
+                safety.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                ><strong>Low Maintenance:</strong> Simple cleaning with long-lasting performance.</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                ><strong>Aesthetically Pleasing:</strong> Endless color, texture, and finish options for
+                a one-of-a-kind floor.</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Where It Works
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Epoxy Flooring Applications
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Epoxy floors are highly adaptable and commonly used in:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Residential garages</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Commercial showrooms and retail spaces</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Warehouses, aviation facilities, aircraft hangars, and industrial spaces</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Medical and veterinary clinics</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Restaurants and commercial kitchens</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Manufacturing and utility rooms</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              How We Work
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Our Epoxy Installation Process
+            </h2>
+          </div>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-8 text-center">
+            A successful epoxy floor starts with proper preparation and expert installation. Our
+            proven process ensures long-lasting results.
+          </p>
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  1
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Surface Preparation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We mechanically grind the concrete to remove contaminants, open the pores, and
+                  ensure proper adhesion.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  2
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Moisture Testing</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We perform professional moisture testing to identify vapor transmission or
+                  hydrostatic pressure that could compromise the epoxy system. This step ensures the
+                  correct products and mitigation methods are selected for long-term performance.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  3
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Concrete Repairs</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Cracks, spalls, and imperfections are repaired to create a smooth, structurally
+                  sound surface.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  4
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Primer Application</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  A high-quality primer is applied to enhance adhesion and prevent moisture-related
+                  issues.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  5
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Base Coat Application</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  The selected epoxy system is applied evenly to create a strong, seamless
+                  foundation.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  6
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Design Layer (Optional)</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Decorative elements such as flakes, quartz, or metallic pigments are broadcast or
+                  layered for visual impact.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  7
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Protective Top Coat</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  A durable top coat is applied to seal the system, enhance durability, and protect
+                  against UV exposure, chemicals, and wear.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Types of Epoxy Systems -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              System Options
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Types of Epoxy Flooring Systems
+            </h2>
+            <p class="text-neutral-700 leading-relaxed text-lg mt-4">
+              We offer a wide range of epoxy floor systems to match both performance needs and
+              design goals.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-semibold text-brand-dark mb-3">3-Coat Solid Color Epoxy</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                A clean, timeless option featuring a primer, solid color epoxy base coat, and
+                protective top coat. Ideal for garages, workshops, aircraft hangars, and commercial
+                spaces seeking a polished, professional look.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Uniform, modern appearance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Cost-effective and durable</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Easy to maintain</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-semibold text-brand-dark mb-3">Metallic Epoxy Floors</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Metallic epoxy floors create a stunning, three-dimensional appearance with depth and
+                movement. Each floor is completely unique, resembling marble, flowing water, or
+                natural stone.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>One-of-a-kind artistic finish</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>High-end, luxury aesthetic</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Ideal for showrooms, offices, and retail spaces</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-semibold text-brand-dark mb-3">Quartz Epoxy Flooring</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Quartz systems combine colored quartz aggregate with epoxy resin to create a
+                textured, slip-resistant surface.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Excellent slip resistance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Highly durable and moisture resistant</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Ideal for locker rooms, restrooms, kitchens, and pool areas</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-xl font-semibold text-brand-dark mb-3">Flake Epoxy Flooring</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Flake systems broadcast decorative vinyl flakes into the epoxy base coat, creating
+                texture, color variation, and enhanced durability.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Improved slip resistance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Hides dirt and imperfections</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Popular for garages, commercial spaces, and industrial settings</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Coat Options -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Protection
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Epoxy Top Coat Options
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-8">
+            The top coat plays a critical role in protecting your epoxy floor and extending its
+            lifespan.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Urethane Top Coats</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Urethane coatings provide excellent chemical resistance and flexibility, helping the
+                floor resist scratches and wear.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Strong chemical and abrasion resistance</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Flexible and impact tolerant</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Enhances longevity of the epoxy system</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Polyaspartic Top Coats</h3>
+              <p class="text-neutral-700 leading-relaxed mb-4">
+                Polyaspartic coatings are fast-curing, UV-stable, and extremely durable, making them
+                ideal for both indoor and outdoor applications.
+              </p>
+              <ul class="space-y-2 text-neutral-600">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Rapid cure times (often same-day use)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>Superior UV resistance (won't yellow)</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  <span>High gloss and long-lasting protection</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Maintenance -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Aftercare
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Care & Maintenance</h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-8">
+            Epoxy floors are designed for durability and easy upkeep, making them an excellent
+            long-term flooring investment. With proper care, your floor will maintain its appearance
+            and performance for years to come.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Regular Cleaning</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Sweep or dust mop to remove dirt and debris that could cause surface abrasion.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Gentle Washing</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Mop with a mild, non-abrasive cleaner to keep the surface looking its best.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Prompt Spill Cleanup</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                While epoxy resists stains and chemicals, cleaning spills quickly helps preserve the
+                finish.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">
+                Protect High-Traffic Areas
+              </h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Use mats or pads under heavy equipment or frequently moved items to minimize wear.
+              </p>
+            </div>
+          </div>
+          <p class="text-neutral-600 mt-6 italic text-center">
+            Avoid highly acidic or abrasive cleaners that may dull the top coat. Routine maintenance
+            is minimal, but the payoff is a floor that continues to look professional, clean, and
+            high-performing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="/services/polished-concrete"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Polished Concrete</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Matte to high-gloss polished concrete finishes for homes, offices, and commercial
+                spaces.
+              </p>
+            </a>
+            <a
+              href="/services/floor-preparation"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Floor Preparation</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Concrete grinding, leveling, and subfloor prep for lasting flooring installations.
+              </p>
+            </a>
+            <a
+              href="/services/custom-tile-showers"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Custom Tile Showers</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Beautifully crafted custom tile showers designed and installed for your home.
+              </p>
+            </a>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Your Free Estimate</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Epoxy flooring delivers unmatched performance with limitless design possibilities. Contact
+          us today to discover how epoxy flooring can transform your space.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

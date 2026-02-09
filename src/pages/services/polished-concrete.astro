@@ -1,0 +1,530 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Polished Concrete Flooring',
+      description:
+        'Professional polished concrete flooring in Phoenix. Matte to high-gloss finishes for homes, offices, and commercial spaces.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Polished Concrete Flooring',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Polished Concrete',
+          item: 'https://brooksfloorcovering.com/services/polished-concrete/',
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'Polished Concrete Flooring Process',
+      description:
+        'Our professional polished concrete process transforms existing concrete slabs into durable, beautiful finished floors.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Surface Preparation',
+          text: 'The existing concrete slab is inspected and prepared. Any coatings, adhesives, or imperfections are removed to create a clean, even base.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Grinding',
+          text: 'Industrial diamond grinders are used to progressively grind the surface. This step smooths the concrete and exposes the desired level of aggregate.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Densifying',
+          text: 'A penetrating concrete densifier is applied to harden the surface, increasing strength, durability, and resistance to dusting.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Polishing',
+          text: 'Finer diamond tooling is used in multiple passes to achieve the selected sheen level, from a subtle matte finish to a high-gloss polish.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Sealing & Protection',
+          text: 'A final protective sealer is applied to enhance stain resistance and ensure long-lasting performance.',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Polished Concrete Flooring Phoenix | Concrete Polishing & Finishing - Brooks Floor Covering"
+  description="Professional polished concrete flooring in Phoenix. Matte to high-gloss finishes for homes, offices, and commercial spaces. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+  ogImage="/images/018.jpg"
+>
+  <Navigation />
+
+  <Hero
+    title="Polished Concrete Flooring"
+    subtitle="Modern, high-performance polished concrete floors for homes, offices, and commercial spaces across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Polished Concrete Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Durable, Beautiful Polished Concrete Floors
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+            Polished concrete is a modern, high-performance flooring solution that blends durability
+            with refined design. Once reserved mainly for industrial spaces, polished concrete has
+            become a sought-after option for homes, retail spaces, offices, and commercial
+            facilities thanks to its versatility, longevity, and striking visual appeal.
+          </p>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            Brooks Floor Covering provides expert polished concrete services for residential and
+            commercial clients across Phoenix, Glendale, Scottsdale, Mesa, Chandler, and the entire
+            Valley. Every project starts with a
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+              >free, no-obligation estimate</a
+            >.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Polished Concrete -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Advantages
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Why Choose Polished Concrete?
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Built to Last</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Polished concrete is exceptionally durable. It resists heavy foot traffic, impacts,
+                and wear far better than many traditional floor coverings. When properly installed
+                and maintained, it can last for decades without the need for replacement.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Low Maintenance</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Unlike carpet, tile, or timber, polished concrete requires minimal upkeep. There's
+                no waxing, sealing, or frequent refinishing — just routine cleaning to keep it
+                looking sharp.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">Cost-Effective Over Time</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Because the existing concrete slab is used as the finished surface, polished
+                concrete eliminates the need for additional floor coverings. Its long lifespan and
+                low maintenance costs make it a smart long-term investment.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-3">
+                Sustainable & Eco-Friendly
+              </h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Polished concrete is an environmentally responsible choice. It uses the existing
+                slab, reduces material waste, and improves light reflectivity — helping to lower
+                lighting and energy costs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Functional Benefits -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Performance
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Functional Benefits</h2>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                >Slip-resistant surface suitable for residential and commercial environments</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Highly resistant to moisture, stains, and allergens</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span
+                >Ideal for high-traffic areas such as showrooms, warehouses, retail spaces, and
+                modern homes</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Compatible with underfloor heating systems</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aesthetic Appeal & Design Flexibility -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Design Options
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Aesthetic Appeal & Design Flexibility
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Polished concrete offers a clean, contemporary look that can be tailored to suit
+            virtually any style. From sleek and minimalist to bold and industrial, each floor is
+            completely unique.
+          </p>
+          <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+            <h3 class="text-lg font-semibold text-neutral-800 mb-4">Design options include:</h3>
+            <ul class="space-y-3 text-neutral-700">
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+                <span><strong>Levels of sheen:</strong> matte, satin, or high-gloss finishes</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+                <span><strong>Aggregate exposure:</strong> minimal to full stone exposure</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+                <span
+                  ><strong>Coloring and staining</strong> for warm, natural tones or dramatic modern finishes</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+                <span
+                  ><strong>Decorative saw cuts or patterns</strong> to mimic tiles or create custom designs</span
+                >
+              </li>
+            </ul>
+            <p class="text-neutral-600 mt-4 italic">
+              No two polished concrete floors are ever the same — natural variations in the concrete
+              ensure a one-of-a-kind result.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              How We Work
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Our Polished Concrete Process
+            </h2>
+          </div>
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  1
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Surface Preparation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  The existing concrete slab is inspected and prepared. Any coatings, adhesives, or
+                  imperfections are removed to create a clean, even base.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  2
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Grinding</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Industrial diamond grinders are used to progressively grind the surface. This step
+                  smooths the concrete and exposes the desired level of aggregate.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  3
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Densifying</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  A penetrating concrete densifier is applied to harden the surface, increasing
+                  strength, durability, and resistance to dusting.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  4
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Polishing</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Finer diamond tooling is used in multiple passes to achieve the selected sheen
+                  level, from a subtle matte finish to a high-gloss polish.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+                >
+                  5
+                </div>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-neutral-800 mb-2">Sealing & Protection</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  A final protective sealer is applied to enhance stain resistance and ensure
+                  long-lasting performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ideal Applications -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Where It Works
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Ideal Applications</h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            Polished concrete is suitable for a wide range of environments:
+          </p>
+          <ul class="space-y-3 text-neutral-700 text-lg">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Residential homes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Retail and hospitality spaces</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Offices and commercial buildings</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Warehouses and industrial facilities</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-1">&#10003;</span>
+              <span>Garages and workshops</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Maintenance -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Aftercare
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">Care & Maintenance</h2>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-8">
+            Polished concrete is designed for easy upkeep, making it an excellent choice for busy
+            homes and high-traffic commercial spaces. With simple care, your floor will maintain its
+            appearance and performance for many years.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Daily Cleaning</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Dust mop or sweep regularly to remove dirt and grit that can dull the surface over
+                time.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Routine Washing</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Use a pH-neutral cleaner with a microfiber mop to keep the floor looking its best.
+                Avoid harsh chemicals or acidic products, as they can damage the finish.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Preventative Protection</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Place mats at entrances to reduce tracked-in debris, and use protective pads under
+                heavy furniture or equipment to prevent scratching.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-neutral-800 mb-2">Long-Term Performance</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                While polished concrete is extremely durable, periodic professional maintenance can
+                help restore sheen in high-traffic areas and extend the life of the floor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <a
+              href="/services/epoxy"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Epoxy Flooring</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Durable, seamless epoxy coatings for garages, warehouses, and commercial spaces.
+              </p>
+            </a>
+            <a
+              href="/services/floor-preparation"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Floor Preparation</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Concrete grinding, leveling, and subfloor prep for lasting flooring installations.
+              </p>
+            </a>
+            <a
+              href="/services/custom-tile-showers"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Custom Tile Showers</h3>
+              <p class="text-neutral-600 text-sm leading-relaxed">
+                Beautifully crafted custom tile showers designed and installed for your home.
+              </p>
+            </a>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get Your Free Estimate</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Polished concrete is more than just a floor — it's a design feature. Contact us today to
+          discuss how polished concrete can transform your space.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

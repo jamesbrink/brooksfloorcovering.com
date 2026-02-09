@@ -180,7 +180,7 @@ const breadcrumbJsonLd = {
       '@type': 'ListItem',
       position: 2,
       name: 'Gallery',
-      item: 'https://brooksfloorcovering.com/gallery',
+      item: 'https://brooksfloorcovering.com/gallery/',
     },
   ],
 };
@@ -190,6 +190,7 @@ const breadcrumbJsonLd = {
   title="Flooring Project Gallery | Phoenix, AZ - Tile, Carpet, Concrete"
   description="Browse our portfolio of completed flooring projects throughout the Phoenix Valley. Hardwood, tile, carpet, vinyl, concrete, and custom installations."
   jsonLd={breadcrumbJsonLd}
+  ogImage="/images/006.jpg"
 >
   <Navigation />
 
@@ -235,7 +236,7 @@ const breadcrumbJsonLd = {
                   width={400}
                   height={400}
                   inferSize
-                  loading={index < 12 ? 'eager' : 'lazy'}
+                  loading={index < 8 ? 'eager' : 'lazy'}
                 />
                 <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <p class="text-white text-sm font-semibold leading-tight">{image.title}</p>

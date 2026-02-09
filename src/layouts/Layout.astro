@@ -5,18 +5,20 @@ interface Props {
   title?: string;
   description?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  ogImage?: string;
 }
 
 const {
   title = 'Brooks Floor Covering - Professional Flooring Services in Phoenix',
-  description = 'Industry-leading flooring & concrete services in the Greater Phoenix Area since 1980. Family-owned, trusted, professional.',
+  description = 'Industry-leading flooring & concrete services in the Greater Phoenix Area since 1994. Family-owned, trusted, professional.',
   jsonLd,
+  ogImage: ogImageProp,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const jsonLdStrings = jsonLdItems.map((item) => JSON.stringify(item).replace(/</g, '\\u003c'));
-const ogImage = new URL('/images/home-image-1.jpg', Astro.site).toString();
+const ogImage = new URL(ogImageProp || '/images/home-image-1.jpg', Astro.site).toString();
 ---
 
 <!doctype html>

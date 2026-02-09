@@ -1,0 +1,604 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Footer from '../../components/Footer.astro';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Engineered Hardwood Flooring Installation',
+      description:
+        'Engineered hardwood and solid wood floor installation in Phoenix. Oak, maple, hickory, walnut and more.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'State',
+        name: 'Arizona',
+      },
+      serviceType: 'Engineered Hardwood Flooring Installation',
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Services',
+          item: 'https://brooksfloorcovering.com/services/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Engineered Hardwood',
+          item: 'https://brooksfloorcovering.com/services/engineered-hardwood/',
+        },
+      ],
+    },
+    {
+      '@type': 'HowTo',
+      name: 'Wood Flooring Installation Process',
+      description:
+        'Our detailed wood flooring installation process ensures beauty, performance, and longevity.',
+      step: [
+        {
+          '@type': 'HowToStep',
+          position: 1,
+          name: 'Consultation & Selection',
+          text: 'We help you choose the right wood type, species, finish, and installation method based on your space and lifestyle.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 2,
+          name: 'Subfloor Preparation',
+          text: 'The subfloor is inspected, cleaned, leveled, and moisture-tested to ensure proper installation.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 3,
+          name: 'Acclimation',
+          text: "Wood flooring is allowed to adjust to the room's environment before installation to prevent warping and gaps.",
+        },
+        {
+          '@type': 'HowToStep',
+          position: 4,
+          name: 'Installation',
+          text: 'The floor is installed using the appropriate method for your product and subfloor — nail-down, glue-down, or floating installation.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 5,
+          name: 'Finishing (if applicable)',
+          text: 'Unfinished floors are sanded, stained, and sealed on-site for a custom look.',
+        },
+        {
+          '@type': 'HowToStep',
+          position: 6,
+          name: 'Final Inspection & Care Guidance',
+          text: 'We ensure everything meets our standards and provide maintenance tips to protect your investment.',
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout
+  title="Engineered Hardwood Flooring Phoenix | Wood Floor Installation - Brooks Floor Covering"
+  description="Engineered hardwood and solid wood floor installation in Phoenix. Oak, maple, hickory, walnut and more. Free estimates — call (623) 688-8422."
+  jsonLd={jsonLd}
+  ogImage="/images/home-image-2.jpg"
+>
+  <Navigation />
+
+  <Hero
+    title="Engineered & Hardwood Flooring"
+    subtitle="Natural warmth, character, and lasting value for homes and commercial interiors across the Greater Phoenix Area."
+    compact={true}
+  />
+
+  <main>
+    <!-- Introduction -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Wood Flooring Solutions
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+            Professional Wood Floor Installation
+          </h2>
+          <p class="text-neutral-700 leading-relaxed text-lg">
+            Wood flooring brings warmth, character, and lasting value to any space. Whether you
+            choose solid hardwood or engineered wood, these floors combine natural beauty with
+            durability and performance — making them a timeless choice for homes and commercial
+            interiors alike.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Wood -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Benefits
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Why Choose Wood Flooring?
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">
+                Timeless Beauty & Unique Character
+              </h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                No two wood floors are exactly alike. Natural grain patterns, color variations, and
+                knots give every floor its own personality. From rustic charm to sleek modern
+                elegance, wood flooring adapts beautifully to any design style.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Long-Lasting Durability</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                High-quality wood floors are built to last. With proper care, hardwood can last for
+                decades and can often be refinished multiple times, extending its life even further.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Increased Home Value</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Wood flooring is a sought-after feature that adds real value to your property. It's
+                a smart investment that enhances both aesthetics and resale appeal.
+              </p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold mb-3 text-neutral-800">Comfort & Performance</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Wood floors feel solid underfoot, improve indoor air quality by reducing allergens,
+                and work well in a variety of spaces. Engineered wood, in particular, offers
+                enhanced stability in areas with fluctuating humidity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solid vs Engineered -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Know the Difference
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Solid Hardwood vs. Engineered Wood
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-4">Solid Hardwood Flooring</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Solid hardwood is made from a single piece of wood, offering unmatched authenticity
+                and longevity. It can be sanded and refinished multiple times, making it ideal for
+                long-term use in living rooms, bedrooms, and dining areas.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-4">Engineered Wood Flooring</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Engineered wood consists of a real wood veneer layered over a high-performance
+                plywood core. This construction provides superior stability, making it suitable for
+                basements, concrete subfloors, and areas with moisture or temperature changes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Our Process
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Wood Flooring Installation Process
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Installing a wood floor is a detailed process that ensures beauty, performance, and
+              longevity.
+            </p>
+          </div>
+
+          <div class="space-y-8">
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                1
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Consultation & Selection</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We help you choose the right wood type, species, finish, and installation method
+                  based on your space and lifestyle.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                2
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Subfloor Preparation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  The subfloor is inspected, cleaned, leveled, and moisture-tested to ensure proper
+                  installation.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                3
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Acclimation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Wood flooring is allowed to adjust to the room's environment before installation
+                  to prevent warping and gaps.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                4
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Installation</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  The floor is installed using the appropriate method for your product and subfloor
+                  — nail-down, glue-down, or floating installation.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                5
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">Finishing (if applicable)</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  Unfinished floors are sanded, stained, and sealed on-site for a custom look.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-6">
+              <div
+                class="flex-shrink-0 w-10 h-10 bg-brand-primary text-white rounded-full flex items-center justify-center font-bold text-lg"
+              >
+                6
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-brand-dark mb-2">
+                  Final Inspection & Care Guidance
+                </h3>
+                <p class="text-neutral-700 leading-relaxed">
+                  We ensure everything meets our standards and provide maintenance tips to protect
+                  your investment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation Methods -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Installation Methods
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Wood Flooring Installation Methods
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Nail-Down Installation</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Commonly used for solid hardwood, this method secures boards directly to a plywood
+                subfloor using nails or staples. It creates a strong, traditional installation with
+                a solid feel underfoot.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Glue-Down Installation</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Ideal for engineered wood and concrete subfloors, glue-down installation provides
+                excellent stability and reduces movement. This method is often used in commercial
+                spaces or areas with high foot traffic.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-6 border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Floating Installation</h3>
+              <p class="text-neutral-700 leading-relaxed text-sm">
+                Floating floors are not attached to the subfloor but instead lock together over an
+                underlayment. This method is quick, versatile, and works well for engineered wood
+                over concrete or radiant heat systems.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wood Species -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-6xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Species & Options
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Wood Species Options</h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Each wood species offers unique characteristics in color, grain, and hardness.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Oak (Red & White)</h3>
+              <p class="text-neutral-600 text-sm">Classic, durable, and versatile</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Maple</h3>
+              <p class="text-neutral-600 text-sm">Smooth grain with a modern, clean look</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Hickory</h3>
+              <p class="text-neutral-600 text-sm">Bold character with dramatic color variation</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Walnut</h3>
+              <p class="text-neutral-600 text-sm">Rich, dark tones with refined elegance</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Cherry</h3>
+              <p class="text-neutral-600 text-sm">Warm hues that deepen beautifully over time</p>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Exotic Woods</h3>
+              <p class="text-neutral-600 text-sm">
+                Distinctive patterns and colors for a truly unique floor
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prefinished vs Unfinished + Finishing Options -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Finishing
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Prefinished vs. Unfinished Wood Floors
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-4">Prefinished Wood Flooring</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Prefinished floors are factory-finished for consistency and durability. They offer
+                faster installation, minimal disruption, and a ready-to-use surface.
+              </p>
+            </div>
+            <div class="bg-neutral-50 rounded-lg p-8 border border-neutral-200">
+              <h3 class="text-xl font-bold text-brand-dark mb-4">Unfinished Wood Flooring</h3>
+              <p class="text-neutral-700 leading-relaxed">
+                Unfinished floors are sanded and finished on-site, allowing for complete
+                customization of stain color and sheen. This option delivers a seamless, custom
+                look.
+              </p>
+            </div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-brand-dark mb-6">Floor Finishing Options</h3>
+          <p class="text-neutral-700 leading-relaxed mb-6">
+            Finishing protects your floor while enhancing its natural beauty.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+              <span class="text-neutral-700"
+                ><strong>Staining</strong> — Custom colors to match your design vision</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+              <span class="text-neutral-700"
+                ><strong>Protective Coatings</strong> — Durable finishes that resist wear and moisture</span
+              >
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+              <span class="text-neutral-700"
+                ><strong>Sheen Levels</strong> — Matte, satin, semi-gloss, or high-gloss for the perfect
+                look</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Care & Maintenance -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Protect Your Investment
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Wood Floor Maintenance & Care
+            </h2>
+            <p class="text-neutral-700 leading-relaxed mt-4 max-w-2xl mx-auto">
+              Proper maintenance keeps wood floors looking beautiful for decades.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Everyday Care</h3>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Sweep or vacuum regularly to remove dirt and grit
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Use a damp (not wet) microfiber mop with a wood-floor-approved cleaner
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Clean spills promptly to prevent moisture damage
+                </li>
+              </ul>
+            </div>
+            <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+              <h3 class="text-lg font-semibold text-brand-dark mb-3">Protecting Your Floors</h3>
+              <ul class="space-y-2 text-sm text-neutral-700">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Use felt pads under furniture legs
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Place mats at entrances to trap dirt and moisture
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-accent font-bold mt-0.5">&#10003;</span>
+                  Avoid walking on wood floors with cleats or high heels
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-8">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Explore More
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Related Services</h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a
+              href="/services/carpet"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Carpet Flooring</h3>
+              <p class="text-neutral-600 text-sm">
+                Commercial and residential carpet installation with expert precision.
+              </p>
+            </a>
+            <a
+              href="/services/tile"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Tile Flooring</h3>
+              <p class="text-neutral-600 text-sm">
+                Ceramic, porcelain, and natural stone tile installation for homes and businesses.
+              </p>
+            </a>
+            <a
+              href="/services/luxury-vinyl-plank"
+              class="block bg-white rounded-lg p-6 shadow-sm border border-neutral-200 hover:shadow-md transition-shadow"
+            >
+              <h3 class="text-lg font-semibold text-brand-dark mb-2">Luxury Vinyl Plank</h3>
+              <p class="text-neutral-600 text-sm">
+                Waterproof, scratch-resistant LVP flooring for modern living.
+              </p>
+            </a>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-sm font-medium text-brand-primary hover:text-brand-primary-dark transition-colors"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">A Natural Choice for Lasting Style</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Engineered and hardwood floors offer unmatched beauty, performance, and individuality.
+          Contact us today to explore your options and bring the warmth and elegance of wood
+          flooring into your space.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
