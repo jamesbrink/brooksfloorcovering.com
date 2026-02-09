@@ -166,7 +166,7 @@ Edit the review cards in `src/pages/about.astro`. Images are in `public/images/r
 Current contact information (update in multiple places):
 
 - Phone: (623) 688-8422
-- Email: <info@brooksfloorcovering.com>
+- Email: <services@brooksfloorcovering.com>
 - ROC: #226840
 
 **Where to update:**
@@ -257,7 +257,6 @@ Fully permissive project settings are checked in at `.claude/settings.json`. All
 ## Notes for AI Assistants
 
 - **Dev server:** Always run with `--host 0.0.0.0` for remote access
-- **Hostname:** Use `bender` instead of `localhost` for links
 - **Formatting:** Run `bun run format` after edits
 - **Testing:** Check mobile responsiveness
 - **Images:** Verify images load before committing

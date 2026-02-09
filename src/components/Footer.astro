@@ -102,7 +102,10 @@ const serviceAreaCities = [
           {
             serviceAreaCities.map((city) => (
               <li>
-                <a href="/service-areas" class="hover:text-brand-accent transition-colors">
+                <a
+                  href={`/service-areas#${city.toLowerCase().replace(/\s+/g, '-')}`}
+                  class="hover:text-brand-accent transition-colors"
+                >
                   {city}
                 </a>
               </li>
@@ -124,8 +127,8 @@ const serviceAreaCities = [
           <p>
             <span aria-hidden="true">📧</span>
             <a
-              href="mailto:info@brooksfloorcovering.com"
-              class="hover:text-brand-accent transition-colors">info@brooksfloorcovering.com</a
+              href="mailto:services@brooksfloorcovering.com"
+              class="hover:text-brand-accent transition-colors">services@brooksfloorcovering.com</a
             >
           </p>
           <p><span aria-hidden="true">📍</span> Serving Greater Phoenix Area</p>
