@@ -138,12 +138,11 @@ This is separate from `bun run check` and `bun run audit:deps`.
 
 ### Adding Gallery Images
 
-1. Add images to `public/images/` as `001.jpg`, `002.jpg`, etc.
-2. Update the count in `gallery.astro`:
-
-   ```ts
-   const galleryImages = Array.from({ length: 31 }, ...);
-   ```
+1. Add images to `public/images/` using the naming convention: `{category}-{descriptive-slug}.jpg`
+   - **Categories:** `tile-`, `carpet-`, `polished-concrete-`, `epoxy-`, `concrete-overlay-`, `hero-`, `site-`
+   - **Example:** `tile-custom-shower-natural-stone.jpg`, `epoxy-metallic-retail-storefront.jpg`
+2. Add a new entry to the `galleryImages` array in `gallery.astro` with `src`, `title`, and `description`
+3. Update any page gallery previews (e.g., `residential.astro`, `commercial.astro`) as needed
 
 ### Updating Services
 

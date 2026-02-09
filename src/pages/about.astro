@@ -24,45 +24,45 @@ const trustedOrgs = [
 const flooringManufacturers = {
   title: 'Flooring Manufacturers & Distributors',
   logos: [
-    { name: 'Arizona Tile', file: 'arizona-tile.png', existing: true },
-    { name: 'Dal-Tile', file: 'daltile.png', existing: true },
-    { name: 'Bedrosians', file: 'bedrosians.png', existing: true },
-    { name: 'Cactus Tile', file: 'cactus-tile.png', existing: true },
-    { name: 'The Tile Shop', file: 'tile-shop.png', existing: true },
-    { name: 'Shaw', file: 'shaw.png', existing: true },
-    { name: 'Mohawk', file: 'mohawk.png', existing: true },
-    { name: 'Emser', file: 'emser.png', existing: true },
-    { name: 'QDI', file: 'qdi.png', existing: true },
-    { name: 'Galleher', file: 'galleher.png', existing: true },
-    { name: 'Tri-West', file: 'tri-west.png', existing: true },
+    { name: 'Arizona Tile', file: 'arizona-tile.png' },
+    { name: 'Dal-Tile', file: 'daltile.png' },
+    { name: 'Bedrosians', file: 'bedrosians.png' },
+    { name: 'Cactus Tile', file: 'cactus-tile.png' },
+    { name: 'The Tile Shop', file: 'tile-shop.png' },
+    { name: 'Shaw', file: 'shaw.png' },
+    { name: 'Mohawk', file: 'mohawk.png' },
+    { name: 'Emser', file: 'emser.png' },
+    { name: 'QDI', file: 'qdi.png' },
+    { name: 'Galleher', file: 'galleher.png' },
+    { name: 'Tri-West', file: 'tri-west.png' },
   ],
 };
 
 const installationSystems = {
   title: 'Professional Installation Systems',
   logos: [
-    { name: 'Schluter', file: 'schluter.png', existing: true },
-    { name: 'Laticrete', file: 'laticrete.png', existing: true },
-    { name: 'MAPEI', file: 'mapei.png', existing: true },
-    { name: 'Custom Building Products', file: 'custom-building-products.png', existing: true },
+    { name: 'Schluter', file: 'schluter.png' },
+    { name: 'Laticrete', file: 'laticrete.png' },
+    { name: 'MAPEI', file: 'mapei.png' },
+    { name: 'Custom Building Products', file: 'custom-building-products.png' },
   ],
 };
 
 const floorPreparation = {
   title: 'Floor Preparation & Moisture Mitigation',
   logos: [
-    { name: 'UZIN', file: 'uzin.png', existing: true },
-    { name: 'Euclid', file: 'euclid.png', existing: true },
+    { name: 'UZIN', file: 'uzin.png' },
+    { name: 'Euclid', file: 'euclid.png' },
   ],
 };
 
 const concreteCoatings = {
   title: 'Concrete Coatings',
   logos: [
-    { name: 'CPS', file: 'cps.png', existing: true },
-    { name: 'APF', file: 'apf.png', existing: true },
-    { name: 'Ameripolish', file: 'ameripolish.png', existing: true },
-    { name: 'Hi-Tech', file: 'hi-tech.png', existing: true },
+    { name: 'CPS', file: 'cps.png' },
+    { name: 'APF', file: 'apf.png' },
+    { name: 'Ameripolish', file: 'ameripolish.png' },
+    { name: 'Hi-Tech', file: 'hi-tech.png' },
   ],
 };
 
@@ -142,7 +142,7 @@ const breadcrumbJsonLd = {
   title="About Brooks Floor Covering | 30+ Years in Phoenix, AZ"
   description="Learn about Brooks Floor Covering — a family-owned flooring company with 30+ years of experience serving the Greater Phoenix Area. Licensed, bonded, insured — ROC #226840."
   jsonLd={[reviewsJsonLd, breadcrumbJsonLd]}
-  ogImage="/images/home-image-2.jpg"
+  ogImage="/images/site-brooks-team-flooring-project.jpg"
 >
   <Navigation />
 
@@ -159,7 +159,7 @@ const breadcrumbJsonLd = {
         <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
           <div class="md:w-1/2">
             <Image
-              src="/images/home-image-2.jpg"
+              src="/images/site-brooks-team-flooring-project.jpg"
               alt="Brooks Floor Covering team at work on a Phoenix flooring project"
               class="rounded-lg shadow-lg w-full"
               width={960}
@@ -261,26 +261,17 @@ const breadcrumbJsonLd = {
                 {category.title}
               </h3>
               <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto">
-                {category.logos.map((logo) =>
-                  logo.existing ? (
-                    <Image
-                      src={`/images/${logo.file}`}
-                      alt={logo.name}
-                      class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
-                      width={128}
-                      height={64}
-                      inferSize
-                      loading="lazy"
-                    />
-                  ) : (
-                    <img
-                      src={`/images/${logo.file}`}
-                      alt={logo.name}
-                      class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
-                      loading="lazy"
-                    />
-                  )
-                )}
+                {category.logos.map((logo) => (
+                  <Image
+                    src={`/images/${logo.file}`}
+                    alt={logo.name}
+                    class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                    width={128}
+                    height={64}
+                    inferSize
+                    loading="lazy"
+                  />
+                ))}
               </div>
             </div>
           ))

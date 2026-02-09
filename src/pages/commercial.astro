@@ -68,32 +68,32 @@ const trustedOrgs = [
 
 const galleryPreview = [
   {
-    src: '/images/017.jpg',
+    src: '/images/polished-concrete-warehouse-after.jpg',
     title: 'Warehouse After Polishing',
     description: 'Same warehouse with mirror-finish polished concrete — night and day difference',
   },
   {
-    src: '/images/018.jpg',
+    src: '/images/polished-concrete-commercial-highgloss.jpg',
     title: 'Commercial Polished Concrete',
     description: 'High-gloss polished concrete in a commercial building with reflective finish',
   },
   {
-    src: '/images/019.jpg',
+    src: '/images/polished-concrete-aircraft-hangar.jpg',
     title: 'Aircraft Hangar Floor',
     description: 'King Air 360 sitting on a pristine polished hangar floor',
   },
   {
-    src: '/images/020.jpg',
+    src: '/images/epoxy-metallic-retail-storefront.jpg',
     title: 'Metallic Epoxy Floor',
     description: 'Stunning dark metallic epoxy with swirl pattern in a retail storefront',
   },
   {
-    src: '/images/024.jpg',
+    src: '/images/polished-concrete-restaurant-kitchen.jpg',
     title: 'Restaurant Polished Concrete',
     description: 'Polished concrete flooring in a restaurant kitchen and service area',
   },
   {
-    src: '/images/022.jpg',
+    src: '/images/epoxy-hangar-gray-coating.jpg',
     title: 'Hangar Epoxy Coating',
     description: 'Light gray epoxy coating in a large hangar with industrial roll-up doors',
   },
@@ -141,7 +141,7 @@ const commercialJsonLd = {
   title="Commercial Flooring Phoenix | Office, Retail & Industrial Flooring - Brooks Floor Covering"
   description="Commercial flooring services in Phoenix. Carpet tile, LVP, epoxy, polished concrete for offices, retail, restaurants, and industrial spaces. Free estimates — call (623) 688-8422."
   jsonLd={commercialJsonLd}
-  ogImage="/images/024.jpg"
+  ogImage="/images/polished-concrete-restaurant-kitchen.jpg"
 >
   <Navigation />
 
@@ -245,12 +245,13 @@ const commercialJsonLd = {
           {
             trustedOrgs.map((org) => (
               <div class="flex items-center justify-center p-4">
-                <img
+                <Image
                   src={org.logo}
                   alt={`${org.name} logo`}
                   class="w-32 h-auto max-h-16 object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
-                  width="128"
-                  height="64"
+                  width={128}
+                  height={64}
+                  inferSize
                   loading="lazy"
                 />
               </div>
