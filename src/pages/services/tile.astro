@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
 
 const jsonLd = {
@@ -142,6 +143,14 @@ const jsonLd = {
     title="Tile Flooring"
     subtitle="Timeless, durable, and endlessly versatile tile flooring for homes and businesses across the Greater Phoenix Area."
     compact={true}
+  />
+
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Tile Flooring' },
+    ]}
   />
 
   <main>

@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
 
 const jsonLd = {
@@ -148,6 +149,14 @@ const jsonLd = {
     title="Epoxy Flooring Systems"
     subtitle="High-performance, seamless epoxy flooring for residential, commercial, and industrial spaces across the Greater Phoenix Area."
     compact={true}
+  />
+
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Epoxy Flooring' },
+    ]}
   />
 
   <main>
