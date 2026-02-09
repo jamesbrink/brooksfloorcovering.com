@@ -1,0 +1,15 @@
+export const trustedOrgs = [
+  { name: 'Walmart', logo: '/images/clients/walmart.png' },
+  { name: 'Dexcom', logo: '/images/clients/dexcom.png' },
+  { name: 'Luke Air Force Base', logo: '/images/clients/luke-afb.png' },
+  { name: 'MassMutual', logo: '/images/clients/massmutual.png' },
+  { name: 'Honeywell', logo: '/images/clients/honeywell.png' },
+  { name: 'FedEx', logo: '/images/clients/fedex.png' },
+  { name: 'Arizona State University', logo: '/images/clients/asu.png' },
+  { name: 'Mesa Gateway Airport', logo: '/images/clients/mesa-gateway.png' },
+  { name: 'Din Tai Fung', logo: '/images/clients/din-tai-fung.png' },
+  { name: 'Chipotle', logo: '/images/clients/chipotle.png' },
+  { name: 'AutoZone', logo: '/images/clients/autozone.png' },
+  { name: 'The Ritz-Carlton', logo: '/images/clients/ritz-carlton.png' },
+  { name: 'Hilton Phoenix Resort at the Peak', logo: '/images/clients/point-hilton.png' },
+];

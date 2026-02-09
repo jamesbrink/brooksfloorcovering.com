@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import { serviceLinks } from '../data/navigation';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -10,17 +11,6 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
-];
-
-const serviceLinks = [
-  { href: '/services/carpet', label: 'Carpet Flooring' },
-  { href: '/services/tile', label: 'Tile Flooring' },
-  { href: '/services/luxury-vinyl-plank', label: 'Luxury Vinyl Plank' },
-  { href: '/services/engineered-hardwood', label: 'Engineered Hardwood' },
-  { href: '/services/polished-concrete', label: 'Polished Concrete' },
-  { href: '/services/epoxy', label: 'Epoxy Flooring' },
-  { href: '/services/floor-preparation', label: 'Floor Preparation' },
-  { href: '/services/custom-tile-showers', label: 'Custom Tile Showers' },
 ];
 
 const currentPath = Astro.url.pathname;
