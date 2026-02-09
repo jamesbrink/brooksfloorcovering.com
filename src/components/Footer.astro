@@ -1,10 +1,36 @@
 ---
 const currentYear = new Date().getFullYear();
+
+const serviceLinks = [
+  { href: '/services/carpet', label: 'Carpet Flooring' },
+  { href: '/services/tile', label: 'Tile Flooring' },
+  { href: '/services/luxury-vinyl-plank', label: 'Luxury Vinyl Plank' },
+  { href: '/services/engineered-hardwood', label: 'Engineered Hardwood' },
+  { href: '/services/polished-concrete', label: 'Polished Concrete' },
+  { href: '/services/epoxy', label: 'Epoxy Flooring' },
+  { href: '/services/floor-preparation', label: 'Floor Preparation' },
+  { href: '/services/custom-tile-showers', label: 'Custom Tile Showers' },
+];
+
+const serviceAreaCities = [
+  'Phoenix',
+  'Scottsdale',
+  'Mesa',
+  'Chandler',
+  'Tempe',
+  'Gilbert',
+  'Glendale',
+  'Peoria',
+  'Surprise',
+  'Goodyear',
+  'Avondale',
+  'Buckeye',
+];
 ---
 
 <footer class="bg-slate-900 text-white py-12">
   <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
       <!-- Company Info -->
       <div>
         <h3 class="text-xl font-bold mb-4 font-display">Brooks Floor Covering</h3>
@@ -45,6 +71,49 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
+      <!-- Services -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 font-display">Services</h3>
+        <ul class="space-y-2 text-neutral-400">
+          {
+            serviceLinks.map((link) => (
+              <li>
+                <a href={link.href} class="hover:text-brand-accent transition-colors">
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
+          <li>
+            <a
+              href="/services"
+              class="text-brand-accent hover:text-white transition-colors font-medium"
+            >
+              All Services &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Service Areas -->
+      <div>
+        <h3 class="text-xl font-bold mb-4 font-display">Service Areas</h3>
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-2 text-neutral-400">
+          {
+            serviceAreaCities.map((city) => (
+              <li>
+                <a
+                  href={`/service-areas#${city.toLowerCase().replace(/\s+/g, '-')}`}
+                  class="hover:text-brand-accent transition-colors"
+                >
+                  {city}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
       <!-- Contact Info -->
       <div>
         <h3 class="text-xl font-bold mb-4 font-display">Contact Us</h3>
@@ -58,29 +127,17 @@ const currentYear = new Date().getFullYear();
           <p>
             <span aria-hidden="true">📧</span>
             <a
-              href="mailto:info@brooksfloorcovering.com"
-              class="hover:text-brand-accent transition-colors">info@brooksfloorcovering.com</a
+              href="mailto:services@brooksfloorcovering.com"
+              class="hover:text-brand-accent transition-colors">services@brooksfloorcovering.com</a
             >
           </p>
           <p><span aria-hidden="true">📍</span> Serving Greater Phoenix Area</p>
           <p><span aria-hidden="true">🔒</span> ROC #226840</p>
         </address>
-      </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-xl font-bold mb-4 font-display">Quick Links</h3>
-        <ul class="space-y-2 text-neutral-400">
-          <li>
-            <a href="/services" class="hover:text-brand-accent transition-colors">Services</a>
-          </li>
+        <ul class="mt-4 space-y-2 text-neutral-400">
           <li><a href="/about" class="hover:text-brand-accent transition-colors">About</a></li>
-          <li>
-            <a href="/gallery" class="hover:text-brand-accent transition-colors">Gallery</a>
-          </li>
-          <li>
-            <a href="/contact" class="hover:text-brand-accent transition-colors">Contact</a>
-          </li>
+          <li><a href="/gallery" class="hover:text-brand-accent transition-colors">Gallery</a></li>
+          <li><a href="/contact" class="hover:text-brand-accent transition-colors">Contact</a></li>
         </ul>
       </div>
     </div>

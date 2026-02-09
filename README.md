@@ -227,7 +227,7 @@ Contact info appears in multiple places:
 Current info:
 
 - Phone: (623) 688-8422
-- Email: <info@brooksfloorcovering.com>
+- Email: <services@brooksfloorcovering.com>
 - ROC: #226840
 
 ### Updating Services
@@ -254,7 +254,7 @@ Edit review cards in `src/pages/about.astro`. Reviewer images are in `public/ima
 
 For questions or issues, contact:
 
-- Email: <info@brooksfloorcovering.com>
+- Email: <services@brooksfloorcovering.com>
 - Phone: (623) 688-8422
 
 ## Credits
@@ -265,4 +265,4 @@ Built with:
 - [Tailwind CSS](https://tailwindcss.com)
 - [GLightbox](https://github.com/biati-digital/glightbox)
 
-Developed by Bender 🤖
+Developed with care.

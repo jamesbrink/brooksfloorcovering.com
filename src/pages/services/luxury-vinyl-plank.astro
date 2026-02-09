@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
 
 const jsonLd = {
@@ -107,7 +109,7 @@ const jsonLd = {
           name: 'How long does luxury vinyl plank flooring last?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'High-quality LVP flooring typically lasts 15 to 25 years with proper care. Many products come with manufacturer warranties of 15 to lifetime years. Thicker wear layers provide greater scratch and dent resistance, extending the floor lifespan in high-traffic areas.',
+            text: 'High-quality LVP flooring typically lasts 15 to 25 years with proper care. Many products come with manufacturer warranties ranging from 15 years to lifetime. Thicker wear layers provide greater scratch and dent resistance, extending the floor lifespan in high-traffic areas.',
           },
         },
         {
@@ -138,27 +140,48 @@ const jsonLd = {
     compact={true}
   />
 
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Luxury Vinyl Plank' },
+    ]}
+  />
+
   <main>
     <!-- Introduction -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
-            LVP Flooring Solutions
-          </p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
-            Professional LVP Installation for Modern Living
-          </h2>
-          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
-            Luxury Vinyl Plank (LVP) flooring delivers the perfect balance of beauty, durability,
-            and everyday practicality. Designed to replicate the look of natural hardwood, concrete,
-            and tile while outperforming them in many ways, LVP has quickly become one of the most
-            popular flooring options for modern homes and commercial spaces alike.
-          </p>
-          <p class="text-neutral-700 leading-relaxed text-lg">
-            Whether you're updating a single room or transforming an entire property, LVP offers a
-            stylish, long-lasting solution that fits your lifestyle.
-          </p>
+        <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div class="md:w-1/2">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              LVP Flooring Solutions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+              Professional LVP Installation for Modern Living
+            </h2>
+            <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+              Luxury Vinyl Plank (LVP) flooring delivers the perfect balance of beauty, durability,
+              and everyday practicality. Designed to replicate the look of natural hardwood,
+              concrete, and tile while outperforming them in many ways, LVP has quickly become one
+              of the most popular flooring options for modern homes and commercial spaces alike.
+            </p>
+            <p class="text-neutral-700 leading-relaxed text-lg">
+              Whether you're updating a single room or transforming an entire property, LVP offers a
+              stylish, long-lasting solution that fits your lifestyle.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <Image
+              src="/images/site-wood-grain-texture-closeup.jpg"
+              alt="Close-up of wood grain texture on luxury vinyl plank flooring"
+              class="rounded-lg shadow-lg w-full"
+              width={960}
+              height={640}
+              inferSize
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
 
 const contactPointJsonLd = {
@@ -10,7 +11,7 @@ const contactPointJsonLd = {
   '@id': 'https://brooksfloorcovering.com/#business',
   name: 'Brooks Floor Covering',
   telephone: '+1-623-688-8422',
-  email: 'info@brooksfloorcovering.com',
+  email: 'services@brooksfloorcovering.com',
   url: 'https://brooksfloorcovering.com',
   areaServed: [
     { '@type': 'City', name: 'Phoenix', containedInPlace: { '@type': 'State', name: 'Arizona' } },
@@ -104,6 +105,8 @@ const breadcrumbJsonLd = {
     compact={true}
   />
 
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Contact' }]} />
+
   <main>
     <!-- Primary CTA Section -->
     <section class="py-20 bg-white">
@@ -128,12 +131,12 @@ const breadcrumbJsonLd = {
           </a>
 
           <a
-            href="mailto:info@brooksfloorcovering.com"
+            href="mailto:services@brooksfloorcovering.com"
             class="group flex flex-col items-center gap-3 p-8 rounded-2xl bg-brand-dark text-white shadow-lg hover:bg-brand-navy hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
             <span class="text-4xl" aria-hidden="true">&#9993;</span>
             <span class="text-lg font-bold">Email Us</span>
-            <span class="text-white/80 text-sm">info@brooksfloorcovering.com</span>
+            <span class="text-white/80 text-sm">services@brooksfloorcovering.com</span>
           </a>
         </div>
 

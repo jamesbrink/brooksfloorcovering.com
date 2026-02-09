@@ -67,6 +67,19 @@ const ogImage = new URL(
     />
 
     {jsonLdStrings.map((str) => <script type="application/ld+json" set:html={str} />)}
+
+    <!-- Global LocalBusiness reference -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+        name: 'Brooks Floor Covering',
+        url: 'https://brooksfloorcovering.com',
+        telephone: '+1-623-688-8422',
+      }).replace(/</g, '\\u003c')}
+    />
   </head>
   <body class="bg-neutral-50 text-neutral-900 font-sans">
     <slot />

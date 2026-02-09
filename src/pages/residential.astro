@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
 
 const residentialProducts = [
@@ -129,39 +130,54 @@ const residentialJsonLd = {
     compact={true}
   />
 
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Residential Flooring' }]} />
+
   <main>
     <!-- Introduction -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
-            Residential Flooring Experts
-          </p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
-            Flooring Designed for Your Home
-          </h2>
-          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
-            Flooring plays a critical role in how a home looks, feels, and functions. At Brooks
-            Floor Covering, our residential services are designed to provide homeowners with
-            dependable guidance, quality materials, and skilled installation backed by more than
-            <strong>30 years of local experience</strong>.
-          </p>
-          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
-            We approach every project with a focus on clarity, professionalism, and long-term
-            performance. Our in-home consultations allow you to evaluate colors, textures, and
-            materials in your lighting and alongside your furnishings, helping simplify the
-            decision-making process.
-          </p>
-          <p class="text-neutral-700 leading-relaxed text-lg">
-            Whether you are updating a single room, renovating your entire home, or planning new
-            construction, our team guides you from consultation through installation with experience
-            and care. Every residential project starts with a
-            <a
-              href="/contact"
-              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
-              >free in-home estimate</a
-            >.
-          </p>
+        <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div class="md:w-1/2">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Residential Flooring Experts
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+              Flooring Designed for Your Home
+            </h2>
+            <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+              Flooring plays a critical role in how a home looks, feels, and functions. At Brooks
+              Floor Covering, our residential services are designed to provide homeowners with
+              dependable guidance, quality materials, and skilled installation backed by more than
+              <strong>30 years of local experience</strong>.
+            </p>
+            <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+              We approach every project with a focus on clarity, professionalism, and long-term
+              performance. Our in-home consultations allow you to evaluate colors, textures, and
+              materials in your lighting and alongside your furnishings, helping simplify the
+              decision-making process.
+            </p>
+            <p class="text-neutral-700 leading-relaxed text-lg">
+              Whether you are updating a single room, renovating your entire home, or planning new
+              construction, our team guides you from consultation through installation with
+              experience and care. Every residential project starts with a
+              <a
+                href="/contact"
+                class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                >free in-home estimate</a
+              >.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <Image
+              src="/images/site-modern-living-room-hardwood.jpg"
+              alt="Stylish living room with professional hardwood flooring"
+              class="rounded-lg shadow-lg w-full"
+              width={960}
+              height={640}
+              inferSize
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>

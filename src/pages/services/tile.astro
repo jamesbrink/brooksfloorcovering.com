@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
 
 const jsonLd = {
@@ -144,23 +146,44 @@ const jsonLd = {
     compact={true}
   />
 
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Tile Flooring' },
+    ]}
+  />
+
   <main>
     <!-- Introduction -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
-            Tile Flooring Solutions
-          </p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
-            Expert Tile Installation for Every Space
-          </h2>
-          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
-            Timeless, durable, and endlessly versatile, tile flooring is one of the smartest
-            investments you can make for your home or business. Whether your style leans modern and
-            minimal or warm and traditional, tile offers a perfect balance of performance and design
-            that stands the test of time.
-          </p>
+        <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div class="md:w-1/2">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Tile Flooring Solutions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+              Expert Tile Installation for Every Space
+            </h2>
+            <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+              Timeless, durable, and endlessly versatile, tile flooring is one of the smartest
+              investments you can make for your home or business. Whether your style leans modern
+              and minimal or warm and traditional, tile offers a perfect balance of performance and
+              design that stands the test of time.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <Image
+              src="/images/site-modern-kitchen-tile-floor.jpg"
+              alt="Modern kitchen with professional tile flooring installation"
+              class="rounded-lg shadow-lg w-full"
+              width={960}
+              height={640}
+              inferSize
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>

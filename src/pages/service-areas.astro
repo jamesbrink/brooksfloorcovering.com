@@ -1,0 +1,488 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Footer from '../components/Footer.astro';
+
+const serviceAreas = [
+  {
+    city: 'Phoenix',
+    tagline: 'Heart of the Valley',
+    description:
+      'As the heart of the Valley, Phoenix is where we complete the most projects each year. From historic neighborhoods like Arcadia and Encanto to newer developments in Laveen, Ahwatukee, and Desert Ridge, our team installs flooring in homes and businesses across every corner of the city. Whether you need tile for a midtown restaurant or carpet for a North Phoenix office park, we know this market inside and out.',
+    neighborhoods: ['Arcadia', 'Encanto', 'Ahwatukee', 'Desert Ridge', 'Laveen', 'North Phoenix'],
+    popularServices: ['Tile', 'Carpet', 'LVP'],
+  },
+  {
+    city: 'Scottsdale',
+    tagline: 'Luxury Flooring Specialists',
+    description:
+      "Scottsdale homeowners and business owners expect premium quality, and we deliver it. We have completed projects in Old Town Scottsdale boutiques, Gainey Ranch estates, DC Ranch residences, and resort properties throughout the city. Our experience with high-end tile, natural stone, and engineered hardwood makes us a trusted partner for Scottsdale's luxury flooring market.",
+    neighborhoods: ['Old Town', 'Gainey Ranch', 'DC Ranch', 'North Scottsdale'],
+    popularServices: ['Natural Stone', 'Engineered Hardwood', 'Custom Tile'],
+  },
+  {
+    city: 'Mesa',
+    tagline: 'East Valley Coverage',
+    description:
+      'Mesa is one of the fastest-growing cities in Arizona, and we have been installing flooring here for decades. From family homes near Fiesta Mall and Red Mountain Ranch to commercial spaces along the US-60 corridor and Mesa Gateway area, our team provides professional installation, concrete polishing, and floor preparation services throughout the city.',
+    neighborhoods: ['Red Mountain Ranch', 'Mesa Gateway', 'Superstition Springs'],
+    popularServices: ['Polished Concrete', 'Floor Preparation', 'Tile'],
+  },
+  {
+    city: 'Chandler',
+    tagline: 'Tech Corridor & Beyond',
+    description:
+      "Chandler's mix of tech campuses, shopping centers, and master-planned communities keeps our team busy year-round. We regularly work in neighborhoods like Ocotillo, Sun Groves, and Chandler Heights, as well as commercial spaces near Chandler Fashion Center and the Price Road corridor. LVP, tile, and polished concrete are popular choices for Chandler clients.",
+    neighborhoods: ['Ocotillo', 'Sun Groves', 'Chandler Heights', 'Price Corridor'],
+    popularServices: ['LVP', 'Tile', 'Polished Concrete'],
+  },
+  {
+    city: 'Tempe',
+    tagline: 'Urban & University District',
+    description:
+      'Home to Arizona State University and a thriving business district, Tempe has a unique mix of student housing, condos, restaurants, and corporate offices. We install flooring for property managers near Mill Avenue, homeowners in South Tempe, and commercial tenants throughout the Tempe Marketplace and Rio Salado areas.',
+    neighborhoods: ['Mill Avenue', 'South Tempe', 'Tempe Marketplace', 'Rio Salado'],
+    popularServices: ['LVP', 'Carpet', 'Epoxy'],
+  },
+  {
+    city: 'Gilbert',
+    tagline: 'Family-Friendly Communities',
+    description:
+      "Gilbert has grown from a small farming town to one of the Valley's most desirable communities. We serve homeowners in Agritopia, Val Vista Lakes, Power Ranch, and the Heritage District with carpet, hardwood, tile, and luxury vinyl plank installations. Our residential flooring services are a perfect fit for Gilbert's family-friendly neighborhoods.",
+    neighborhoods: ['Agritopia', 'Val Vista Lakes', 'Power Ranch', 'Heritage District'],
+    popularServices: ['Carpet', 'Hardwood', 'LVP'],
+  },
+  {
+    city: 'Glendale',
+    tagline: 'Our Home Base',
+    description:
+      'Glendale is our home base, and we are proud to serve the community where our business was built. From the Westgate Entertainment District and State Farm Stadium area to established neighborhoods near downtown and Arrowhead Ranch, we handle residential and commercial flooring projects of every size. Our proximity means faster response times and deep knowledge of the local market.',
+    neighborhoods: ['Westgate', 'Arrowhead Ranch', 'Downtown', 'State Farm Stadium Area'],
+    popularServices: ['Carpet', 'Tile', 'LVP', 'Epoxy'],
+    highlight: true,
+  },
+  {
+    city: 'Peoria',
+    tagline: 'West Valley to Lake Pleasant',
+    description:
+      'Peoria stretches from the heart of the West Valley to the foothills of Lake Pleasant, and we serve every part of it. Our team installs flooring in homes near Vistancia, Westwing, and the P83 entertainment district, as well as commercial properties along Grand Avenue and the Bell Road corridor. Tile, epoxy, and carpet are popular choices for Peoria clients.',
+    neighborhoods: ['Vistancia', 'Westwing', 'P83 District'],
+    popularServices: ['Tile', 'Epoxy', 'Carpet'],
+  },
+  {
+    city: 'Surprise',
+    tagline: 'New Construction Experts',
+    description:
+      'Surprise has seen tremendous growth over the past decade, and we have been part of it. From Sun City Grand and Marley Park to new construction near Prasada and the Surprise City Center, we provide flooring installation for homes and businesses throughout the community. Our experience with new-build installations makes us a valuable partner for Surprise homeowners and builders alike.',
+    neighborhoods: ['Sun City Grand', 'Marley Park', 'Prasada', 'Surprise City Center'],
+    popularServices: ['LVP', 'Tile', 'Carpet'],
+  },
+  {
+    city: 'Goodyear',
+    tagline: 'Master-Planned Communities',
+    description:
+      "Goodyear's master-planned communities and expanding commercial districts create steady demand for professional flooring services. We work in Estrella Mountain Ranch, Palm Valley, Pebble Creek, and Canyon Trails, installing everything from luxury vinyl plank and carpet to tile and polished concrete. Our team is familiar with the products and styles that Goodyear homeowners prefer.",
+    neighborhoods: ['Estrella Mountain Ranch', 'Palm Valley', 'Pebble Creek', 'Canyon Trails'],
+    popularServices: ['LVP', 'Carpet', 'Polished Concrete'],
+  },
+  {
+    city: 'Avondale',
+    tagline: 'I-10 Corridor',
+    description:
+      'Located along the I-10 corridor between Phoenix and Goodyear, Avondale is a growing community with a mix of residential neighborhoods and commercial developments. We serve homeowners in Coldwater Springs, Garden Lakes, and Crystal Gardens, as well as businesses near Avondale Boulevard. Carpet, tile, and LVP installations are our most requested services in the area.',
+    neighborhoods: ['Coldwater Springs', 'Garden Lakes', 'Crystal Gardens'],
+    popularServices: ['Carpet', 'Tile', 'LVP'],
+  },
+  {
+    city: 'Buckeye',
+    tagline: 'Fastest-Growing City in AZ',
+    description:
+      "Buckeye is one of the fastest-growing cities in Arizona, with new homes and commercial developments expanding rapidly to the west. We provide flooring services in Verrado, Sundance, Tartesso, and Festival Ranch, as well as commercial projects along the MC 85 and I-10 corridors. Whether it's a brand-new home or a commercial build-out, our team delivers quality results.",
+    neighborhoods: ['Verrado', 'Sundance', 'Tartesso', 'Festival Ranch'],
+    popularServices: ['LVP', 'Tile', 'Carpet'],
+  },
+];
+
+const faqItems = [
+  {
+    question: 'Do you charge extra for projects outside of Glendale?',
+    answer:
+      'No, we do not charge travel fees for any location within the Greater Phoenix Area. Whether your project is in Scottsdale, Buckeye, Mesa, or anywhere else in the Valley, our pricing is the same. Every project starts with a free, no-obligation estimate.',
+  },
+  {
+    question: 'How quickly can you start a project in my area?',
+    answer:
+      'We typically schedule projects within one to two weeks of the estimate, depending on material availability and our current workload. For urgent repairs or time-sensitive commercial projects, we do our best to accommodate faster timelines. Call us at (623) 688-8422 to discuss your schedule.',
+  },
+  {
+    question: 'Do you serve areas outside the cities listed on this page?',
+    answer:
+      'Yes, we serve the entire Greater Phoenix metro area and surrounding communities. If your city is not listed above, give us a call at (623) 688-8422 and we will let you know if we can help. We regularly take on projects in Fountain Hills, Cave Creek, Queen Creek, Litchfield Park, and other Valley communities.',
+  },
+  {
+    question: 'Can you handle both residential and commercial projects in all service areas?',
+    answer:
+      'Absolutely. We provide full residential and commercial flooring services in every city we serve. This includes carpet, tile, luxury vinyl plank, engineered hardwood, polished concrete, epoxy coatings, and floor preparation for homes, offices, retail spaces, restaurants, and industrial facilities.',
+  },
+  {
+    question: 'Are you licensed to work throughout Arizona?',
+    answer:
+      'Yes, our Arizona Registrar of Contractors license (ROC #226840) covers work throughout the state of Arizona. We are fully licensed, bonded, and insured. Our primary service area is the Greater Phoenix Valley, where we have been operating since 1994.',
+  },
+];
+
+const serviceAreasJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: 'Flooring Services - Greater Phoenix Area',
+      description:
+        'Professional flooring installation, repairs, and concrete services serving Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, Glendale, Peoria, Surprise, Goodyear, Avondale, and Buckeye.',
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: serviceAreas.map((area) => ({
+        '@type': 'City',
+        name: area.city,
+        containedInPlace: { '@type': 'State', name: 'Arizona' },
+      })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Service Areas',
+          item: 'https://brooksfloorcovering.com/service-areas/',
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
+};
+---
+
+<Layout
+  title="Service Areas | Flooring Installation Across the Phoenix Valley - Brooks Floor Covering"
+  description="Brooks Floor Covering serves Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, Glendale, Peoria, Surprise, Goodyear, Avondale, and Buckeye. Professional flooring installation since 1994."
+  jsonLd={serviceAreasJsonLd}
+>
+  <Navigation />
+
+  <Hero
+    title="Service Areas"
+    subtitle="Professional flooring services across the Greater Phoenix Valley since 1994."
+    compact={true}
+  />
+
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Service Areas' }]} />
+
+  <main>
+    <!-- Arizona Landscape Banner -->
+    <section class="relative h-48 md:h-64 overflow-hidden">
+      <Image
+        src="/images/hero-arizona-desert-saguaro.jpg"
+        alt="Arizona desert landscape with saguaro cacti representing the Phoenix Valley service area"
+        class="w-full h-full object-cover"
+        width={1920}
+        height={480}
+        inferSize
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
+    </section>
+
+    <!-- Intro + Jump Nav (combined) -->
+    <section class="bg-white">
+      <div class="container mx-auto px-4 py-10">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div class="md:col-span-3">
+              <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-2">
+                Greater Phoenix Area
+              </p>
+              <h2 class="text-2xl md:text-3xl font-bold mb-4 text-brand-dark">
+                Serving the Entire Phoenix Valley
+              </h2>
+              <p class="text-neutral-700 leading-relaxed mb-3">
+                Based in Glendale, Brooks Floor Covering has been serving homes and businesses
+                across the Greater Phoenix Area since 1994. We provide professional flooring
+                installation, repairs, concrete services, and specialty tile work to over a dozen
+                cities throughout the Valley. Licensed, bonded, and insured (ROC #226840) with no
+                travel fees anywhere in the metro area.
+              </p>
+              <p class="text-neutral-700 leading-relaxed">
+                Whether you need <a
+                  href="/services/carpet"
+                  class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                  >carpet</a
+                > for a Chandler office,
+                <a
+                  href="/services/tile"
+                  class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                  >tile</a
+                > for a Scottsdale kitchen,
+                <a
+                  href="/services/polished-concrete"
+                  class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                  >polished concrete</a
+                > for a Mesa warehouse, or
+                <a
+                  href="/services/luxury-vinyl-plank"
+                  class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                  >luxury vinyl plank</a
+                > for a Surprise home, we bring the same quality and professionalism to every project.
+                <a
+                  href="/contact"
+                  class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                  >Contact us</a
+                > for a free estimate.
+              </p>
+            </div>
+            <div class="md:col-span-2 bg-neutral-50 rounded-xl p-5 border border-neutral-200">
+              <p class="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">
+                12 Cities Served
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {
+                  serviceAreas.map((area) => (
+                    <a
+                      href={`#${area.city.toLowerCase().replace(/\s+/g, '-')}`}
+                      class:list={[
+                        'px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200',
+                        area.highlight
+                          ? 'bg-brand-primary text-white hover:bg-brand-primary-dark'
+                          : 'bg-white text-neutral-600 border border-neutral-200 hover:border-brand-primary/30 hover:text-brand-primary',
+                      ]}
+                    >
+                      {area.city}
+                    </a>
+                  ))
+                }
+              </div>
+              <p class="text-xs text-neutral-400 mt-3">No travel fees within the metro area</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- City Sections -->
+    <section class="py-12 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {
+              serviceAreas.map((area) => (
+                <div
+                  id={area.city.toLowerCase().replace(/\s+/g, '-')}
+                  class:list={[
+                    'rounded-xl p-6 shadow-sm border transition-shadow duration-300 hover:shadow-md scroll-mt-20',
+                    area.highlight
+                      ? 'bg-gradient-to-br from-brand-primary/5 to-brand-accent/5 border-brand-primary/20 md:col-span-2'
+                      : 'bg-white border-neutral-200',
+                  ]}
+                >
+                  <div class="flex items-start justify-between gap-4 mb-3">
+                    <div>
+                      <h3 class="text-xl font-bold text-brand-dark">
+                        {area.city}
+                        <span class="text-sm font-normal text-neutral-400 ml-1">, AZ</span>
+                      </h3>
+                      <p class="text-sm text-brand-accent font-medium">{area.tagline}</p>
+                    </div>
+                    {area.highlight && (
+                      <span class="shrink-0 bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                        Home Base
+                      </span>
+                    )}
+                  </div>
+                  <p class="text-neutral-700 leading-relaxed mb-4">{area.description}</p>
+                  <div class="flex flex-wrap gap-4 text-sm">
+                    <div>
+                      <span class="text-neutral-400 font-medium">Neighborhoods: </span>
+                      <span class="text-neutral-600">{area.neighborhoods.join(' · ')}</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap items-center gap-2 mt-3 pt-3 border-t border-neutral-100">
+                    <span class="text-xs text-neutral-400 font-semibold uppercase tracking-wider">
+                      Popular:
+                    </span>
+                    {area.popularServices.map((service) => (
+                      <span class="inline-block bg-neutral-100 text-neutral-700 text-xs font-medium px-2.5 py-1 rounded-full">
+                        {service}
+                      </span>
+                    ))}
+                    <a
+                      href="/contact"
+                      class="ml-auto text-sm font-semibold text-brand-primary hover:text-brand-primary-dark transition-colors"
+                    >
+                      Get estimate &rarr;
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Available -->
+    <section class="py-14 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              What We Offer
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+              Services Available in Every City
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <a
+              href="/services/carpet"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">🏠</span>
+              <span class="font-medium text-neutral-800">Carpet Flooring</span>
+            </a>
+            <a
+              href="/services/tile"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">◻️</span>
+              <span class="font-medium text-neutral-800">Tile Flooring</span>
+            </a>
+            <a
+              href="/services/luxury-vinyl-plank"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">🪵</span>
+              <span class="font-medium text-neutral-800">Luxury Vinyl Plank</span>
+            </a>
+            <a
+              href="/services/engineered-hardwood"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">🪵</span>
+              <span class="font-medium text-neutral-800">Engineered Hardwood</span>
+            </a>
+            <a
+              href="/services/polished-concrete"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">💎</span>
+              <span class="font-medium text-neutral-800">Polished Concrete</span>
+            </a>
+            <a
+              href="/services/epoxy"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">🔬</span>
+              <span class="font-medium text-neutral-800">Epoxy Flooring</span>
+            </a>
+            <a
+              href="/services/floor-preparation"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">🔧</span>
+              <span class="font-medium text-neutral-800">Floor Preparation</span>
+            </a>
+            <a
+              href="/services/custom-tile-showers"
+              class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+            >
+              <span class="text-2xl" aria-hidden="true">🚿</span>
+              <span class="font-medium text-neutral-800">Custom Tile Showers</span>
+            </a>
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors text-lg"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-14 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Common Questions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Service Area FAQ</h2>
+          </div>
+          <div class="space-y-8">
+            {
+              faqItems.map((faq) => (
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+                  <h3 class="text-lg font-semibold text-neutral-800 mb-3">{faq.question}</h3>
+                  <p class="text-neutral-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-14 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight">
+          Ready to Start Your Flooring Project?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          No matter where you are in the Phoenix Valley, our team is ready to deliver professional
+          flooring results. Get started with a free, no-obligation estimate today.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get a Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

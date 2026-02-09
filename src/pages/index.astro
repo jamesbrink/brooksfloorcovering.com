@@ -15,7 +15,7 @@ const businessJsonLd = {
     'Family-owned professional flooring company serving the Greater Phoenix Area since 1994. Flooring sales, installation, repairs, concrete services, and specialty tile work.',
   url: 'https://brooksfloorcovering.com',
   telephone: '+1-623-688-8422',
-  email: 'info@brooksfloorcovering.com',
+  email: 'services@brooksfloorcovering.com',
   foundingDate: '1994',
   priceRange: '$$',
   image: 'https://brooksfloorcovering.com/images/hero-phoenix-flooring-showroom.jpg',
@@ -118,6 +118,47 @@ const websiteJsonLd = {
   },
 };
 
+const homepageFaqItems = [
+  {
+    question: 'What areas do you serve in Arizona?',
+    answer:
+      'We serve the entire Greater Phoenix Area including Phoenix, Scottsdale, Mesa, Chandler, Tempe, Gilbert, Glendale, Peoria, Surprise, Goodyear, Avondale, Buckeye, and surrounding communities. Our home base is in Glendale and we have no travel fees within the Valley.',
+  },
+  {
+    question: 'Are you licensed and insured in Arizona?',
+    answer:
+      'Yes, we are fully licensed, bonded, and insured. Our Arizona Registrar of Contractors license number is ROC #226840. We have been operating continuously in the Phoenix Valley since 1994.',
+  },
+  {
+    question: 'What types of flooring do you install?',
+    answer:
+      'We install carpet, tile, luxury vinyl plank (LVP), engineered hardwood, polished concrete, epoxy coatings, and custom tile showers. We also provide floor preparation services including concrete grinding, moisture mitigation, and self-leveling underlayment.',
+  },
+  {
+    question: 'Do you offer free estimates?',
+    answer:
+      'Yes, every project starts with a free, no-obligation in-home or on-site estimate. We visit your home or business, measure the space, discuss your options, and provide a detailed written quote. Call (623) 688-8422 to schedule.',
+  },
+  {
+    question: 'How long does flooring installation take?',
+    answer:
+      'A single room of carpet or luxury vinyl plank can often be completed in one day. Tile and hardwood projects typically take 2 to 5 days for an average-sized home. Commercial and larger residential projects may take a week or more. We provide a detailed timeline during your free estimate.',
+  },
+];
+
+const homepageFaqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homepageFaqItems.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+
 const featuredServices = [
   {
     icon: '🔨',
@@ -186,7 +227,7 @@ const homepageGallery = [
 <Layout
   title="Brooks Floor Covering - Professional Flooring Services in Phoenix, AZ"
   description="Family-owned flooring company serving the Greater Phoenix Area since 1994. Expert installation, repairs, concrete services, and custom tile work. ROC #226840."
-  jsonLd={[businessJsonLd, websiteJsonLd]}
+  jsonLd={[businessJsonLd, websiteJsonLd, homepageFaqJsonLd]}
 >
   <Navigation />
 
@@ -303,6 +344,34 @@ const homepageGallery = [
           >
             View Full Gallery
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-brand-accent font-semibold mb-3">
+              Common Questions
+            </p>
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p class="text-neutral-700 max-w-2xl mx-auto leading-relaxed">
+              Answers to the most common questions about our flooring services in the Phoenix
+              Valley.
+            </p>
+          </div>
+          <div class="space-y-6">
+            {
+              homepageFaqItems.map((faq) => (
+                <div class="bg-white rounded-lg p-6 shadow-sm border border-neutral-200">
+                  <h3 class="text-lg font-semibold text-neutral-800 mb-3">{faq.question}</h3>
+                  <p class="text-neutral-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>

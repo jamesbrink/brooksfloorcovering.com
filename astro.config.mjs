@@ -13,7 +13,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
     server: {
       host: '0.0.0.0',
-      allowedHosts: ['bender', 'bender.local', 'bender.home.urandom.io', '.tail1f4f9.ts.net'],
+      allowedHosts: true,
     },
   },
   

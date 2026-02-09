@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
 
 const jsonLd = {
@@ -138,33 +140,55 @@ const jsonLd = {
     compact={true}
   />
 
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services' },
+      { label: 'Polished Concrete' },
+    ]}
+  />
+
   <main>
     <!-- Introduction -->
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto">
-          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
-            Polished Concrete Solutions
-          </p>
-          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
-            Durable, Beautiful Polished Concrete Floors
-          </h2>
-          <p class="text-neutral-700 leading-relaxed text-lg mb-4">
-            Polished concrete is a modern, high-performance flooring solution that blends durability
-            with refined design. Once reserved mainly for industrial spaces, polished concrete has
-            become a sought-after option for homes, retail spaces, offices, and commercial
-            facilities thanks to its versatility, longevity, and striking visual appeal.
-          </p>
-          <p class="text-neutral-700 leading-relaxed text-lg">
-            Brooks Floor Covering provides expert polished concrete services for residential and
-            commercial clients across Phoenix, Glendale, Scottsdale, Mesa, Chandler, and the entire
-            Valley. Every project starts with a
-            <a
-              href="/contact"
-              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
-              >free, no-obligation estimate</a
-            >.
-          </p>
+        <div class="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+          <div class="md:w-1/2">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              Polished Concrete Solutions
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-brand-dark">
+              Durable, Beautiful Polished Concrete Floors
+            </h2>
+            <p class="text-neutral-700 leading-relaxed text-lg mb-4">
+              Polished concrete is a modern, high-performance flooring solution that blends
+              durability with refined design. Once reserved mainly for industrial spaces, polished
+              concrete has become a sought-after option for homes, retail spaces, offices, and
+              commercial facilities thanks to its versatility, longevity, and striking visual
+              appeal.
+            </p>
+            <p class="text-neutral-700 leading-relaxed text-lg">
+              Brooks Floor Covering provides expert polished concrete services for residential and
+              commercial clients across Phoenix, Glendale, Scottsdale, Mesa, Chandler, and the
+              entire Valley. Every project starts with a
+              <a
+                href="/contact"
+                class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+                >free, no-obligation estimate</a
+              >.
+            </p>
+          </div>
+          <div class="md:w-1/2">
+            <Image
+              src="/images/site-office-corridor-concrete.jpg"
+              alt="Modern office corridor with polished concrete flooring"
+              class="rounded-lg shadow-lg w-full"
+              width={960}
+              height={640}
+              inferSize
+              loading="eager"
+            />
+          </div>
         </div>
       </div>
     </section>
