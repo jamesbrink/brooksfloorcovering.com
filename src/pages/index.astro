@@ -18,7 +18,7 @@ const businessJsonLd = {
   email: 'info@brooksfloorcovering.com',
   foundingDate: '1994',
   priceRange: '$$',
-  image: 'https://brooksfloorcovering.com/images/home-image-1.jpg',
+  image: 'https://brooksfloorcovering.com/images/hero-phoenix-flooring-showroom.jpg',
   logo: 'https://brooksfloorcovering.com/images/logo.jpg',
   address: {
     '@type': 'PostalAddress',
@@ -147,15 +147,39 @@ const featuredServices = [
   },
 ];
 
-const galleryAltTexts = [
-  'Custom tile shower installation in Phoenix home',
-  'Marble bathtub surround with mosaic tile detail',
-  'Completed oval tub installation with brushed nickel fixtures',
-  'Frameless glass shower partition with mosaic tile wall',
-  'Precision glass and tile craftsmanship detail',
-  'Full master bathroom remodel with tiled floors and custom shower',
-  'Large-format porcelain tile floor in powder room',
-  'Tile flooring and tub surround with dark-cabinet vanity',
+const homepageGallery = [
+  {
+    src: '/images/tile-custom-shower-natural-stone.jpg',
+    alt: 'Custom tile shower installation in Phoenix home',
+  },
+  {
+    src: '/images/tile-bathtub-surround-marble-mosaic.jpg',
+    alt: 'Marble bathtub surround with mosaic tile detail',
+  },
+  {
+    src: '/images/tile-bathtub-installation-complete.jpg',
+    alt: 'Completed oval tub installation with brushed nickel fixtures',
+  },
+  {
+    src: '/images/tile-shower-partition-frameless-glass.jpg',
+    alt: 'Frameless glass shower partition with mosaic tile wall',
+  },
+  {
+    src: '/images/tile-glass-mosaic-detail.jpg',
+    alt: 'Precision glass and tile craftsmanship detail',
+  },
+  {
+    src: '/images/tile-master-bathroom-full-remodel.jpg',
+    alt: 'Full master bathroom remodel with tiled floors and custom shower',
+  },
+  {
+    src: '/images/tile-powder-room-porcelain-floor.jpg',
+    alt: 'Large-format porcelain tile floor in powder room',
+  },
+  {
+    src: '/images/tile-double-vanity-bathroom-floor.jpg',
+    alt: 'Tile flooring and tub surround with dark-cabinet vanity',
+  },
 ];
 ---
 
@@ -171,7 +195,7 @@ const galleryAltTexts = [
     subtitle="Family-owned since 1994. We deliver expert flooring installation, repairs, and concrete services to homes and businesses across the Greater Phoenix Area."
     ctaText="Get a Free Estimate"
     ctaLink="/contact"
-    image="/images/home-image-1.jpg"
+    image="/images/hero-phoenix-flooring-showroom.jpg"
   />
 
   <main>
@@ -230,7 +254,7 @@ const galleryAltTexts = [
           </div>
           <div class="md:w-1/2 order-1 md:order-2">
             <Image
-              src="/images/home-image-2.jpg"
+              src="/images/site-brooks-team-flooring-project.jpg"
               alt="Brooks Floor Covering team working on a flooring project in Phoenix"
               class="rounded-lg shadow-lg w-full"
               width={960}
@@ -257,22 +281,19 @@ const galleryAltTexts = [
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">
           {
-            [1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => {
-              const imageNum = String(num).padStart(3, '0');
-              return (
-                <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <Image
-                    src={`/images/${imageNum}.jpg`}
-                    alt={galleryAltTexts[index]}
-                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                    width={400}
-                    height={400}
-                    inferSize
-                    loading="lazy"
-                  />
-                </div>
-              );
-            })
+            homepageGallery.map((image) => (
+              <div class="aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  class="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  width={400}
+                  height={400}
+                  inferSize
+                  loading="lazy"
+                />
+              </div>
+            ))
           }
         </div>
         <div class="text-center">
