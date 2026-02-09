@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
@@ -63,6 +64,39 @@ const trustedOrgs = [
   { name: 'AutoZone', logo: '/images/clients/autozone.png' },
   { name: 'The Ritz-Carlton', logo: '/images/clients/ritz-carlton.png' },
   { name: 'Hilton Phoenix Resort at the Peak', logo: '/images/clients/point-hilton.png' },
+];
+
+const galleryPreview = [
+  {
+    src: '/images/017.jpg',
+    title: 'Warehouse After Polishing',
+    description: 'Same warehouse with mirror-finish polished concrete — night and day difference',
+  },
+  {
+    src: '/images/018.jpg',
+    title: 'Commercial Polished Concrete',
+    description: 'High-gloss polished concrete in a commercial building with reflective finish',
+  },
+  {
+    src: '/images/019.jpg',
+    title: 'Aircraft Hangar Floor',
+    description: 'King Air 360 sitting on a pristine polished hangar floor',
+  },
+  {
+    src: '/images/020.jpg',
+    title: 'Metallic Epoxy Floor',
+    description: 'Stunning dark metallic epoxy with swirl pattern in a retail storefront',
+  },
+  {
+    src: '/images/024.jpg',
+    title: 'Restaurant Polished Concrete',
+    description: 'Polished concrete flooring in a restaurant kitchen and service area',
+  },
+  {
+    src: '/images/022.jpg',
+    title: 'Hangar Epoxy Coating',
+    description: 'Light gray epoxy coating in a large hangar with industrial roll-up doors',
+  },
 ];
 
 const commercialJsonLd = {
@@ -232,8 +266,52 @@ const commercialJsonLd = {
       </div>
     </section>
 
-    <!-- Why Choose Us for Commercial -->
+    <!-- Commercial Project Gallery -->
     <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Our Work
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">Recent Commercial Projects</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {
+            galleryPreview.map((image) => (
+              <a
+                href="/gallery"
+                class="group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100 relative"
+              >
+                <Image
+                  src={image.src}
+                  alt={`${image.title} — ${image.description}`}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  width={400}
+                  height={400}
+                  inferSize
+                  loading="lazy"
+                />
+                <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-3 pt-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p class="text-white text-sm font-semibold leading-tight">{image.title}</p>
+                  <p class="text-white/80 text-xs mt-0.5 leading-snug">{image.description}</p>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+        <div class="text-center mt-10">
+          <a
+            href="/gallery"
+            class="inline-block text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors text-lg"
+          >
+            View Full Gallery &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us for Commercial -->
+    <section class="py-20 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-6xl mx-auto">
           <div class="text-center mb-12">
