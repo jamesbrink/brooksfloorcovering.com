@@ -5,22 +5,7 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
-
-const trustedOrgs = [
-  { name: 'Walmart', src: '/images/clients/walmart.png' },
-  { name: 'Dexcom', src: '/images/clients/dexcom.png' },
-  { name: 'Luke Air Force Base', src: '/images/clients/luke-afb.png' },
-  { name: 'MassMutual', src: '/images/clients/massmutual.png' },
-  { name: 'Honeywell', src: '/images/clients/honeywell.png' },
-  { name: 'FedEx', src: '/images/clients/fedex.png' },
-  { name: 'Arizona State University', src: '/images/clients/asu.png' },
-  { name: 'Mesa Gateway Airport', src: '/images/clients/mesa-gateway.png' },
-  { name: 'Din Tai Fung', src: '/images/clients/din-tai-fung.png' },
-  { name: 'Chipotle', src: '/images/clients/chipotle.png' },
-  { name: 'AutoZone', src: '/images/clients/autozone.png' },
-  { name: 'The Ritz-Carlton', src: '/images/clients/ritz-carlton.png' },
-  { name: 'Hilton Phoenix Resort at the Peak', src: '/images/clients/point-hilton.png' },
-];
+import { trustedOrgs } from '../data/clients';
 
 const flooringManufacturers = {
   title: 'Flooring Manufacturers & Distributors',
@@ -226,7 +211,7 @@ const breadcrumbJsonLd = {
           {
             trustedOrgs.map((org) => (
               <Image
-                src={org.src}
+                src={org.logo}
                 alt={`${org.name} logo`}
                 width={200}
                 height={100}
@@ -451,7 +436,7 @@ const breadcrumbJsonLd = {
             href="/contact"
             class="inline-block bg-white text-brand-dark px-8 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition duration-300 shadow-lg"
           >
-            Get a Free Estimate
+            Get Your Free Estimate
           </a>
         </div>
       </div>
