@@ -77,6 +77,10 @@ All in `public/`:
 - `public/CNAME` — custom domain config
 - Image naming: `{category}-{descriptive-slug}.jpg` (categories: `tile-`, `carpet-`, `polished-concrete-`, `epoxy-`, `concrete-overlay-`, `hero-`, `site-`)
 
+## Content Rules
+
+- **Never include dollar amounts or pricing on the site.** No costs, price ranges, or per-square-foot figures in any page, blog post, or schema. Direct users to contact for a free estimate instead.
+
 ## Content Updates
 
 **Contact info** appears in multiple places — update both `src/components/Footer.astro` and `src/pages/contact.astro`:

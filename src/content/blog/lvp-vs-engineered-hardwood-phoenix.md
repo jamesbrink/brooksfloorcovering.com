@@ -1,6 +1,6 @@
 ---
 title: 'LVP vs. Engineered Hardwood: Which Is Better for Phoenix Homes?'
-description: 'Comparing luxury vinyl plank and engineered hardwood for Arizona homeowners. Durability, moisture resistance, heat tolerance, cost, and aesthetics side by side.'
+description: 'Comparing luxury vinyl plank and engineered hardwood for Arizona homeowners. Durability, moisture resistance, heat tolerance, and aesthetics side by side.'
 date: 2026-03-25
 author: 'Brooks Floor Covering'
 tags: ['lvp', 'engineered hardwood', 'flooring comparison', 'phoenix', 'arizona']
@@ -99,14 +99,9 @@ This is where personal preference plays the biggest role.
 
 ## Cost Comparison
 
-Pricing varies by product quality and brand, but here are typical ranges for the Phoenix market (materials and professional installation):
+LVP is generally the more budget-friendly option, both for materials and installation. Engineered hardwood carries a higher upfront cost and may require periodic refinishing, adding to the long-term investment. LVP also has lower maintenance costs over time since it never needs sanding or refinishing.
 
-| Factor                         | LVP            | Engineered Hardwood    |
-| ------------------------------ | -------------- | ---------------------- |
-| Material cost per sq ft        | $2.50 – $6.00  | $4.00 – $12.00         |
-| Installation cost per sq ft    | $2.00 – $4.00  | $3.00 – $6.00          |
-| Total installed cost per sq ft | $4.50 – $10.00 | $7.00 – $18.00         |
-| Maintenance costs              | Low            | Moderate (refinishing) |
+For an accurate quote based on your project size and product preferences, [contact us for a free estimate](/contact/).
 
 **Winner for cost: LVP.** It is significantly more affordable both upfront and over time, especially when you factor in the lack of refinishing costs.
 
