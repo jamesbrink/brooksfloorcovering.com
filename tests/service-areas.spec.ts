@@ -22,26 +22,30 @@ test.describe('Service Areas page', () => {
     ];
 
     for (const city of cities) {
-      await expect(page.locator(`#${city.toLowerCase()}`)).toBeAttached();
+      const slug = city.toLowerCase();
+      await expect(page.locator(`a[href="/service-areas/${slug}/"]`).first()).toBeAttached();
     }
   });
 
-  test('city jump links navigate to correct sections', async ({ page }) => {
-    const link = page.getByRole('link', { name: 'Surprise' }).first();
-    await link.click();
-
-    const section = page.locator('#surprise');
-    await expect(section).toBeInViewport({ timeout: 3000 });
+  test('city cards link to individual city pages', async ({ page }) => {
+    const cityLinks = page
+      .locator('a[href^="/service-areas/"]')
+      .filter({ hasText: 'View details' });
+    await expect(cityLinks).toHaveCount(12);
   });
 
   test('Glendale card has Home Base badge', async ({ page }) => {
-    const glendale = page.locator('#glendale');
-    await expect(glendale.getByText('Home Base', { exact: true })).toBeVisible();
+    const glendaleCard = page.locator('a[href="/service-areas/glendale/"]').first();
+    await expect(glendaleCard).toBeVisible();
+    await expect(page.getByText('Home Base', { exact: true })).toBeVisible();
   });
 
-  test('each city card has a Get estimate link', async ({ page }) => {
-    const estimateLinks = page.locator('.grid a[href="/contact"]', { hasText: 'Get estimate' });
-    await expect(estimateLinks).toHaveCount(12);
+  test('each city card links to its detail page', async ({ page }) => {
+    const link = page.locator('a[href="/service-areas/phoenix/"]').first();
+    await expect(link).toBeVisible();
+    await link.click();
+    await expect(page).toHaveURL(/\/service-areas\/phoenix\//);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Phoenix');
   });
 
   test('contains FAQ section with questions', async ({ page }) => {

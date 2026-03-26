@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
+import { serviceAreaCitiesSchema } from '../../data/navigation';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -18,10 +19,7 @@ const jsonLd = {
         '@type': 'HomeAndConstructionBusiness',
         '@id': 'https://brooksfloorcovering.com/#business',
       },
-      areaServed: {
-        '@type': 'State',
-        name: 'Arizona',
-      },
+      areaServed: serviceAreaCitiesSchema,
       serviceType: 'Epoxy Flooring',
     },
     {
@@ -147,7 +145,7 @@ const jsonLd = {
   <Navigation />
 
   <Hero
-    title="Epoxy Flooring Systems"
+    title="Epoxy Flooring Systems in Phoenix, AZ"
     subtitle="High-performance, seamless epoxy flooring for residential, commercial, and industrial spaces across the Greater Phoenix Area."
     compact={true}
   />
