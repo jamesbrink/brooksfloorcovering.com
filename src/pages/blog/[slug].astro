@@ -67,7 +67,7 @@ const blogPostingJsonLd = {
   },
   mainEntityOfPage: {
     '@type': 'WebPage',
-    '@id': `https://brooksfloorcovering.com/blog/${post.id}/`,
+    '@id': `https://brooksfloorcovering.com/blog/${slug}/`,
   },
   ...(post.data.image && {
     image: `https://brooksfloorcovering.com${post.data.image}`,

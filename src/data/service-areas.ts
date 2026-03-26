@@ -1,3 +1,4 @@
+/** Metadata for a service-area city landing page. */
 export interface ServiceArea {
   city: string;
   slug: string;
