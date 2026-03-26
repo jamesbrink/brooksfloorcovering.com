@@ -1,262 +1,100 @@
-# CLAUDE.md - Developer Guide
+# CLAUDE.md
 
-This document provides guidance for AI assistants (like Claude) working on this project.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
-**Brooks Floor Covering** is a professional flooring services website built with modern web technologies.
+**Brooks Floor Covering** — professional flooring services website for a Phoenix-area family business (since 1994). Static site deployed to GitHub Pages at `brooksfloorcovering.com`.
 
-- **Framework:** Astro 5.17+
-- **Styling:** Tailwind CSS 4.1
-- **UI Components:** GLightbox for gallery
-- **Type Safety:** TypeScript (strict mode)
-- **Deployment:** GitHub Pages via GitHub Actions
+**Stack:** Astro 5.17+, Tailwind CSS 4.1 (CSS-first, no config file), TypeScript, GLightbox, Bun
 
-## Architecture
-
-### Multi-Page Structure
-
-```shell
-src/
-├── components/          # Reusable Astro components
-│   ├── Footer.astro
-│   ├── Hero.astro
-│   ├── Navigation.astro
-│   └── ServiceCard.astro
-├── layouts/
-│   └── Layout.astro     # Base layout with meta tags
-├── pages/               # File-based routing
-│   ├── index.astro      # Homepage
-│   ├── services.astro   # Services page
-│   ├── about.astro      # About page
-│   ├── gallery.astro    # Project gallery
-│   └── contact.astro    # Contact page
-└── styles/
-    └── global.css       # Tailwind imports
-```
-
-### Key Design Decisions
-
-1. **Astro Islands Architecture** - Minimal client-side JS, static by default
-2. **File-based Routing** - Each `.astro` file in `pages/` becomes a route
-3. **Component Props** - TypeScript interfaces for type-safe props
-4. **Tailwind 4.1** - New CSS-first approach, no `tailwind.config.js`
-5. **GLightbox** - Lightweight, accessible gallery lightbox
-
-## Development Workflow
-
-### Commands
+## Commands
 
 ```bash
-# Development
-bun run dev              # Start dev server (http://localhost:4321)
-
-# Code Quality
-bun run format           # Format code with Prettier
-bun run format:check     # Check formatting without changes
-bun run lint             # Lint with ESLint
-bun run lint:fix         # Auto-fix linting issues
-bun run check            # Run Astro type checking
-bun run audit:deps       # Scan dependencies for security vulnerabilities
-
-# Build & Preview
-bun run build            # Build for production
+bun run dev              # Dev server at localhost:4321
+bun run build            # Production build
 bun run preview          # Preview production build
+bun run check            # Astro type checking
+bun run lint             # ESLint (.js, .astro)
+bun run lint:fix         # Auto-fix lint issues
+bun run format           # Prettier format
+bun run format:check     # Check formatting
+bun run audit:deps       # npm audit (omit dev)
+bun run test             # Playwright e2e tests (requires build first)
+bun run test:ui          # Playwright UI mode
 ```
 
 ### Before Committing
 
-Always run:
+Run all checks:
 
 ```bash
-bun run format
-bun run lint
-bun run check
-bun run audit:deps
-bun run build
+bun run format && bun run lint && bun run check && bun run audit:deps && bun run build
 ```
 
-### Astro Dev Toolbar Audit
+### Tests
 
-The Astro dev server includes a visual dev toolbar (bottom of page) with built-in audits:
+Playwright tests live in `tests/`. They run against `bun run preview` (auto-started by Playwright config). Tests require a production build to exist first — run `bun run build` before `bun run test`.
 
-- **Performance recommendations** (use `<Image>`, lazy loading, etc.)
-- **Accessibility checks**
-- **Best practices**
+## Architecture
 
-Access it at: `http://localhost:4321` (click toolbar icon at bottom)
+### Routing
 
-This is separate from `bun run check` and `bun run audit:deps`.
+Astro file-based routing in `src/pages/`. Key pages:
 
-## Component Patterns
+- Top-level: `index`, `services`, `about`, `gallery`, `contact`, `commercial`, `residential`, `service-areas`, `404`
+- Service detail pages: `services/carpet`, `services/tile`, `services/luxury-vinyl-plank`, `services/engineered-hardwood`, `services/polished-concrete`, `services/epoxy`, `services/floor-preparation`, `services/custom-tile-showers`
 
-### Hero Component
+### Shared Data
 
-```astro
-<Hero
-  title="Page Title"
-  subtitle="Optional subtitle"
-  ctaText="Optional CTA"
-  ctaLink="/optional-link"
-  image="/optional-image.jpg"
-  compact={true}
-  Smaller
-  padding
-  for
-  internal
-  pages
-/>
-```
+`src/data/navigation.ts` — single source of truth for service links and service area cities. Navigation component and service pages both consume this.
 
-### Service Card
+`src/data/clients.ts` — client/brand data.
 
-```astro
-<ServiceCard
-  icon="🔨"
-  title="Service Name"
-  description="Service description"
-  features={['Feature 1', 'Feature 2']}
-/>
-```
+### Layout & Components
 
-## Styling Guidelines
+- `src/layouts/Layout.astro` — base layout with SEO meta, Open Graph, JSON-LD structured data, canonical URLs, Cloudflare analytics. Props: `title`, `description`, `jsonLd`, `ogImage`, `noindex`.
+- `src/components/Navigation.astro` — fixed header with desktop dropdown (services) and mobile hamburger menu. Reads `serviceLinks` from data layer.
+- `src/components/Hero.astro` — page hero. Supports `compact` mode for internal pages.
+- `src/components/Breadcrumb.astro` — breadcrumb navigation with schema markup.
+- `src/components/ServiceCard.astro` — service listing card.
+- `src/components/Footer.astro` — site footer with contact info.
 
-### Tailwind Usage
+### Styling
 
-- **Spacing:** Use consistent scale (4, 6, 8, 12, 16, 20)
-- **Colors:** `blue-600` for primary, `neutral-*` for grays
-- **Responsive:** Mobile-first, use `md:` and `lg:` breakpoints
-- **Typography:** `text-3xl md:text-4xl` pattern for responsive headings
+Tailwind 4.1 CSS-first configuration in `src/styles/global.css`:
 
-### Component Styling
+- Custom theme tokens: `brand-primary` (#2563eb), `brand-accent` (#d97706), `brand-dark`, `brand-navy`
+- Fonts: Inter (sans), Playfair Display (display — used for h1/h2)
+- Use `brand-*` color tokens, not raw hex values
+- Responsive: mobile-first with `md:` and `lg:` breakpoints
 
-- Use Tailwind utilities in components
-- Avoid inline styles except for debugging
-- Keep `<style>` blocks minimal (Astro scopes them automatically)
+### Static Assets
 
-## Content Management
+All in `public/`:
 
-### Adding Gallery Images
+- `public/images/` — gallery, hero, and site images
+- `public/CNAME` — custom domain config
+- Image naming: `{category}-{descriptive-slug}.jpg` (categories: `tile-`, `carpet-`, `polished-concrete-`, `epoxy-`, `concrete-overlay-`, `hero-`, `site-`)
 
-1. Add images to `public/images/` using the naming convention: `{category}-{descriptive-slug}.jpg`
-   - **Categories:** `tile-`, `carpet-`, `polished-concrete-`, `epoxy-`, `concrete-overlay-`, `hero-`, `site-`
-   - **Example:** `tile-custom-shower-natural-stone.jpg`, `epoxy-metallic-retail-storefront.jpg`
-2. Add a new entry to the `galleryImages` array in `gallery.astro` with `src`, `title`, and `description`
-3. Update any page gallery previews (e.g., `residential.astro`, `commercial.astro`) as needed
+## Content Updates
 
-### Updating Services
-
-Edit the `services` array in `src/pages/services.astro`:
-
-```ts
-{
-  icon: '🔨',
-  title: 'Service Name',
-  description: '...',
-  features: ['...']
-}
-```
-
-### Updating Reviews
-
-Edit the review cards in `src/pages/about.astro`. Images are in `public/images/reviewers/`.
-
-## Contact Info
-
-Current contact information (update in multiple places):
+**Contact info** appears in multiple places — update both `src/components/Footer.astro` and `src/pages/contact.astro`:
 
 - Phone: (623) 688-8422
-- Email: <services@brooksfloorcovering.com>
+- Email: services@brooksfloorcovering.com
 - ROC: #226840
 
-**Where to update:**
+**Gallery images:** Add to `public/images/`, then add entry to `galleryImages` array in `gallery.astro`. Also update segment page previews (`residential.astro`, `commercial.astro`) as needed.
 
-- `src/components/Footer.astro`
-- `src/pages/contact.astro`
+**Services:** Add service link to `src/data/navigation.ts`, create page in `src/pages/services/`, update `src/pages/services.astro`.
 
-## CI/CD Pipeline
+**Navigation:** Top-level routes are hardcoded in `Navigation.astro`. Service dropdown links come from `src/data/navigation.ts`.
 
-### GitHub Actions Workflow
+## CI/CD
 
-1. **Lint & Check** - Formatting, linting, Astro type check, security audit
-2. **Build** - Production build
-3. **Deploy** - Deploy to GitHub Pages
-
-Runs on every push to `main` branch.
-
-### GitHub Pages Setup
-
-1. Repository Settings → Pages
-2. Source: GitHub Actions
-3. Custom domain: `brooksfloorcovering.com` (via `public/CNAME`)
-
-## Common Tasks
-
-### Adding a New Page
-
-1. Create `src/pages/new-page.astro`
-2. Import and use `Layout` + `Navigation`
-3. Add route to `Navigation.astro`
-
-### Updating Dependencies
-
-```bash
-bun update
-bun outdated  # Check for major updates
-bun run audit:deps  # Security check (npm audit)
-```
-
-### Troubleshooting
-
-**Images not loading:**
-
-- Check path: `/images/name.jpg` (public folder)
-- Verify file exists in `public/images/`
-
-**Tailwind not working:**
-
-- Check `src/styles/global.css` imports Tailwind
-- Verify `@tailwindcss/vite` plugin in `astro.config.mjs`
-
-**Build fails:**
-
-- Run `bun run check` for type errors
-- Check import paths (case-sensitive!)
-- Verify all images exist
-
-## Best Practices
-
-1. **Type Safety** - Use TypeScript interfaces for props
-2. **Accessibility** - Include alt text, ARIA labels
-3. **Performance** - Use `loading="lazy"` on images
-4. **SEO** - Set page titles and meta descriptions
-5. **Mobile-First** - Test on mobile breakpoints
-6. **DRY** - Extract repeated patterns into components
-
-## External Resources
-
-- **Astro Docs:** <https://docs.astro.build>
-- **Tailwind CSS:** <https://tailwindcss.com>
-- **GLightbox:** <https://github.com/biati-digital/glightbox>
-- **Deployment:** <https://docs.astro.build/en/guides/deploy/github/>
+Single GitHub Actions workflow (`.github/workflows/deploy.yml`): lint, check, audit, build, deploy to GitHub Pages. Runs on push to `main`.
 
 ## Project Settings
 
-### Claude Code (`.claude/settings.json`)
-
-Fully permissive project settings are checked in at `.claude/settings.json`. All tools (Bash, Read, Edit, Write, WebFetch, MCP, Task, etc.) are pre-allowed so Claude Code can operate without permission prompts.
-
-## Project History
-
-- **2026-02-08:** Added `.claude/settings.json` with fully permissive config
-- **2026-02-08:** Removed obsolete `MIGRATION.md`
-- **2026-02-07:** Added Formspree contact form, sitemap, SEO, AI discoverability
-- **2026-02-07:** Initial migration from Vite to Astro 5, multi-page architecture
-- **2026-02-07:** Added GLightbox, linting, CI/CD checks
-
-## Notes for AI Assistants
-
-- **Dev server:** Always run with `--host 0.0.0.0` for remote access
-- **Formatting:** Run `bun run format` after edits
-- **Testing:** Check mobile responsiveness
-- **Images:** Verify images load before committing
+`.claude/settings.json` has fully permissive config — all tools pre-allowed.

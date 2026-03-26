@@ -1,0 +1,179 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const slug = post.id.replace(/\.md$/, '');
+
+const formattedDate = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const isoDate = post.data.date.toISOString().split('T')[0];
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://brooksfloorcovering.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://brooksfloorcovering.com/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.data.title,
+      item: `https://brooksfloorcovering.com/blog/${slug}/`,
+    },
+  ],
+};
+
+const blogPostingJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: isoDate,
+  dateModified: isoDate,
+  author: {
+    '@type': 'Organization',
+    name: post.data.author,
+    '@id': 'https://brooksfloorcovering.com/#business',
+  },
+  publisher: {
+    '@id': 'https://brooksfloorcovering.com/#business',
+  },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': `https://brooksfloorcovering.com/blog/${post.id}/`,
+  },
+  ...(post.data.image && {
+    image: `https://brooksfloorcovering.com${post.data.image}`,
+  }),
+};
+---
+
+<Layout
+  title={`${post.data.title} - Brooks Floor Covering`}
+  description={post.data.description}
+  jsonLd={[breadcrumbJsonLd, blogPostingJsonLd]}
+  ogImage={post.data.image}
+>
+  <Navigation />
+
+  <div class="pt-20 bg-gradient-to-br from-brand-dark to-brand-navy"></div>
+
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Blog', href: '/blog/' },
+      { label: post.data.title },
+    ]}
+  />
+
+  <main>
+    <article class="py-12 md:py-16 bg-white">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <!-- Article Header -->
+        <header class="mb-10">
+          <div class="flex items-center gap-3 text-sm text-neutral-500 mb-4">
+            <time datetime={isoDate}>{formattedDate}</time>
+            <span aria-hidden="true">&middot;</span>
+            <span>{post.data.author}</span>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold font-display text-neutral-900 mb-4">
+            {post.data.title}
+          </h1>
+          {
+            post.data.tags && (
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.map((tag) => (
+                  <span class="text-xs bg-blue-50 text-brand-primary px-2 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )
+          }
+        </header>
+
+        <!-- Article Content -->
+        <div class="prose">
+          <Content />
+        </div>
+
+        <!-- CTA Banner -->
+        <div
+          class="mt-12 bg-gradient-to-br from-brand-dark to-brand-navy rounded-xl p-8 text-center text-white"
+        >
+          <h2 class="text-2xl font-bold font-display mb-3">Ready to Get Started?</h2>
+          <p class="text-lg opacity-90 mb-6 max-w-xl mx-auto">
+            Contact us today for a free estimate on your flooring project. Serving the Greater
+            Phoenix Area since 1994.
+          </p>
+          <a
+            href="/contact/"
+            class="inline-block bg-brand-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 shadow-lg"
+          >
+            Get a Free Estimate
+          </a>
+        </div>
+
+        <!-- Related Services -->
+        <div class="mt-12 border-t border-neutral-200 pt-8">
+          <h3 class="text-lg font-bold text-neutral-900 mb-4">Explore Our Services</h3>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <a
+              href="/services/tile/"
+              class="block text-center px-4 py-3 bg-neutral-50 rounded-lg text-sm font-medium text-neutral-700 hover:text-brand-primary hover:bg-blue-50 transition-colors"
+            >
+              Tile
+            </a>
+            <a
+              href="/services/luxury-vinyl-plank/"
+              class="block text-center px-4 py-3 bg-neutral-50 rounded-lg text-sm font-medium text-neutral-700 hover:text-brand-primary hover:bg-blue-50 transition-colors"
+            >
+              Luxury Vinyl Plank
+            </a>
+            <a
+              href="/services/polished-concrete/"
+              class="block text-center px-4 py-3 bg-neutral-50 rounded-lg text-sm font-medium text-neutral-700 hover:text-brand-primary hover:bg-blue-50 transition-colors"
+            >
+              Polished Concrete
+            </a>
+            <a
+              href="/services/engineered-hardwood/"
+              class="block text-center px-4 py-3 bg-neutral-50 rounded-lg text-sm font-medium text-neutral-700 hover:text-brand-primary hover:bg-blue-50 transition-colors"
+            >
+              Engineered Hardwood
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

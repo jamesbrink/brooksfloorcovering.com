@@ -1,0 +1,122 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://brooksfloorcovering.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://brooksfloorcovering.com/blog/',
+    },
+  ],
+};
+---
+
+<Layout
+  title="Blog | Flooring Tips & Guides - Brooks Floor Covering"
+  description="Expert flooring tips, guides, and insights from Brooks Floor Covering. Learn about the best flooring options for Arizona homes and businesses."
+  jsonLd={breadcrumbJsonLd}
+>
+  <Navigation />
+
+  <Hero
+    title="Flooring Tips & Guides"
+    subtitle="Expert advice on choosing, maintaining, and getting the most from your floors in Arizona's unique climate."
+    compact={true}
+  />
+
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
+
+  <main>
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {
+            posts.map((post) => (
+              <article class="bg-neutral-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 border border-neutral-100">
+                {post.data.image && (
+                  <img
+                    src={post.data.image}
+                    alt={post.data.title}
+                    class="w-full h-48 object-cover"
+                    loading="lazy"
+                  />
+                )}
+                <div class="p-6">
+                  <time
+                    datetime={post.data.date.toISOString().split('T')[0]}
+                    class="text-sm text-neutral-500"
+                  >
+                    {post.data.date.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                  <h2 class="text-xl font-bold mt-2 mb-3 font-display text-neutral-900">
+                    <a
+                      href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+                      class="hover:text-brand-primary transition-colors"
+                    >
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  <p class="text-neutral-600 leading-relaxed mb-4">{post.data.description}</p>
+                  {post.data.tags && (
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      {post.data.tags.slice(0, 3).map((tag) => (
+                        <span class="text-xs bg-blue-50 text-brand-primary px-2 py-1 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <a
+                    href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+                    class="inline-flex items-center text-brand-primary font-medium hover:text-brand-primary-dark transition-colors"
+                  >
+                    Read more
+                    <svg
+                      class="w-4 h-4 ml-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

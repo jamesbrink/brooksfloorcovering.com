@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
+import { serviceAreaCitiesSchema } from '../../data/navigation';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -18,10 +19,7 @@ const jsonLd = {
         '@type': 'HomeAndConstructionBusiness',
         '@id': 'https://brooksfloorcovering.com/#business',
       },
-      areaServed: {
-        '@type': 'State',
-        name: 'Arizona',
-      },
+      areaServed: serviceAreaCitiesSchema,
       serviceType: 'Tile Flooring Installation',
     },
     {
@@ -141,7 +139,7 @@ const jsonLd = {
   <Navigation />
 
   <Hero
-    title="Tile Flooring"
+    title="Tile Flooring in Phoenix, AZ"
     subtitle="Timeless, durable, and endlessly versatile tile flooring for homes and businesses across the Greater Phoenix Area."
     compact={true}
   />

@@ -1,0 +1,266 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Footer from '../../components/Footer.astro';
+import { serviceLinks } from '../../data/navigation';
+import { serviceAreas } from '../../data/service-areas';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (() => {
+  return serviceAreas.map((area) => ({
+    params: { city: area.slug },
+    props: { area },
+  }));
+}) satisfies GetStaticPaths;
+
+const { area } = Astro.props;
+
+const serviceIcons: Record<string, string> = {
+  '/services/carpet': '🏠',
+  '/services/tile': '◻️',
+  '/services/luxury-vinyl-plank': '🪵',
+  '/services/engineered-hardwood': '🪵',
+  '/services/polished-concrete': '💎',
+  '/services/epoxy': '🔬',
+  '/services/floor-preparation': '🔧',
+  '/services/custom-tile-showers': '🚿',
+};
+
+const popularServiceLinks: Record<string, string> = {
+  Tile: '/services/tile',
+  Carpet: '/services/carpet',
+  LVP: '/services/luxury-vinyl-plank',
+  'Luxury Vinyl Plank': '/services/luxury-vinyl-plank',
+  'Natural Stone': '/services/tile',
+  'Engineered Hardwood': '/services/engineered-hardwood',
+  Hardwood: '/services/engineered-hardwood',
+  'Custom Tile': '/services/custom-tile-showers',
+  'Polished Concrete': '/services/polished-concrete',
+  'Floor Preparation': '/services/floor-preparation',
+  Epoxy: '/services/epoxy',
+};
+
+const pageTitle = `Flooring Services in ${area.city}, AZ | Brooks Floor Covering`;
+const pageDescription = `Professional flooring installation in ${area.city}, AZ — ${area.tagline}. Carpet, tile, LVP, polished concrete, epoxy, and more. Licensed (ROC #226840), no travel fees. Free estimates.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      name: `Flooring Services in ${area.city}, AZ`,
+      description: `Professional flooring installation, repairs, and concrete services in ${area.city}, Arizona. ${area.tagline}.`,
+      provider: {
+        '@type': 'HomeAndConstructionBusiness',
+        '@id': 'https://brooksfloorcovering.com/#business',
+      },
+      areaServed: {
+        '@type': 'City',
+        name: area.city,
+        containedInPlace: { '@type': 'State', name: 'Arizona' },
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://brooksfloorcovering.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Service Areas',
+          item: 'https://brooksfloorcovering.com/service-areas/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: area.city,
+          item: `https://brooksfloorcovering.com/service-areas/${area.slug}/`,
+        },
+      ],
+    },
+  ],
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} jsonLd={jsonLd}>
+  <Navigation />
+
+  <Hero title={`Flooring Services in ${area.city}, AZ`} subtitle={area.tagline} compact={true} />
+
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Service Areas', href: '/service-areas/' },
+      { label: area.city },
+    ]}
+  />
+
+  <main>
+    <!-- City Overview -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="flex items-start justify-between gap-4 mb-6">
+            <div>
+              <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-2">
+                {area.tagline}
+              </p>
+              <h2 class="text-2xl md:text-3xl font-bold text-brand-dark font-display">
+                Professional Flooring in {area.city}
+              </h2>
+            </div>
+            {
+              area.highlight && (
+                <span class="shrink-0 bg-brand-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Home Base
+                </span>
+              )
+            }
+          </div>
+          <p class="text-neutral-700 leading-relaxed text-lg mb-6">
+            {area.description}
+          </p>
+          <p class="text-neutral-700 leading-relaxed">
+            Brooks Floor Covering has been serving {area.city} and the Greater Phoenix Area since 1994.
+            We are fully licensed, bonded, and insured (ROC #226840) with no travel fees anywhere in the
+            metro area. Every project starts with a free, no-obligation estimate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neighborhoods -->
+    <section class="py-12 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Areas We Serve
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-6 font-display">
+            {area.city} Neighborhoods
+          </h2>
+          <div class="flex flex-wrap gap-3">
+            {
+              area.neighborhoods.map((neighborhood) => (
+                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-neutral-200 text-neutral-700 font-medium shadow-sm">
+                  <span class="w-2 h-2 rounded-full bg-brand-primary shrink-0" />
+                  {neighborhood}
+                </span>
+              ))
+            }
+          </div>
+          <p class="text-sm text-neutral-500 mt-4">
+            Don't see your neighborhood listed? We serve all of {area.city} and surrounding areas.
+            <a
+              href="/contact"
+              class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
+            >
+              Contact us
+            </a> for a free estimate.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Services -->
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Most Requested
+          </p>
+          <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-6 font-display">
+            Popular Services in {area.city}
+          </h2>
+          <div class="flex flex-wrap gap-3 mb-8">
+            {
+              area.popularServices.map((service) => (
+                <a
+                  href={popularServiceLinks[service] || '/services'}
+                  class="inline-block bg-brand-primary/10 text-brand-primary px-4 py-2 rounded-lg font-semibold hover:bg-brand-primary hover:text-white transition-all duration-300"
+                >
+                  {service}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- All Services Grid -->
+    <section class="py-14 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-12">
+            <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+              What We Offer
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold text-brand-dark font-display">
+              All Services Available in {area.city}
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {
+              serviceLinks.map((link) => (
+                <a
+                  href={link.href}
+                  class="flex items-center gap-3 p-4 bg-white rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
+                >
+                  <span class="text-2xl" aria-hidden="true">
+                    {serviceIcons[link.href] || '🔨'}
+                  </span>
+                  <span class="font-medium text-neutral-800">{link.label}</span>
+                </a>
+              ))
+            }
+          </div>
+          <div class="text-center mt-8">
+            <a
+              href="/services"
+              class="inline-block text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors text-lg"
+            >
+              View All Services &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-14 bg-gradient-to-br from-brand-dark to-brand-navy text-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display tracking-tight">
+          Ready to Start Your {area.city} Flooring Project?
+        </h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+          Get a free, no-obligation estimate for your home or business in {area.city}. No travel
+          fees, licensed and insured, with over 30 years of experience.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contact"
+            class="inline-block bg-brand-accent text-white px-10 py-4 rounded-lg font-semibold hover:bg-brand-accent-dark transition duration-300 text-lg shadow-lg"
+          >
+            Get Your Free Estimate
+          </a>
+          <a
+            href="tel:+16236888422"
+            class="inline-block bg-white/10 text-white px-10 py-4 rounded-lg font-semibold hover:bg-white/20 transition duration-300 text-lg border border-white/30"
+          >
+            Call (623) 688-8422
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

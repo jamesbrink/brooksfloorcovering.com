@@ -4,6 +4,7 @@ import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
+import { serviceAreaCitiesSchema } from '../../data/navigation';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -17,10 +18,7 @@ const jsonLd = {
         '@type': 'HomeAndConstructionBusiness',
         '@id': 'https://brooksfloorcovering.com/#business',
       },
-      areaServed: {
-        '@type': 'State',
-        name: 'Arizona',
-      },
+      areaServed: serviceAreaCitiesSchema,
       serviceType: 'Floor Preparation',
     },
     {
@@ -96,7 +94,7 @@ const jsonLd = {
   <Navigation />
 
   <Hero
-    title="Floor Preparation Services"
+    title="Floor Preparation Services in Phoenix, AZ"
     subtitle="Professional concrete grinding, leveling, moisture mitigation, and subfloor preparation for lasting flooring installations across the Greater Phoenix Area."
     compact={true}
   />

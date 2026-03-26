@@ -23,3 +23,9 @@ export const serviceAreaCities = [
   'Avondale',
   'Buckeye',
 ];
+
+export const serviceAreaCitiesSchema = serviceAreaCities.map((city) => ({
+  '@type': 'City' as const,
+  name: city,
+  containedInPlace: { '@type': 'State' as const, name: 'Arizona' },
+}));
