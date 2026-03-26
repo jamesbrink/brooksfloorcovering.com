@@ -241,7 +241,7 @@ Brooks Floor Covering proudly serves the entire Greater Phoenix metropolitan are
 - **Gilbert** — Family-friendly community in the East Valley. Residential and commercial flooring services.
 - **Buckeye** — Arizona's fastest-growing city. Professional flooring installation for new builds and remodels.
 
-Each city has a dedicated service page with local details: https://brooksfloorcovering.com/service-areas/[city]/
+Each city has a dedicated service page: [Phoenix](https://brooksfloorcovering.com/service-areas/phoenix/), [Scottsdale](https://brooksfloorcovering.com/service-areas/scottsdale/), [Mesa](https://brooksfloorcovering.com/service-areas/mesa/), [Chandler](https://brooksfloorcovering.com/service-areas/chandler/), [Tempe](https://brooksfloorcovering.com/service-areas/tempe/), [Gilbert](https://brooksfloorcovering.com/service-areas/gilbert/), [Glendale](https://brooksfloorcovering.com/service-areas/glendale/), [Peoria](https://brooksfloorcovering.com/service-areas/peoria/), [Surprise](https://brooksfloorcovering.com/service-areas/surprise/), [Goodyear](https://brooksfloorcovering.com/service-areas/goodyear/), [Avondale](https://brooksfloorcovering.com/service-areas/avondale/), [Buckeye](https://brooksfloorcovering.com/service-areas/buckeye/).
 
 ## Blog
 

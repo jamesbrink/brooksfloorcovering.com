@@ -99,11 +99,9 @@ This is where personal preference plays the biggest role.
 
 ## Cost Comparison
 
-LVP is generally the more budget-friendly option, both for materials and installation. Engineered hardwood carries a higher upfront cost and may require periodic refinishing, adding to the long-term investment. LVP also has lower maintenance costs over time since it never needs sanding or refinishing.
+Costs vary by product line, room size, and installation complexity. The best way to compare is with a side-by-side quote tailored to your project. [Contact us for a free estimate](/contact/) and we'll break down the numbers for both options so you can make an informed decision.
 
-For an accurate quote based on your project size and product preferences, [contact us for a free estimate](/contact/).
-
-**Winner for cost: LVP.** It is significantly more affordable both upfront and over time, especially when you factor in the lack of refinishing costs.
+**Winner for cost:** Depends on your project — get a quote to find out.
 
 ## Which Should You Choose for Your Phoenix Home?
 
