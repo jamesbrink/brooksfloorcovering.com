@@ -14,7 +14,7 @@ We install both products regularly across the Valley, so we know the strengths a
 
 **Luxury Vinyl Plank** is a synthetic product built in layers: a rigid or flexible core (typically SPC or WPC), a photographic design layer that mimics wood grain, and a clear wear layer on top. The entire plank is engineered plastic and contains no real wood.
 
-**Engineered Hardwood** features a real hardwood veneer on top — typically oak, hickory, walnut, or maple — bonded to a plywood or HDF core. The cross-layered core gives it more dimensional stability than solid hardwood, but it is still a wood-based product that reacts to environmental changes.
+**Engineered Hardwood** features a real hardwood veneer on top (typically oak, hickory, walnut, or maple) bonded to a plywood or HDF core. The cross-layered core gives it more dimensional stability than solid hardwood, but it is still a wood-based product that reacts to environmental changes.
 
 **The takeaway:** LVP is fully synthetic and inert. Engineered hardwood is a natural product that responds to humidity and temperature. In Phoenix's extreme conditions, this distinction matters.
 
@@ -44,13 +44,13 @@ Phoenix may be a desert, but moisture still matters. Kitchen spills, bathroom sp
 
 **LVP Performance:**
 
-- 100% waterproof — the core, surface, and edges do not absorb water
+- 100% waterproof: the core, surface, and edges do not absorb water
 - Safe for kitchens, bathrooms, laundry rooms, and below-grade installations
 - Standing water will not cause damage if cleaned within a reasonable time
 
 **Engineered Hardwood Performance:**
 
-- Water-resistant but not waterproof — the wood veneer and core can absorb moisture
+- Water-resistant but not waterproof: the wood veneer and core can absorb moisture
 - Spills must be cleaned promptly to prevent staining and swelling
 - Not recommended for bathrooms or below-grade installations
 - Monsoon humidity spikes can cause temporary expansion
@@ -65,7 +65,7 @@ Both products are durable, but they wear differently over time.
 
 - Wear layer thickness ranges from 12 mil (residential) to 28 mil (heavy commercial)
 - Resists scratches, dents, and stains better than most flooring types
-- Cannot be refinished — when the wear layer is worn through, the plank must be replaced
+- Cannot be refinished. When the wear layer is worn through, the plank must be replaced
 - Expected lifespan: 15 to 25 years depending on quality and traffic
 
 **Engineered Hardwood Durability:**
@@ -90,7 +90,7 @@ This is where personal preference plays the biggest role.
 
 **Engineered Hardwood Aesthetics:**
 
-- Nothing matches the look and feel of real wood — the grain variation is genuine
+- Nothing matches the look and feel of real wood because the grain variation is genuine
 - Natural wood character adds warmth and depth to any room
 - Develops a patina over time that many homeowners find appealing
 - Premium feel underfoot that adds perceived value to your home
@@ -101,7 +101,7 @@ This is where personal preference plays the biggest role.
 
 Costs vary by product line, room size, and installation complexity. The best way to compare is with a side-by-side quote tailored to your project. [Contact us for a free estimate](/contact/) and we'll break down the numbers for both options so you can make an informed decision.
 
-**Winner for cost:** Depends on your project — get a quote to find out.
+**Winner for cost:** Depends on your project. Get a quote to find out.
 
 ## Which Should You Choose for Your Phoenix Home?
 
@@ -125,7 +125,7 @@ Costs vary by product line, room size, and installation complexity. The best way
 
 For most Phoenix homeowners, we find that LVP offers the best combination of performance, value, and peace of mind in Arizona's climate. It handles everything the desert throws at it without requiring the environmental controls that engineered hardwood demands.
 
-That said, engineered hardwood is a beautiful product that absolutely works in Arizona when installed correctly and maintained properly. Many of our customers install LVP in kitchens, bathrooms, and high-traffic zones, then use engineered hardwood in formal living spaces and bedrooms — getting the best of both worlds.
+That said, engineered hardwood is a beautiful product that absolutely works in Arizona when installed correctly and maintained properly. Many of our customers install LVP in kitchens, bathrooms, and high-traffic zones, then use engineered hardwood in formal living spaces and bedrooms, getting the best of both worlds.
 
 No matter which direction you lean, professional installation is key to long-term performance. At Brooks Floor Covering, we have been installing both products across the Greater Phoenix Area since 1994. Our team will help you choose the right product for each room and ensure it is installed to manufacturer specifications.
 

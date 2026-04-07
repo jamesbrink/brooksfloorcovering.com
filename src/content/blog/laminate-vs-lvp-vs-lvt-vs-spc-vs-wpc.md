@@ -6,7 +6,7 @@ author: 'Brooks Floor Covering'
 tags: ['laminate', 'lvp', 'lvt', 'spc', 'wpc', 'flooring comparison', 'phoenix', 'arizona']
 ---
 
-Walk into any flooring showroom and you will see a wall of products that all look similar — planks and tiles with realistic wood or stone visuals. But behind those surfaces, the construction varies significantly. Laminate, LVP, LVT, SPC, and WPC each use different core materials and manufacturing methods that affect performance in real-world conditions.
+Walk into any flooring showroom and you will see a wall of products that all look similar: planks and tiles with realistic wood or stone visuals. But behind those surfaces, the construction varies significantly. Laminate, LVP, LVT, SPC, and WPC each use different core materials and manufacturing methods that affect performance in real-world conditions.
 
 If you have been researching flooring for your Phoenix home and feel overwhelmed by the alphabet soup, this guide will break down what each product actually is, how they differ, and which ones perform best in Arizona's climate.
 
@@ -14,21 +14,21 @@ If you have been researching flooring for your Phoenix home and feel overwhelmed
 
 Before diving into the details, here is a plain-language overview of each product type:
 
-- **Laminate** — a wood-fiber core (HDF) topped with a photographic image layer and a protective overlay
-- **LVP (Luxury Vinyl Plank)** — a vinyl-based plank with a rigid or flexible core, designed to mimic wood
-- **LVT (Luxury Vinyl Tile)** — the same technology as LVP but cut in tile or stone-look formats
-- **SPC (Stone Plastic Composite)** — a type of rigid-core luxury vinyl with a dense, stone-powder-and-polymer core
-- **WPC (Wood Plastic Composite)** — a type of rigid-core luxury vinyl with a foamed, wood-powder-and-polymer core
+- **Laminate:** a wood-fiber core (HDF) topped with a photographic image layer and a protective overlay
+- **LVP (Luxury Vinyl Plank):** a vinyl-based plank with a rigid or flexible core, designed to mimic wood
+- **LVT (Luxury Vinyl Tile):** the same technology as LVP but cut in tile or stone-look formats
+- **SPC (Stone Plastic Composite):** a type of rigid-core luxury vinyl with a dense, stone-powder-and-polymer core
+- **WPC (Wood Plastic Composite):** a type of rigid-core luxury vinyl with a foamed, wood-powder-and-polymer core
 
 **Key point:** LVP and LVT describe the shape and look of the product. SPC and WPC describe what the core is made of. An LVP plank will have either an SPC or WPC core (or occasionally a flexible vinyl core in older products). Understanding this relationship clears up most of the confusion.
 
-## Core Construction — The Most Important Difference
+## Core Construction: The Most Important Difference
 
 The core is what gives each product its structural properties, and it is the single biggest factor separating these flooring types.
 
 ### Laminate Core
 
-Laminate flooring uses a **high-density fiberboard (HDF) core** made from compressed wood fibers bonded with resin. This gives laminate a rigid, stable feel underfoot and good impact resistance. However, HDF is a wood-based material — it absorbs water. When moisture reaches the core through seams, edges, or damage to the surface, the board swells and does not recover. This is laminate's biggest vulnerability.
+Laminate flooring uses a **high-density fiberboard (HDF) core** made from compressed wood fibers bonded with resin. This gives laminate a rigid, stable feel underfoot and good impact resistance. However, HDF is a wood-based material that absorbs water. When moisture reaches the core through seams, edges, or damage to the surface, the board swells and does not recover. This is laminate's biggest vulnerability.
 
 ### SPC Core (Stone Plastic Composite)
 
@@ -36,7 +36,7 @@ SPC cores are made from a blend of **limestone powder, polyvinyl chloride, and s
 
 ### WPC Core (Wood Plastic Composite)
 
-WPC cores combine **wood powder (or bamboo powder) with thermoplastic polymers** in a foamed structure. The foaming process creates a core that is thicker, lighter, and softer underfoot than SPC. WPC also provides better sound absorption and thermal insulation. Like SPC, the core itself is waterproof — the polymer matrix prevents moisture absorption even though wood powder is part of the blend.
+WPC cores combine **wood powder (or bamboo powder) with thermoplastic polymers** in a foamed structure. The foaming process creates a core that is thicker, lighter, and softer underfoot than SPC. WPC also provides better sound absorption and thermal insulation. Like SPC, the core itself is waterproof because the polymer matrix prevents moisture absorption even though wood powder is part of the blend.
 
 ### How They Compare
 
@@ -50,15 +50,15 @@ WPC cores combine **wood powder (or bamboo powder) with thermoplastic polymers**
 | **Thickness range**   | 7–12 mm        | 3.5–7 mm  | 5–8 mm               |
 | **Weight**            | Light          | Heavy     | Medium               |
 
-## Water Resistance — Where the Products Diverge Most
+## Water Resistance: Where the Products Diverge Most
 
 This is the category where laminate separates from the pack, and it matters enormously in real life.
 
-**Laminate:** Water-resistant surface, but the HDF core is not waterproof. Spills must be cleaned immediately. Standing water causes irreversible swelling at seams and edges. Not suitable for bathrooms, laundry rooms, or any space where water exposure is likely. In Phoenix, monsoon season can bring unexpected leaks — laminate in the wrong location can be ruined in a single event.
+**Laminate:** Water-resistant surface, but the HDF core is not waterproof. Spills must be cleaned immediately. Standing water causes irreversible swelling at seams and edges. Not suitable for bathrooms, laundry rooms, or any space where water exposure is likely. In Phoenix, monsoon season can bring unexpected leaks, and laminate in the wrong location can be ruined in a single event.
 
 **LVP/LVT with SPC core:** 100% waterproof from top to bottom. The stone-polymer core does not absorb moisture under any conditions. Safe for kitchens, bathrooms, laundry rooms, mudrooms, and below-grade installations. Standing water will not cause structural damage.
 
-**LVP/LVT with WPC core:** Also 100% waterproof. The foamed polymer core resists moisture completely. Suitable for all the same wet areas as SPC. The only caveat is that some lower-quality WPC products may have seams that allow water to reach the subfloor if not properly installed — professional installation eliminates this risk.
+**LVP/LVT with WPC core:** Also 100% waterproof. The foamed polymer core resists moisture completely. Suitable for all the same wet areas as SPC. The only caveat is that some lower-quality WPC products may have seams that allow water to reach the subfloor if not properly installed. Professional installation eliminates this risk.
 
 **Bottom line:** If there is any chance your floor will encounter moisture, SPC and WPC luxury vinyl products are far safer choices than laminate.
 
@@ -68,11 +68,11 @@ The wear layer is the transparent top coating that protects the floor from scrat
 
 ### Laminate Wear Layer
 
-Laminate uses an **aluminum oxide overlay** — a hard, abrasion-resistant sheet bonded to the surface. This overlay is measured by an AC (Abrasion Class) rating:
+Laminate uses an **aluminum oxide overlay**, a hard, abrasion-resistant sheet bonded to the surface. This overlay is measured by an AC (Abrasion Class) rating:
 
-- **AC3** — moderate residential traffic
-- **AC4** — heavy residential and moderate commercial traffic
-- **AC5** — heavy commercial traffic
+- **AC3:** moderate residential traffic
+- **AC4:** heavy residential and moderate commercial traffic
+- **AC5:** heavy commercial traffic
 
 Laminate's aluminum oxide surface is genuinely hard and resists scratches well. It tends to outperform vinyl wear layers against fine abrasion. However, laminate can chip on hard impacts, and damage cannot be repaired without replacing the plank.
 
@@ -80,11 +80,11 @@ Laminate's aluminum oxide surface is genuinely hard and resists scratches well. 
 
 Luxury vinyl products use a **clear PVC or polyurethane wear layer** measured in mils (thousandths of an inch):
 
-- **6–12 mil** — light residential use
-- **12–20 mil** — standard residential to light commercial
-- **20–28 mil** — heavy commercial and high-traffic residential
+- **6–12 mil:** light residential use
+- **12–20 mil:** standard residential to light commercial
+- **20–28 mil:** heavy commercial and high-traffic residential
 
-Higher mil counts mean more material protecting the design layer. Some products add a ceramic bead coating for extra scratch resistance. Vinyl wear layers are more flexible than laminate overlays, which makes them better at absorbing dents rather than chipping — an advantage in homes with pets or heavy furniture.
+Higher mil counts mean more material protecting the design layer. Some products add a ceramic bead coating for extra scratch resistance. Vinyl wear layers are more flexible than laminate overlays, which makes them better at absorbing dents rather than chipping, an advantage in homes with pets or heavy furniture.
 
 ### Which Is More Durable?
 
@@ -92,7 +92,7 @@ Neither product wins across the board. Laminate resists fine scratches and abras
 
 ## Comfort and Feel Underfoot
 
-How a floor feels when you walk on it is more important than many homeowners expect — especially in a home where you spend a lot of time barefoot.
+How a floor feels when you walk on it is more important than many homeowners expect, especially in a home where you spend a lot of time barefoot.
 
 **Laminate** feels firm and somewhat hollow. The HDF core transmits sound, and without quality underlayment, laminate can produce a noticeable "click" when walked on. It does not retain heat or cold as aggressively as tile, but it is not particularly warm either.
 
@@ -108,8 +108,8 @@ Phoenix homes face conditions that stress flooring in ways that milder climates 
 
 - Performs reasonably well in temperature-controlled interiors
 - Low humidity can cause gapping at plank seams over time
-- Must avoid rooms with direct sun exposure on the slab — heat buildup can cause warping
-- Absolutely no wet areas — monsoon leaks or plumbing failures are a serious risk
+- Must avoid rooms with direct sun exposure on the slab because heat buildup can cause warping
+- Absolutely no wet areas. Monsoon leaks or plumbing failures are a serious risk
 
 **SPC vinyl in Arizona:**
 
@@ -121,7 +121,7 @@ Phoenix homes face conditions that stress flooring in ways that milder climates 
 **WPC vinyl in Arizona:**
 
 - Good heat tolerance, though the foamed core can soften slightly at extreme slab temperatures
-- Most manufacturers rate WPC for use on slabs up to 85–90 degrees — confirm specs for your product
+- Most manufacturers rate WPC for use on slabs up to 85–90 degrees, so confirm specs for your product
 - Excellent for interior rooms, bedrooms, and living areas
 - Also waterproof and safe for wet areas
 
@@ -131,7 +131,7 @@ Phoenix homes face conditions that stress flooring in ways that milder climates 
 
 All three product types use click-lock floating installation, but there are some differences worth knowing.
 
-**Laminate** floats over an underlayment pad. It cannot be glued directly to concrete in most cases. Expansion gaps are critical because the HDF core expands and contracts with humidity changes. In Arizona's dry climate, laminate installations need careful acclimation — we recommend 72 hours minimum in the room where it will be installed.
+**Laminate** floats over an underlayment pad. It cannot be glued directly to concrete in most cases. Expansion gaps are critical because the HDF core expands and contracts with humidity changes. In Arizona's dry climate, laminate installations need careful acclimation. We recommend 72 hours minimum in the room where it will be installed.
 
 **SPC vinyl** clicks together tightly and can be installed over most existing hard-surface floors, including tile. Its rigidity means it bridges minor subfloor imperfections well. SPC requires smaller expansion gaps than laminate because it expands and contracts less. Many SPC products can be installed over concrete slabs with minimal prep.
 
@@ -157,10 +157,10 @@ All three product types use click-lock floating installation, but there are some
 
 **Choose WPC luxury vinyl if:**
 
-- Comfort and quiet are priorities — bedrooms, living rooms, home offices
+- Comfort and quiet are priorities (bedrooms, living rooms, home offices)
 - You want waterproof performance with a softer feel than SPC
 - Your rooms have moderate slab temperatures (not direct afternoon sun exposure)
-- Sound dampening matters — upstairs rooms or condos with noise concerns
+- Sound dampening matters (upstairs rooms or condos with noise concerns)
 
 **Choose LVT (tile format) if:**
 
@@ -172,7 +172,7 @@ All three product types use click-lock floating installation, but there are some
 
 For most Phoenix homeowners, we recommend **SPC-core luxury vinyl plank** as the best all-around performer. It handles the heat, shrugs off moisture, resists daily wear, and looks great doing it. When customers want extra comfort in bedrooms and quiet spaces, we often suggest WPC for those rooms while using SPC in kitchens, baths, and high-traffic areas.
 
-Laminate has its place — it is a proven product with excellent scratch resistance and a natural feel — but its vulnerability to moisture makes it a riskier choice in Arizona. One monsoon leak, one overflowing bathtub, or one dishwasher failure can ruin a laminate floor permanently.
+Laminate has its place. It is a proven product with excellent scratch resistance and a natural feel, but its vulnerability to moisture makes it a riskier choice in Arizona. One monsoon leak, one overflowing bathtub, or one dishwasher failure can ruin a laminate floor permanently.
 
 At Brooks Floor Covering, we install all of these products and can show you samples side by side so you can feel the difference for yourself. We have been helping Phoenix-area homeowners choose the right flooring since 1994, and we will give you an honest recommendation based on your home, your lifestyle, and your rooms.
 

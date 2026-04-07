@@ -25,6 +25,7 @@ pnpm-debug.log*
 
 # playwright
 .playwright-mcp/
+.playwright-cli/
 test-results/
 
 # MCP config (local)
