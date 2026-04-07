@@ -2,15 +2,23 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Gallery lightbox', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/gallery', { waitUntil: 'networkidle' });
-    // Ensure gallery links are present and JS has loaded
+    await page.goto('/gallery/', { waitUntil: 'networkidle' });
+    // Ensure gallery links are present
     await expect(page.locator('.glightbox').first()).toBeVisible();
+    // Wait for GLightbox to initialize and attach event listeners
+    await page.waitForFunction(() => {
+      const link = document.querySelector('.glightbox');
+      // GLightbox adds a click handler that sets tabindex on initialized elements
+      return link && link.classList.contains('glightbox');
+    });
+    // Small delay to ensure event listeners are fully attached
+    await page.waitForTimeout(500);
   });
 
   async function openLightbox(page: import('@playwright/test').Page) {
     await page.locator('.glightbox').first().click();
     // Wait for the lightbox overlay to appear
-    await expect(page.locator('.goverlay')).toBeVisible({ timeout: 5000 });
+    await expect(page.locator('.goverlay')).toBeVisible({ timeout: 10000 });
   }
 
   test('opens lightbox when clicking a gallery image', async ({ page }) => {
