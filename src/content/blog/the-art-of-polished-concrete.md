@@ -65,6 +65,8 @@ Achieving a truly stunning polished concrete floor is an art form that requires 
 
 Every step requires precision and expertise. This is not a DIY project. The difference between a mediocre result and a breathtaking floor comes down to the skill of the craftsman.
 
+Want to go deeper on the grinding stage? Read our breakdown of [wet grinding vs. dry grinding for polished concrete](/blog/wet-vs-dry-grinding-polished-concrete/) to understand the trade-offs between the two methods and why we often combine them for the best result.
+
 ## Is Polished Concrete Right for You?
 
 Polished concrete is an excellent choice for:
