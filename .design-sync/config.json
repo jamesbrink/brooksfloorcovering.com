@@ -1,0 +1,6 @@
+{
+  "projectId": "2eb19d79-b277-4fe0-ae49-7bf7140cb479",
+  "projectName": "Brooks Floor Covering",
+  "mode": "tokens-and-guidelines",
+  "note": "This repo is a static Astro site, not a React component library. Per user decision (2026-07-21), the sync ships design tokens, fonts, and authored brand guidelines only — no component bundle. The .astro components (Navigation, Hero, Breadcrumb, ServiceCard, Footer) cannot execute in the design runtime and are intentionally not synced. Do not run the converter (package-build.mjs) against this repo."
+}
