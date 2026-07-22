@@ -73,7 +73,7 @@ const breadcrumbJsonLd = {
                   </time>
                   <h2 class="text-xl font-bold mt-2 mb-3 font-display text-neutral-900">
                     <a
-                      href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+                      href={`/blog/${post.id}/`}
                       class="hover:text-brand-primary transition-colors"
                     >
                       {post.data.title}
@@ -90,7 +90,7 @@ const breadcrumbJsonLd = {
                     </div>
                   )}
                   <a
-                    href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+                    href={`/blog/${post.id}/`}
                     class="inline-flex items-center text-brand-primary font-medium hover:text-brand-primary-dark transition-colors"
                   >
                     Read more

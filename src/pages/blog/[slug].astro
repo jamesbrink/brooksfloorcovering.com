@@ -8,14 +8,14 @@ import { getCollection, render } from 'astro:content';
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.md$/, '') },
+    params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const slug = post.id.replace(/\.md$/, '');
+const slug = post.id;
 
 const formattedDate = post.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
