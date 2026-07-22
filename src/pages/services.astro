@@ -10,6 +10,8 @@ const flooringServices = [
     icon: '🏠',
     title: 'Carpet Flooring',
     href: '/services/carpet',
+    image: '/images/carpet-residential-phoenix-install.jpg',
+    imageAlt: 'Freshly installed residential carpet in a Phoenix-area home',
     description:
       'Commercial carpet tile, stretch-in carpet, and broadloom carpet expertly installed for homes and businesses.',
   },
@@ -17,6 +19,8 @@ const flooringServices = [
     icon: '◻️',
     title: 'Tile Flooring',
     href: '/services/tile',
+    image: '/images/tile-installation-worker-renovation.jpg',
+    imageAlt: 'Installer laying tile flooring during a home renovation',
     description:
       'Ceramic, porcelain, and natural stone tile installation with precision layout and lasting adhesion.',
   },
@@ -24,6 +28,8 @@ const flooringServices = [
     icon: '🪵',
     title: 'Luxury Vinyl Plank',
     href: '/services/luxury-vinyl-plank',
+    image: '/images/site-modern-kitchen-tile-floor.jpg',
+    imageAlt: 'Durable, easy-to-clean flooring in a modern Phoenix-area kitchen',
     description:
       'Waterproof, scratch-resistant LVP flooring that replicates hardwood and stone at a fraction of the cost.',
   },
@@ -31,6 +37,8 @@ const flooringServices = [
     icon: '🪵',
     title: 'Engineered Hardwood',
     href: '/services/engineered-hardwood',
+    image: '/images/site-modern-living-room-hardwood.jpg',
+    imageAlt: 'Engineered hardwood flooring in a modern living room',
     description:
       'Oak, maple, hickory, walnut, and exotic wood species in engineered or solid formats.',
   },
@@ -41,6 +49,8 @@ const concreteServices = [
     icon: '💎',
     title: 'Polished Concrete',
     href: '/services/polished-concrete',
+    image: '/images/polished-concrete-commercial-highgloss.jpg',
+    imageAlt: 'High-gloss polished concrete floor in a commercial space',
     description:
       'Transform raw concrete into a sleek, low-maintenance finished floor from matte to high-gloss.',
   },
@@ -48,6 +58,8 @@ const concreteServices = [
     icon: '🔬',
     title: 'Epoxy Flooring',
     href: '/services/epoxy',
+    image: '/images/epoxy-metallic-commercial-wideview.jpg',
+    imageAlt: 'Metallic epoxy floor coating in a wide commercial interior',
     description:
       'Seamless, durable coatings ideal for garages, warehouses, and commercial environments.',
   },
@@ -55,6 +67,8 @@ const concreteServices = [
     icon: '🔧',
     title: 'Floor Preparation',
     href: '/services/floor-preparation',
+    image: '/images/concrete-overlay-self-leveling-residential.jpg',
+    imageAlt: 'Self-leveling underlayment poured during floor preparation',
     description:
       'Concrete grinding, moisture mitigation, leveling, and subfloor prep for lasting installations.',
   },
@@ -222,8 +236,8 @@ const servicesJsonLd = {
 ---
 
 <Layout
-  title="Flooring Installation & Repair Services | Phoenix, AZ - Brooks Floor Covering"
-  description="Professional flooring installation, repairs, concrete services, and specialty tile work in Phoenix and the Greater Phoenix Area. Free estimates — call (623) 688-8422."
+  title="Flooring Services in Phoenix, AZ | Brooks Floor Covering"
+  description="Professional flooring installation, repair, concrete, and specialty tile services in Phoenix and across the Valley. Free estimates — call (623) 688-8422."
   jsonLd={servicesJsonLd}
   ogImage="/images/site-brooks-team-flooring-project.jpg"
 >
@@ -253,9 +267,13 @@ const servicesJsonLd = {
             preparation, installation, restoration, and specialty surface solutions for residential,
             commercial, and industrial spaces. From concrete preparation and surface systems to fine
             finish details, our team delivers durable results, clean installations, and floors built
-            to perform. With over 30 years of experience, we are licensed, bonded, and insured (ROC
-            #226840), and our installers are factory-trained by leading manufacturers including
-            Mohawk, Shaw, Arizona Tile, and Daltile.
+            to perform. With over 30 years of experience, we are licensed, bonded, and insured (<a
+              href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+              target="_blank"
+              rel="noopener"
+              class="underline hover:text-brand-primary">ROC #226840</a
+            >), and our installers are factory-trained by leading manufacturers including Mohawk,
+            Shaw, Arizona Tile, and Daltile.
           </p>
           <p class="text-neutral-700 leading-relaxed text-lg">
             Whether you need a single repair or a complete flooring system, we deliver solutions
@@ -287,19 +305,29 @@ const servicesJsonLd = {
               flooringServices.map((service) => (
                 <a
                   href={service.href}
-                  class="block p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                  class="group block overflow-hidden border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div
-                    class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
-                    aria-hidden="true"
-                  >
-                    {service.icon}
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-6">
+                    <div
+                      class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                      aria-hidden="true"
+                    >
+                      {service.icon}
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
+                    <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
+                    <span class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm">
+                      Learn More &rarr;
+                    </span>
                   </div>
-                  <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
-                  <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
-                  <span class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm">
-                    Learn More &rarr;
-                  </span>
                 </a>
               ))
             }
@@ -325,19 +353,29 @@ const servicesJsonLd = {
               concreteServices.map((service) => (
                 <a
                   href={service.href}
-                  class="block p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+                  class="group block overflow-hidden border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div
-                    class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
-                    aria-hidden="true"
-                  >
-                    {service.icon}
+                  <img
+                    src={service.image}
+                    alt={service.imageAlt}
+                    width="800"
+                    height="450"
+                    loading="lazy"
+                    class="w-full h-48 object-cover"
+                  />
+                  <div class="p-6">
+                    <div
+                      class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                      aria-hidden="true"
+                    >
+                      {service.icon}
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
+                    <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
+                    <span class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm">
+                      Learn More &rarr;
+                    </span>
                   </div>
-                  <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
-                  <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
-                  <span class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm">
-                    Learn More &rarr;
-                  </span>
                 </a>
               ))
             }
@@ -359,24 +397,34 @@ const servicesJsonLd = {
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <a
               href="/services/custom-tile-showers"
-              class="block p-6 border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
+              class="group block overflow-hidden border border-neutral-200 rounded-lg bg-white border-t-4 border-t-brand-accent hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div
-                class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
-                aria-hidden="true"
-              >
-                🚿
+              <img
+                src="/images/tile-custom-shower-natural-stone.jpg"
+                alt="Custom tile shower finished with natural stone"
+                width="800"
+                height="450"
+                loading="lazy"
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <div
+                  class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                  aria-hidden="true"
+                >
+                  🚿
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-neutral-800">Custom Tile Showers</h3>
+                <p class="text-neutral-700 mb-4 leading-relaxed">
+                  Complete custom shower systems including waterproofing, tile installation, and
+                  custom layouts.
+                </p>
+                <span
+                  class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm"
+                >
+                  Learn More &rarr;
+                </span>
               </div>
-              <h3 class="text-xl font-semibold mb-3 text-neutral-800">Custom Tile Showers</h3>
-              <p class="text-neutral-700 mb-4 leading-relaxed">
-                Complete custom shower systems including waterproofing, tile installation, and
-                custom layouts.
-              </p>
-              <span
-                class="text-brand-primary font-semibold group-hover:text-brand-primary-dark transition-colors text-sm"
-              >
-                Learn More &rarr;
-              </span>
             </a>
           </div>
           <div class="bg-white rounded-lg border border-neutral-200 p-6">
@@ -517,8 +565,12 @@ const servicesJsonLd = {
               </div>
               <h3 class="text-lg font-semibold mb-2 text-neutral-800">Licensed & Insured</h3>
               <p class="text-neutral-600 text-sm leading-relaxed">
-                Arizona ROC #226840. Fully licensed, bonded, and insured for your protection on
-                every project.
+                Arizona <a
+                  href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+                  target="_blank"
+                  rel="noopener"
+                  class="underline hover:text-brand-primary">ROC #226840</a
+                >. Fully licensed, bonded, and insured for your protection on every project.
               </p>
             </div>
             <div class="text-center">

@@ -1,0 +1,54 @@
+---
+/**
+ * Visible FAQ section. Pages that emit FAQPage JSON-LD must render the same
+ * questions through this component — Google requires FAQ content to be
+ * user-visible on the page.
+ */
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FaqItem[];
+  title?: string;
+  subtitle?: string;
+}
+
+const { faqs, title = 'Frequently Asked Questions', subtitle } = Astro.props;
+---
+
+<section class="py-16 bg-neutral-50">
+  <div class="container mx-auto px-4 max-w-3xl">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-bold font-display text-neutral-900 mb-3">{title}</h2>
+      {subtitle && <p class="text-neutral-600 max-w-2xl mx-auto">{subtitle}</p>}
+    </div>
+    <div class="space-y-4">
+      {
+        faqs.map((faq) => (
+          <details class="group bg-white rounded-lg border border-neutral-200 shadow-sm">
+            <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-4 font-semibold text-neutral-900">
+              {faq.question}
+              <svg
+                class="w-5 h-5 shrink-0 text-brand-primary transition-transform duration-200 group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </summary>
+            <p class="px-6 pb-5 text-neutral-600 leading-relaxed">{faq.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,8 +1,9 @@
 ---
 title: 'Laminate vs. LVP vs. LVT vs. SPC vs. WPC: Understanding the Differences'
-description: 'A clear comparison of laminate, LVP, LVT, SPC, and WPC flooring. Learn how core construction, water resistance, and wear layers differ so you can choose the right floor for your Phoenix home.'
+description: 'A clear comparison of laminate, LVP, LVT, SPC, and WPC flooring, and how core construction, water resistance, and wear layers set them apart.'
 date: 2026-03-30
 author: 'Brooks Floor Covering'
+image: '/images/site-modern-kitchen-tile-floor.jpg'
 tags: ['laminate', 'lvp', 'lvt', 'spc', 'wpc', 'flooring comparison', 'phoenix', 'arizona']
 ---
 

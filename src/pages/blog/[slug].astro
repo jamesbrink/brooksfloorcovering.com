@@ -7,13 +7,29 @@ import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { post },
-  }));
+  return posts.map((post) => {
+    const currentTags = post.data.tags ?? [];
+    const related = posts
+      .filter((other) => other.id !== post.id)
+      .map((other) => ({
+        post: other,
+        sharedTags: (other.data.tags ?? []).filter((tag) => currentTags.includes(tag)).length,
+      }))
+      .sort((a, b) => {
+        if (b.sharedTags !== a.sharedTags) return b.sharedTags - a.sharedTags;
+        return b.post.data.date.getTime() - a.post.data.date.getTime();
+      })
+      .slice(0, 3)
+      .map((entry) => entry.post);
+
+    return {
+      params: { slug: post.id },
+      props: { post, related },
+    };
+  });
 }
 
-const { post } = Astro.props;
+const { post, related } = Astro.props;
 const { Content } = await render(post);
 const slug = post.id;
 
@@ -60,7 +76,7 @@ const blogPostingJsonLd = {
   author: {
     '@type': 'Organization',
     name: post.data.author,
-    '@id': 'https://brooksfloorcovering.com/#business',
+    url: 'https://brooksfloorcovering.com/',
   },
   publisher: {
     '@id': 'https://brooksfloorcovering.com/#business',
@@ -80,6 +96,8 @@ const blogPostingJsonLd = {
   description={post.data.description}
   jsonLd={[breadcrumbJsonLd, blogPostingJsonLd]}
   ogImage={post.data.image}
+  ogType="article"
+  publishedTime={post.data.date.toISOString()}
 >
   <Navigation />
 
@@ -119,6 +137,18 @@ const blogPostingJsonLd = {
           }
         </header>
 
+        <!-- Hero Image -->
+        {
+          post.data.image && (
+            <img
+              src={post.data.image}
+              alt={post.data.title}
+              class="w-full rounded-lg shadow-md mb-10"
+              loading="eager"
+            />
+          )
+        }
+
         <!-- Article Content -->
         <div class="prose">
           <Content />
@@ -140,6 +170,40 @@ const blogPostingJsonLd = {
             Get a Free Estimate
           </a>
         </div>
+
+        <!-- Related Posts -->
+        {
+          related.length > 0 && (
+            <div class="mt-12 border-t border-neutral-200 pt-8">
+              <h3 class="text-lg font-bold text-neutral-900 mb-4">Related Articles</h3>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {related.map((relatedPost) => (
+                  <a
+                    href={`/blog/${relatedPost.id}/`}
+                    class="block bg-white rounded-lg border border-neutral-200 shadow-sm hover:shadow-md transition-shadow duration-300 p-5"
+                  >
+                    <time
+                      datetime={relatedPost.data.date.toISOString().split('T')[0]}
+                      class="text-xs text-neutral-500"
+                    >
+                      {relatedPost.data.date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </time>
+                    <h4 class="text-base font-bold font-display text-neutral-900 mt-1 mb-2">
+                      {relatedPost.data.title}
+                    </h4>
+                    <p class="text-sm text-neutral-600 leading-relaxed">
+                      {relatedPost.data.description}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )
+        }
 
         <!-- Related Services -->
         <div class="mt-12 border-t border-neutral-200 pt-8">
