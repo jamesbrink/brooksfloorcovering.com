@@ -30,3 +30,4 @@ test-results/
 
 # MCP config (local)
 .mcp.json
+ds-bundle/

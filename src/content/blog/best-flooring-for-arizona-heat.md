@@ -1,8 +1,9 @@
 ---
 title: "Best Flooring Options for Arizona's Extreme Heat"
-description: "Choosing the right flooring for Arizona's desert climate is critical. Learn which flooring types handle Phoenix heat best, from tile and polished concrete to LVP and carpet."
+description: "Which flooring types handle Phoenix heat best? Compare tile, polished concrete, LVP, and carpet for Arizona's demanding desert climate."
 date: 2026-03-25
 author: 'Brooks Floor Covering'
+image: '/images/hero-arizona-desert-saguaro.jpg'
 tags: ['flooring', 'arizona', 'phoenix', 'tile', 'lvp', 'polished concrete', 'desert climate']
 ---
 

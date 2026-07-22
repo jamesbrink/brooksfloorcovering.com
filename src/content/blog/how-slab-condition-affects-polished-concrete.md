@@ -1,8 +1,9 @@
 ---
 title: 'Polished Concrete: How Slab Condition Affects the Process and the Finished Floor'
-description: 'How the condition of your concrete slab shapes the polished concrete process, the finished look, and the timeline. Learn what an ideal slab looks like and how Brooks Floor Covering tackles uneven floors, poor finishes, grout coats, pour-backs, holes, and cracks.'
+description: 'How the condition of your concrete slab shapes the polished concrete process, the finished look, and the timeline, plus how we handle uneven or damaged floors.'
 date: 2026-05-02
 author: 'Brooks Floor Covering'
+image: '/images/polished-concrete-grinding-demo.jpg'
 tags:
   [
     'polished concrete',

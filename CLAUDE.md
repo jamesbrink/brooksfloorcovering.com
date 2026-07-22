@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Brooks Floor Covering** — professional flooring services website for a Phoenix-area family business (since 1994). Static site deployed to GitHub Pages at `brooksfloorcovering.com`.
 
-**Stack:** Astro 5.17+, Tailwind CSS 4.1 (CSS-first, no config file), TypeScript, GLightbox, Bun
+**Stack:** Astro 7, Tailwind CSS 4.3 (CSS-first, no config file), TypeScript, GLightbox, Bun
 
 ## Commands
 
@@ -19,7 +19,7 @@ bun run lint             # ESLint (.js, .astro)
 bun run lint:fix         # Auto-fix lint issues
 bun run format           # Prettier format
 bun run format:check     # Check formatting
-bun run audit:deps       # npm audit (omit dev)
+bun run audit:deps       # bun audit (high+ severity)
 bun run test             # Playwright e2e tests (requires build first)
 bun run test:ui          # Playwright UI mode
 ```

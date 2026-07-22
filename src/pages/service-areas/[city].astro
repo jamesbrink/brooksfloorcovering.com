@@ -4,6 +4,7 @@ import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
 import { serviceLinks } from '../../data/navigation';
 import { serviceAreas } from '../../data/service-areas';
 import type { GetStaticPaths } from 'astro';
@@ -85,6 +86,17 @@ const jsonLd = {
         },
       ],
     },
+    {
+      '@type': 'FAQPage',
+      mainEntity: area.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    },
   ],
 };
 ---
@@ -129,8 +141,13 @@ const jsonLd = {
           </p>
           <p class="text-neutral-700 leading-relaxed">
             Brooks Floor Covering has been serving {area.city} and the Greater Phoenix Area since 1994.
-            We are fully licensed, bonded, and insured (ROC #226840) with no travel fees anywhere in the
-            metro area. Every project starts with a free, no-obligation estimate.
+            We are fully licensed, bonded, and insured (<a
+              href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+              target="_blank"
+              rel="noopener"
+              class="underline hover:text-brand-primary">ROC #226840</a
+            >) with no travel fees anywhere in the metro area. Every project starts with a free,
+            no-obligation estimate.
           </p>
         </div>
       </div>
@@ -233,6 +250,13 @@ const jsonLd = {
         </div>
       </div>
     </section>
+
+    <!-- City FAQ -->
+    <FAQ
+      faqs={area.faqs}
+      title={`Flooring FAQs for ${area.city}`}
+      subtitle={`Common questions about flooring installation and estimates in ${area.city}, AZ.`}
+    />
 
     <!-- CTA Section -->
     <section class="py-14 bg-gradient-to-br from-brand-dark to-brand-navy text-white">

@@ -10,6 +10,9 @@ const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
 );
 
+const intro =
+  'Practical flooring guidance for Arizona homes and businesses from a Phoenix family flooring contractor working the Valley since 1994.';
+
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -28,12 +31,24 @@ const breadcrumbJsonLd = {
     },
   ],
 };
+
+const blogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': 'https://brooksfloorcovering.com/blog/#blog',
+  name: 'Brooks Floor Covering Blog',
+  description: intro,
+  url: 'https://brooksfloorcovering.com/blog/',
+  publisher: {
+    '@id': 'https://brooksfloorcovering.com/#business',
+  },
+};
 ---
 
 <Layout
   title="Blog | Flooring Tips & Guides - Brooks Floor Covering"
   description="Expert flooring tips, guides, and insights from Brooks Floor Covering. Learn about the best flooring options for Arizona homes and businesses."
-  jsonLd={breadcrumbJsonLd}
+  jsonLd={[breadcrumbJsonLd, blogJsonLd]}
 >
   <Navigation />
 
@@ -48,6 +63,12 @@ const breadcrumbJsonLd = {
   <main>
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
+        <p class="max-w-3xl text-lg text-neutral-600 leading-relaxed mb-12">
+          {intro} We write these guides to answer the questions homeowners and business owners actually
+          ask us on the job site, from choosing floors that survive our summers to understanding how a
+          polished concrete slab is prepped. No jargon, no sales pitch, just straight advice from people
+          who install floors for a living.
+        </p>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {
             posts.map((post) => (
@@ -73,7 +94,7 @@ const breadcrumbJsonLd = {
                   </time>
                   <h2 class="text-xl font-bold mt-2 mb-3 font-display text-neutral-900">
                     <a
-                      href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+                      href={`/blog/${post.id}/`}
                       class="hover:text-brand-primary transition-colors"
                     >
                       {post.data.title}
@@ -90,7 +111,7 @@ const breadcrumbJsonLd = {
                     </div>
                   )}
                   <a
-                    href={`/blog/${post.id.replace(/\.md$/, '')}/`}
+                    href={`/blog/${post.id}/`}
                     class="inline-flex items-center text-brand-primary font-medium hover:text-brand-primary-dark transition-colors"
                   >
                     Read more

@@ -185,12 +185,31 @@ const breadcrumbJsonLd = {
     },
   ],
 };
+
+const galleryJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Brooks Floor Covering Project Gallery',
+  description:
+    'Completed flooring projects throughout the Phoenix Valley — tile, carpet, polished concrete, epoxy, and concrete overlays.',
+  itemListElement: galleryImages.map((image, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    item: {
+      '@type': 'ImageObject',
+      contentUrl: `https://brooksfloorcovering.com${image.src}`,
+      name: image.title,
+      description: image.description,
+      creditText: 'Brooks Floor Covering',
+    },
+  })),
+};
 ---
 
 <Layout
   title="Flooring Project Gallery | Phoenix, AZ - Tile, Carpet, Concrete"
   description="Browse our portfolio of completed flooring projects throughout the Phoenix Valley. Hardwood, tile, carpet, vinyl, concrete, and custom installations."
-  jsonLd={breadcrumbJsonLd}
+  jsonLd={[breadcrumbJsonLd, galleryJsonLd]}
   ogImage="/images/tile-master-bathroom-full-remodel.jpg"
 >
   <Navigation />
