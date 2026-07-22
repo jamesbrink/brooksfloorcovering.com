@@ -7,7 +7,13 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://brooksfloorcovering.com',
 
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      serialize(item) {
+        return { ...item, lastmod: new Date().toISOString() };
+      },
+    }),
+  ],
 
   vite: {
     plugins: [tailwindcss()],

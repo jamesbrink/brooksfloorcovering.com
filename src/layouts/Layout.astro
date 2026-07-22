@@ -7,6 +7,9 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   ogImage?: string;
   noindex?: boolean;
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
 const {
@@ -15,6 +18,9 @@ const {
   jsonLd,
   ogImage: ogImageProp,
   noindex = false,
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -32,10 +38,6 @@ const ogImage = new URL(
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="flooring services Phoenix, commercial flooring Valley, residential flooring Phoenix, concrete services Arizona, professional flooring contractor, floor installation Greater Phoenix Area"
-    />
     {
       noindex ? (
         <meta name="robots" content="noindex, nofollow" />
@@ -49,12 +51,15 @@ const ogImage = new URL(
 
     <!-- Open Graph -->
     <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
     <meta property="og:site_name" content="Brooks Floor Covering" />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -65,13 +70,21 @@ const ogImage = new URL(
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
-      rel="stylesheet"
+      rel="alternate"
+      type="application/rss+xml"
+      title="Brooks Floor Covering Blog"
+      href={new URL('/rss.xml', Astro.site)}
+    />
+
+    <!-- Self-hosted fonts (declared in global.css); preload the critical faces -->
+    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link
+      rel="preload"
+      href="/fonts/playfair-display-700.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     {jsonLdStrings.map((str) => <script type="application/ld+json" set:html={str} />)}
