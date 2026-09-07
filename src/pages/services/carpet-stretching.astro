@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+import { serviceAreaCitiesSchema } from '../../data/navigation';
+const content = {
+  slug: 'carpet-stretching',
+  label: 'Carpet Stretching & Repair',
+  title: 'Carpet Stretching & Repair in Glendale and Greater Phoenix',
+  description:
+    'Carpet restretching, seam repairs, and pad replacement in Glendale and Greater Phoenix. Ask Brooks Floor Covering for a free estimate.',
+  intro:
+    'Wrinkles, loose areas, and damaged seams can make an existing carpet difficult to live with. Brooks Floor Covering offers carpet restretching, pad replacement, and seam repairs throughout Greater Phoenix, with Glendale as our home base.',
+  heading: 'Explore repair options before replacing your carpet',
+  sections: [
+    [
+      'Wrinkles and loose carpet',
+      'Restretching addresses loose carpet and ripples that can become trip hazards. The condition of the carpet, backing, and installation affects whether restretching is appropriate. Let us know which rooms are affected and how long the problem has been present.',
+    ],
+    [
+      'Seams and pad replacement',
+      'We also handle carpet seam repairs and pad replacement. Describe any separating seams, damaged areas, or changes underfoot so we can assess the work together instead of assuming that stretching alone will solve the problem.',
+    ],
+    [
+      'When replacement may be a better fit',
+      'Repair cannot reverse every type of wear or damage. Worn backing, extensive deterioration, and other underlying conditions can limit the result. We can discuss carpet installation if the existing floor is no longer a good candidate for repair.',
+    ],
+    [
+      'Getting ready for an estimate',
+      'Tell us the room sizes, the condition of the carpet, and whether furniture occupies the affected areas. Ask about access and furniture arrangements when the work is scoped. The estimate is the time to clarify preparation and what the repair includes.',
+    ],
+  ],
+  faqs: [
+    [
+      'Does every wrinkled carpet need replacement?',
+      'Not necessarily. Restretching may be an option when the carpet and backing are in suitable condition. An assessment helps determine the appropriate approach.',
+    ],
+    [
+      'Do you repair carpet seams?',
+      'Yes. Carpet seam repairs and pad replacement are among our advertised repair services. Tell us about the affected areas when requesting an estimate.',
+    ],
+    [
+      'Do you work outside Glendale?',
+      'Yes. We serve Greater Phoenix, including Phoenix, Peoria, Surprise, Scottsdale, and surrounding communities. Call (623) 688-8422 for a free estimate.',
+    ],
+  ],
+  related: [
+    ['/services/carpet/', 'Carpet installation'],
+    ['/residential/', 'Residential flooring'],
+  ],
+};
+const faqs = content.faqs.map(([question, answer]) => ({ question, answer }));
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: content.label,
+  description: content.description,
+  url: `https://brooksfloorcovering.com/services/${content.slug}/`,
+  provider: {
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': 'https://brooksfloorcovering.com/#business',
+    name: 'Brooks Floor Covering',
+  },
+  areaServed: serviceAreaCitiesSchema,
+};
+---
+
+<Layout
+  title={`${content.title} | Brooks Floor Covering`}
+  description={content.description}
+  jsonLd={jsonLd}
+>
+  <Navigation />
+  <Hero title={content.title} subtitle={content.description} compact />
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services/' },
+      { label: content.label },
+    ]}
+  />
+  <main>
+    <section class="py-14 md:py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <p class="text-xs uppercase tracking-wider font-semibold text-brand-primary mb-3">
+          Restore &amp; Maintain
+        </p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-dark mb-6">
+          {content.heading}
+        </h2>
+        <p class="text-lg leading-relaxed text-neutral-600 max-w-3xl">{content.intro}</p>
+        <div class="grid md:grid-cols-2 gap-6 mt-10">
+          {
+            content.sections.map(([heading, body]) => (
+              <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-6 md:p-8">
+                <h3 class="text-xl font-semibold text-brand-dark mb-3">{heading}</h3>
+                <p class="text-neutral-600 leading-relaxed">{body}</p>
+              </article>
+            ))
+          }
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4">
+          {
+            content.related.map(([href, label]) => (
+              <a href={href} class="font-semibold text-brand-primary hover:underline">
+                {label} &rarr;
+              </a>
+            ))
+          }
+          <a href="/services/" class="font-semibold text-brand-primary hover:underline"
+            >All services &rarr;</a
+          >
+        </div>
+      </div>
+    </section>
+    <FAQ faqs={faqs} />
+    <section class="py-14 bg-brand-navy text-white text-center">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-3xl font-display font-bold mb-4">Talk through your repair with us</h2>
+        <p class="text-lg mb-3">Family-owned since 1994. Serving Glendale and Greater Phoenix.</p>
+        <p class="mb-7">
+          Arizona <a
+            href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline">ROC #226840</a
+          >. Free estimates.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
+          <a
+            href="/contact/"
+            class="bg-brand-accent px-7 py-3 rounded-lg font-semibold hover:brightness-110"
+            >Get Your Free Estimate</a
+          >
+          <a href="tel:+16236888422" class="font-semibold underline">Call (623) 688-8422</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

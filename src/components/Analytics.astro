@@ -1,0 +1,90 @@
+<!-- Production website analytics. Keep previews out of the reporting property. -->
+<script is:inline>
+  (() => {
+    if (
+      window.location.origin !== 'https://brooksfloorcovering.com' ||
+      window.__brooksAnalyticsInitialized ||
+      document.querySelector('meta[name="robots"]')?.content.includes('noindex')
+    )
+      return;
+    window.__brooksAnalyticsInitialized = true;
+
+    const measurementId = 'G-61CCJFTLEL';
+    const cleanUrl = (value) => {
+      try {
+        const url = new URL(value);
+        if (!['https:', 'http:'].includes(url.protocol)) return '';
+        return url.origin + url.pathname;
+      } catch {
+        return '';
+      }
+    };
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    gtag('consent', 'default', {
+      analytics_storage: 'granted',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    });
+    gtag('js', new Date());
+    const pageContext = () => ({
+      page_location: cleanUrl(window.location.href),
+      // External referrer paths can contain private values; the origin is sufficient.
+      page_referrer: (() => {
+        try {
+          return new URL(document.referrer).origin + '/';
+        } catch {
+          return '';
+        }
+      })(),
+      page_title: document.title,
+    });
+    gtag('set', pageContext());
+    // Static Astro pages use normal document navigation; config owns the initial view.
+    gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      cookie_prefix: 'brooks',
+      cookie_domain: 'brooksfloorcovering.com',
+    });
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(script);
+
+    // Restoring a document from the back/forward cache does not run config again.
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        gtag('set', pageContext());
+        gtag('event', 'page_view');
+      }
+    });
+    document.addEventListener('click', (event) => {
+      const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
+      if (!anchor) return;
+      const href = anchor.getAttribute('href') || '';
+      const method = /^tel:/i.test(href) ? 'phone' : /^mailto:/i.test(href) ? 'email' : null;
+      if (method) {
+        // Counts intent, not completed calls, sent emails or qualified leads.
+        gtag('event', 'contact_click', {
+          contact_method: method,
+          transport_type: 'beacon',
+        });
+        return;
+      }
+      const target = new URL(anchor.href);
+      if (!['https:', 'http:'].includes(target.protocol)) return;
+      // Automatic outbound/download measurement is off to avoid raw link URLs.
+      if (target.origin !== window.location.origin) {
+        gtag('event', 'click', {
+          outbound: true,
+          link_domain: target.hostname,
+          link_url: target.origin + '/',
+        });
+      }
+    });
+  })();
+</script>

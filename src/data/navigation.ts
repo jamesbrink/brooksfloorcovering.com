@@ -1,4 +1,6 @@
 export const serviceLinks = [
+  { href: '/services/tile-repair/', label: 'Tile Repair' },
+  { href: '/services/carpet-stretching/', label: 'Carpet Stretching & Repair' },
   { href: '/services/carpet', label: 'Carpet Flooring' },
   { href: '/services/tile', label: 'Tile Flooring' },
   { href: '/services/luxury-vinyl-plank', label: 'Luxury Vinyl Plank' },
