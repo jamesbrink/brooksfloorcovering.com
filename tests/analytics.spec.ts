@@ -111,6 +111,18 @@ test('noindex pages do not collect unknown paths', async ({ page }) => {
   expect(await commands(page)).toEqual([]);
 });
 
+test('expanded mobile services keep the contact link reachable', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 667 });
+  await page.goto('/services/tile-repair/');
+  await page.getByRole('button', { name: 'Toggle menu' }).click();
+  await page.locator('#mobile-services-toggle').click();
+  const menu = page.locator('#mobile-menu');
+  const bounds = await menu.boundingBox();
+  expect(bounds!.y + bounds!.height).toBeLessThanOrEqual(667);
+  await menu.getByRole('link', { name: 'Contact', exact: true }).click();
+  await expect(page).toHaveURL(/\/contact\/?$/);
+});
+
 for (const route of ['tile-repair', 'carpet-stretching']) {
   test(`${route} has usable FAQ and estimate navigation`, async ({ page }) => {
     await page.goto(`/services/${route}/`);
