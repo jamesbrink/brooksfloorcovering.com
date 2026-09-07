@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Hero from '../../components/Hero.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Footer from '../../components/Footer.astro';
+import FAQ from '../../components/FAQ.astro';
+import { serviceAreaCitiesSchema } from '../../data/navigation';
+const content = {
+  slug: 'tile-repair',
+  label: 'Tile Repair',
+  title: 'Tile Repair in Phoenix, AZ',
+  description:
+    'Cracked tile replacement and grout repair for existing floors across Greater Phoenix. Contact Brooks Floor Covering for a free estimate.',
+  intro:
+    'A cracked tile or worn grout does not always mean replacing the whole floor. Brooks Floor Covering provides tile replacement and grout services for homes and businesses across Greater Phoenix, including Glendale, Peoria, Scottsdale, and surrounding communities.',
+  heading: 'Start with the condition of your existing floor',
+  sections: [
+    [
+      'Cracked and damaged tiles',
+      'The right repair depends on the damaged area and the condition beneath it. Tell us whether a tile is cracked, chipped, loose, or missing, and whether the problem has appeared in more than one place. An assessment helps establish the scope before work begins.',
+    ],
+    [
+      'Replacement tiles and matching',
+      'Keep any spare tiles from the original installation. Product size, thickness, finish, and color all affect the match, and discontinued products can be difficult to replace. New tile or grout may look different from a floor that has aged; a perfect visual match cannot be assumed.',
+    ],
+    [
+      'Grout repair and restoration',
+      'Our grout services include repair, staining, and sealing. The appropriate approach depends on the surface and the problem. Repeated cracking or movement may require attention to the substrate rather than another cosmetic repair.',
+    ],
+    [
+      'Preparation before the repair',
+      'Cracks or uneven areas in the slab can affect the finished tile. Where floor preparation is needed, we can discuss it as part of the estimate. Flooring repairs are not a substitute for assessing a structural foundation problem.',
+    ],
+  ],
+  faqs: [
+    [
+      'Should I save spare tiles?',
+      'Yes. Spare tiles and the original product details help us evaluate replacement options. Tell us how many matching tiles you have when you contact us.',
+    ],
+    [
+      'Can you repair grout without replacing the floor?',
+      'Grout repair, staining, and sealing may be options depending on the condition of the tile and substrate. Contact us to discuss the affected area.',
+    ],
+    [
+      'How do I get a tile repair estimate?',
+      'Call (623) 688-8422 or email services@brooksfloorcovering.com. Describe the damage, approximate area, location, and any matching tiles you have. Estimates are free.',
+    ],
+  ],
+  related: [
+    ['/services/tile/', 'Tile installation'],
+    ['/services/floor-preparation/', 'Floor preparation'],
+  ],
+};
+const faqs = content.faqs.map(([question, answer]) => ({ question, answer }));
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: content.label,
+  description: content.description,
+  url: `https://brooksfloorcovering.com/services/${content.slug}/`,
+  provider: {
+    '@type': 'HomeAndConstructionBusiness',
+    '@id': 'https://brooksfloorcovering.com/#business',
+    name: 'Brooks Floor Covering',
+  },
+  areaServed: serviceAreaCitiesSchema,
+};
+---
+
+<Layout
+  title={`${content.title} | Brooks Floor Covering`}
+  description={content.description}
+  jsonLd={jsonLd}
+>
+  <Navigation />
+  <Hero title={content.title} subtitle={content.description} compact />
+  <Breadcrumb
+    items={[
+      { label: 'Home', href: '/' },
+      { label: 'Services', href: '/services/' },
+      { label: content.label },
+    ]}
+  />
+  <main>
+    <section class="py-14 md:py-20 bg-white">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <p class="text-xs uppercase tracking-wider font-semibold text-brand-primary mb-3">
+          Restore &amp; Maintain
+        </p>
+        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-dark mb-6">
+          {content.heading}
+        </h2>
+        <p class="text-lg leading-relaxed text-neutral-600 max-w-3xl">{content.intro}</p>
+        <div class="grid md:grid-cols-2 gap-6 mt-10">
+          {
+            content.sections.map(([heading, body]) => (
+              <article class="rounded-xl border border-neutral-200 bg-neutral-50 p-6 md:p-8">
+                <h3 class="text-xl font-semibold text-brand-dark mb-3">{heading}</h3>
+                <p class="text-neutral-600 leading-relaxed">{body}</p>
+              </article>
+            ))
+          }
+        </div>
+        <div class="mt-10 flex flex-wrap gap-4">
+          {
+            content.related.map(([href, label]) => (
+              <a href={href} class="font-semibold text-brand-primary hover:underline">
+                {label} &rarr;
+              </a>
+            ))
+          }
+          <a href="/services/" class="font-semibold text-brand-primary hover:underline"
+            >All services &rarr;</a
+          >
+        </div>
+      </div>
+    </section>
+    <FAQ faqs={faqs} />
+    <section class="py-14 bg-brand-navy text-white text-center">
+      <div class="container mx-auto px-4 max-w-3xl">
+        <h2 class="text-3xl font-display font-bold mb-4">Talk through your repair with us</h2>
+        <p class="text-lg mb-3">Family-owned since 1994. Serving Glendale and Greater Phoenix.</p>
+        <p class="mb-7">
+          Arizona <a
+            href="https://azroc.my.site.com/AZRoc/s/contractor-search"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="underline">ROC #226840</a
+          >. Free estimates.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-5">
+          <a
+            href="/contact/"
+            class="bg-brand-accent px-7 py-3 rounded-lg font-semibold hover:brightness-110"
+            >Get Your Free Estimate</a
+          >
+          <a href="tel:+16236888422" class="font-semibold underline">Call (623) 688-8422</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>

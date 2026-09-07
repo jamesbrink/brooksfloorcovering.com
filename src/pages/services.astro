@@ -93,6 +93,8 @@ const specialtyInlineServices = [
 const repairServices = [
   {
     title: 'Floor Repairs',
+    href: '/services/tile-repair/',
+    linkLabel: 'Explore tile repair',
     description:
       'Cracked tile replacement, vinyl plank replacement, laminate and wood plank repairs.',
   },
@@ -102,6 +104,8 @@ const repairServices = [
   },
   {
     title: 'Carpet Services',
+    href: '/services/carpet-stretching/',
+    linkLabel: 'Explore carpet stretching and repair',
     description:
       'Re-stretching to remove wrinkles and trip hazards, pad replacement, and seam repairs.',
   },
@@ -462,6 +466,14 @@ const servicesJsonLd = {
                 <div class="bg-neutral-50 rounded-lg border border-neutral-200 p-6">
                   <h3 class="text-lg font-semibold text-neutral-800 mb-2">{service.title}</h3>
                   <p class="text-neutral-600 leading-relaxed">{service.description}</p>
+                  {service.href && (
+                    <a
+                      href={service.href}
+                      class="inline-block mt-4 font-semibold text-brand-primary hover:underline"
+                    >
+                      {service.linkLabel} &rarr;
+                    </a>
+                  )}
                 </div>
               ))
             }
@@ -593,10 +605,9 @@ const servicesJsonLd = {
               >
                 ⭐
               </div>
-              <h3 class="text-lg font-semibold mb-2 text-neutral-800">4.9-Star Reviews</h3>
+              <h3 class="text-lg font-semibold mb-2 text-neutral-800">Customer Feedback</h3>
               <p class="text-neutral-600 text-sm leading-relaxed">
-                Rated 4.9 out of 5 stars across 150+ reviews on Google, Yelp, and Facebook from
-                satisfied customers.
+                Read feedback from our customers on Google, Yelp, and Facebook.
               </p>
             </div>
             <div class="text-center">

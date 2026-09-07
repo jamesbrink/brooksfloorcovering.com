@@ -17,8 +17,8 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed w-full bg-white shadow-md z-50">
-  <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+<header class="fixed w-full max-h-dvh flex flex-col bg-white shadow-md z-50">
+  <nav class="container mx-auto px-4 py-4 flex shrink-0 justify-between items-center">
     <a href="/" class="flex items-center">
       <Image
         src="/images/logo.jpg"
@@ -125,7 +125,10 @@ const currentPath = Astro.url.pathname;
   </nav>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+  <div
+    id="mobile-menu"
+    class="md:hidden hidden min-h-0 overflow-y-auto overscroll-contain bg-white shadow-lg"
+  >
     <div class="px-4 py-3 space-y-1">
       {
         navLinks.map((link) => {

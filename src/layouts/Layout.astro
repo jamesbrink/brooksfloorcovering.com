@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '../components/Analytics.astro';
 
 interface Props {
   title?: string;
@@ -88,6 +89,7 @@ const ogImage = new URL(
     />
 
     {jsonLdStrings.map((str) => <script type="application/ld+json" set:html={str} />)}
+    <Analytics />
   </head>
   <body class="bg-neutral-50 text-neutral-900 font-sans">
     <a
