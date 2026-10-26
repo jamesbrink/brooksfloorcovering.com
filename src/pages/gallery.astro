@@ -1108,6 +1108,34 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Gallery filter categories, derived from the image filename prefix
+const categoryDefs = [
+  { id: 'tile', label: 'Tile & Showers' },
+  { id: 'carpet', label: 'Carpet' },
+  { id: 'hardwood', label: 'Hardwood' },
+  { id: 'vinyl', label: 'Vinyl Plank' },
+  { id: 'concrete', label: 'Concrete' },
+  { id: 'epoxy', label: 'Epoxy' },
+];
+
+function getCategory(src: string): string {
+  const file = src.split('/').pop() ?? '';
+  if (file.startsWith('tile-')) return 'tile';
+  if (file.startsWith('carpet-')) return 'carpet';
+  if (file.startsWith('hardwood-')) return 'hardwood';
+  if (file.startsWith('vinyl-')) return 'vinyl';
+  if (file.startsWith('epoxy-')) return 'epoxy';
+  if (file.includes('concrete-')) return 'concrete';
+  return 'other';
+}
+
+const categoryCounts = new Map<string, number>();
+for (const image of galleryImages) {
+  const category = getCategory(image.src);
+  categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
+}
+const filterButtons = categoryDefs.filter((c) => (categoryCounts.get(c.id) ?? 0) > 0);
+
 const galleryJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
@@ -1161,6 +1189,33 @@ const galleryJsonLd = {
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4">
         <div
+          class="flex flex-wrap justify-center gap-2 mb-10 max-w-7xl mx-auto"
+          role="group"
+          aria-label="Filter projects by flooring type"
+          id="gallery-filters"
+        >
+          <button
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+            class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
+          >
+            All <span class="opacity-70">({galleryImages.length})</span>
+          </button>
+          {
+            filterButtons.map((c) => (
+              <button
+                type="button"
+                data-filter={c.id}
+                aria-pressed="false"
+                class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
+              >
+                {c.label} <span class="opacity-70">({categoryCounts.get(c.id)})</span>
+              </button>
+            ))
+          }
+        </div>
+        <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
           id="gallery"
         >
@@ -1170,6 +1225,7 @@ const galleryJsonLd = {
                 href={image.src}
                 class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100 relative"
                 data-gallery="gallery1"
+                data-category={getCategory(image.src)}
                 data-title={image.title}
                 data-description={image.description}
               >
@@ -1218,22 +1274,76 @@ const galleryJsonLd = {
 <script>
   import GLightbox from 'glightbox';
 
-  // Initialize GLightbox with keyboard navigation enabled
-  // Escape key closes the lightbox, arrow keys navigate between slides
-  GLightbox({
-    touchNavigation: true,
-    keyboardNavigation: true,
-    closeOnOutsideClick: true,
-    loop: true,
-    autoplayVideos: false,
-    closeButton: true,
-    moreLength: 0,
-  });
+  // Escape closes the lightbox, arrow keys navigate between slides.
+  // Only items that are currently visible (not filtered out) are included.
+  function createLightbox() {
+    return GLightbox({
+      selector: '#gallery a.glightbox:not([hidden])',
+      touchNavigation: true,
+      keyboardNavigation: true,
+      closeOnOutsideClick: true,
+      loop: true,
+      autoplayVideos: false,
+      closeButton: true,
+      moreLength: 0,
+    });
+  }
+
+  let lightbox = createLightbox();
+
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.filter-btn'));
+  const items = Array.from(document.querySelectorAll<HTMLAnchorElement>('#gallery a.glightbox'));
+
+  function applyFilter(filter: string) {
+    for (const item of items) {
+      item.hidden = filter !== 'all' && item.dataset.category !== filter;
+    }
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
+    }
+    lightbox.destroy();
+    lightbox = createLightbox();
+  }
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter ?? 'all';
+      applyFilter(filter);
+      history.replaceState(null, '', filter === 'all' ? location.pathname : `#${filter}`);
+    });
+  }
+
+  // Support direct links like /gallery#tile
+  const initial = location.hash.slice(1);
+  if (initial && buttons.some((b) => b.dataset.filter === initial)) {
+    applyFilter(initial);
+  }
 </script>
 
 <style>
   /* Ensure images display properly */
   img {
     display: block;
+  }
+
+  /* Filter pills */
+  .filter-btn {
+    background: white;
+    color: var(--color-neutral-700);
+    border-color: var(--color-neutral-300);
+  }
+  .filter-btn:hover {
+    border-color: var(--color-brand-primary);
+    color: var(--color-brand-primary);
+  }
+  .filter-btn[aria-pressed='true'] {
+    background: var(--color-brand-primary);
+    border-color: var(--color-brand-primary);
+    color: white;
+  }
+
+  /* Tailwind's `block` utility would otherwise override the hidden attribute */
+  #gallery a[hidden] {
+    display: none;
   }
 </style>
