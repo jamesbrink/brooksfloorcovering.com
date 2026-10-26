@@ -75,7 +75,7 @@ All in `public/`:
 
 - `public/images/` — gallery, hero, and site images
 - `public/CNAME` — custom domain config
-- Image naming: `{category}-{descriptive-slug}.jpg` (categories: `tile-`, `carpet-`, `polished-concrete-`, `epoxy-`, `concrete-overlay-`, `hero-`, `site-`)
+- Image naming: `{category}-{descriptive-slug}.jpg` (categories: `tile-`, `carpet-`, `hardwood-`, `polished-concrete-`, `epoxy-`, `concrete-overlay-`, `concrete-`, `hero-`, `site-`)
 
 ## Content Rules
 
