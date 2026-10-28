@@ -16,7 +16,7 @@ const flooringManufacturers = {
     { name: 'Dal-Tile', file: 'daltile.png' },
     { name: 'Bedrosians', file: 'bedrosians.png' },
     { name: 'Cactus Tile', file: 'cactus-tile.png' },
-    { name: 'The Tile Shop', file: 'tile-shop.png' },
+    { name: 'The Tile Shop', file: 'tile-shop.png', wide: true },
     { name: 'Shaw', file: 'shaw.png' },
     { name: 'Mohawk', file: 'mohawk.png' },
     { name: 'Emser', file: 'emser.png' },
@@ -59,7 +59,7 @@ const concreteCoatings = {
 const distributorCategories: {
   title: string;
   intro?: string;
-  logos: { name: string; file: string }[];
+  logos: { name: string; file: string; wide?: boolean }[];
 }[] = [flooringManufacturers, installationSystems, floorPreparation, concreteCoatings];
 
 const whyChooseUs = [
@@ -226,7 +226,10 @@ const breadcrumbJsonLd = {
                   <Image
                     src={`/images/${logo.file}`}
                     alt={logo.name}
-                    class="w-32 h-auto object-contain hover:scale-110 hover:shadow-lg transition-all duration-300"
+                    class:list={[
+                      logo.wide ? 'w-48' : 'w-32',
+                      'h-auto object-contain hover:scale-110 hover:shadow-lg transition-all duration-300',
+                    ]}
                     width={128}
                     height={64}
                     inferSize
