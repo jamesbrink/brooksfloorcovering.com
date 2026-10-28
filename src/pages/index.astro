@@ -17,7 +17,7 @@ const businessJsonLd = {
   telephone: '+1-623-688-8422',
   email: 'services@brooksfloorcovering.com',
   foundingDate: '1994',
-  image: 'https://brooksfloorcovering.com/images/hero-phoenix-flooring-showroom.jpg',
+  image: 'https://brooksfloorcovering.com/images/hero-polished-concrete-mountain-view.jpg',
   logo: 'https://brooksfloorcovering.com/images/logo.jpg',
   address: {
     '@type': 'PostalAddress',
@@ -155,27 +155,31 @@ const homepageFaqJsonLd = {
 
 const featuredServices = [
   {
-    icon: '🔨',
+    image: '/images/hardwood-kitchen-navy-island-white-cabinets.jpg',
+    imageAlt: 'Rich hardwood floor in a kitchen with a navy island and white cabinets',
     title: 'Flooring Sales & Installation',
     description:
       'Professional flooring sales and installation for residential and commercial clients.',
     features: ['Hardwood', 'Tile', 'Carpet', 'Luxury Vinyl'],
   },
   {
-    icon: '🔧',
+    image: '/images/carpet-bedroom-neutral-shutters.jpg',
+    imageAlt: 'Neutral carpet in a bedroom with window shutters',
     title: 'Floor Repairs',
     description:
       'Expert repair services for all types of flooring, from minor fixes to major repairs.',
     features: ['Tile Replacement', 'Carpet Restretch', 'Grout Repairs'],
   },
   {
-    icon: '🏗️',
+    image: '/images/epoxy-metallic-gray-commercial-space.jpg',
+    imageAlt: 'Glossy gray metallic epoxy floor in a commercial space',
     title: 'Concrete Services',
     description: 'Complete concrete solutions including grinding, leveling, and epoxy coatings.',
     features: ['Grinding', 'Leveling', 'Epoxy Coatings', 'Polishing'],
   },
   {
-    icon: '💎',
+    image: '/images/tile-vertical-glass-shower-wall.jpg',
+    imageAlt: 'Custom shower wall with vertical glass tile and a recessed niche',
     title: 'Specialty Services',
     description: 'Custom showers, countertops, backsplashes, and unique tile work.',
     features: ['Custom Showers', 'Countertops', 'Backsplashes'],
@@ -184,36 +188,52 @@ const featuredServices = [
 
 const homepageGallery = [
   {
-    src: '/images/tile-custom-shower-natural-stone.jpg',
-    alt: 'Custom tile shower installation in Phoenix home',
+    src: '/images/tile-shower-black-brick-tub-wall-faucet-herringbone-floor.jpg',
+    alt: 'Freestanding tub against a black tile wall with brass fixtures and a herringbone marble floor',
   },
   {
-    src: '/images/tile-bathtub-surround-marble-mosaic.jpg',
-    alt: 'Marble bathtub surround with mosaic tile detail',
+    src: '/images/hero-polished-concrete-mountain-view.jpg',
+    alt: 'Mirror-polished concrete floor beside a glass wall and steel stair with mountain views',
   },
   {
-    src: '/images/tile-bathtub-installation-complete.jpg',
-    alt: 'Completed oval tub installation with brushed nickel fixtures',
+    src: '/images/tile-shower-green-glazed-tile-linear-drain.jpg',
+    alt: 'Green glazed subway tile shower with a linear drain',
   },
   {
-    src: '/images/tile-shower-partition-frameless-glass.jpg',
-    alt: 'Frameless glass shower partition with mosaic tile wall',
+    src: '/images/tile-fireplace-feature-wall-niches.jpg',
+    alt: 'Large-format tile fireplace feature wall with built-in niches',
   },
   {
-    src: '/images/tile-glass-mosaic-detail.jpg',
-    alt: 'Precision glass and tile craftsmanship detail',
+    src: '/images/polished-concrete-office-corridor-mural-reflection.jpg',
+    alt: 'Gray stained polished concrete office floor reflecting a colorful mural',
   },
   {
-    src: '/images/tile-master-bathroom-full-remodel.jpg',
-    alt: 'Full master bathroom remodel with tiled floors and custom shower',
+    src: '/images/tile-patterned-accent-wall-black-white.jpg',
+    alt: 'Black and white patterned tile accent wall',
   },
   {
-    src: '/images/tile-powder-room-porcelain-floor.jpg',
-    alt: 'Large-format porcelain tile floor in powder room',
+    src: '/images/hardwood-wide-plank-oak-fireplace-hearth.jpg',
+    alt: 'Wide-plank oak floor in multiple tones running to a fireplace hearth',
   },
   {
-    src: '/images/tile-double-vanity-bathroom-floor.jpg',
-    alt: 'Tile flooring and tub surround with dark-cabinet vanity',
+    src: '/images/tile-large-format-great-room-red-rock-view.jpg',
+    alt: 'Large-format tile floor in a great room with red rock views',
+  },
+  {
+    src: '/images/tile-shower-marble-look-large-format-niche-window.jpg',
+    alt: 'Large-format veined stone-look tile shower with a niche and window',
+  },
+  {
+    src: '/images/tile-shower-black-brick-wall-niche-rain-head-half-wall.jpg',
+    alt: 'Black brick-pattern tile shower with a marble niche and rain head',
+  },
+  {
+    src: '/images/tile-large-format-polished-porcelain-bright-room.jpg',
+    alt: 'Large-format polished porcelain tile floor in a bright open room',
+  },
+  {
+    src: '/images/tile-shower-marble-look-mosaic-floor-niche-bench.jpg',
+    alt: 'Marble-look tile shower with a mosaic floor, niche and bench',
   },
 ];
 ---
@@ -230,7 +250,7 @@ const homepageGallery = [
     subtitle="Family-owned since 1994. We deliver expert flooring installation, repairs, and concrete services to homes and businesses across the Greater Phoenix Area."
     ctaText="Get Your Free Estimate"
     ctaLink="/contact"
-    image="/images/hero-phoenix-flooring-showroom.jpg"
+    image="/images/hero-polished-concrete-mountain-view.jpg"
   />
 
   <main>
@@ -311,7 +331,8 @@ const homepageGallery = [
           </p>
           <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Work</h2>
           <p class="text-neutral-700 max-w-2xl mx-auto leading-relaxed">
-            See examples of our professional flooring installations throughout the Phoenix Valley.
+            Custom tile showers, feature walls, large-format floors and polished concrete from
+            recent projects across the Phoenix Valley.
           </p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mb-12">

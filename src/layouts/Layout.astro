@@ -28,7 +28,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const jsonLdStrings = jsonLdItems.map((item) => JSON.stringify(item).replace(/</g, '\\u003c'));
 const ogImage = new URL(
-  ogImageProp || '/images/hero-phoenix-flooring-showroom.jpg',
+  ogImageProp || '/images/hero-polished-concrete-mountain-view.jpg',
   Astro.site
 ).toString();
 ---

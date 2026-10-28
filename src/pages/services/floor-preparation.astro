@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
@@ -122,7 +123,7 @@ const jsonLd = {
           </p>
           <p class="text-neutral-700 leading-relaxed text-lg">
             We serve residential and commercial clients across Phoenix, Glendale, Scottsdale, Mesa,
-            Chandler, and the entire Valley. Every project starts with a
+            Chandler, and the entire Valley. Every project starts with a{' '}
             <a
               href="/contact"
               class="text-brand-primary font-semibold hover:text-brand-primary-dark transition-colors"
@@ -167,6 +168,64 @@ const jsonLd = {
             Our grinding process delivers improved floor flatness, ready for the next phase of
             installation.
           </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+            <figure>
+              <Image
+                src="/images/concrete-floor-grinder-three-head-slab-prep-wide.jpg"
+                alt="Floor grinder with diamond tooling on a new-construction slab"
+                class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                width={800}
+                height={600}
+                inferSize
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-neutral-600 mt-2">
+                Floor grinder with diamond tooling on a new-construction slab
+              </figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/concrete-slab-ground-flat-ready-for-flooring-great-room.jpg"
+                alt="Great-room slab ground and ready for flooring"
+                class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                width={800}
+                height={600}
+                inferSize
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-neutral-600 mt-2">
+                Great-room slab ground and ready for flooring
+              </figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/concrete-edge-grinder-bedroom-slab-prep.jpg"
+                alt="Smaller grinder and dust control for bedrooms and tight spaces"
+                class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                width={800}
+                height={600}
+                inferSize
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-neutral-600 mt-2">
+                Smaller grinder and dust control for bedrooms and tight spaces
+              </figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/concrete-slab-prepped-glass-walls-new-home.jpg"
+                alt="Prepared slab ready for the next phase"
+                class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                width={800}
+                height={600}
+                inferSize
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-neutral-600 mt-2">
+                Prepared slab ready for the next phase
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -318,6 +377,84 @@ const jsonLd = {
           <p class="text-neutral-700 leading-relaxed text-lg mt-6">
             These systems protect substrates from water intrusion and long-term damage.
           </p>
+
+          <div class="mt-12">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-4 text-center">
+              Drains and Large Floors
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-commercial-slab-prepped-before-waterproofing.jpg"
+                  alt="Prepped concrete slab in a large commercial space before waterproofing"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Slab prepped and cleaned
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-floor-drain-membrane-cut-to-flange.jpg"
+                  alt="Waterproofing membrane cut and fitted around a floor drain flange"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Membrane cut to fit the drain
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-floor-drain-green-membrane-sealed.jpg"
+                  alt="Floor drain flange sealed with a green waterproofing membrane"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Drain flange sealed in membrane
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-commercial-slab-wet-topping-reflections.jpg"
+                  alt="Large commercial slab with a freshly placed topping layer reflecting overhead lights"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Topping placed across the floor
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-commercial-drains-leveled-wall-base.jpg"
+                  alt="Leveled floor with floor drains and a sealed wall base"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Drains and wall base, leveled and sealed
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -355,6 +492,850 @@ const jsonLd = {
               <span>Meeting flatness requirements for modern flooring systems</span>
             </li>
           </ul>
+
+          <div class="mt-12">
+            <h3 class="text-xl font-semibold text-neutral-800 mb-4 text-center">
+              Before and After the Pour
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-framed-home-slab-before-pour.jpg"
+                  alt="Patched and prepped concrete slab in a framed home before self-leveler is poured"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Prepped slab, ready for the pour
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-framed-home-freshly-poured.jpg"
+                  alt="Same framed home after the self-leveling underlayment has been poured"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Freshly poured and self-leveling
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3 class="text-xl font-semibold text-neutral-800 mt-12 mb-4 text-center">
+              On the Job
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-pump-mixer-on-site.jpg"
+                  alt="Self-leveler pump and mixer set up outside a job site"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Pump and mixer on site
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-pour-stream-round-room.jpg"
+                  alt="Self-leveling underlayment flowing from a hose across a round room"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Underlayment flowing from the hose
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-hallway-hose-pour.jpg"
+                  alt="Self-leveling underlayment being poured down a long hallway"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">Pouring a hallway</figcaption>
+              </figure>
+            </div>
+
+            <h3 class="text-xl font-semibold text-neutral-800 mt-12 mb-4 text-center">
+              A Flat, Smooth Surface
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-kitchen-smooth-wet-surface.jpg"
+                  alt="Smooth wet self-leveler across a kitchen floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Kitchen floor right after the pour
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-great-room-sliding-doors.jpg"
+                  alt="Glossy self-leveling underlayment in a great room with sliding glass doors"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Great room right after the pour
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-window-wall-reflection-grid.jpg"
+                  alt="Wet self-leveler reflecting a window wall in a commercial building"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Poured flat at a window wall
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3 class="text-xl font-semibold text-neutral-800 mt-12 mb-2 text-center">
+              Moisture System Capped with Self-Leveler
+            </h3>
+            <p class="text-neutral-600 mb-4 text-center">
+              An office kitchenette: old adhesive ground off, an epoxy moisture system applied, then
+              capped with self-leveler for a vinyl plank installation.
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-office-kitchenette-grinder-removing-old-adhesive.jpg"
+                  alt="Floor grinder working over old adhesive on an office kitchenette floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Grinding off the old adhesive
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-office-kitchenette-old-adhesive-residue-vacuum-hose.jpg"
+                  alt="Old adhesive residue on a concrete floor with a vacuum hose coiled on it"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Old adhesive ground and vacuumed
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-office-kitchenette-ground-slab-clean.jpg"
+                  alt="Concrete slab ground clean along office cabinets"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">Slab ground clean</figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-office-kitchenette-ground-slab-orange-wall.jpg"
+                  alt="Ground concrete slab in a room with an orange wall"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Ground slab ready for the moisture system
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-moisture-barrier-epoxy-office-kitchenette-wet.jpg"
+                  alt="Glossy epoxy moisture system freshly applied across an office floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Epoxy moisture system applied
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-moisture-barrier-epoxy-office-kitchenette-glossy.jpg"
+                  alt="Epoxy moisture system covering the full floor of an office kitchenette"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Moisture system across the room
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-office-kitchenette-pour-start.jpg"
+                  alt="Self-leveler beginning to spread over the moisture system"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Self-leveler going down over the moisture system
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-office-kitchenette-pour-spreading.jpg"
+                  alt="Self-leveler flowing across an office floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Self-leveler flowing across the room
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-office-kitchenette-smooth-finish.jpg"
+                  alt="Smooth, flat self-leveler surface in an office kitchenette"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Smooth, flat surface ready for vinyl plank
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3 class="text-xl font-semibold text-neutral-800 mt-12 mb-2 text-center">
+              Large Building: Pumped Self-Leveler
+            </h3>
+            <p class="text-neutral-600 mb-4 text-center">
+              A large building with long corridors, mixed and pumped on site, one pour after
+              another.
+            </p>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Staging and Prep
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-pallets-material-staging.jpg"
+                  alt="Pallets of self-leveler material staged outside a large building"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Material staged at the building
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-crew-mixing-pumps.jpg"
+                  alt="Crew mixing self-leveler with pumps on site"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Crew mixing at the pumps
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-crew-bags-hoses.jpg"
+                  alt="Crew with bagged self-leveler material and hoses"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Bagged material and hoses
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-bare-slab-before-pour.jpg"
+                  alt="Bare concrete slab inside a framed building before the pour"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Bare slab before the pour
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-slab-wall-framing-before-pour.jpg"
+                  alt="Concrete slab beside wall framing before the self-leveler pour"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Slab at the wall framing
+                </figcaption>
+              </figure>
+            </div>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">Pouring</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-hose-worker-hallway-pour.jpg"
+                  alt="Worker holding the pump hose while self-leveler spreads across a hallway"
+                  class="rounded-lg shadow-md w-full aspect-[3/4] object-cover"
+                  width={1200}
+                  height={1600}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Pump hose in the hallway
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-crew-hallway-pour.jpg"
+                  alt="Crew placing self-leveler along a hallway"
+                  class="rounded-lg shadow-md w-full aspect-[3/4] object-cover"
+                  width={1200}
+                  height={1600}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Crew on the hallway pour
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-hose-screed-bar-hallway.jpg"
+                  alt="Worker with hose beside a screed bar as self-leveler flows down a hallway"
+                  class="rounded-lg shadow-md w-full aspect-[3/4] object-cover"
+                  width={1200}
+                  height={1600}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">Hose and screed bar</figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-hallway-pour-crew-distance.jpg"
+                  alt="Self-leveler pour progressing down a long hallway with the crew in the distance"
+                  class="rounded-lg shadow-md w-full aspect-[3/4] object-cover"
+                  width={1200}
+                  height={1600}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Pour moving down the hallway
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-hallway-edge-reflections.jpg"
+                  alt="Self-leveler flowing past a dam at a hallway doorway"
+                  class="rounded-lg shadow-md w-full aspect-[3/4] object-cover"
+                  width={1200}
+                  height={1600}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Pour edge at a doorway
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-hallway-smooth-lights.jpg"
+                  alt="Smooth self-leveled hallway floor reflecting work lights"
+                  class="rounded-lg shadow-md w-full aspect-[3/4] object-cover"
+                  width={1200}
+                  height={1600}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Smooth hallway under work lights
+                </figcaption>
+              </figure>
+            </div>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Finished Surface
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-window-wall-glossy-pour.jpg"
+                  alt="Glossy self-leveler reflecting a glass wall"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Glossy surface at the glass wall
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-ceiling-grid-reflection.jpg"
+                  alt="Self-leveler reflecting the ceiling grid across a large room"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Ceiling grid reflected in the pour
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-glass-wall-flat-floor.jpg"
+                  alt="Flat self-leveled floor beside a glass wall"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Flat floor along the glass wall
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-cured-floor-column.jpg"
+                  alt="Cured self-leveled floor around a column"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Cured floor around a column
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-cured-floor-wall.jpg"
+                  alt="Cured self-leveled floor beside a white wall"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Cured floor along the wall
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-building-cured-floor-hallway-glass.jpg"
+                  alt="Cured self-leveled floor at a hallway and glass opening"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Cured floor toward the glass
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3 class="text-xl font-semibold text-neutral-800 mt-12 mb-2 text-center">
+              Laboratory Floor, Start to Finish
+            </h3>
+            <p class="text-neutral-600 mb-4 text-center">
+              A large laboratory facility: slab repaired and ground, an epoxy moisture barrier, a
+              self-leveler cap, and resilient SDT tile on top.
+            </p>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Slab Repair and Grinding
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-lab-slab-cracks-filled-wide.jpg"
+                  alt="Concrete slab with cracks and joints filled with repair material"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Cracks and joints filled with repair material
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-lab-slab-cracks-filled-columns.jpg"
+                  alt="Wide concrete slab with filled crack and joint lines around columns"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Repairs run across the whole slab
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-lab-slab-crack-filler-closeup.jpg"
+                  alt="Close view of crack repair material on a gray concrete slab"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Repair material up close
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-lab-slab-ground-corridor.jpg"
+                  alt="Concrete slab ground and cleaned in a corridor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Slab ground and cleaned, corridor
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-lab-slab-ground-open-floor.jpg"
+                  alt="Large open concrete slab ground and cleaned"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Slab ground and cleaned, open floor
+                </figcaption>
+              </figure>
+            </div>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Epoxy Moisture Barrier
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-moisture-barrier-epoxy-lab-wet-ceiling-reflections.jpg"
+                  alt="Wet epoxy moisture barrier reflecting the ceiling grid across a large room"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Moisture barrier wet, ceiling reflected in it
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-moisture-barrier-epoxy-lab-wet-room-view.jpg"
+                  alt="Freshly rolled epoxy moisture barrier across a laboratory room"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Moisture barrier across the room
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-moisture-barrier-epoxy-lab-wet-corner.jpg"
+                  alt="Glossy epoxy moisture barrier meeting wrapped wall panels"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Coverage up to the walls
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-moisture-barrier-epoxy-lab-installer-rolling.jpg"
+                  alt="Installer rolling epoxy moisture barrier on a laboratory floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Rolling out the barrier
+                </figcaption>
+              </figure>
+            </div>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Self-Leveler Cap
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-lab-hallway-smooth.jpg"
+                  alt="Smooth self-leveler surface in a hallway"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Self-leveler cap, hallway
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-lab-open-floor-columns.jpg"
+                  alt="Smooth self-leveler surface across a large room with columns"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Smooth cap across the open floor
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-lab-wide-floor.jpg"
+                  alt="Wide view of a flat self-leveled floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Flat and ready for tile
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/concrete-self-leveler-lab-full-room.jpg"
+                  alt="Full room with a smooth self-leveled floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  The full room, leveled
+                </figcaption>
+              </figure>
+            </div>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Trench Drain Rooms: Chemical-Resistant Epoxy
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/epoxy-lab-trench-drain-coating-wet.jpg"
+                  alt="Gray chemical-resistant epoxy freshly applied around a floor trench drain"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Chemical-resistant epoxy applied around a trench drain
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/epoxy-lab-trench-drain-coating-long-run.jpg"
+                  alt="Gray chemical-resistant epoxy along a long trench drain with coved edge"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Long drain run with coved edge
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/epoxy-lab-trench-drain-coating-cured.jpg"
+                  alt="Cured gray chemical-resistant epoxy around a metal trench drain grate"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Cured epoxy at the drain
+                </figcaption>
+              </figure>
+            </div>
+            <h4 class="text-lg font-semibold text-neutral-700 mt-10 mb-3 text-center">
+              Resilient SDT Tile
+            </h4>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <figure>
+                <Image
+                  src="/images/vinyl-sdt-tile-lab-open-floor-wide.jpg"
+                  alt="Resilient SDT tile floor across a large laboratory space"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Resilient SDT tile, open floor
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/vinyl-sdt-tile-lab-columns-view.jpg"
+                  alt="White resilient SDT tile floor with columns and wall panels"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Columns and wall panels
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/vinyl-sdt-tile-lab-clean-white-floor.jpg"
+                  alt="Clean white resilient SDT tile floor"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Clean finished tile floor
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/vinyl-sdt-tile-lab-doorway-view.jpg"
+                  alt="Resilient SDT tile floor toward a doorway"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">Toward the doorway</figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/vinyl-sdt-tile-lab-speckled-floor-wall-panels.jpg"
+                  alt="Speckled resilient SDT tile floor beside wrapped wall panels"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">Speckled tile finish</figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -397,6 +1378,64 @@ const jsonLd = {
             These systems provide added protection and peace of mind for finished flooring
             installations.
           </p>
+          <div class="mt-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <figure>
+                <Image
+                  src="/images/tile-crack-membrane-over-slab-cracks-bedroom.jpg"
+                  alt="Red crack isolation membrane painted over cracks in a concrete slab"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Membrane over slab cracks, bedroom
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/tile-crack-membrane-over-slab-crack-doorway.jpg"
+                  alt="Red crack isolation membrane covering a long crack at a doorway"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Crack covered at a doorway
+                </figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/tile-crack-membrane-across-slab-before-plank-tile.jpg"
+                  alt="Crack isolation membrane across a slab before plank tile is set"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">Ready for plank tile</figcaption>
+              </figure>
+              <figure>
+                <Image
+                  src="/images/tile-crack-membrane-long-slab-crack-kitchen.jpg"
+                  alt="Long slab crack covered with red membrane in a kitchen area"
+                  class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                  width={1600}
+                  height={1200}
+                  inferSize
+                  loading="lazy"
+                />
+                <figcaption class="text-sm text-neutral-600 mt-2">
+                  Long crack, kitchen area
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -433,6 +1472,36 @@ const jsonLd = {
               <span>Compliance with strict FF/FL specifications and installation requirements</span>
             </li>
           </ul>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
+            <figure>
+              <Image
+                src="/images/concrete-flatness-check-straightedge-level-slab.jpg"
+                alt="Straightedge laid on a concrete floor to check flatness before installation"
+                class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                width={800}
+                height={600}
+                inferSize
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-neutral-600 mt-2">
+                Checking flatness with a straightedge before flooring goes down.
+              </figcaption>
+            </figure>
+            <figure>
+              <Image
+                src="/images/concrete-flatness-check-straightedge-polished-slab.jpg"
+                alt="Straightedge resting on a ground and polished concrete slab"
+                class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                width={800}
+                height={600}
+                inferSize
+                loading="lazy"
+              />
+              <figcaption class="text-sm text-neutral-600 mt-2">
+                A prepared slab verified flat and ready for the next step.
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>

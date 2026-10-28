@@ -9,14 +9,977 @@ import 'glightbox/dist/css/glightbox.min.css';
 
 const galleryImages = [
   {
+    src: '/images/tile-wood-look-plank-warm-brown-kitchen-island-oak-cabinets.jpg',
+    title: 'Wood-Look Plank Tile, Kitchen Island',
+    description: 'Warm brown wood-look plank tile running through a kitchen.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-warm-brown-kitchen-living-area.jpg',
+    title: 'Wood-Look Plank Tile, Kitchen and Living Area',
+    description: 'Warm brown wood-look plank tile through an open kitchen and living area.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-warm-brown-kitchen-hallway.jpg',
+    title: 'Wood-Look Plank Tile, Hallway',
+    description: 'Warm brown wood-look plank tile in a hallway opening to the kitchen.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-warm-brown-living-room.jpg',
+    title: 'Wood-Look Plank Tile, Living Room',
+    description: 'Warm brown wood-look plank tile in a living room.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-warm-brown-open-floor-sliding-door.jpg',
+    title: 'Wood-Look Plank Tile, Open Floor Plan',
+    description: 'Wood-look plank tile across an open floor plan toward a sliding door.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-blended-tones-living-room.jpg',
+    title: 'Blended-Tone Plank Tile, Living Room',
+    description: 'Narrow blended-tone wood-look plank tile in a living room.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-blended-tones-closeup.jpg',
+    title: 'Blended-Tone Plank Tile Detail',
+    description: 'Close-up of narrow blended-tone wood-look plank tile.',
+  },
+  {
+    src: '/images/tile-wood-look-plank-blended-tones-kitchen-entry.jpg',
+    title: 'Blended-Tone Plank Tile, Kitchen Entry',
+    description: 'Blended-tone wood-look plank tile at a kitchen entry.',
+  },
+  {
+    src: '/images/carpet-berber-sunlit-bedroom-frosted-glass-door.jpg',
+    title: 'Berber Carpet, Sunlit Bedroom',
+    description: 'Light berber carpet wall to wall in a sunlit bedroom.',
+  },
+  {
+    src: '/images/carpet-berber-bedroom-sliding-barn-door.jpg',
+    title: 'Berber Carpet, Barn Door',
+    description: 'Light berber carpet in a bedroom with a sliding barn door.',
+  },
+  {
+    src: '/images/carpet-berber-bedroom-gray-accent-wall.jpg',
+    title: 'Berber Carpet, Accent Wall',
+    description: 'Light berber carpet in a bedroom with a gray accent wall.',
+  },
+  {
+    src: '/images/carpet-berber-bedroom-mirrored-closet-window.jpg',
+    title: 'Berber Carpet, Mirrored Closet',
+    description: 'Light berber carpet in a bedroom with mirrored closet doors.',
+  },
+  {
+    src: '/images/concrete-stained-teal-entry.jpg',
+    title: 'Stained Concrete Entry',
+    description: 'Teal stained concrete floor in a home entry with a spiral staircase',
+  },
+  {
+    src: '/images/hardwood-entry-foyer-stained-concrete-transition.jpg',
+    title: 'Entry Hardwood Transition',
+    description: 'Wide-plank hardwood meeting a stained concrete entry',
+  },
+  {
+    src: '/images/tile-shower-fleur-pattern-porcelain-penny-floor.jpg',
+    title: 'Fleur Pattern Shower',
+    description:
+      'Fleur-pattern porcelain shower wall with white subway tile and a penny-tile floor.',
+  },
+  {
+    src: '/images/tile-shower-fleur-pattern-subway-niche.jpg',
+    title: 'Patterned Shower Niche',
+    description: 'Fleur-pattern wall tile beside a subway-tile niche.',
+  },
+  {
+    src: '/images/tile-shower-fleur-pattern-wall-curb-detail.jpg',
+    title: 'Patterned Wall and Curb',
+    description: 'Fleur-pattern porcelain wall above a tiled curb and penny-tile floor.',
+  },
+  {
+    src: '/images/tile-freestanding-tub-subway-wainscot-penny-floor.jpg',
+    title: 'Freestanding Tub Room',
+    description: 'Freestanding tub with subway-tile wainscot and a penny-tile floor.',
+  },
+  {
+    src: '/images/hardwood-dark-wide-plank-living-room-furnished.jpg',
+    title: 'Dark Wide-Plank Living Room',
+    description: 'Dark wide-plank hardwood across a furnished living room open to the kitchen.',
+  },
+  {
+    src: '/images/hardwood-dark-wide-plank-kitchen-living-bar-stools.jpg',
+    title: 'Dark Plank, Kitchen to Living Room',
+    description: 'Dark wide-plank hardwood running from a kitchen bar into the living room.',
+  },
+  {
+    src: '/images/hardwood-weathered-wide-plank-kitchen-stainless.jpg',
+    title: 'Weathered-Look Plank Kitchen',
+    description: 'Weathered-look wide-plank hardwood in a kitchen beside stainless appliances.',
+  },
+  {
+    src: '/images/tile-shower-large-format-white-niche-bench-chevron-accent.jpg',
+    title: 'Large-Format White Tile Shower',
+    description: 'Large-format white tile shower with a niche, bench and dark chevron accent.',
+  },
+  {
+    src: '/images/tile-tub-surround-marble-large-format-rain-head.jpg',
+    title: 'Marble-Look Tub Surround',
+    description: 'Large-format marble-look tile tub surround with a rain head.',
+  },
+  {
+    src: '/images/tile-porcelain-stair-treads-risers-landing.jpg',
+    title: 'Porcelain Stair Treads and Risers',
+    description: 'Porcelain tile on stair treads and risers leading to a landing.',
+  },
+  {
+    src: '/images/hardwood-wide-plank-oak-fireplace-hearth.jpg',
+    title: 'Wide-Plank Oak to the Hearth',
+    description: 'Wide-plank oak in multiple tones running to a fireplace hearth.',
+  },
+  {
+    src: '/images/hardwood-light-oak-great-room-sunlight.jpg',
+    title: 'Light Oak Great Room',
+    description: 'Light oak wide plank with sunlight across the floor.',
+  },
+  {
+    src: '/images/hardwood-kitchen-light-oak-cherry-cabinets-vaulted.jpg',
+    title: 'Light Oak Kitchen, Vaulted Ceiling',
+    description: 'Light oak wide plank in a vaulted kitchen with cherry cabinets.',
+  },
+  {
+    src: '/images/hardwood-light-oak-open-kitchen-to-hallway.jpg',
+    title: 'Light Oak Kitchen to Hallway',
+    description: 'Light oak wide plank running from an open kitchen toward a hallway.',
+  },
+  {
+    src: '/images/hardwood-loft-wide-plank-glass-doors.jpg',
+    title: 'Wide Plank Loft',
+    description: 'Wide-plank oak floor in a loft with glass doors.',
+  },
+  {
+    src: '/images/hardwood-wide-plank-grain-warm-oak-closeup.jpg',
+    title: 'Warm Oak Grain Detail',
+    description: 'Close view of warm oak wide planks showing grain and knots.',
+  },
+  {
+    src: '/images/hardwood-upstairs-hallway-railing-wide-plank.jpg',
+    title: 'Upstairs Hallway, Wide Plank',
+    description: 'Long wide-plank oak floor beside a wood railing.',
+  },
+  {
+    src: '/images/hardwood-stair-landing-wrapped-steps-wide-plank.jpg',
+    title: 'Wrapped Stair Landing',
+    description: 'Wide-plank oak wrapped over a stair landing and steps.',
+  },
+  {
+    src: '/images/hardwood-warm-red-oak-hallway-wide-plank.jpg',
+    title: 'Warm Oak Hallway',
+    description: 'Warm red oak wide plank running down a hallway.',
+  },
+  {
+    src: '/images/hardwood-cherry-stained-steps-hand-scraped.jpg',
+    title: 'Hand-Scraped Plank, Cherry-Tone Steps',
+    description: 'Hand-scraped hardwood steps in a rich cherry tone.',
+  },
+  {
+    src: '/images/hero-polished-concrete-mountain-view.jpg',
+    title: 'Polished Concrete, Glass Walls and Stairs',
+    description:
+      'Mirror-polished concrete floor beside a glass wall and steel stair with mountain views',
+  },
+  {
+    src: '/images/tile-shower-black-brick-tub-wall-faucet-herringbone-floor.jpg',
+    title: 'Black Tile Tub Room',
+    description:
+      'Freestanding tub against black brick-pattern tile with brass fixtures and a herringbone marble floor.',
+  },
+  {
+    src: '/images/tile-shower-black-brick-wall-niche-rain-head-half-wall.jpg',
+    title: 'Black Tile Shower, Rain Head',
+    description:
+      'Black brick-pattern tile shower wall with a marble niche, rain head and tiled half wall.',
+  },
+  {
+    src: '/images/tile-shower-black-brick-valve-handheld-niche.jpg',
+    title: 'Black Tile Shower, Handheld',
+    description:
+      'Black brick-pattern tile shower with a marble niche, brass valve and handheld shower.',
+  },
+  {
+    src: '/images/tile-shower-black-brick-niche-rain-head-valve-drain.jpg',
+    title: 'Black Tile Shower, Niche and Valve',
+    description: 'Black tile shower with a marble niche, rain head, valve and herringbone floor.',
+  },
+  {
+    src: '/images/tile-shower-black-brick-freestanding-tub-corner-herringbone-floor.jpg',
+    title: 'Black Tile Tub Corner',
+    description:
+      'Freestanding tub in the corner of a black tile wall with a herringbone marble floor.',
+  },
+  {
+    src: '/images/vinyl-plank-new-home-living-room-sliding-doors.jpg',
+    title: 'Vinyl Plank Living Room, Sliding Doors',
+    description: 'Living room with sliding glass doors.',
+  },
+  {
+    src: '/images/vinyl-plank-new-home-entry-hallway-iron-door.jpg',
+    title: 'Vinyl Plank Entry Hallway',
+    description: 'Entry hallway.',
+  },
+  {
+    src: '/images/vinyl-plank-new-home-kitchen-island-cabinets.jpg',
+    title: 'Vinyl Plank Kitchen, Island',
+    description: 'Kitchen, plank to the cabinets.',
+  },
+  {
+    src: '/images/vinyl-plank-new-home-kitchen-gray-cabinets.jpg',
+    title: 'Vinyl Plank Kitchen, Gray Cabinets',
+    description: 'Kitchen with gray cabinets.',
+  },
+  {
+    src: '/images/vinyl-plank-new-home-hallway-slate-tile-transition.jpg',
+    title: 'Vinyl Plank Hallway, Tile Transitions',
+    description: 'Hallway with tile transitions.',
+  },
+  {
+    src: '/images/polished-concrete-charcoal-dye-building-sunset-reflections.jpg',
+    title: 'Charcoal Dye Polished, Evening Light',
+    description: 'Polished and reflecting the evening light.',
+  },
+  {
+    src: '/images/polished-concrete-charcoal-dye-building-wide-reflections.jpg',
+    title: 'Charcoal Dye Polished, Wide View',
+    description: 'Wide view of the polished floor.',
+  },
+  {
+    src: '/images/polished-concrete-charcoal-dye-building-final-sheen.jpg',
+    title: 'Charcoal Dye Polished, Finished',
+    description: 'Finished sheen.',
+  },
+  {
+    src: '/images/polished-concrete-residence-window-view-reflections.jpg',
+    title: 'Polished Concrete, Window Reflections',
+    description: 'Reflecting the window view.',
+  },
+  {
+    src: '/images/polished-concrete-residence-kitchen-reflections.jpg',
+    title: 'Polished Concrete Kitchen',
+    description: 'Through the kitchen.',
+  },
+  {
+    src: '/images/polished-concrete-residence-open-room-gloss.jpg',
+    title: 'Polished Concrete, Open Room',
+    description: 'Open room, glossy finish.',
+  },
+  {
+    src: '/images/polished-concrete-residence-bedroom-patio-door.jpg',
+    title: 'Polished Concrete Bedroom',
+    description: 'Bedroom with sliding patio door.',
+  },
+  {
+    src: '/images/hardwood-wood-stair-treads-polished-concrete-landing.jpg',
+    title: 'Wood Treads at Polished Landing',
+    description: 'Wood treads at a polished landing.',
+  },
+  {
+    src: '/images/hardwood-wood-step-kitchen-polished-concrete.jpg',
+    title: 'Wood Step by the Kitchen',
+    description: 'Wood step beside the kitchen.',
+  },
+  {
+    src: '/images/concrete-self-leveler-building-window-wall-glossy-pour.jpg',
+    title: 'Glossy Self-Leveler, Glass Wall',
+    description: 'Glossy surface at the glass wall.',
+  },
+  {
+    src: '/images/polished-concrete-lab-benches-fume-hoods.jpg',
+    title: 'Polished Concrete, Benches and Fume Hoods',
+    description: 'Benches and fume hoods.',
+  },
+  {
+    src: '/images/polished-concrete-lab-cleanroom-walls-reflections.jpg',
+    title: 'Polished Floor Reflecting Lab Walls',
+    description: 'Polished floor reflecting the lab walls.',
+  },
+  {
+    src: '/images/concrete-self-leveler-lab-wide-floor.jpg',
+    title: 'Self-Leveler Cap, Wide View',
+    description: 'Flat and ready for tile.',
+  },
+  {
+    src: '/images/vinyl-sdt-tile-lab-clean-white-floor.jpg',
+    title: 'Resilient SDT Tile, Clean Finish',
+    description: 'Clean finished tile floor.',
+  },
+  {
+    src: '/images/polished-concrete-office-lobby-wide-reflections.jpg',
+    title: 'Gray Stained Polished Concrete, Office Lobby',
+    description:
+      'Gray stained concrete polished to a mirror finish, reflecting a mural and textured wall.',
+  },
+  {
+    src: '/images/polished-concrete-office-corridor-mural-reflection.jpg',
+    title: 'Gray Stained Polished Concrete, Mural Reflection',
+    description: 'Colorful wall mural reflected in a gray stained polished office floor.',
+  },
+  {
+    src: '/images/tile-built-in-media-wall-niches-plank-floor.jpg',
+    title: 'Media Wall on New Tile Floor',
+    description: 'Built-in niches above linear-grain tile.',
+  },
+  {
+    src: '/images/tile-large-format-linear-grain-hallway-entry.jpg',
+    title: 'Hallway Tile to the Entry',
+    description: 'Large-format tile running to the front doors.',
+  },
+  {
+    src: '/images/tile-large-format-linear-grain-living-room-finished.jpg',
+    title: 'Large-Format Tile Living Room',
+    description: 'Linear-grain tile finished across a living room.',
+  },
+  {
+    src: '/images/carpet-patterned-lattice-bedroom-shutters.jpg',
+    title: 'Patterned Carpet Bedroom',
+    description: 'Lattice carpet across a bedroom with plantation shutters.',
+  },
+  {
+    src: '/images/carpet-patterned-lattice-bedroom-blinds.jpg',
+    title: 'Patterned Carpet Bedroom Wall to Wall',
+    description: 'Wall-to-wall lattice carpet.',
+  },
+  {
+    src: '/images/carpet-patterned-lattice-stairway.jpg',
+    title: 'Patterned Carpet Staircase',
+    description: 'Lattice carpet up the stairs.',
+  },
+  {
+    src: '/images/tile-shower-remodel-travertine-look-valve-accent-band.jpg',
+    title: 'Travertine-Look Shower Valve Wall',
+    description: 'Large-format tile with a dark accent band.',
+  },
+  {
+    src: '/images/tile-shower-linear-stone-look-finished-bench-mosaic-floor.jpg',
+    title: 'Gray Linear Tile Shower',
+    description: 'Finished shower with bench and glass accent band.',
+  },
+  {
+    src: '/images/tile-tub-surround-finished-glass-mosaic-strip.jpg',
+    title: 'Tub Surround with Glass Mosaic Strip',
+    description: 'Finished surround in large vertical tile.',
+  },
+  {
+    src: '/images/carpet-residential-plush-taupe-bedroom-shutters-tile-edge.jpg',
+    title: 'Plush Taupe Carpet, Shuttered Bedroom',
+    description: 'Plush taupe carpet in a bedroom with shuttered windows',
+  },
+  {
+    src: '/images/carpet-residential-plush-taupe-bedroom-wide.jpg',
+    title: 'Plush Carpet, Bedroom Wide View',
+    description: 'Wall-to-wall plush carpet in a bedroom',
+  },
+  {
+    src: '/images/carpet-residential-light-taupe-bedroom-shutters.jpg',
+    title: 'Light Taupe Carpet, Shuttered Bedroom',
+    description: 'Light taupe carpet in a bedroom with shuttered windows',
+  },
+  {
+    src: '/images/carpet-residential-living-room-fireplace-tile-border.jpg',
+    title: 'Carpet Bordered by Wood-Look Tile',
+    description: 'Living room carpet area bordered by wood-look tile at a fireplace',
+  },
+  {
+    src: '/images/carpet-residential-edge-meets-dark-wood-look-tile.jpg',
+    title: 'Carpet Meets Dark Wood-Look Tile',
+    description: 'Carpet edge meeting dark wood-look tile',
+  },
+  {
+    src: '/images/vinyl-plank-living-room-angled-wide-oak.jpg',
+    title: 'Wide-Plank Oak Look Vinyl Living Room',
+    description: 'Wide-plank oak look luxury vinyl in a living room',
+  },
+  {
+    src: '/images/vinyl-plank-long-view-open-floor-plan.jpg',
+    title: 'Vinyl Plank, Open Floor Plan',
+    description: 'Long view of luxury vinyl plank through an open floor plan',
+  },
+  {
+    src: '/images/vinyl-plank-gray-oak-shutters-columns.jpg',
+    title: 'Gray Oak Vinyl Plank Around Columns',
+    description: 'Gray oak luxury vinyl plank with columns and shuttered windows',
+  },
+  {
+    src: '/images/carpet-commercial-dark-carpet-glass-entry-hallway.jpg',
+    title: 'Dark Carpet to the Glass Entry',
+    description: 'Dark patterned carpet in a commercial hallway leading to a glass entry',
+  },
+  {
+    src: '/images/carpet-tile-open-office-blue-gray-pattern-wide.jpg',
+    title: 'Patterned Carpet Tile, Open Office',
+    description: 'Blue and gray patterned carpet tile across an open office',
+  },
+  {
+    src: '/images/carpet-tile-office-corridor-gray-stripe-cubicles.jpg',
+    title: 'Gray Striped Carpet Tile Corridor',
+    description: 'Gray striped carpet tile in an office corridor',
+  },
+  {
+    src: '/images/carpet-corridor-long-tan-stripe-terrazzo.jpg',
+    title: 'Carpeted Corridor to Terrazzo Lobby',
+    description: 'Striped carpet corridor meeting a terrazzo floor',
+  },
+  {
+    src: '/images/carpet-tile-corridor-brown-blue-pattern.jpg',
+    title: 'Brown and Blue Carpet Tile Corridor',
+    description: 'Patterned carpet tile in a long office corridor',
+  },
+  {
+    src: '/images/carpet-tile-corridor-glass-offices.jpg',
+    title: 'Carpet Tile Corridor, Glass Offices',
+    description: 'Carpet tile corridor leading past glass-front offices',
+  },
+  {
+    src: '/images/epoxy-hangar-white-gray-gloss-hangar-door.jpg',
+    title: 'Hangar Epoxy at the Hangar Door',
+    description: 'Gloss epoxy floor reflecting the hangar door',
+  },
+  {
+    src: '/images/epoxy-hangar-gloss-door-reflection.jpg',
+    title: 'Hangar Epoxy Gloss Reflections',
+    description: 'Hangar door and ceiling reflected in the epoxy',
+  },
+  {
+    src: '/images/epoxy-metallic-gray-upper-level-wide.jpg',
+    title: 'Metallic Gray Epoxy, Upper Level',
+    description: 'Metallic gray epoxy floor on an upper level',
+  },
+  {
+    src: '/images/epoxy-metallic-silver-swirl-wall-edge.jpg',
+    title: 'Silver Metallic Epoxy Swirls',
+    description: 'Silver and charcoal metallic epoxy along a wall edge',
+  },
+  {
+    src: '/images/epoxy-metallic-red-black-gray-garage-detail.jpg',
+    title: 'Red and Black Metallic Garage Floor',
+    description: 'Red, black and gray metallic epoxy marbling in a garage',
+  },
+  {
+    src: '/images/epoxy-metallic-red-vein-garage-vertical.jpg',
+    title: 'Red Vein Metallic Epoxy',
+    description: 'Red veining through black and white metallic epoxy',
+  },
+  {
+    src: '/images/epoxy-office-suite-gloss-light-reflections.jpg',
+    title: 'Office Epoxy Light Reflections',
+    description: 'Gloss gray epoxy reflecting overhead lights',
+  },
+  {
+    src: '/images/epoxy-gray-office-window-reflection-grid.jpg',
+    title: 'Gray Epoxy Reflecting Windows',
+    description: 'Gray epoxy office floor reflecting a wall of windows',
+  },
+  {
+    src: '/images/epoxy-gray-gloss-bedroom-window-stripes.jpg',
+    title: 'Gray Gloss Epoxy in a Sunlit Room',
+    description: 'Glossy gray epoxy floor with sunlight through blinds',
+  },
+  {
+    src: '/images/concrete-loft-dark-gloss-urethane-spiral-stair-reflection.jpg',
+    title: 'Urethane-Coated Loft Floor',
+    description: 'Dark glossy urethane coating in a loft reflecting a spiral staircase',
+  },
+  {
+    src: '/images/concrete-loft-dark-gloss-urethane-french-doors.jpg',
+    title: 'Urethane Loft Floor and French Doors',
+    description: 'Dark glossy urethane-coated loft floor reflecting french doors',
+  },
+  {
+    src: '/images/concrete-stained-amber-sunroom-wide.jpg',
+    title: 'Stained Concrete Sunroom, Wide View',
+    description: 'Sealed amber and brown stained concrete across a bright sunroom',
+  },
+  {
+    src: '/images/concrete-stained-amber-kitchen-hallway.jpg',
+    title: 'Stained Concrete Kitchen Hallway',
+    description: 'Amber stained concrete through a kitchen hallway with cabinets protected',
+  },
+  {
+    src: '/images/concrete-stained-amber-marbled-vertical.jpg',
+    title: 'Marbled Amber Stained Concrete',
+    description: 'Variegated amber and brown stained concrete with a glossy seal',
+  },
+  {
+    src: '/images/concrete-overlay-microtopping-stained-gray-living-room-windows.jpg',
+    title: 'Gray Stained Microtopping Living Room',
+    description: 'Gray stained microtopping in a living room with window light',
+  },
+  {
+    src: '/images/concrete-overlay-microtopping-stained-gray-shutter-light-pattern.jpg',
+    title: 'Gray Stained Microtopping in Afternoon Light',
+    description: 'Soft gray stained microtopping with shutter light patterns',
+  },
+  {
+    src: '/images/tile-wood-look-plank-kitchen-sunlight-green-walls.jpg',
+    title: 'Wood-look plank into the kitchen',
+    description: 'Wood-look plank tile in sunlight leading into a kitchen',
+  },
+  {
+    src: '/images/tile-herringbone-gray-porcelain-living-area.jpg',
+    title: 'Herringbone, living area',
+    description: 'Gray porcelain tile in a herringbone pattern in a living area',
+  },
+  {
+    src: '/images/tile-sunroom-slate-look-tile-finished-sunlight.jpg',
+    title: 'Finished in the sunlight',
+    description: 'Finished slate-look tile floor in a sunlit sunroom',
+  },
+  {
+    src: '/images/tile-limestone-diagonal-hallway-entry-light.jpg',
+    title: 'Limestone toward the entry',
+    description: 'Diagonal limestone hallway leading to an entry with colored glass',
+  },
+  {
+    src: '/images/tile-travertine-french-pattern-hallway.jpg',
+    title: 'French pattern down the hall',
+    description: 'Travertine French-pattern tile running down a hallway',
+  },
+  {
+    src: '/images/tile-kitchen-pressed-tin-style-backsplash-range.jpg',
+    title: 'Backsplash behind the range',
+    description: 'Kitchen backsplash with a pressed-tin style panel behind a gas range',
+  },
+  {
+    src: '/images/tile-kitchen-wood-look-plank-island-wide.jpg',
+    title: 'After: wood-look plank tile',
+    description: 'Kitchen with a wood-look tile plank floor and a large island',
+  },
+  {
+    src: '/images/tile-large-format-polished-porcelain-evening-reflections.jpg',
+    title: 'Evening reflections',
+    description: 'Polished porcelain floor reflecting recessed lights in the evening',
+  },
+  {
+    src: '/images/tile-large-format-polished-porcelain-open-kitchen.jpg',
+    title: 'Open kitchen and living area',
+    description: 'Open kitchen and living area with polished large-format porcelain',
+  },
+  {
+    src: '/images/tile-large-format-polished-porcelain-bright-room.jpg',
+    title: 'Polished porcelain, finished',
+    description: 'Bright room with a polished large-format porcelain floor',
+  },
+  {
+    src: '/images/tile-fireplace-dark-mosaic-surround.jpg',
+    title: 'Dark Mosaic Fireplace',
+    description: 'Fireplace surround in dark woven mosaic tile',
+  },
+  {
+    src: '/images/tile-arabesque-backsplash-gas-cooktop.jpg',
+    title: 'Arabesque Backsplash',
+    description: 'Arabesque tile backsplash behind a gas cooktop',
+  },
+  {
+    src: '/images/tile-subway-shower-niche-pebble-floor.jpg',
+    title: 'Subway Tile Shower',
+    description: 'White subway tile shower with a recessed niche and pebble floor',
+  },
+  {
+    src: '/images/tile-slate-look-shower-niches-glass-accent.jpg',
+    title: 'Two Niches and a Glass Accent',
+    description: 'Two recessed shower niches framed by a glass tile accent band',
+  },
+  {
+    src: '/images/hardwood-living-room-stone-fireplace-dark-stain.jpg',
+    title: 'Dark Hardwood and Stone Fireplace',
+    description: 'Dark-stained hardwood living room with a stone fireplace',
+  },
+  {
+    src: '/images/hardwood-handscraped-plank-living-room-sunlight.jpg',
+    title: 'Handscraped Plank in the Sun',
+    description: 'Sunlight across handscraped hardwood in a living area',
+  },
+  {
+    src: '/images/hardwood-handscraped-plank-long-arched-hallway.jpg',
+    title: 'Long Arched Hallway',
+    description: 'Handscraped plank flooring running the length of an arched hallway',
+  },
+  {
+    src: '/images/concrete-self-leveler-bay-window-reflection.jpg',
+    title: 'Bay Window Reflection',
+    description: 'Wet self-leveling underlayment reflecting a bay window in a home',
+  },
+  {
+    src: '/images/polished-concrete-cafe-amber-polish-storefront-glass-reflections.jpg',
+    title: 'Cafe Floor with Amber Tone',
+    description:
+      'Polished concrete cafe floor with a warm amber tone and storefront glass reflections',
+  },
+  {
+    src: '/images/polished-concrete-sky-and-cloud-reflections-gloss-floor.jpg',
+    title: 'Clouds in the Floor',
+    description: 'Sky and clouds mirrored in a high-gloss polished concrete floor',
+  },
+  {
+    src: '/images/polished-concrete-retail-glass-wall-gloss-reflections.jpg',
+    title: 'Retail Floor at a Glass Wall',
+    description: 'Glossy polished concrete in a retail space beside a glass wall',
+  },
+  {
+    src: '/images/polished-concrete-restaurant-floor-gloss-reflections.jpg',
+    title: 'Restaurant Polished Floor',
+    description:
+      'Polished concrete restaurant floor with a glossy finish and soft light reflections',
+  },
+  {
+    src: '/images/polished-concrete-gloss-floor-sky-reflected-glass-storefront.jpg',
+    title: 'Gloss Floor at a Glass Storefront',
+    description:
+      'Sky and clouds reflected in a high-gloss polished concrete floor at a glass storefront',
+  },
+  {
+    src: '/images/polished-concrete-exposed-aggregate-pebble-close-up.jpg',
+    title: 'Exposed Pebble Aggregate',
+    description: 'Close-up of exposed pebble aggregate in a polished concrete surface',
+  },
+  {
+    src: '/images/polished-concrete-dark-aggregate-saw-cut-reflections.jpg',
+    title: 'Dark Aggregate and Saw Cuts',
+    description: 'Polished concrete with dark aggregate, crisp saw-cut joints and soft reflections',
+  },
+  {
+    src: '/images/polished-concrete-garage-high-gloss-finish.jpg',
+    title: 'Polished Garage and Shop Floor',
+    description:
+      'Large garage and shop space with a high-gloss polished concrete floor and exposed aggregate',
+  },
+  {
+    src: '/images/polished-concrete-multicolor-stone-aggregate-close-up.jpg',
+    title: 'Polished Stone Aggregate Close-Up',
+    description:
+      'Close-up of a polished concrete floor with a colorful mix of exposed stone aggregate',
+  },
+  {
+    src: '/images/polished-concrete-swirl-pattern-glass-wall-light.jpg',
+    title: 'Polish Pattern at a Glass Wall',
+    description:
+      'Daylight from a glass wall catching the swirl pattern left by the polishing pass on a commercial floor',
+  },
+  {
+    src: '/images/polished-concrete-gloss-polish-amber-tone-saw-cut-joints.jpg',
+    title: 'Gloss Polish, Saw-Cut Joints',
+    description:
+      'Glossy polished concrete with a warm tone, clean saw-cut joints and daylight reflections',
+  },
+  {
+    src: '/images/polished-concrete-wet-slab-mirror-storefront-windows.jpg',
+    title: 'Wet Slab Mirroring Storefront',
+    description:
+      'Wet slab during polishing mirroring the storefront windows in a new commercial building',
+  },
+  {
+    src: '/images/polished-concrete-warehouse-polished-floor-steel-columns.jpg',
+    title: 'Polished Warehouse Floor',
+    description:
+      'Large warehouse floor polished wall to wall, with the steel columns and dock doors reflected in it',
+  },
+  {
+    src: '/images/polished-concrete-warehouse-wet-slab-mirror-reflection.jpg',
+    title: 'Wet Warehouse Slab, Mirror Finish',
+    description: 'Wet polished warehouse slab mirroring the steel roof structure overhead',
+  },
+  {
+    src: '/images/polished-concrete-retail-amber-tone-window-reflections.jpg',
+    title: 'Amber-Toned Polished Concrete',
+    description:
+      'Warm amber-toned polished concrete in a commercial space, reflecting daylight from the storefront',
+  },
+  {
+    src: '/images/polished-concrete-gloss-polish-storefront-window-reflections.jpg',
+    title: 'Gloss Polish, Storefront Windows',
+    description:
+      'High-gloss polished concrete in a commercial space, reflecting the storefront glass and ceiling lights',
+  },
+  {
+    src: '/images/polished-concrete-gloss-polish-ceiling-light-reflections.jpg',
+    title: 'Polished Concrete, Light Reflections',
+    description:
+      'Polished concrete with a deep gloss and fine aggregate, mirroring the ceiling lights above',
+  },
+  {
+    src: '/images/polished-concrete-glass-wall-stair-reflections-amber-floor.jpg',
+    title: 'Glass Wall Reflected in Polished Floor',
+    description:
+      'Warm-toned polished concrete mirroring a glass wall and open staircase in a new commercial building',
+  },
+  {
+    src: '/images/polished-concrete-long-hallway-even-sheen.jpg',
+    title: 'Long Hallway, Even Sheen',
+    description: 'Long polished concrete hallway with an even, consistent sheen from end to end',
+  },
+  {
+    src: '/images/polished-concrete-glass-door-threshold-gloss.jpg',
+    title: 'Polished Concrete at a Glass Door',
+    description:
+      'Glossy polished concrete with fine aggregate reflecting the light at a glass door threshold',
+  },
+  {
+    src: '/images/polished-concrete-exposed-aggregate-close-up.jpg',
+    title: 'Exposed Aggregate Close-Up',
+    description: 'Close-up of polished concrete showing the colorful stone aggregate in the slab',
+  },
+  {
+    src: '/images/polished-concrete-exposed-aggregate-office-entry.jpg',
+    title: 'Polished Aggregate, Office Entry',
+    description:
+      'Polished exposed-aggregate concrete leading to a glass entry in a commercial office',
+  },
+  {
+    src: '/images/polished-concrete-exposed-aggregate-office-hallway.jpg',
+    title: 'Polished Aggregate, Office Hallway',
+    description:
+      'Long office hallway of polished exposed-aggregate concrete with a warm, reflective finish',
+  },
+  {
+    src: '/images/polished-concrete-exposed-aggregate-shelving-aisle.jpg',
+    title: 'Polished Concrete Between Shelving',
+    description:
+      'Smooth polished concrete floor with a light aggregate look between rows of shelving',
+  },
+  {
+    src: '/images/polished-concrete-dark-gray-office-hallway.jpg',
+    title: 'Dark Gray Polished Hallway',
+    description: 'Dark gray polished concrete running down a new office hallway',
+  },
+  {
+    src: '/images/epoxy-laundromat-light-gray-coating-wide.jpg',
+    title: 'Epoxy Coating, Wide View',
+    description:
+      'Epoxy coating across a commercial laundromat floor, tight and even along the wall and equipment bases',
+  },
+  {
+    src: '/images/tile-wood-look-plank-textured-gray-sliding-door-corner.jpg',
+    title: 'Wood-Look Tile at Sliding Doors',
+    description:
+      'Textured wood-look plank tile run tight to a corner of sliding glass doors with even grout lines',
+  },
+  {
+    src: '/images/tile-wood-look-plank-gray-bedroom.jpg',
+    title: 'Wood-Look Tile Bedroom',
+    description:
+      'Gray wood-look plank tile in a bedroom, laid in a staggered pattern with tight, even grout lines',
+  },
+  {
+    src: '/images/tile-shower-marble-look-large-format-hex-floor-bench.jpg',
+    title: 'Marble-Look Shower with Bench',
+    description:
+      'Large-format marble-look porcelain shower with a dark hex mosaic floor, black edge trim, niche and a tile-wrapped bench',
+  },
+  {
+    src: '/images/tile-shower-marble-look-large-format-niche-window.jpg',
+    title: 'Large-Format Shower Walls',
+    description:
+      'Large-format marble-look wall tile with a recessed niche and window, set over a dark mosaic shower floor',
+  },
+  {
+    src: '/images/tile-shower-white-marble-look-black-edge-trim.jpg',
+    title: 'White Marble-Look Shower',
+    description:
+      'Floor-to-ceiling white marble-look tile with black edge trim, a corner bench and a flat-sloped shower floor',
+  },
+  {
+    src: '/images/tile-shower-marble-look-mosaic-floor-niche-bench.jpg',
+    title: 'Shower with Mosaic Floor and Niche',
+    description:
+      'Marble-look wall tile with a green and gray mosaic shower floor, recessed niche and built-in bench',
+  },
+  {
+    src: '/images/concrete-stained-covered-patio-log-columns.jpg',
+    title: 'Stained Concrete Covered Patio',
+    description: 'Stained concrete across a long covered patio with log columns and desert views',
+  },
+  {
+    src: '/images/concrete-stained-garage-amber-over-dark-brown-slab-edge.jpg',
+    title: 'Acid-Stained Garage Floor',
+    description: 'Acid-stained garage floor in warm amber and brown tones',
+  },
+  {
+    src: '/images/concrete-overlay-smooth-gray-finish-living-area.jpg',
+    title: 'Smooth Gray Concrete Overlay',
+    description: 'Smooth gray concrete overlay finish across a living area',
+  },
+  {
+    src: '/images/concrete-overlay-microtopping-stained-gray-taupe-open-kitchen-living.jpg',
+    title: 'Gray-Taupe Stained Microtopping',
+    description:
+      'Gray-taupe stained and sealed microtopping through an open kitchen and living area',
+  },
+  {
+    src: '/images/epoxy-hangar-gloss-open-door-view.jpg',
+    title: 'Hangar Floor with Open Door',
+    description: 'Glossy hangar floor reflecting the open hangar door',
+  },
+  {
+    src: '/images/epoxy-metallic-swirl-closeup-red-gray.jpg',
+    title: 'Metallic Swirl Detail',
+    description: 'Close-up of red, gray and black metallic epoxy swirls',
+  },
+  {
+    src: '/images/epoxy-metallic-gray-showroom-stairs.jpg',
+    title: 'Metallic Gray Showroom Floor',
+    description: 'Metallic gray epoxy floor leading toward a staircase',
+  },
+  {
+    src: '/images/tile-large-format-gray-porcelain-hallway.jpg',
+    title: 'Large-Format Gray Tile Hallway',
+    description: 'Large-format gray tile running through a hallway',
+  },
+  {
+    src: '/images/tile-tub-surround-vertical-gray-mosaic-strip.jpg',
+    title: 'Tub Surround with Mosaic Accent',
+    description: 'Vertical gray tile tub surround with a glass mosaic accent strip',
+  },
+  {
+    src: '/images/tile-walk-in-shower-linear-stone-look-seat-niche.jpg',
+    title: 'Walk-In Shower with Bench',
+    description:
+      'Walk-in tile shower with linear stone-look tile, a corner bench and recessed niche',
+  },
+  {
+    src: '/images/tile-travertine-look-shower-grab-bar-large-format.jpg',
+    title: 'Large-Format Tile Shower',
+    description: 'Large-format tile shower walls with a decorative band and grab bar',
+  },
+  {
+    src: '/images/tile-kitchen-backsplash-travertine-range-hood.jpg',
+    title: 'Kitchen Backsplash and Range Hood',
+    description: 'Tile kitchen backsplash with a stacked-stone accent above the range',
+  },
+  {
+    src: '/images/tile-dining-table-top-inlay-border.jpg',
+    title: 'Tiled Dining Table',
+    description: 'Tiled outdoor dining table with a decorative inlay stripe',
+  },
+  {
+    src: '/images/tile-patio-border-inlay-pool-area.jpg',
+    title: 'Patio Tile with Border Inlay',
+    description: 'Patio tile with a dark border inlay beside a pool area',
+  },
+  {
+    src: '/images/concrete-stained-floor-compass-medallion.jpg',
+    title: 'Stained Concrete with Compass Medallion',
+    description: 'Stained concrete floor with an inlaid compass medallion',
+  },
+  {
+    src: '/images/tile-kitchen-backsplash-glass-mosaic-granite.jpg',
+    title: 'Glass Mosaic Backsplash',
+    description: 'Glass mosaic kitchen backsplash above granite countertops',
+  },
+  {
+    src: '/images/tile-fireplace-surround-stacked-travertine.jpg',
+    title: 'Stacked Travertine Fireplace',
+    description: 'Fireplace surround finished in stacked travertine',
+  },
+  {
+    src: '/images/tile-stone-feature-wall-sconce-lounge.jpg',
+    title: 'Stone Feature Wall',
+    description: 'Stacked-stone feature wall with an accent sconce',
+  },
+  {
+    src: '/images/tile-wood-look-plank-gray-living-area.jpg',
+    title: 'Gray Wood-Look Tile',
+    description: 'Gray wood-look plank tile through a living area',
+  },
+  {
+    src: '/images/tile-wood-look-plank-kitchen-floor.jpg',
+    title: 'Wood-Look Tile Kitchen',
+    description: 'Warm wood-look plank tile in a kitchen',
+  },
+  {
+    src: '/images/tile-wood-look-dark-kitchen-living.jpg',
+    title: 'Dark Wood-Look Kitchen Floor',
+    description: 'Dark wood-look flooring running through a kitchen and living area',
+  },
+  {
+    src: '/images/carpet-elevator-lobby-commercial.jpg',
+    title: 'Elevator Lobby Carpet',
+    description: 'Commercial carpet in an elevator lobby',
+  },
+  {
+    src: '/images/carpet-hallway-peaked-ceiling-commercial.jpg',
+    title: 'Commercial Hallway Carpet',
+    description: 'Carpet in a commercial hallway with a peaked ceiling',
+  },
+  {
+    src: '/images/tile-patterned-accent-wall-black-white.jpg',
+    title: 'Patterned Tile Accent Wall',
+    description: 'Large black-and-white patterned tile set on the diagonal as a feature wall',
+  },
+  {
+    src: '/images/tile-patterned-cement-look-shower.jpg',
+    title: 'Patterned Tile Shower',
+    description: 'Black-and-white patterned tile shower wall with a woven mosaic floor',
+  },
+  {
+    src: '/images/tile-fireplace-feature-wall-niches.jpg',
+    title: 'Tiled Fireplace Feature Wall',
+    description: 'Tiled fireplace wall with a linear fireplace and recessed display niches',
+  },
+  {
+    src: '/images/tile-walk-in-shower-green-glazed-tile-pebble-floor.jpg',
+    title: 'Glazed Tile Walk-In Shower',
+    description: 'Vertical glazed tile shower with a recessed niche, pebble floor and linear drain',
+  },
+  {
+    src: '/images/tile-large-format-great-room-red-rock-view.jpg',
+    title: 'Large-Format Tile Floor',
+    description: 'Large-format porcelain tile in a great room with red rock views',
+  },
+  {
+    src: '/images/tile-shower-green-glazed-tile-linear-drain.jpg',
+    title: 'Shower With Linear Drain',
+    description: 'Glazed tile shower with a pebble floor, curb and linear drain',
+  },
+  {
+    src: '/images/tile-shower-niche-green-glazed-tile-detail.jpg',
+    title: 'Tile Shower Niche Detail',
+    description: 'Recessed shower niche with matching glazed tile',
+  },
+  {
+    src: '/images/hardwood-kitchen-vaulted-ceiling-wide-plank.jpg',
+    title: 'Wide-Plank Hardwood Kitchen',
+    description: 'Natural oak wide-plank flooring through an open vaulted-ceiling kitchen',
+  },
+  {
+    src: '/images/tile-large-format-great-room.jpg',
+    title: 'Large-Format Tile Great Room',
+    description: 'Large-format tile floor in a great room with mountain views',
+  },
+  {
+    src: '/images/hardwood-kitchen-navy-island-white-cabinets.jpg',
+    title: 'Hardwood Kitchen Floor',
+    description: 'Rich hardwood flooring beneath a navy island and white cabinetry',
+  },
+  {
+    src: '/images/tile-diagonal-hallway-stained-glass-door.jpg',
+    title: 'Diagonal Tile Hallway',
+    description: 'Diagonal-set tile hallway leading to a stained glass entry door',
+  },
+  {
+    src: '/images/hardwood-living-room-warm-wide-plank.jpg',
+    title: 'Warm Hardwood Living Room',
+    description: 'Warm-toned wide-plank hardwood in a sunlit living room',
+  },
+  {
+    src: '/images/hardwood-oak-grain-closeup.jpg',
+    title: 'Oak Plank Detail',
+    description: 'Close-up of engineered oak plank grain and character',
+  },
+  {
+    src: '/images/hardwood-after-living-room-wide-plank.jpg',
+    title: 'After: Hardwood Living Room',
+    description: 'The same living room finished with wide engineered plank',
+  },
+  {
     src: '/images/tile-custom-shower-natural-stone.jpg',
     title: 'Custom Tile Shower',
     description: 'Natural stone tile with mosaic accent strip in a walk-in shower',
-  },
-  {
-    src: '/images/tile-bathtub-surround-marble-mosaic.jpg',
-    title: 'Bathtub Tile Surround',
-    description: 'Oval soaking tub with marble tile and mosaic detail — in progress',
   },
   {
     src: '/images/tile-bathtub-installation-complete.jpg',
@@ -24,41 +987,10 @@ const galleryImages = [
     description: 'Finished oval tub surround with mosaic tile and brushed nickel fixtures',
   },
   {
-    src: '/images/tile-shower-partition-frameless-glass.jpg',
-    title: 'Bathroom Shower Partition',
-    description: 'Frameless glass partition with full-height mosaic tile shower wall',
-  },
-  {
-    src: '/images/tile-glass-mosaic-detail.jpg',
-    title: 'Glass & Tile Detail',
-    description: 'Close-up of frameless glass meeting mosaic tile — precision craftsmanship',
-  },
-  {
     src: '/images/tile-master-bathroom-full-remodel.jpg',
     title: 'Full Bathroom Remodel',
     description:
       'Complete master bath with tiled floors, mosaic shower, soaking tub, and double vanity',
-  },
-  {
-    src: '/images/tile-powder-room-porcelain-floor.jpg',
-    title: 'Powder Room Tile Floor',
-    description: 'Large-format porcelain tile in a powder room for a clean, modern look',
-  },
-  {
-    src: '/images/tile-double-vanity-bathroom-floor.jpg',
-    title: 'Double Vanity Bathroom',
-    description: 'Tile flooring and tub surround complementing a dark-cabinet double vanity',
-  },
-  {
-    src: '/images/tile-walk-in-shower-niche-accent.jpg',
-    title: 'Shower Tile & Niche',
-    description:
-      'Walk-in shower with large porcelain tile, mosaic accent, and built-in shampoo niche',
-  },
-  {
-    src: '/images/carpet-residential-phoenix-install.jpg',
-    title: 'Residential Carpet Install',
-    description: 'Fresh wall-to-wall carpet installation in a Phoenix-area home',
   },
   {
     src: '/images/carpet-bedroom-plush-closet.jpg',
@@ -71,34 +1003,9 @@ const galleryImages = [
     description: 'Neutral-tone carpet in a bedroom with plantation shutters',
   },
   {
-    src: '/images/carpet-hallway-dark-tone.jpg',
-    title: 'Hallway Carpet',
-    description: 'Dark carpet extending through a hallway and into adjacent rooms',
-  },
-  {
-    src: '/images/polished-concrete-grinding-demo.jpg',
-    title: 'Concrete Polishing Demo',
-    description: 'Live demonstration of CPS concrete grinding and polishing equipment',
-  },
-  {
-    src: '/images/polished-concrete-grinder-closeup.jpg',
-    title: 'Concrete Grinding Close-Up',
-    description: 'CPS floor grinder producing a high-gloss polished concrete finish',
-  },
-  {
-    src: '/images/polished-concrete-warehouse-before.jpg',
-    title: 'Warehouse Before Polishing',
-    description: 'Large-scale warehouse floor before concrete polishing treatment',
-  },
-  {
     src: '/images/polished-concrete-warehouse-after.jpg',
     title: 'Warehouse After Polishing',
     description: 'Same warehouse with mirror-finish polished concrete — night and day difference',
-  },
-  {
-    src: '/images/polished-concrete-commercial-highgloss.jpg',
-    title: 'Commercial Polished Concrete',
-    description: 'High-gloss polished concrete in a commercial building with reflective finish',
   },
   {
     src: '/images/polished-concrete-aircraft-hangar.jpg',
@@ -111,26 +1018,6 @@ const galleryImages = [
     description: 'Stunning dark metallic epoxy with swirl pattern in a retail storefront',
   },
   {
-    src: '/images/epoxy-metallic-commercial-wideview.jpg',
-    title: 'Metallic Epoxy — Wide View',
-    description: 'Metallic epoxy floor in a commercial space with track lighting and staircase',
-  },
-  {
-    src: '/images/epoxy-hangar-gray-coating.jpg',
-    title: 'Hangar Epoxy Coating',
-    description: 'Light gray epoxy coating in a large hangar with industrial roll-up doors',
-  },
-  {
-    src: '/images/epoxy-metallic-natural-light-detail.jpg',
-    title: 'Metallic Epoxy Detail',
-    description: 'Metallic epoxy floor catching natural light near a cable railing',
-  },
-  {
-    src: '/images/polished-concrete-restaurant-kitchen.jpg',
-    title: 'Restaurant Polished Concrete',
-    description: 'Polished concrete flooring in a restaurant kitchen and service area',
-  },
-  {
     src: '/images/polished-concrete-restaurant-dining.jpg',
     title: 'Polished Concrete — Dining Area',
     description: 'Glossy polished concrete in a restaurant with floor-to-ceiling windows',
@@ -139,31 +1026,6 @@ const galleryImages = [
     src: '/images/concrete-overlay-exposed-aggregate-closeup.jpg',
     title: 'Exposed Aggregate Concrete',
     description: 'Close-up of polished concrete revealing natural stone aggregate',
-  },
-  {
-    src: '/images/concrete-overlay-commercial-hallway-aggregate.jpg',
-    title: 'Commercial Concrete Hallway',
-    description: 'Polished concrete in a commercial corridor with exposed aggregate finish',
-  },
-  {
-    src: '/images/concrete-overlay-self-leveling-construction.jpg',
-    title: 'Self-Leveling Overlay',
-    description: 'Self-leveling concrete overlay in a building under construction',
-  },
-  {
-    src: '/images/concrete-overlay-self-leveling-residential.jpg',
-    title: 'Self-Leveling Concrete',
-    description: 'Fresh self-leveling concrete with a mirror-like surface in a residential remodel',
-  },
-  {
-    src: '/images/concrete-overlay-self-leveling-renovation.jpg',
-    title: 'Concrete Overlay — Renovation',
-    description: 'Self-leveling concrete floor reflecting window light during a renovation project',
-  },
-  {
-    src: '/images/concrete-overlay-self-leveling-wideview.jpg',
-    title: 'Self-Leveling Floor — Wide View',
-    description: 'Completed self-leveling concrete in a full residential renovation',
   },
 ];
 
@@ -186,13 +1048,83 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Featured showpiece projects, shown first in the gallery (best first)
+const featuredSrcs = [
+  '/images/tile-shower-black-brick-tub-wall-faucet-herringbone-floor.jpg',
+  '/images/hero-polished-concrete-mountain-view.jpg',
+  '/images/tile-shower-green-glazed-tile-linear-drain.jpg',
+  '/images/tile-fireplace-feature-wall-niches.jpg',
+  '/images/hardwood-wide-plank-oak-fireplace-hearth.jpg',
+  '/images/hardwood-handscraped-plank-living-room-sunlight.jpg',
+  '/images/polished-concrete-office-corridor-mural-reflection.jpg',
+  '/images/tile-patterned-accent-wall-black-white.jpg',
+  '/images/tile-large-format-great-room-red-rock-view.jpg',
+  '/images/tile-shower-marble-look-large-format-niche-window.jpg',
+  '/images/tile-shower-black-brick-wall-niche-rain-head-half-wall.jpg',
+  '/images/polished-concrete-glass-wall-stair-reflections-amber-floor.jpg',
+  '/images/tile-shower-niche-green-glazed-tile-detail.jpg',
+  '/images/tile-built-in-media-wall-niches-plank-floor.jpg',
+  '/images/polished-concrete-office-lobby-wide-reflections.jpg',
+  '/images/tile-patterned-cement-look-shower.jpg',
+  '/images/tile-large-format-polished-porcelain-bright-room.jpg',
+  '/images/tile-shower-marble-look-large-format-hex-floor-bench.jpg',
+  '/images/hardwood-light-oak-great-room-sunlight.jpg',
+  '/images/hardwood-kitchen-light-oak-cherry-cabinets-vaulted.jpg',
+  '/images/hardwood-upstairs-hallway-railing-wide-plank.jpg',
+  '/images/hardwood-wide-plank-grain-warm-oak-closeup.jpg',
+  '/images/tile-shower-black-brick-valve-handheld-niche.jpg',
+  '/images/tile-large-format-polished-porcelain-evening-reflections.jpg',
+  '/images/tile-shower-marble-look-mosaic-floor-niche-bench.jpg',
+  '/images/tile-shower-black-brick-niche-rain-head-valve-drain.jpg',
+  '/images/tile-large-format-great-room.jpg',
+  '/images/tile-large-format-polished-porcelain-open-kitchen.jpg',
+];
+const featuredSet = new Set(featuredSrcs);
+const featuredImages = featuredSrcs.map((src) => {
+  const image = galleryImages.find((i) => i.src === src);
+  if (!image) throw new Error(`Featured image missing from galleryImages: ${src}`);
+  return image;
+});
+const orderedImages = [
+  ...featuredImages,
+  ...galleryImages.filter((image) => !featuredSet.has(image.src)),
+];
+
+// Gallery filter categories, derived from the image filename prefix
+const categoryDefs = [
+  { id: 'tile', label: 'Tile & Showers' },
+  { id: 'carpet', label: 'Carpet' },
+  { id: 'hardwood', label: 'Hardwood' },
+  { id: 'vinyl', label: 'Vinyl Plank' },
+  { id: 'concrete', label: 'Concrete' },
+  { id: 'epoxy', label: 'Epoxy' },
+];
+
+function getCategory(src: string): string {
+  const file = src.split('/').pop() ?? '';
+  if (file.startsWith('tile-')) return 'tile';
+  if (file.startsWith('carpet-')) return 'carpet';
+  if (file.startsWith('hardwood-')) return 'hardwood';
+  if (file.startsWith('vinyl-')) return 'vinyl';
+  if (file.startsWith('epoxy-')) return 'epoxy';
+  if (file.includes('concrete-')) return 'concrete';
+  return 'other';
+}
+
+const categoryCounts = new Map<string, number>();
+for (const image of galleryImages) {
+  const category = getCategory(image.src);
+  categoryCounts.set(category, (categoryCounts.get(category) ?? 0) + 1);
+}
+const filterButtons = categoryDefs.filter((c) => (categoryCounts.get(c.id) ?? 0) > 0);
+
 const galleryJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Brooks Floor Covering Project Gallery',
   description:
     'Completed flooring projects throughout the Phoenix Valley — tile, carpet, polished concrete, epoxy, and concrete overlays.',
-  itemListElement: galleryImages.map((image, index) => ({
+  itemListElement: orderedImages.map((image, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     item: {
@@ -239,15 +1171,53 @@ const galleryJsonLd = {
     <section class="py-16 bg-neutral-50">
       <div class="container mx-auto px-4">
         <div
+          class="flex flex-wrap justify-center gap-2 mb-10 max-w-7xl mx-auto"
+          role="group"
+          aria-label="Filter projects by flooring type"
+          id="gallery-filters"
+        >
+          <button
+            type="button"
+            data-filter="featured"
+            aria-pressed="true"
+            class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
+          >
+            Featured <span class="opacity-70">({featuredImages.length})</span>
+          </button>
+          <button
+            type="button"
+            data-filter="all"
+            aria-pressed="false"
+            class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
+          >
+            All <span class="opacity-70">({galleryImages.length})</span>
+          </button>
+          {
+            filterButtons.map((c) => (
+              <button
+                type="button"
+                data-filter={c.id}
+                aria-pressed="false"
+                class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
+              >
+                {c.label} <span class="opacity-70">({categoryCounts.get(c.id)})</span>
+              </button>
+            ))
+          }
+        </div>
+        <div
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
           id="gallery"
         >
           {
-            galleryImages.map((image, index) => (
+            orderedImages.map((image, index) => (
               <a
                 href={image.src}
                 class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100 relative"
                 data-gallery="gallery1"
+                data-category={getCategory(image.src)}
+                data-featured={featuredSet.has(image.src) ? 'true' : 'false'}
+                hidden={!featuredSet.has(image.src)}
                 data-title={image.title}
                 data-description={image.description}
               >
@@ -296,22 +1266,81 @@ const galleryJsonLd = {
 <script>
   import GLightbox from 'glightbox';
 
-  // Initialize GLightbox with keyboard navigation enabled
-  // Escape key closes the lightbox, arrow keys navigate between slides
-  GLightbox({
-    touchNavigation: true,
-    keyboardNavigation: true,
-    closeOnOutsideClick: true,
-    loop: true,
-    autoplayVideos: false,
-    closeButton: true,
-    moreLength: 0,
-  });
+  // Escape closes the lightbox, arrow keys navigate between slides.
+  // Only items that are currently visible (not filtered out) are included.
+  function createLightbox() {
+    return GLightbox({
+      selector: '#gallery a.glightbox:not([hidden])',
+      touchNavigation: true,
+      keyboardNavigation: true,
+      closeOnOutsideClick: true,
+      loop: true,
+      autoplayVideos: false,
+      closeButton: true,
+      moreLength: 0,
+    });
+  }
+
+  let lightbox = createLightbox();
+
+  const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.filter-btn'));
+  const items = Array.from(document.querySelectorAll<HTMLAnchorElement>('#gallery a.glightbox'));
+
+  function applyFilter(filter: string) {
+    for (const item of items) {
+      item.hidden =
+        filter === 'all'
+          ? false
+          : filter === 'featured'
+            ? item.dataset.featured !== 'true'
+            : item.dataset.category !== filter;
+    }
+    for (const button of buttons) {
+      button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
+    }
+    lightbox.destroy();
+    lightbox = createLightbox();
+  }
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter ?? 'all';
+      applyFilter(filter);
+      history.replaceState(null, '', filter === 'all' ? location.pathname : `#${filter}`);
+    });
+  }
+
+  // Support direct links like /gallery#tile
+  const initial = location.hash.slice(1);
+  if (initial && buttons.some((b) => b.dataset.filter === initial)) {
+    applyFilter(initial);
+  }
 </script>
 
 <style>
   /* Ensure images display properly */
   img {
     display: block;
+  }
+
+  /* Filter pills */
+  .filter-btn {
+    background: white;
+    color: var(--color-neutral-700);
+    border-color: var(--color-neutral-300);
+  }
+  .filter-btn:hover {
+    border-color: var(--color-brand-primary);
+    color: var(--color-brand-primary);
+  }
+  .filter-btn[aria-pressed='true'] {
+    background: var(--color-brand-primary);
+    border-color: var(--color-brand-primary);
+    color: white;
+  }
+
+  /* Tailwind's `block` utility would otherwise override the hidden attribute */
+  #gallery a[hidden] {
+    display: none;
   }
 </style>
