@@ -9,12 +9,14 @@ import { trustedOrgs } from '../data/clients';
 
 const flooringManufacturers = {
   title: 'Flooring Manufacturers & Distributors',
+  intro:
+    'We source our flooring from respected manufacturers and distributors who share our commitment to quality, consistency, and innovation. These partnerships allow us to provide products that meet the highest standards for both style and durability.',
   logos: [
     { name: 'Arizona Tile', file: 'arizona-tile.png' },
     { name: 'Dal-Tile', file: 'daltile.png' },
     { name: 'Bedrosians', file: 'bedrosians.png' },
     { name: 'Cactus Tile', file: 'cactus-tile.png' },
-    { name: 'The Tile Shop', file: 'tile-shop.png' },
+    { name: 'The Tile Shop', file: 'tile-shop.png', wide: true },
     { name: 'Shaw', file: 'shaw.png' },
     { name: 'Mohawk', file: 'mohawk.png' },
     { name: 'Emser', file: 'emser.png' },
@@ -25,7 +27,9 @@ const flooringManufacturers = {
 };
 
 const installationSystems = {
-  title: 'Professional Installation Systems',
+  title: 'Professional Installation Materials',
+  intro:
+    'A long-lasting floor depends on more than just the surface. It requires the right materials underneath. We use professional-grade installation products designed to enhance performance, improve longevity, and ensure every floor is installed to the highest standard.',
   logos: [
     { name: 'Schluter', file: 'schluter.png' },
     { name: 'Laticrete', file: 'laticrete.png' },
@@ -43,7 +47,7 @@ const floorPreparation = {
 };
 
 const concreteCoatings = {
-  title: 'Concrete Coatings',
+  title: 'Concrete Coatings & Specialty Systems',
   logos: [
     { name: 'CPS', file: 'cps.png' },
     { name: 'APF', file: 'apf.png' },
@@ -52,12 +56,11 @@ const concreteCoatings = {
   ],
 };
 
-const distributorCategories = [
-  flooringManufacturers,
-  installationSystems,
-  floorPreparation,
-  concreteCoatings,
-];
+const distributorCategories: {
+  title: string;
+  intro?: string;
+  logos: { name: string; file: string; wide?: boolean }[];
+}[] = [flooringManufacturers, installationSystems, floorPreparation, concreteCoatings];
 
 const whyChooseUs = [
   '30+ Years Experience',
@@ -169,9 +172,7 @@ const breadcrumbJsonLd = {
           Our work speaks for itself. We've provided flooring services for some of the most
           recognizable organizations in the Valley.
         </p>
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto"
-        >
+        <div class="flex flex-wrap justify-center items-center gap-x-14 gap-y-10 max-w-6xl mx-auto">
           {
             trustedOrgs.map((org) => (
               <Image
@@ -180,7 +181,7 @@ const breadcrumbJsonLd = {
                 width={200}
                 height={100}
                 inferSize
-                class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                class="w-32 h-auto object-contain hover:scale-110 hover:shadow-lg transition-all duration-300"
                 loading="lazy"
               />
             ))
@@ -202,8 +203,11 @@ const breadcrumbJsonLd = {
           Trusted Products. Proven Results.
         </h2>
         <p class="text-center text-neutral-700 mb-12 max-w-2xl mx-auto leading-relaxed">
-          We partner with industry-leading manufacturers to provide you with the highest quality
-          products for your Phoenix-area home or business.
+          We believe exceptional floors start with exceptional materials. That's why we partner with
+          trusted manufacturers and distributors known for their performance, reliability, and
+          long-term durability. Every product we install is carefully selected to ensure your floor
+          not only looks beautiful but performs for years to come in your Phoenix-area home or
+          business.
         </p>
 
         {
@@ -212,12 +216,20 @@ const breadcrumbJsonLd = {
               <h3 class="text-xl font-semibold text-neutral-800 text-center mb-6">
                 {category.title}
               </h3>
+              {category.intro && (
+                <p class="text-center text-neutral-700 mb-6 max-w-2xl mx-auto leading-relaxed">
+                  {category.intro}
+                </p>
+              )}
               <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto">
                 {category.logos.map((logo) => (
                   <Image
                     src={`/images/${logo.file}`}
                     alt={logo.name}
-                    class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                    class:list={[
+                      logo.wide ? 'w-48' : 'w-32',
+                      'h-auto object-contain hover:scale-110 hover:shadow-lg transition-all duration-300',
+                    ]}
                     width={128}
                     height={64}
                     inferSize
