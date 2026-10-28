@@ -1,5 +1,6 @@
 ---
 title: 'Polished Concrete: How Slab Condition Affects the Process and the Finished Floor'
+seoTitle: 'How Slab Condition Affects Polished Concrete Floors'
 description: 'How the condition of your concrete slab shapes the polished concrete process, the finished look, and the timeline, plus how we handle uneven or damaged floors.'
 date: 2026-05-02
 author: 'Brooks Floor Covering'

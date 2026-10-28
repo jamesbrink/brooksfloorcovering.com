@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import responsiveImages from './src/integrations/responsive-images.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +14,7 @@ export default defineConfig({
         return { ...item, lastmod: new Date().toISOString() };
       },
     }),
+    responsiveImages(),
   ],
 
   vite: {

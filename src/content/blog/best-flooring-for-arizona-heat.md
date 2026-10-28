@@ -1,5 +1,6 @@
 ---
 title: "Best Flooring Options for Arizona's Extreme Heat"
+seoTitle: "Best Flooring for Arizona's Extreme Heat | Brooks Floor Covering"
 description: "Which flooring types handle Phoenix heat best? Compare tile, polished concrete, LVP, and carpet for Arizona's demanding desert climate."
 date: 2026-03-25
 author: 'Brooks Floor Covering'

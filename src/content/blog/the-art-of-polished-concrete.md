@@ -1,5 +1,6 @@
 ---
 title: 'The Art of Polished Concrete: Beauty, Durability, and Timeless Appeal'
+seoTitle: 'The Art of Polished Concrete: Beauty and Durability'
 description: 'Why polished concrete is one of the most sought-after choices for homes and businesses, plus the polishing process, benefits, and what makes each floor unique.'
 date: 2026-04-06
 author: 'Brooks Floor Covering'

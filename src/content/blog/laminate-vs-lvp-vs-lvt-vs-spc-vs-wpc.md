@@ -1,5 +1,6 @@
 ---
 title: 'Laminate vs. LVP vs. LVT vs. SPC vs. WPC: Understanding the Differences'
+seoTitle: 'Laminate vs. LVP vs. LVT vs. SPC vs. WPC: The Differences'
 description: 'A clear comparison of laminate, LVP, LVT, SPC, and WPC flooring, and how core construction, water resistance, and wear layers set them apart.'
 date: 2026-03-30
 author: 'Brooks Floor Covering'
