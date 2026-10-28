@@ -9,6 +9,12 @@ import 'glightbox/dist/css/glightbox.min.css';
 
 const galleryImages = [
   {
+    src: '/images/hero-polished-concrete-mountain-view.jpg',
+    title: 'Polished Concrete, Glass Walls and Stairs',
+    description:
+      'Mirror-polished concrete floor beside a glass wall and steel stair with mountain views',
+  },
+  {
     src: '/images/tile-shower-black-brick-tub-wall-faucet-herringbone-floor.jpg',
     title: 'Black Tile Tub Room',
     description:
@@ -2929,6 +2935,43 @@ const breadcrumbJsonLd = {
   ],
 };
 
+// Featured showpiece projects, shown first in the gallery (best first)
+const featuredSrcs = [
+  '/images/tile-shower-black-brick-tub-wall-faucet-herringbone-floor.jpg',
+  '/images/hero-polished-concrete-mountain-view.jpg',
+  '/images/tile-shower-green-glazed-tile-linear-drain.jpg',
+  '/images/tile-fireplace-feature-wall-niches.jpg',
+  '/images/hardwood-handscraped-plank-living-room-sunlight.jpg',
+  '/images/polished-concrete-office-corridor-mural-reflection.jpg',
+  '/images/tile-patterned-accent-wall-black-white.jpg',
+  '/images/tile-large-format-great-room-red-rock-view.jpg',
+  '/images/tile-shower-marble-look-large-format-niche-window.jpg',
+  '/images/tile-shower-black-brick-wall-niche-rain-head-half-wall.jpg',
+  '/images/polished-concrete-glass-wall-stair-reflections-amber-floor.jpg',
+  '/images/tile-shower-niche-green-glazed-tile-detail.jpg',
+  '/images/tile-built-in-media-wall-niches-plank-floor.jpg',
+  '/images/polished-concrete-office-lobby-wide-reflections.jpg',
+  '/images/tile-patterned-cement-look-shower.jpg',
+  '/images/tile-large-format-polished-porcelain-bright-room.jpg',
+  '/images/tile-shower-marble-look-large-format-hex-floor-bench.jpg',
+  '/images/tile-shower-black-brick-valve-handheld-niche.jpg',
+  '/images/tile-large-format-polished-porcelain-evening-reflections.jpg',
+  '/images/tile-shower-marble-look-mosaic-floor-niche-bench.jpg',
+  '/images/tile-shower-black-brick-niche-rain-head-valve-drain.jpg',
+  '/images/tile-large-format-great-room.jpg',
+  '/images/tile-large-format-polished-porcelain-open-kitchen.jpg',
+];
+const featuredSet = new Set(featuredSrcs);
+const featuredImages = featuredSrcs.map((src) => {
+  const image = galleryImages.find((i) => i.src === src);
+  if (!image) throw new Error(`Featured image missing from galleryImages: ${src}`);
+  return image;
+});
+const orderedImages = [
+  ...featuredImages,
+  ...galleryImages.filter((image) => !featuredSet.has(image.src)),
+];
+
 // Gallery filter categories, derived from the image filename prefix
 const categoryDefs = [
   { id: 'tile', label: 'Tile & Showers' },
@@ -2963,7 +3006,7 @@ const galleryJsonLd = {
   name: 'Brooks Floor Covering Project Gallery',
   description:
     'Completed flooring projects throughout the Phoenix Valley — tile, carpet, polished concrete, epoxy, and concrete overlays.',
-  itemListElement: galleryImages.map((image, index) => ({
+  itemListElement: orderedImages.map((image, index) => ({
     '@type': 'ListItem',
     position: index + 1,
     item: {
@@ -3017,8 +3060,16 @@ const galleryJsonLd = {
         >
           <button
             type="button"
-            data-filter="all"
+            data-filter="featured"
             aria-pressed="true"
+            class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
+          >
+            Featured <span class="opacity-70">({featuredImages.length})</span>
+          </button>
+          <button
+            type="button"
+            data-filter="all"
+            aria-pressed="false"
             class="filter-btn px-4 py-2 rounded-full border text-sm font-semibold transition duration-200"
           >
             All <span class="opacity-70">({galleryImages.length})</span>
@@ -3041,12 +3092,14 @@ const galleryJsonLd = {
           id="gallery"
         >
           {
-            galleryImages.map((image, index) => (
+            orderedImages.map((image, index) => (
               <a
                 href={image.src}
                 class="glightbox group block aspect-square overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 bg-neutral-100 relative"
                 data-gallery="gallery1"
                 data-category={getCategory(image.src)}
+                data-featured={featuredSet.has(image.src) ? 'true' : 'false'}
+                hidden={!featuredSet.has(image.src)}
                 data-title={image.title}
                 data-description={image.description}
               >
@@ -3117,7 +3170,12 @@ const galleryJsonLd = {
 
   function applyFilter(filter: string) {
     for (const item of items) {
-      item.hidden = filter !== 'all' && item.dataset.category !== filter;
+      item.hidden =
+        filter === 'all'
+          ? false
+          : filter === 'featured'
+            ? item.dataset.featured !== 'true'
+            : item.dataset.category !== filter;
     }
     for (const button of buttons) {
       button.setAttribute('aria-pressed', String(button.dataset.filter === filter));
