@@ -5,45 +5,46 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
+import FloorIcon from '../components/FloorIcon.astro';
 
 const residentialProducts = [
   {
-    icon: '🏠',
+    icon: 'carpet',
     title: 'Carpet',
     description:
       'Plush, durable carpet for bedrooms, living rooms, and family spaces. Comfort underfoot with a wide range of colors and textures to match your style.',
     link: '/services/carpet',
   },
   {
-    icon: '🪵',
+    icon: 'hardwood',
     title: 'Engineered Hardwood',
     description:
       'Timeless character and warmth with the stability to handle Arizona climate. Real wood surfaces engineered for long-lasting beauty.',
     link: '/services/engineered-hardwood',
   },
   {
-    icon: '💧',
+    icon: 'plank',
     title: 'Luxury Vinyl Plank',
     description:
       'Waterproof, scratch-resistant LVP that looks like real wood or stone. The most popular choice for Phoenix-area homes with pets and kids.',
     link: '/services/luxury-vinyl-plank',
   },
   {
-    icon: '🔲',
+    icon: 'tile',
     title: 'Tile & Stone',
     description:
       'Porcelain, ceramic, and natural stone tile for kitchens, bathrooms, entryways, and throughout your home. Built to last in high-traffic areas.',
     link: '/services/tile',
   },
   {
-    icon: '🏡',
+    icon: 'laminate',
     title: 'Laminate',
     description:
       'Practical, long-lasting style that replicates the look of wood or stone, with scratch resistance and easy care for busy households.',
     link: '/services',
   },
   {
-    icon: '🚿',
+    icon: 'shower',
     title: 'Custom Tile Showers',
     description:
       'Beautifully crafted walk-in showers, tub surrounds, and bathroom tile work. From mosaic accents to floor-to-ceiling tile installations.',
@@ -205,10 +206,10 @@ const residentialJsonLd = {
             residentialProducts.map((product) => (
               <div class="bg-white rounded-xl p-8 shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div
-                  class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                   aria-hidden="true"
                 >
-                  {product.icon}
+                  <FloorIcon name={product.icon} />
                 </div>
                 <h3 class="text-xl font-semibold mb-3 text-neutral-800">{product.title}</h3>
                 <p class="text-neutral-600 leading-relaxed mb-4">{product.description}</p>

@@ -4,6 +4,7 @@ import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
+import FloorIcon from '../../components/FloorIcon.astro';
 import FAQ from '../../components/FAQ.astro';
 import { serviceLinks } from '../../data/navigation';
 import { serviceAreas } from '../../data/service-areas';
@@ -19,14 +20,14 @@ export const getStaticPaths = (() => {
 const { area } = Astro.props;
 
 const serviceIcons: Record<string, string> = {
-  '/services/carpet': '🏠',
-  '/services/tile': '◻️',
-  '/services/luxury-vinyl-plank': '🪵',
-  '/services/engineered-hardwood': '🪵',
-  '/services/polished-concrete': '💎',
-  '/services/epoxy': '🔬',
-  '/services/floor-preparation': '🔧',
-  '/services/custom-tile-showers': '🚿',
+  '/services/carpet': 'carpet',
+  '/services/tile': 'tile',
+  '/services/luxury-vinyl-plank': 'plank',
+  '/services/engineered-hardwood': 'hardwood',
+  '/services/polished-concrete': 'polished',
+  '/services/epoxy': 'epoxy',
+  '/services/floor-preparation': 'prep',
+  '/services/custom-tile-showers': 'shower',
 };
 
 const popularServiceLinks: Record<string, string> = {
@@ -231,8 +232,8 @@ const jsonLd = {
                   href={link.href}
                   class="flex items-center gap-3 p-4 bg-white rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
                 >
-                  <span class="text-2xl" aria-hidden="true">
-                    {serviceIcons[link.href] || '🔨'}
+                  <span class="text-brand-primary" aria-hidden="true">
+                    <FloorIcon name={serviceIcons[link.href] || 'prep'} class="w-6 h-6" />
                   </span>
                   <span class="font-medium text-neutral-800">{link.label}</span>
                 </a>

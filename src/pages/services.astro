@@ -4,10 +4,11 @@ import Navigation from '../components/Navigation.astro';
 import Hero from '../components/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
+import FloorIcon from '../components/FloorIcon.astro';
 
 const flooringServices = [
   {
-    icon: '🏠',
+    icon: 'carpet',
     title: 'Carpet Flooring',
     href: '/services/carpet',
     image: '/images/carpet-residential-phoenix-install.jpg',
@@ -16,7 +17,7 @@ const flooringServices = [
       'Commercial carpet tile, stretch-in carpet, and broadloom carpet expertly installed for homes and businesses.',
   },
   {
-    icon: '◻️',
+    icon: 'tile',
     title: 'Tile Flooring',
     href: '/services/tile',
     image: '/images/tile-installation-worker-renovation.jpg',
@@ -25,7 +26,7 @@ const flooringServices = [
       'Ceramic, porcelain, and natural stone tile installation with precision layout and lasting adhesion.',
   },
   {
-    icon: '🪵',
+    icon: 'plank',
     title: 'Luxury Vinyl Plank',
     href: '/services/luxury-vinyl-plank',
     image: '/images/vinyl-plank-open-floor-plan-gray-oak.jpg',
@@ -34,7 +35,7 @@ const flooringServices = [
       'Waterproof, scratch-resistant LVP flooring that replicates hardwood and stone at a fraction of the cost.',
   },
   {
-    icon: '🪵',
+    icon: 'hardwood',
     title: 'Engineered Hardwood',
     href: '/services/engineered-hardwood',
     image: '/images/hardwood-living-room-warm-wide-plank.jpg',
@@ -46,7 +47,7 @@ const flooringServices = [
 
 const concreteServices = [
   {
-    icon: '💎',
+    icon: 'polished',
     title: 'Polished Concrete',
     href: '/services/polished-concrete',
     image: '/images/hero-polished-concrete-mountain-view.jpg',
@@ -55,7 +56,7 @@ const concreteServices = [
       'Transform raw concrete into a sleek, low-maintenance finished floor from matte to high-gloss.',
   },
   {
-    icon: '🔬',
+    icon: 'epoxy',
     title: 'Epoxy Flooring',
     href: '/services/epoxy',
     image: '/images/epoxy-metallic-commercial-wideview.jpg',
@@ -64,7 +65,7 @@ const concreteServices = [
       'Seamless, durable coatings ideal for garages, warehouses, and commercial environments.',
   },
   {
-    icon: '🔧',
+    icon: 'prep',
     title: 'Floor Preparation',
     href: '/services/floor-preparation',
     image: '/images/concrete-overlay-self-leveling-residential.jpg',
@@ -567,10 +568,10 @@ const servicesJsonLd = {
                   />
                   <div class="p-6">
                     <div
-                      class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                      class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                       aria-hidden="true"
                     >
-                      {service.icon}
+                      <FloorIcon name={service.icon} />
                     </div>
                     <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
                     <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
@@ -615,10 +616,10 @@ const servicesJsonLd = {
                   />
                   <div class="p-6">
                     <div
-                      class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                      class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                       aria-hidden="true"
                     >
-                      {service.icon}
+                      <FloorIcon name={service.icon} />
                     </div>
                     <h3 class="text-xl font-semibold mb-3 text-neutral-800">{service.title}</h3>
                     <p class="text-neutral-700 mb-4 leading-relaxed">{service.description}</p>
@@ -659,10 +660,10 @@ const servicesJsonLd = {
               />
               <div class="p-6">
                 <div
-                  class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                  class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                   aria-hidden="true"
                 >
-                  🚿
+                  <FloorIcon name="shower" />
                 </div>
                 <h3 class="text-xl font-semibold mb-3 text-neutral-800">Custom Tile Showers</h3>
                 <p class="text-neutral-700 mb-4 leading-relaxed">
@@ -828,7 +829,7 @@ const servicesJsonLd = {
               class="block bg-white border border-neutral-200 rounded-lg p-8 shadow hover:shadow-xl transition-all duration-300 group"
             >
               <div
-                class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                 aria-hidden="true"
               >
                 🏢
@@ -850,7 +851,7 @@ const servicesJsonLd = {
               class="block bg-white border border-neutral-200 rounded-lg p-8 shadow hover:shadow-xl transition-all duration-300 group"
             >
               <div
-                class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-3xl mb-4"
+                class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                 aria-hidden="true"
               >
                 🏠
