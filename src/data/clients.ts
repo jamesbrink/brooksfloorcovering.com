@@ -12,4 +12,5 @@ export const trustedOrgs = [
   { name: 'AutoZone', logo: '/images/clients/autozone.png' },
   { name: 'The Ritz-Carlton', logo: '/images/clients/ritz-carlton.png' },
   { name: 'Hilton Phoenix Resort at the Peak', logo: '/images/clients/point-hilton.png' },
+  { name: 'PayPal', logo: '/images/clients/paypal.png' },
 ];

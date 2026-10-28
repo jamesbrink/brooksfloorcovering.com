@@ -172,9 +172,7 @@ const breadcrumbJsonLd = {
           Our work speaks for itself. We've provided flooring services for some of the most
           recognizable organizations in the Valley.
         </p>
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center max-w-6xl mx-auto"
-        >
+        <div class="flex flex-wrap justify-center items-center gap-x-14 gap-y-10 max-w-6xl mx-auto">
           {
             trustedOrgs.map((org) => (
               <Image
@@ -228,7 +226,7 @@ const breadcrumbJsonLd = {
                   <Image
                     src={`/images/${logo.file}`}
                     alt={logo.name}
-                    class="w-32 h-auto object-contain grayscale hover:grayscale-0 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                    class="w-32 h-auto object-contain hover:scale-110 hover:shadow-lg transition-all duration-300"
                     width={128}
                     height={64}
                     inferSize
