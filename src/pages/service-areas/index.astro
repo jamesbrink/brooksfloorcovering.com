@@ -5,6 +5,7 @@ import Navigation from '../../components/Navigation.astro';
 import Hero from '../../components/Hero.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Footer from '../../components/Footer.astro';
+import FloorIcon from '../../components/FloorIcon.astro';
 import { serviceAreas } from '../../data/service-areas';
 
 const faqItems = [
@@ -269,56 +270,72 @@ const serviceAreasJsonLd = {
               href="/services/carpet"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">🏠</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="carpet" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Carpet Flooring</span>
             </a>
             <a
               href="/services/tile"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">◻️</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="tile" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Tile Flooring</span>
             </a>
             <a
               href="/services/luxury-vinyl-plank"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">🪵</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="plank" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Luxury Vinyl Plank</span>
             </a>
             <a
               href="/services/engineered-hardwood"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">🪵</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="hardwood" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Engineered Hardwood</span>
             </a>
             <a
               href="/services/polished-concrete"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">💎</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="polished" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Polished Concrete</span>
             </a>
             <a
               href="/services/epoxy"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">🔬</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="epoxy" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Epoxy Flooring</span>
             </a>
             <a
               href="/services/floor-preparation"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">🔧</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="prep" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Floor Preparation</span>
             </a>
             <a
               href="/services/custom-tile-showers"
               class="flex items-center gap-3 p-4 bg-neutral-50 rounded-lg border border-neutral-200 hover:shadow-md hover:border-brand-primary/30 transition-all duration-300"
             >
-              <span class="text-2xl" aria-hidden="true">🚿</span>
+              <span class="text-brand-primary" aria-hidden="true"
+                ><FloorIcon name="shower" class="w-6 h-6" /></span
+              >
               <span class="font-medium text-neutral-800">Custom Tile Showers</span>
             </a>
           </div>

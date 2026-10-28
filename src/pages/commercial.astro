@@ -6,45 +6,46 @@ import Hero from '../components/Hero.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
 import { trustedOrgs } from '../data/clients';
+import FloorIcon from '../components/FloorIcon.astro';
 
 const commercialSolutions = [
   {
-    icon: '🏢',
+    icon: 'carpet',
     title: 'Carpet Tile',
     description:
       'Modular carpet tile for offices, conference rooms, and retail spaces. Easy to replace individual tiles for long-term maintenance savings.',
     link: '/services/carpet',
   },
   {
-    icon: '🪵',
+    icon: 'plank',
     title: 'Luxury Vinyl Plank & Tile',
     description:
       'Waterproof, scratch-resistant LVP and LVT for high-traffic commercial environments. Modern wood and stone looks with commercial-grade durability.',
     link: '/services/luxury-vinyl-plank',
   },
   {
-    icon: '🧹',
+    icon: 'vinyl-sheet',
     title: 'Sheet Vinyl',
     description:
       'Seamless sheet vinyl for healthcare facilities, kitchens, and high-moisture commercial settings. Easy to clean and maintain.',
     link: '/services',
   },
   {
-    icon: '🔲',
+    icon: 'tile',
     title: 'Tile & Stone',
     description:
       'Porcelain, ceramic, and natural stone tile for lobbies, restaurants, restrooms, and heavy-use commercial areas built to last.',
     link: '/services/tile',
   },
   {
-    icon: '💎',
+    icon: 'polished',
     title: 'Polished Concrete',
     description:
       'High-gloss polished concrete for warehouses, showrooms, restaurants, and retail spaces. Low maintenance with a professional finish.',
     link: '/services/polished-concrete',
   },
   {
-    icon: '🛡️',
+    icon: 'epoxy',
     title: 'Epoxy Coatings',
     description:
       'Industrial-strength epoxy for warehouses, hangars, garages, and manufacturing facilities. Chemical-resistant and extremely durable.',
@@ -190,10 +191,10 @@ const commercialJsonLd = {
             commercialSolutions.map((solution) => (
               <div class="bg-white rounded-xl p-8 shadow-sm border border-neutral-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div
-                  class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-4"
+                  class="w-14 h-14 bg-blue-50 text-brand-primary rounded-xl flex items-center justify-center mb-4"
                   aria-hidden="true"
                 >
-                  {solution.icon}
+                  <FloorIcon name={solution.icon} />
                 </div>
                 <h3 class="text-xl font-semibold mb-3 text-neutral-800">{solution.title}</h3>
                 <p class="text-neutral-600 leading-relaxed mb-4">{solution.description}</p>
