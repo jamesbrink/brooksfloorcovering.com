@@ -1,5 +1,6 @@
 ---
 title: 'Polished Concrete: Wet Grinding vs. Dry Grinding, What is the Difference?'
+seoTitle: 'Polished Concrete: Wet vs. Dry Grinding Explained'
 description: 'Wet grinding vs. dry grinding for polished concrete: the trade-offs in cut speed, polish clarity, slurry management, and why a combined approach often wins.'
 date: 2026-04-17
 author: 'Brooks Floor Covering'

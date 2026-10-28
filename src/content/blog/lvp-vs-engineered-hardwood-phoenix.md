@@ -1,5 +1,6 @@
 ---
 title: 'LVP vs. Engineered Hardwood: Which Is Better for Phoenix Homes?'
+seoTitle: 'LVP vs. Engineered Hardwood: Which Is Better for Phoenix Homes?'
 description: 'Comparing luxury vinyl plank and engineered hardwood for Arizona homeowners. Durability, moisture resistance, heat tolerance, and aesthetics side by side.'
 date: 2026-03-25
 author: 'Brooks Floor Covering'

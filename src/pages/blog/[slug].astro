@@ -92,7 +92,7 @@ const blogPostingJsonLd = {
 ---
 
 <Layout
-  title={`${post.data.title} - Brooks Floor Covering`}
+  title={post.data.seoTitle ?? `${post.data.title} - Brooks Floor Covering`}
   description={post.data.description}
   jsonLd={[breadcrumbJsonLd, blogPostingJsonLd]}
   ogImage={post.data.image}
