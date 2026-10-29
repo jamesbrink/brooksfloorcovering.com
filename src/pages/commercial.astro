@@ -55,9 +55,10 @@ const commercialSolutions = [
 
 const galleryPreview = [
   {
-    src: '/images/polished-concrete-warehouse-after.jpg',
-    title: 'Warehouse After Polishing',
-    description: 'Same warehouse with mirror-finish polished concrete — night and day difference',
+    src: '/images/polished-concrete-asu-terrazzo-paver-atrium-refinished-wide.jpg',
+    title: 'ASU Terrazzo Paver Refinish',
+    description:
+      'Terrazzo pavers on a raised floor system, ground and refinished in a large campus atrium',
   },
   {
     src: '/images/polished-concrete-aircraft-hangar.jpg',
@@ -65,19 +66,81 @@ const galleryPreview = [
     description: 'King Air 360 sitting on a pristine polished hangar floor',
   },
   {
+    src: '/images/concrete-self-leveler-building-window-wall-glossy-pour.jpg',
+    title: 'Self-Leveling Underlayment',
+    description: 'Glossy self-leveling pour reflecting a glass wall in a large new building',
+  },
+  {
+    src: '/images/tile-commercial-retail-space-large-format-tile-wide.jpg',
+    title: 'Large-Format Tile, Retail Space',
+    description: 'Large-format tile set across a commercial retail space',
+  },
+  {
+    src: '/images/polished-concrete-warehouse-after.jpg',
+    title: 'Warehouse After Polishing',
+    description: 'Same warehouse with mirror-finish polished concrete — night and day difference',
+  },
+  {
     src: '/images/epoxy-metallic-retail-storefront.jpg',
     title: 'Metallic Epoxy Floor',
-    description: 'Stunning dark metallic epoxy with swirl pattern in a retail storefront',
+    description: 'Dark metallic epoxy with swirl pattern in a retail storefront',
+  },
+];
+
+const featuredProjects = [
+  {
+    title: 'ASU: Terrazzo Paver Refinishing',
+    description:
+      'Terrazzo pavers on a raised floor system, ground and refinished across a large campus atrium and its corridors.',
+    photos: [
+      {
+        src: '/images/polished-concrete-asu-terrazzo-paver-atrium-refinished-wide.jpg',
+        alt: 'Refinished terrazzo paver floor in a large campus atrium',
+        caption: 'Finished atrium floor',
+      },
+      {
+        src: '/images/polished-concrete-asu-terrazzo-paver-grinding-pass-wood-columns.jpg',
+        alt: 'Floor grinder making a pass across terrazzo pavers beside wood columns',
+        caption: 'Grinding pass across the pavers',
+      },
+      {
+        src: '/images/polished-concrete-asu-terrazzo-paver-aggregate-closeup.jpg',
+        alt: 'Close-up of terrazzo paver aggregate and joints after refinishing',
+        caption: 'Paver detail after refinishing',
+      },
+      {
+        src: '/images/polished-concrete-asu-terrazzo-paver-corridor-refinished.jpg',
+        alt: 'Long corridor of refinished terrazzo pavers',
+        caption: 'Refinished corridor',
+      },
+    ],
   },
   {
-    src: '/images/polished-concrete-restaurant-kitchen.jpg',
-    title: 'Restaurant Polished Concrete',
-    description: 'Polished concrete flooring in a restaurant kitchen and service area',
-  },
-  {
-    src: '/images/epoxy-hangar-gray-coating.jpg',
-    title: 'Hangar Epoxy Coating',
-    description: 'Light gray epoxy coating in a large hangar with industrial roll-up doors',
+    title: 'Self-Leveling Underlayment, Large New Building',
+    description:
+      'Self-leveling underlayment installed throughout a large new building, from the bare slab to a flat, smooth floor ready for finish flooring.',
+    photos: [
+      {
+        src: '/images/concrete-self-leveler-building-bare-slab-before-pour.jpg',
+        alt: 'Bare concrete slab with sunlight before the self-leveling pour',
+        caption: 'Bare slab before the pour',
+      },
+      {
+        src: '/images/concrete-self-leveler-building-crew-mixing-pumps.jpg',
+        alt: 'Crew mixing and pumping self-leveling underlayment beside pallets of material',
+        caption: 'Mixing and pumping on site',
+      },
+      {
+        src: '/images/concrete-self-leveler-building-glass-wall-flat-floor.jpg',
+        alt: 'Flat self-leveled floor beside a glass wall',
+        caption: 'Flat floor at the glass wall',
+      },
+      {
+        src: '/images/concrete-self-leveler-building-window-wall-glossy-pour.jpg',
+        alt: 'Glossy self-leveling pour reflecting a window wall',
+        caption: 'Finished pour reflecting the windows',
+      },
+    ],
   },
 ];
 
@@ -323,6 +386,45 @@ const commercialJsonLd = {
           alongside general contractors. This list reflects completed projects and professional
           relationships, not endorsements.
         </p>
+      </div>
+    </section>
+
+    <!-- Featured Commercial Projects -->
+    <section class="py-20 bg-neutral-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-xs uppercase tracking-wider text-neutral-500 font-semibold mb-3">
+            Featured Projects
+          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-brand-dark">
+            Large-Scale Commercial Work
+          </h2>
+        </div>
+        <div class="max-w-6xl mx-auto space-y-16">
+          {
+            featuredProjects.map((project) => (
+              <div>
+                <h3 class="text-xl font-semibold text-neutral-800 mb-2">{project.title}</h3>
+                <p class="text-neutral-600 leading-relaxed mb-6 max-w-3xl">{project.description}</p>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                  {project.photos.map((photo) => (
+                    <figure>
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        width="1600"
+                        height="1200"
+                        loading="lazy"
+                        class="rounded-lg shadow-md w-full aspect-[4/3] object-cover"
+                      />
+                      <figcaption class="text-sm text-neutral-600 mt-2">{photo.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
 
