@@ -33,6 +33,7 @@ const businessJsonLd = {
     longitude: -112.186,
   },
   areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Maricopa County, Arizona' },
     { '@type': 'City', name: 'Phoenix' },
     { '@type': 'City', name: 'Glendale' },
     { '@type': 'City', name: 'Scottsdale' },
@@ -241,14 +242,14 @@ const homepageGallery = [
 
 <Layout
   title="Brooks Floor Covering | Professional Flooring in Phoenix, AZ"
-  description="Family-owned flooring company serving the Greater Phoenix Area since 1994. Expert installation, repairs, concrete services, and custom tile work. ROC #226840."
+  description="Family-owned flooring company serving Maricopa County and the Greater Phoenix Area since 1994. Expert installation, repairs, concrete services, and custom tile work. ROC #226840."
   jsonLd={[businessJsonLd, websiteJsonLd, homepageFaqJsonLd]}
 >
   <Navigation />
 
   <Hero
     title="Professional Flooring Services in Phoenix, Arizona"
-    subtitle="Family-owned since 1994. We deliver expert flooring installation, repairs, and concrete services to homes and businesses across the Greater Phoenix Area."
+    subtitle="Family-owned since 1994. We deliver expert flooring installation, repairs, and concrete services to homes and businesses across Maricopa County and the Greater Phoenix Area."
     ctaText="Get Your Free Estimate"
     ctaLink="/contact"
     image="/images/hero-polished-concrete-mountain-view.jpg"
