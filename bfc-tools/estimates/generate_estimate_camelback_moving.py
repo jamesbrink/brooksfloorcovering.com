@@ -55,7 +55,7 @@ gold_l = ParagraphStyle("GL", parent=styles["Normal"], fontSize=10,
     fontName="Helvetica-Bold", textColor=colors.white, alignment=TA_LEFT)
 gold_r = ParagraphStyle("GR", parent=styles["Normal"], fontSize=10,
     fontName="Helvetica-Bold", textColor=colors.white, alignment=TA_RIGHT)
-gold_data = [[Paragraph("Estimate", gold_l), Paragraph("Date: November 19, 2026", gold_r)]]
+gold_data = [[Paragraph("Estimate", gold_l), Paragraph("Date: November 20, 2026", gold_r)]]
 gold_table = Table(gold_data, colWidths=[3.6*inch, 3.6*inch])
 gold_table.setStyle(TableStyle([
     ("BACKGROUND",    (0,0),(-1,-1), ACCENT_GOLD),
