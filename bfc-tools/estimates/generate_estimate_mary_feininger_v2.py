@@ -264,7 +264,7 @@ def tile_total_row(label, amount):
 # ══════════════════════════════════════════════════════════════
 # SECTION 1: SHOWER
 # ══════════════════════════════════════════════════════════════
-shower_total = 4500.00
+shower_total = 4260.00
 bench_deduct = 240.00
 
 denshield_total = 462.00
@@ -278,15 +278,13 @@ shower_items = [
      f"${shower_total:,.2f}"),
     ([Paragraph("Furnish and install Denshield backerboard — back wall and side walls of shower", desc_s)],
      f"${denshield_total:,.2f}"),
-    ([Paragraph("Deduct — no tile on bench", desc_s)],
-     f"-${bench_deduct:,.2f}"),
 ]
 
 story.append(KeepTogether([
     section_header("Shower"),
     col_header_row2(),
     line_items_table2(shower_items),
-    total_row2("Shower Total", f"${shower_total + denshield_total - bench_deduct:,.2f}"),
+    total_row2("Shower Total", f"${shower_total + denshield_total:,.2f}"),
 ]))
 story.append(Spacer(1, 10))
 
@@ -361,8 +359,8 @@ story.append(Spacer(1, 10))
 # TAX + GRAND TOTAL
 # ══════════════════════════════════════════════════════════════
 tax_amount  = 179.35
-grand_total = shower_total + denshield_total - bench_deduct + tile_sel_total + install_total + concrete_prep_total + tax_amount
-# $4,500.00 + $462.00 - $240.00 + $1,694.48 + $1,029.00 + $200.00 + $179.35 = $7,824.83
+grand_total = shower_total + denshield_total + tile_sel_total + install_total + concrete_prep_total + tax_amount
+# $4,260.00 + $462.00 + $1,694.48 + $1,029.00 + $200.00 + $179.35 = $7,824.83
 
 # Tax row
 tax_table = Table([[
