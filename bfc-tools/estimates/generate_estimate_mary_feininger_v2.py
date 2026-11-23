@@ -272,11 +272,11 @@ denshield_total = 462.00
 shower_items = [
     ([Paragraph("Prep shower-pan, liner, drain, walls, waterproofing, build bench, install tile and trim", desc_s),
       Paragraph("Includes block, deck mud, liner, waterproofing, thinset, grout", detail_s),
-      Paragraph("Tile to be installed on back wall — side walls, curb, and bench to receive micro cement topping", detail_s),
+      Paragraph("Tile to be installed on back wall — side walls, curb, bench, and shower pan to receive micro cement topping", detail_s),
       Paragraph("All walls, curb, and bench to be waterproofed", detail_s),
       Paragraph("Includes install of owner supplied porcelain subway tile on vanity ledge", detail_s)],
      f"${shower_total:,.2f}"),
-    ([Paragraph("Furnish and install Denshield backerboard — back wall, side walls, and shower pan", desc_s)],
+    ([Paragraph("Furnish and install Denshield backerboard — back wall and side walls of shower", desc_s)],
      f"${denshield_total:,.2f}"),
 ]
 
