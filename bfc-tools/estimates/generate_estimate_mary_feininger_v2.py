@@ -276,7 +276,7 @@ shower_items = [
       Paragraph("All walls, curb, and bench to be waterproofed", detail_s),
       Paragraph("Includes install of owner supplied porcelain subway tile on vanity ledge", detail_s)],
      f"${shower_total:,.2f}"),
-    ([Paragraph("Furnish and install Denshield backerboard — back wall and side walls of shower", desc_s)],
+    ([Paragraph("Furnish and install Denshield backerboard — back wall, side walls, and shower pan", desc_s)],
      f"${denshield_total:,.2f}"),
 ]
 
