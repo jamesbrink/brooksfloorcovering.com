@@ -278,7 +278,7 @@ shower_items = [
      f"${shower_total:,.2f}"),
     ([Paragraph("Furnish and install Denshield backerboard — back wall and side walls of shower", desc_s)],
      f"${denshield_total:,.2f}"),
-    ([Paragraph("Option — Build bench only, no tile install on bench: deduct $240.00 from shower total", desc_s)],
+    ([Paragraph("Tile install on bench not included — bench will be built only. Deducted from shower total.", desc_s)],
      f"-${bench_deduct:,.2f}"),
 ]
 
