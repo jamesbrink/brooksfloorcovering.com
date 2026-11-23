@@ -115,7 +115,7 @@ story.append(addr_table)
 # Scope of work row
 scope_table = Table([
     [Paragraph("Scope of Work", lbl_top)],
-    [Paragraph("Casita — Shower, Bedroom Floor, Bathroom Floor", val_top)],
+    [Paragraph("Casita — Shower, Bedroom Floor, Bathroom Floor, Concrete Prep", val_top)],
 ], colWidths=[W])
 scope_table.setStyle(TableStyle([
     ("BACKGROUND",    (0,0),(-1,-1), LIGHT_GRAY),
@@ -267,6 +267,8 @@ def tile_total_row(label, amount):
 shower_total = 4500.00
 bench_deduct = 240.00
 
+denshield_total = 462.00
+
 shower_items = [
     ([Paragraph("Prep shower-pan, liner, drain, walls, waterproofing, build bench, install tile and trim", desc_s),
       Paragraph("Includes block, deck mud, liner, waterproofing, thinset, grout", detail_s),
@@ -274,6 +276,8 @@ shower_items = [
       Paragraph("All walls, curb, and bench to be waterproofed", detail_s),
       Paragraph("Includes install of owner supplied porcelain subway tile on bench and vanity ledge", detail_s)],
      f"${shower_total:,.2f}"),
+    ([Paragraph("Furnish and install Denshield backerboard", desc_s)],
+     f"${denshield_total:,.2f}"),
     ([Paragraph("Option — Build bench only, no tile install on bench: deduct $240.00 from shower total", desc_s)],
      f"-${bench_deduct:,.2f}"),
 ]
@@ -282,7 +286,7 @@ story.append(KeepTogether([
     section_header("Shower"),
     col_header_row2(),
     line_items_table2(shower_items),
-    total_row2("Shower Total", f"${shower_total:,.2f}"),
+    total_row2("Shower Total", f"${shower_total + denshield_total:,.2f}"),
 ]))
 story.append(Spacer(1, 10))
 
@@ -336,11 +340,29 @@ story.append(KeepTogether([
 story.append(Spacer(1, 10))
 
 # ══════════════════════════════════════════════════════════════
+# SECTION 4: CONCRETE PREP
+# ══════════════════════════════════════════════════════════════
+concrete_prep_total = 200.00
+
+concrete_items = [
+    ([Paragraph("Grind concrete to remove paint", desc_s)],
+     f"${concrete_prep_total:,.2f}"),
+]
+
+story.append(KeepTogether([
+    section_header("Concrete Prep"),
+    col_header_row2(),
+    line_items_table2(concrete_items),
+    total_row2("Concrete Prep Total", f"${concrete_prep_total:,.2f}"),
+]))
+story.append(Spacer(1, 10))
+
+# ══════════════════════════════════════════════════════════════
 # TAX + GRAND TOTAL
 # ══════════════════════════════════════════════════════════════
-tax_amount  = 169.45
-grand_total = shower_total + tile_sel_total + install_total + tax_amount
-# $4,500.00 + $1,694.48 + $1,029.00 + $169.45 = $7,392.93
+tax_amount  = 184.98
+grand_total = shower_total + denshield_total + tile_sel_total + install_total + concrete_prep_total + tax_amount
+# $4,500.00 + $462.00 + $1,694.48 + $1,029.00 + $200.00 + $184.98 = $8,070.46
 
 # Tax row
 tax_table = Table([[
