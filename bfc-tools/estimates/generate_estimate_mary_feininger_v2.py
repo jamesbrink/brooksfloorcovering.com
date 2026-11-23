@@ -284,7 +284,7 @@ story.append(KeepTogether([
     section_header("Shower"),
     col_header_row2(),
     line_items_table2(shower_items),
-    total_row2("Shower Total", f"${shower_total + denshield_total:,.2f}"),
+    total_row2("Shower Total", f"${shower_total + denshield_total - bench_deduct:,.2f}"),
 ]))
 story.append(Spacer(1, 10))
 
@@ -358,9 +358,9 @@ story.append(Spacer(1, 10))
 # ══════════════════════════════════════════════════════════════
 # TAX + GRAND TOTAL
 # ══════════════════════════════════════════════════════════════
-tax_amount  = 184.98
-grand_total = shower_total + denshield_total + tile_sel_total + install_total + concrete_prep_total + tax_amount
-# $4,500.00 + $462.00 + $1,694.48 + $1,029.00 + $200.00 + $184.98 = $8,070.46
+tax_amount  = 179.35
+grand_total = shower_total + denshield_total - bench_deduct + tile_sel_total + install_total + concrete_prep_total + tax_amount
+# $4,500.00 + $462.00 - $240.00 + $1,694.48 + $1,029.00 + $200.00 + $179.35 = $7,824.83
 
 # Tax row
 tax_table = Table([[
