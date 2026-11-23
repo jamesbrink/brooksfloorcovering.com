@@ -274,6 +274,7 @@ shower_items = [
       Paragraph("Includes block, deck mud, liner, waterproofing, thinset, grout", detail_s),
       Paragraph("Tile to be installed on back wall — side walls and curb to receive micro cement topping", detail_s),
       Paragraph("All walls, curb, and bench to be waterproofed", detail_s),
+      Paragraph("Includes install of owner supplied porcelain subway tile on vanity ledge", detail_s),
       Paragraph("Bench will be built only — tile install on bench not included. Deducted from shower total.", detail_s)],
      f"${shower_total:,.2f}"),
     ([Paragraph("Furnish and install Denshield backerboard — back wall and side walls of shower", desc_s)],
