@@ -278,6 +278,8 @@ shower_items = [
      f"${shower_total:,.2f}"),
     ([Paragraph("Furnish and install Denshield backerboard — back wall and side walls of shower", desc_s)],
      f"${denshield_total:,.2f}"),
+    ([Paragraph("Deduct — no tile on bench", desc_s)],
+     f"-${bench_deduct:,.2f}"),
 ]
 
 story.append(KeepTogether([
